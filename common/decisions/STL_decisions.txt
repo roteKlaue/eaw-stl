@@ -1,0 +1,422 @@
+form_equ_stg = {
+    form_stg = {
+        icon = equalistdec
+        cost = 50
+        ai_will_do = {
+            factor = 100
+        }
+        fire_only_once = yes
+        visible = {
+            any_owned_state = {
+                is_core_of = STG
+            }
+            OR = {
+                has_government = communism
+            }
+        }
+        available = {
+            has_war = no
+            custom_trigger_tooltip = {
+                tooltip = STL_stg_check
+                owns_state = 240
+                owns_state = 334
+                owns_state = 678
+                owns_state = 165
+                owns_state = 153
+                owns_state = 235
+                owns_state = 237
+                owns_state = 153
+                owns_state = 161
+                owns_state = 225
+                owns_state = 168
+                owns_state = 166
+                owns_state = 233
+                owns_state = 332
+                owns_state = 234
+            }
+            NOT = {
+                country_exists = STG
+            }
+        }
+        remove_effect = {
+            log = "[GetDateText]: [Root.GetName]: Decision form_the_socialist_world_republic_decision"
+            custom_effect_tooltip = form_stg_tt1
+            if = {
+                limit = {
+                    has_government = communism
+                }
+                set_cosmetic_tag = STG_OUR
+            }
+
+            add_stability = 0.1
+            set_party_name = {
+                ideology = communism
+                long_name = STL_STG_communism_party_long
+                name = STL_STG_communism_party
+            }
+            set_party_name = {
+                ideology = democratic
+                long_name = STL_STG_democratic_party_long
+                name = STL_STG_democratic_party
+            }
+            set_party_name = {
+                ideology = neutrality
+                long_name = STL_STG_neutrality_party_long
+                name = STL_STG_neutrality_party
+            }
+            set_party_name = {
+                ideology = fascism
+                long_name = STL_STG_fascism_party
+                name = STL_STG_fascism_party
+            }
+
+            custom_effect_tooltip = form_stg_tt2
+            153 = {
+                set_state_name = STL_vp_our_stalliongrad
+            }
+            set_capital = {
+                state = 153
+                remember_old_capital = no
+            }
+            235 = {
+                set_state_name = STL_vp_starlight_glimmer
+            }
+            166 = {
+                set_state_name = STL_vp_ourhoof
+            }
+            add_victory_points = {
+                province = 3335
+                value = 10
+            }
+            custom_effect_tooltip = form_stg_tt5
+            STG = { STL = { transfer_technology = yes } }
+            custom_effect_tooltip =	form_stg_tt3
+            if = {
+                limit = {
+                    is_subject = no
+                }
+                set_rule = { can_create_factions = yes }
+                create_faction_from_template = faction_template_equality_pact
+            }
+            custom_effect_tooltip =	form_stg_tt4
+            set_country_flag = formed_stg_stl
+            STG = {
+                every_character = {
+                    limit = {
+                        is_country_leader = no
+                        OR = {
+                            is_character = STG_vinous_kostylev
+                            is_character = STG_alexia_goldgear
+                            is_character = STG_cherry_swirl
+                            is_character = STG_katya_ironstead
+                        }
+                    }
+                    set_nationality = ROOT
+                }
+            }
+            hidden_effect = {
+                every_state = {
+                    limit = {
+                        OR = {
+                            is_core_of = STG
+                            is_in_array = {
+                                state_original_cores = STG
+                            }
+                        }
+                    }
+                    add_core_of = STL
+                }
+            }
+        }
+    }
+    form_eqs = {
+        icon = equalistdec
+        cost = 50
+        ai_will_do = {
+            factor = 100
+        }
+        fire_only_once = yes
+        visible = {
+            has_country_flag = formed_stg_stl
+            any_owned_state = {
+                is_core_of = EQS
+            }
+            OR = {
+                has_government = communism
+            }
+        }
+        available = {
+            has_war = no
+            has_country_flag = formed_stg_stl
+            custom_trigger_tooltip = {
+                tooltip = form_eqs_check
+                owns_state = 3
+                owns_state = 75
+                owns_state = 70
+                owns_state = 74
+                owns_state = 12
+            }
+            NOT = {
+                country_exists = EQS
+                country_exists = NLR
+                country_exists = ELF
+            }
+        }
+        remove_effect = {
+            log = "[GetDateText]: [Root.GetName]: Decision form_the_socialist_world_republic_decision"
+            set_country_flag = STL_has_formed_our_eqs
+			mark_focus_tree_layout_dirty = yes
+            custom_effect_tooltip = form_EQS_tt3
+            if = {
+                limit = {
+                    has_government = communism
+                }
+                set_cosmetic_tag = EQS_OUR
+            }
+
+            add_stability = 0.1
+            set_party_name = {
+                ideology = communism
+                long_name = STL_EQS_communism_party_long
+                name = STL_EQS_communism_party
+            }
+            set_party_name = {
+                ideology = democratic
+                long_name = STL_EQS_democratic_party_long
+                name = STL_EQS_democratic_party
+            }
+            set_party_name = {
+                ideology = neutrality
+                long_name = STL_EQS_neutrality_party_long
+                name = STL_EQS_neutrality_party
+            }
+            set_party_name = {
+                ideology = fascism
+                long_name = STL_EQS_fascism_party
+                name = STL_EQS_fascism_party
+            }
+
+            custom_effect_tooltip = form_EQS_tt
+            3 = {
+                set_state_name = STL_vp_our_canterlot
+                set_state_category = megalopolis
+            }
+            set_province_name = {
+                id = 179
+                name = STL_vp_our_canterlot
+            }
+            set_capital = {
+                state = 3
+                remember_old_capital = no
+            }
+            add_victory_points = {
+                province = 3335
+                value = 5
+            }
+            custom_effect_tooltip = form_EQS_tt2
+            EQS = { STL = { transfer_technology = yes } }
+            hidden_effect = {
+                every_state = {
+                    limit = {
+                        OR = {
+                            is_core_of = EQS
+                            is_in_array = {
+                                state_original_cores = EQS
+                            }
+                        }
+                    }
+                    add_core_of = STL
+                }
+                every_state = {
+                    limit = {
+                        OR = {
+                            is_core_of = CRY
+                            is_in_array = {
+                                state_original_cores = CRY
+                            }
+                        }
+                    }
+                    add_core_of = STL
+                }
+            }
+        }
+    }
+
+    STL_griffon_core_territories = {
+        icon = GFX_decision_generic_form_nation
+
+        ai_will_do = {
+            base = 50
+        }
+
+        priority = 25
+
+        #highlight_states = {
+        #	highlight_state_targets = {
+        #		state = FROM
+        #	}
+        #}
+
+        allowed = {
+        }
+
+        visible = {
+            has_completed_focus = STL_integrate_griffon_lands
+        }
+
+        available = {
+            FROM = {
+                NOT = { has_state_flag = STL_coring_state_in_progress_flag }
+            }
+            FROM = {
+                compliance > 40
+            }
+        }
+
+        state_target = any_controlled_state
+
+        target_trigger = {
+            FROM = {
+                NOT = { is_core_of = ROOT }
+                is_fully_controlled_by = ROOT
+                OR = {
+                    is_core_of = GRF
+                    is_core_of = GFF
+                }
+            }
+        }
+        on_map_mode = map_only
+
+        cost = 50
+
+        fire_only_once = yes
+
+        days_remove = 35
+
+        complete_effect = {
+            hidden_effect = {
+                FROM = {
+                    set_state_flag = { flag = STL_coring_state_in_progress_flag value = 1 	days = 31 }
+                }
+            }
+        }
+
+        remove_effect = {
+            hidden_effect = {
+                FROM = {
+                    clr_state_flag = STL_coring_state_in_progress_flag
+                }
+            }
+
+            FROM = {
+                add_core_of = ROOT
+            }
+
+        }
+
+        cancel_trigger = {
+            FROM = {
+                NOT = { is_fully_controlled_by = ROOT }
+            }
+        }
+
+        cancel_effect = {
+            hidden_effect = {
+                FROM = {
+                    clr_state_flag = STL_coring_state_in_progress_flag
+                }
+            }
+        }
+    }
+
+    CHI_warlord_core_manchuria = {
+        icon = GFX_decision_generic_form_nation
+
+        ai_will_do = {
+            base = 50
+        }
+
+        priority = 25
+
+        #highlight_states = {
+        #	highlight_state_targets = {
+        #		state = FROM
+        #	}
+        #}
+
+        allowed = {
+
+        }
+
+        visible = {
+            has_completed_focus = CHI_sea_push_into_manchuria
+        }
+
+        available = {
+            FROM = {
+                NOT = { has_state_flag = STL_coring_state_in_progress_flag }
+            }
+            FROM = {
+                compliance > 45
+            }
+        }
+
+        state_target = any_controlled_state
+
+        target_trigger = {
+            FROM = {
+                NOT = { is_core_of = ROOT }
+                is_fully_controlled_by = ROOT
+                OR = {
+                    state = 408
+                    state = 409
+                    state = 657
+                    state = 560
+                    state = 561
+                }
+            }
+        }
+        on_map_mode = map_only
+
+        cost = 50
+
+        fire_only_once = yes
+
+        days_remove = 35
+
+        complete_effect = {
+            hidden_effect = {
+                FROM = {
+                    set_state_flag = { flag = STL_coring_state_in_progress_flag value = 1 	days = 31 }
+                }
+            }
+        }
+
+        remove_effect = {
+            hidden_effect = {
+                FROM = {
+                    clr_state_flag = STL_coring_state_in_progress_flag
+                }
+            }
+
+            FROM = {
+                add_core_of = ROOT
+            }
+
+        }
+
+        cancel_trigger = {
+            FROM = {
+                NOT = { is_fully_controlled_by = ROOT }
+            }
+        }
+
+        cancel_effect = {
+            hidden_effect = {
+                FROM = {
+                    clr_state_flag = STL_coring_state_in_progress_flag
+                }
+            }
+        }
+    }
+}

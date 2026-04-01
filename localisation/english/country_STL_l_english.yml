@@ -33,10 +33,12 @@ STG_MY_communism_ADJ:0 "Equal Severyanian"
 EQS_OUR_communism:0 "Our Equestria"
 EQS_OUR_communism_DEF:0 "Our Equestria"
 EQS_OUR_communism_ADJ:0 "Equal Equestrian"
+STL_starlight_glimmer:0 "Starlight Glimmer"
 
 form_equ_stg:0 "Our Unification Movement"
 form_stg:0 "Our First Step"
 form_eqs:0 "Our Greatest Achievement"
+STL_integrate_griffon_lands_tt:0 "§YIntegrate§! the Griffon lands into our glorious society."
 
 form_stg_tt1:0 "§PWe shall set up a grand republic as old Starlight envisioned a long time ago...§!\n\n"
 form_stg_tt3:0 "\n§gCreates a new faction:§!"

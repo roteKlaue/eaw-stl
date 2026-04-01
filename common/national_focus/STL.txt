@@ -94,7 +94,7 @@ focus_tree = {
         ai_will_do = {
             factor = 5
         }
-        x = 4
+        x = 5
         y = 4
         completion_reward = {
             log = "[GetDateText]: [Root.GetName]: Focus STL_independence_line"
@@ -113,7 +113,7 @@ focus_tree = {
         ai_will_do = {
             factor = 10
         }
-        x = 3
+        x = 4
         y = 5
         completion_reward = {
             log = "[GetDateText]: [Root.GetName]: Focus STL_industrial_effort"
@@ -192,7 +192,7 @@ focus_tree = {
         ai_will_do = {
             factor = 1
         }
-        x = 2
+        x = 1
         y = 6
         completion_reward = {
             every_state = {
@@ -220,7 +220,7 @@ focus_tree = {
                 is_historical_focus_on = yes
             }
         }
-        x = 5
+        x = 4
         y = 6
         will_lead_to_war_with = STG
         completion_reward = {
@@ -236,30 +236,30 @@ focus_tree = {
         icon = GFX_STL_sussy2-888223
         cost = 5.00
 
-        available = {			
-			has_war = no
-			custom_trigger_tooltip = {
-    			tooltip = STL_stg_check
-				owns_state = 240
-				owns_state = 334
-				owns_state = 678
-				owns_state = 165
-				owns_state = 153
-				owns_state = 235
-				owns_state = 237
-				owns_state = 153
-				owns_state = 161
-				owns_state = 225
-				owns_state = 168
-				owns_state = 166
-				owns_state = 233
-				owns_state = 332
-				owns_state = 234
-			}
-			NOT = {
-				country_exists = STG
-			}
-		}
+        available = {
+            has_war = no
+            custom_trigger_tooltip = {
+                tooltip = STL_stg_check
+                owns_state = 240
+                owns_state = 334
+                owns_state = 678
+                owns_state = 165
+                owns_state = 153
+                owns_state = 235
+                owns_state = 237
+                owns_state = 153
+                owns_state = 161
+                owns_state = 225
+                owns_state = 168
+                owns_state = 166
+                owns_state = 233
+                owns_state = 332
+                owns_state = 234
+            }
+            NOT = {
+                country_exists = STG
+            }
+        }
 
         prerequisite = {
             focus = STL_conquest_of_STG
@@ -274,7 +274,7 @@ focus_tree = {
                 is_historical_focus_on = yes
             }
         }
-        x = 7
+        x = 8
         y = 7
         will_lead_to_war_with = STG
         completion_reward = {
@@ -290,30 +290,30 @@ focus_tree = {
             focus = STL_conquest_of_STG
         }
 
-        available = {			
-			has_war = no
-			custom_trigger_tooltip = {
-    			tooltip = STL_stg_check
-				owns_state = 240
-				owns_state = 334
-				owns_state = 678
-				owns_state = 165
-				owns_state = 153
-				owns_state = 235
-				owns_state = 237
-				owns_state = 153
-				owns_state = 161
-				owns_state = 225
-				owns_state = 168
-				owns_state = 166
-				owns_state = 233
-				owns_state = 332
-				owns_state = 234
-			}
-			NOT = {
-				country_exists = STG
-			}
-		}
+        available = {
+            has_war = no
+            custom_trigger_tooltip = {
+                tooltip = STL_stg_check
+                owns_state = 240
+                owns_state = 334
+                owns_state = 678
+                owns_state = 165
+                owns_state = 153
+                owns_state = 235
+                owns_state = 237
+                owns_state = 153
+                owns_state = 161
+                owns_state = 225
+                owns_state = 168
+                owns_state = 166
+                owns_state = 233
+                owns_state = 332
+                owns_state = 234
+            }
+            NOT = {
+                country_exists = STG
+            }
+        }
 
         mutually_exclusive = {
             focus = STL_invite_starlight_back
@@ -325,11 +325,312 @@ focus_tree = {
                 is_historical_focus_on = yes
             }
         }
-        x = 5
+        x = 4
         y = 7
         will_lead_to_war_with = STG
         completion_reward = {
 
+        }
+    }
+
+    focus = {
+        id = STL_increase_radicalism
+        prerequisite = {
+            focus = STL_double_diamond_supreme
+        }
+        icon = GFX_SOV_demand_eastern_poland_ccp_2d_sov_compatibility
+        cost = 5
+        x = 1
+        y = 8
+        completion_reward = {
+            swap_ideas = {
+                remove_idea = STL_equality_past
+                add_idea = STL_embraced_past
+            }
+        }
+    }
+
+    focus = {
+        id = STL_starlight_as_a_figure_head
+        icon = GFX_STL_sussy-888222
+        cost = 5
+        available = {
+            has_country_flag = STL_has_formed_our_eqs
+        }
+        prerequisite = {
+            focus = STL_increase_radicalism
+        }
+        x = 1
+        y = 9
+        completion_reward = { }
+    }
+
+    focus = {
+        id = STL_industrial_integration_of_stg
+        icon = GFX_focus_GER_integrated_economies
+
+        prerequisite = {
+            focus = STL_invite_starlight_back
+            focus = STL_double_diamond_supreme
+        }
+
+        bypass = {
+            custom_trigger_tooltip = {
+                tooltip = construction_effort_tt
+                all_owned_state = {
+                    free_building_slots = {
+                        building = industrial_complex
+                        size < 1
+                        include_locked = yes
+                    }
+                }
+            }
+        }
+
+        cost = 5
+        x = 5
+        y = 8
+        completion_reward = {
+            random_owned_controlled_state = {
+                limit = {
+                    free_building_slots = {
+                        building = industrial_complex
+                        size > 1
+                        include_locked = yes
+                    }
+                    OR = {
+                        is_in_home_area = yes
+                        NOT = {
+                            owner = {
+                                any_owned_state = {
+                                    free_building_slots = {
+                                        building = industrial_complex
+                                        size > 1
+                                        include_locked = yes
+                                    }
+                                    is_in_home_area = yes
+                                }
+                            }
+                        }
+                    }
+                }
+                add_extra_state_shared_building_slots = 2
+                add_building_construction = {
+                    type = industrial_complex
+                    level = 2
+                    instant_build = yes
+                }
+            }
+
+            random_owned_controlled_state = {
+                limit = {
+                    free_building_slots = {
+                        building = industrial_complex
+                        size > 1
+                        include_locked = yes
+                    }
+                    OR = {
+                        is_in_home_area = yes
+                        NOT = {
+                            owner = {
+                                any_owned_state = {
+                                    free_building_slots = {
+                                        building = industrial_complex
+                                        size > 1
+                                        include_locked = yes
+                                    }
+                                    is_in_home_area = yes
+                                }
+                            }
+                        }
+                    }
+                }
+                add_extra_state_shared_building_slots = 2
+                add_building_construction = {
+                    type = industrial_complex
+                    level = 2
+                    instant_build = yes
+                }
+            }
+        }
+    }
+
+    focus = {
+        id = STL_bring_equality_to_equestria
+        prerequisite = {
+            focus = STL_double_diamond_supreme
+            focus = STL_invite_starlight_back
+        }
+        icon=GFX_goal_stg_eqs
+        cost = 5
+        x = 6
+        y = 9
+        completion_reward = {
+            create_wargoal = {
+                type = annex_everything
+                target = EQS
+            }
+        }
+    }
+
+    focus = {
+        id = STL_industrial_integration_of_eqs
+        icon = GFX_focus_GER_integrate_volkskommissariats
+
+        prerequisite = {
+            focus = STL_bring_equality_to_equestria
+        }
+
+        bypass = {
+            custom_trigger_tooltip = {
+                tooltip = construction_effort_tt
+                all_owned_state = {
+                    free_building_slots = {
+                        building = industrial_complex
+                        size < 1
+                        include_locked = yes
+                    }
+                }
+            }
+        }
+
+        cost = 5
+        x = 5
+        y = 10
+        completion_reward = {
+            random_owned_controlled_state = {
+                limit = {
+                    free_building_slots = {
+                        building = industrial_complex
+                        size > 1
+                        include_locked = yes
+                    }
+                    OR = {
+                        is_in_home_area = yes
+                        NOT = {
+                            owner = {
+                                any_owned_state = {
+                                    free_building_slots = {
+                                        building = industrial_complex
+                                        size > 1
+                                        include_locked = yes
+                                    }
+                                    is_in_home_area = yes
+                                }
+                            }
+                        }
+                    }
+                }
+                add_extra_state_shared_building_slots = 2
+                add_building_construction = {
+                    type = industrial_complex
+                    level = 2
+                    instant_build = yes
+                }
+            }
+
+            random_owned_controlled_state = {
+                limit = {
+                    free_building_slots = {
+                        building = industrial_complex
+                        size > 1
+                        include_locked = yes
+                    }
+                    OR = {
+                        is_in_home_area = yes
+                        NOT = {
+                            owner = {
+                                any_owned_state = {
+                                    free_building_slots = {
+                                        building = industrial_complex
+                                        size > 1
+                                        include_locked = yes
+                                    }
+                                    is_in_home_area = yes
+                                }
+                            }
+                        }
+                    }
+                }
+                add_extra_state_shared_building_slots = 2
+                add_building_construction = {
+                    type = industrial_complex
+                    level = 2
+                    instant_build = yes
+                }
+            }
+        }
+    }
+
+    focus = {
+        id = STL_integrate_griffon_lands
+        icon = GFX_focus_AFG_integrate_tajik_and_uzbek_republics
+        cost = 10
+        x = 7
+        y = 10
+
+        available = {
+            has_country_flag = STL_has_formed_our_eqs
+            any_owned_state = {
+                NOT = {
+                    is_core_of = ROOT
+                }
+
+                OR = {
+                    is_core_of = GRF
+                    is_core_of = GFF
+                }
+            }
+        }
+
+        prerequisite = {
+            focus = STL_bring_equality_to_equestria
+        }
+
+        completion_reward = {
+            tooltip = STL_integrate_griffon_lands_tt
+        }
+    }
+
+    focus = {
+        id = STL_reastablish_equality
+        icon = GFX_goal_generic_national_unity
+        prerequisite = {
+            focus = STL_invite_starlight_back
+        }
+        available = {
+            has_country_leader = STL_starlight_glimmer
+        }
+        cost = 5
+        x = 11
+        y = 8
+        completion_reward = {
+            swap_ideas = {
+                remove_idea = STL_equality_past
+                add_idea = STL_equality_reastablished
+            }
+        }
+    }
+
+    focus = {
+        id = STL_reastablish_solidified
+        prerequisite = {
+            focus = STL_reastablish_equality
+        }
+
+        available = {
+            has_country_leader = STL_starlight_glimmer
+            has_country_flag = STL_has_formed_our_eqs
+        }
+
+        cost = 5
+        x = 11
+        y = 9
+        completion_reward = {
+            swap_ideas = {
+                remove_idea = STL_equality_reastablished
+                add_idea = STL_equality_solidified
+            }
         }
     }
 
@@ -352,6 +653,7 @@ focus_tree = {
         }
         search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_RESEARCH }
     }
+
     focus = {
         id = STL_garden
         icon = GFX_focus_jap_manchurian_project
@@ -371,6 +673,19 @@ focus_tree = {
         }
         search_filters = { FOCUS_FILTER_ARMY_BONUS FOCUS_FILTER_MANPOWER FOCUS_FILTER_STABILITY }
     }
+
+    focus = {
+        id = STL_breeding_program
+        prerequisite = {
+            focus = STL_garden
+        }
+        icon = GFX_focus_jap_spiritual_mobilization
+        cost = 7
+        x = 6
+        y = 6
+        completion_reward = { }
+    }
+
     focus = {
         id = STL_research_facility
         icon = GFX_focus_research
@@ -434,8 +749,8 @@ focus_tree = {
         completion_reward = {
             log = "[GetDateText]: [Root.GetName]: Focus STL_twilight_teaching"
         }
-
     }
+
     focus = {
         id = STL_railroad_way
         icon = GFX_goal_generic_construct_infrastructure
@@ -462,6 +777,7 @@ focus_tree = {
         }
         search_filters = { FOCUS_FILTER_INDUSTRY }
     }
+
     focus = {
         id = STL_equestrian_airbridge
         icon = GFX_goal_eqs_airfields_south
@@ -483,8 +799,8 @@ focus_tree = {
             }
         }
         search_filters = { FOCUS_FILTER_INDUSTRY }
-
     }
+
     focus = {
         id = STL_our_town_fortress
         icon = GFX_goal_generic_fortify_city
@@ -507,8 +823,8 @@ focus_tree = {
             }
         }
         search_filters = { FOCUS_FILTER_INDUSTRY }
-
     }
+
     focus = {
         id = STL_eqs_exped_forces
         icon = GFX_focus_generic_paratrooper
@@ -525,6 +841,7 @@ focus_tree = {
             add_ideas = STL_volunteers
         }
     }
+
     focus = {
         id = STL_griffon_transition
         icon = GFX_goal_planning_bonus
@@ -544,6 +861,7 @@ focus_tree = {
             }
         }
     }
+
     focus = {
         id = STL_GRF_cedeing_land
         icon = GFX_goal_planning_bonus
@@ -578,6 +896,7 @@ focus_tree = {
             add_research_slot = 1
         }
     }
+
     focus = {
         id = STL_call_to_war
         icon = GFX_goal_planning_bonus
@@ -593,6 +912,7 @@ focus_tree = {
             }
         }
     }
+
     focus = {
         id = STL_war_on_GRF
         icon = GFX_goal_planning_bonus
@@ -607,7 +927,7 @@ focus_tree = {
                 is_historical_focus_on = yes
             }
         }
-        x = 1
+        x = 0
         y = 7
         will_lead_to_war_with = GRF
         will_lead_to_war_with = GFF
@@ -622,6 +942,7 @@ focus_tree = {
             }
         }
     }
+
     focus = {
         id = STL_second_factory
         icon = GFX_focus_generic_industry_1
@@ -643,6 +964,7 @@ focus_tree = {
         }
         search_filters = { FOCUS_FILTER_INDUSTRY }
     }
+
     focus = {
         id = STL_third_factory
         icon = GFX_focus_generic_industry_2
@@ -656,11 +978,36 @@ focus_tree = {
         x = 16
         y = 2
         completion_reward = {
-            log = "[GetDateText]: [Root.GetName]: Focus STL_third_factory"
-            57 = {add_extra_state_shared_building_slots = 3
-            add_building_construction = { type = industrial_complex
-            level = 2
-            instant_build = yes } }
+            random_owned_controlled_state = {
+                limit = {
+                    free_building_slots = {
+                        building = industrial_complex
+                        size > 1
+                        include_locked = yes
+                    }
+                    OR = {
+                        is_in_home_area = yes
+                        NOT = {
+                            owner = {
+                                any_owned_state = {
+                                    free_building_slots = {
+                                        building = industrial_complex
+                                        size > 1
+                                        include_locked = yes
+                                    }
+                                    is_in_home_area = yes
+                                }
+                            }
+                        }
+                    }
+                }
+                add_extra_state_shared_building_slots = 2
+                add_building_construction = {
+                    type = industrial_complex
+                    level = 2
+                    instant_build = yes
+                }
+            }
         }
         search_filters = { FOCUS_FILTER_INDUSTRY }
     }
@@ -678,14 +1025,40 @@ focus_tree = {
         x = 18
         y = 2
         completion_reward = {
-            log = "[GetDateText]: [Root.GetName]: Focus STL_military_factories"
-            57 = {add_extra_state_shared_building_slots = 3
-            add_building_construction = { type = industrial_complex
-            level = 2
-            instant_build = yes } }
+            random_owned_controlled_state = {
+                limit = {
+                    free_building_slots = {
+                        building = arms_factory
+                        size > 1
+                        include_locked = yes
+                    }
+                    OR = {
+                        is_in_home_area = yes
+                        NOT = {
+                            owner = {
+                                any_owned_state = {
+                                    free_building_slots = {
+                                        building = arms_factory
+                                        size > 1
+                                        include_locked = yes
+                                    }
+                                    is_in_home_area = yes
+                                }
+                            }
+                        }
+                    }
+                }
+                add_extra_state_shared_building_slots = 2
+                add_building_construction = {
+                    type = arms_factory
+                    level = 2
+                    instant_build = yes
+                }
+            }
         }
         search_filters = { FOCUS_FILTER_INDUSTRY }
     }
+
     focus = {
         id = STL_GRF_revolution
         icon = GFX_goal_planning_bonus
@@ -704,7 +1077,7 @@ focus_tree = {
         ai_will_do = {
             factor = 1
         }
-        x = 3
+        x = 2
         y = 7
         completion_reward = {
             every_owned_state = {
@@ -954,35 +1327,35 @@ focus_tree = {
         y = 2
         cost = 5
 
-        available = {			
-			OR = {
+        available = {
+            OR = {
                 AND = {
                     has_war = no
-			        custom_trigger_tooltip = {
-    		        	tooltip = STL_stg_check
-			        	owns_state = 240
-			        	owns_state = 334
-			        	owns_state = 678
-			        	owns_state = 165
-			        	owns_state = 153
-			        	owns_state = 235
-			        	owns_state = 237
-			        	owns_state = 153
-			        	owns_state = 161
-			        	owns_state = 225
-			        	owns_state = 168
-			        	owns_state = 166
-			        	owns_state = 233
-			        	owns_state = 332
-			        	owns_state = 234
-			        }
-			        NOT = {
-			        	country_exists = STG
-			        }
+                    custom_trigger_tooltip = {
+                        tooltip = STL_stg_check
+                        owns_state = 240
+                        owns_state = 334
+                        owns_state = 678
+                        owns_state = 165
+                        owns_state = 153
+                        owns_state = 235
+                        owns_state = 237
+                        owns_state = 153
+                        owns_state = 161
+                        owns_state = 225
+                        owns_state = 168
+                        owns_state = 166
+                        owns_state = 233
+                        owns_state = 332
+                        owns_state = 234
+                    }
+                    NOT = {
+                        country_exists = STG
+                    }
                 }
                 is_in_faction_with = EQS
             }
-		}
+        }
 
         search_filters = { FOCUS_FILTER_INDUSTRY }
 
@@ -1161,6 +1534,19 @@ focus_tree = {
 
             add_research_slot = 1
         }
+    }
+
+    focus = {
+        id = STL_equality_for_the_continet
+        icon = GFX_idea_STL_starlight_glimmer-888107
+        cost = 1.5
+        x = 16
+        y = 15
+
+        # allow_branch = {
+        #     has_country_flag = STL_has_formed_our_eqs
+        # }
+        completion_reward = { }
     }
 }
 
