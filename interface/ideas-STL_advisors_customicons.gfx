@@ -1,0 +1,7 @@
+spriteTypes = { 
+	##Icon For: Starlight Glimmer
+	SpriteType = { 
+		name = "GFX_idea_STL_starlight_glimmer-888107"
+		texturefile = "gfx/interface/ideas/advisors-ideas/STL_starlight_glimmer-888107.dds"
+	}
+ }

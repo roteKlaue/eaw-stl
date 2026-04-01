@@ -1,0 +1,1167 @@
+focus_tree = {
+    id = starlight_village
+    country = {
+        factor = 0
+        modifier = {
+            add = 10
+            tag = STL
+        }
+    }
+    default = no
+    continuous_focus_position = { x = 10 y = 10 }
+    focus = {
+        id = STL_abolish_equality
+        icon = GFX_focus_eqc_memories_of_our_town
+        cost = 3.00
+        x = 11
+        y = 0
+        ai_will_do = {
+            factor = 5
+        }
+        completion_reward = {
+            log = "[GetDateText]: [Root.GetName]: Focus STL_abolish_equality"
+            country_event = {
+                id = starlight.3 days = 1
+            }
+        }
+    }
+    focus = {
+        id = STL_society_reform
+        icon = GFX_goal_government_icon
+        prerequisite = { focus = STL_abolish_equality }
+        cost = 5.00
+        x = 12
+        y = 1
+        ai_will_do = {
+            factor = 5
+        }
+        completion_reward = {
+            log = "[GetDateText]: [Root.GetName]: Focus STL_society_reform"
+            country_event = {
+                id = starlight.9 days = 1
+            }
+        }
+    }
+    focus = {
+        id = STL_one_factory
+        icon = GFX_focus_generic_industry_1
+        x = 17
+        y = 0
+        ai_will_do = {
+            factor = 10
+        }
+        cost = 2
+        completion_reward = {
+            log = "[GetDateText]: [Root.GetName]: Focus STL_one_factory"
+            57 = {add_extra_state_shared_building_slots = 1
+            add_building_construction = { type = industrial_complex
+            level = 1
+            instant_build = yes } }
+        }
+        search_filters = { FOCUS_FILTER_INDUSTRY }
+    }
+    focus = {
+        id = STL_neighbors_help
+        icon = GFX_goal_cry_stalliongrad
+        mutually_exclusive = {focus = STL_twilight_teaching }
+        cost = 5.00
+        prerequisite = {
+            focus = STL_elections
+        }
+        available = {
+            has_country_flag = double_diamond_elected
+        }
+        ai_will_do = {
+            factor = 5
+        }
+        x = 8
+        y = 3
+        completion_reward = {
+            log = "[GetDateText]: [Root.GetName]: Focus STL_neighbors_help"
+            country_event = {
+                id = starlight.4 days = 1
+            }
+        }
+
+    }
+    focus = {
+        id = STL_independence_line
+        icon = GFX_focus_generic_support_the_left_right
+        cost = 5.00
+        prerequisite = {
+            focus = STL_neighbors_help
+        }
+        ai_will_do = {
+            factor = 5
+        }
+        x = 4
+        y = 4
+        completion_reward = {
+            log = "[GetDateText]: [Root.GetName]: Focus STL_independence_line"
+            country_event = {
+                id = starlight.5 days = 1
+            }
+        }
+    }
+    focus = {
+        id = STL_industrial_effort
+        icon = GFX_goal_industrial_pony
+        cost = 5.00
+        prerequisite = {
+            focus = STL_independence_line
+        }
+        ai_will_do = {
+            factor = 10
+        }
+        x = 3
+        y = 5
+        completion_reward = {
+            log = "[GetDateText]: [Root.GetName]: Focus STL_industrial_effort"
+            57 = {add_extra_state_shared_building_slots = 2
+            add_building_construction = { type = industrial_complex
+            level = 2
+            instant_build = yes } }
+        }
+        search_filters = { FOCUS_FILTER_INDUSTRY }
+    }
+    focus = {
+        id = STL_industrial_help
+        icon = GFX_goal_generic_intelligence_exchange_pony
+        cost = 5.00
+        prerequisite = {
+            focus = STL_neighbors_help
+        }
+        ai_will_do = {
+            factor = 1
+        }
+        x = 7
+        y = 4
+        completion_reward = {
+            log = "[GetDateText]: [Root.GetName]: Focus STL_industrial_help"
+            country_event = {
+                id = starlight.6 days = 1
+            }
+        }
+    }
+    focus = {
+        id = STL_STG_military_advisors
+        icon = GFX_goal_stg_stl
+        cost = 5.00
+        prerequisite = {
+            focus = STL_neighbors_help
+        }
+        ai_will_do = {
+            factor = 1
+        }
+        x = 1
+        y = 4
+        completion_reward = {
+            log = "[GetDateText]: [Root.GetName]: Focus STL_STG_military_advisors"
+            country_event = {
+                id = starlight.7 days = 1
+            }
+        }
+    }
+    focus = {
+        id = STL_new_army
+        icon = GFX_goal_generic_allies_build_infantry
+        cost = 5.00
+        prerequisite = {
+            focus = STL_STG_military_advisors
+        }
+        ai_will_do = {
+            factor = 1
+        }
+        x = 1
+        y = 5
+        completion_reward = {
+            log = "[GetDateText]: [Root.GetName]: Focus STL_new_army"
+            country_event = {
+                id = starlight.10 days = 1
+            }
+        }
+    }
+    focus = {
+        id = STL_demand_griffon_land
+        icon = GFX_goal_generic_territory_or_war
+        cost = 5.00
+        prerequisite = {
+            focus = STL_new_army
+            focus = STL_industrial_effort
+        }
+        ai_will_do = {
+            factor = 1
+        }
+        x = 2
+        y = 6
+        completion_reward = {
+            every_state = {
+                limit = {
+                    OR = {
+                        is_core_of = GRF
+                        is_core_of = GFF
+                    }
+                }
+                add_claim_by = STL
+            }
+        }
+    }
+    focus = {
+        id = STL_conquest_of_STG
+        icon = GFX_goal_crush_stalliongrad
+        cost = 5.00
+        prerequisite = {
+            focus = STL_industrial_effort
+        }
+        ai_will_do = {
+            factor = 0.1
+            modifier = {
+                factor = 0
+                is_historical_focus_on = yes
+            }
+        }
+        x = 5
+        y = 6
+        will_lead_to_war_with = STG
+        completion_reward = {
+            create_wargoal = {
+                type = annex_everything
+                target = STG
+            }
+        }
+    }
+
+    focus = {
+        id = STL_invite_starlight_back
+        icon = GFX_STL_sussy2-888223
+        cost = 5.00
+
+        available = {			
+			has_war = no
+			custom_trigger_tooltip = {
+    			tooltip = STL_stg_check
+				owns_state = 240
+				owns_state = 334
+				owns_state = 678
+				owns_state = 165
+				owns_state = 153
+				owns_state = 235
+				owns_state = 237
+				owns_state = 153
+				owns_state = 161
+				owns_state = 225
+				owns_state = 168
+				owns_state = 166
+				owns_state = 233
+				owns_state = 332
+				owns_state = 234
+			}
+			NOT = {
+				country_exists = STG
+			}
+		}
+
+        prerequisite = {
+            focus = STL_conquest_of_STG
+        }
+        mutually_exclusive = {
+            focus = STL_double_diamond_supreme
+        }
+        ai_will_do = {
+            factor = 0.1
+            modifier = {
+                factor = 0
+                is_historical_focus_on = yes
+            }
+        }
+        x = 7
+        y = 7
+        will_lead_to_war_with = STG
+        completion_reward = {
+            country_event = { id = starlight.20 }
+        }
+    }
+
+    focus = {
+        id = STL_double_diamond_supreme
+        icon = GFX_focus_eqc_memories_of_our_town
+        cost = 5.00
+        prerequisite = {
+            focus = STL_conquest_of_STG
+        }
+
+        available = {			
+			has_war = no
+			custom_trigger_tooltip = {
+    			tooltip = STL_stg_check
+				owns_state = 240
+				owns_state = 334
+				owns_state = 678
+				owns_state = 165
+				owns_state = 153
+				owns_state = 235
+				owns_state = 237
+				owns_state = 153
+				owns_state = 161
+				owns_state = 225
+				owns_state = 168
+				owns_state = 166
+				owns_state = 233
+				owns_state = 332
+				owns_state = 234
+			}
+			NOT = {
+				country_exists = STG
+			}
+		}
+
+        mutually_exclusive = {
+            focus = STL_invite_starlight_back
+        }
+        ai_will_do = {
+            factor = 0.1
+            modifier = {
+                factor = 0
+                is_historical_focus_on = yes
+            }
+        }
+        x = 5
+        y = 7
+        will_lead_to_war_with = STG
+        completion_reward = {
+
+        }
+    }
+
+    focus = {
+        id = STL_socialist_trade
+        icon = GFX_goal_generic_positive_trade_relations
+        cost = 5.00
+        prerequisite = {
+            focus = STL_industrial_help
+        }
+        ai_will_do = {
+            factor = 1
+        }
+        x = 8
+        y = 5
+        completion_reward = {
+            log = "[GetDateText]: [Root.GetName]: Focus STL_socialist_trade"
+            add_ideas = trade_relations_with_stalliongrad
+            remove_ideas = { STL_city_state STL_city_state2 }
+        }
+        search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_RESEARCH }
+    }
+    focus = {
+        id = STL_garden
+        icon = GFX_focus_jap_manchurian_project
+        cost = 5.00
+        prerequisite = {
+            focus = STL_industrial_help
+            focus = STL_independence_line
+        }
+        ai_will_do = {
+            factor = 1
+        }
+        x = 6
+        y = 5
+        completion_reward = {
+            log = "[GetDateText]: [Root.GetName]: Focus STL_garden"
+            add_ideas = STL_garden_spirit
+        }
+        search_filters = { FOCUS_FILTER_ARMY_BONUS FOCUS_FILTER_MANPOWER FOCUS_FILTER_STABILITY }
+    }
+    focus = {
+        id = STL_research_facility
+        icon = GFX_focus_research
+        cost = 10.00
+        prerequisite = {
+            focus = STL_railroad_way
+        }
+        prerequisite = {
+            focus = STL_socialist_trade
+            focus = STL_our_town_fortress
+        }
+        ai_will_do = {
+            factor = 1
+        }
+        x = 11
+        y = 6
+        completion_reward = {
+            log = "[GetDateText]: [Root.GetName]: Focus STL_research_facility"
+            add_research_slot = 1
+        }
+        search_filters = { FOCUS_FILTER_RESEARCH }
+    }
+    focus = {
+        id = STL_elections
+        icon = GFX_goal_generic_elections
+        cost = 10.00
+        prerequisite = {
+            focus = STL_society_reform
+        }
+        prerequisite = {
+            focus = STL_abolish_equality
+        }
+        ai_will_do = {
+            factor = 1
+        }
+        x = 11
+        y = 2
+        completion_reward = {
+            log = "[GetDateText]: [Root.GetName]: Focus STL_elections"
+            country_event = {
+                id = starlight.14 days = 1
+            }
+        }
+    }
+    focus = {
+        id = STL_twilight_teaching
+        icon = GFX_goal_generic_equestria
+        mutually_exclusive = {focus = STL_neighbors_help }
+        cost = 10.00
+        prerequisite = {
+            focus = STL_elections
+        }
+        available = {
+            has_country_flag = feather_bangs_elected
+        }
+        ai_will_do = {
+            factor = 1
+        }
+        x = 14
+        y = 3
+        completion_reward = {
+            log = "[GetDateText]: [Root.GetName]: Focus STL_twilight_teaching"
+        }
+
+    }
+    focus = {
+        id = STL_railroad_way
+        icon = GFX_goal_generic_construct_infrastructure
+        cost = 10.00
+        prerequisite = {
+            focus = STL_neighbors_help
+            focus = STL_twilight_teaching
+        }
+        ai_will_do = {
+            factor = 1
+        }
+        x = 11
+        y = 5
+        completion_reward = {
+            log = "[GetDateText]: [Root.GetName]: Focus STL_railroad_way"
+            57 = {
+                add_building_construction = {
+                    type = infrastructure
+                    level = 2
+                    instant_build = yes
+                }
+                set_state_category = city
+            }
+        }
+        search_filters = { FOCUS_FILTER_INDUSTRY }
+    }
+    focus = {
+        id = STL_equestrian_airbridge
+        icon = GFX_goal_eqs_airfields_south
+        cost = 10.00
+        prerequisite = {
+            focus = STL_twilight_teaching
+        }
+        ai_will_do = {
+            factor = 1
+        }
+        x = 15
+        y = 4
+        completion_reward = {
+            57 = {
+                add_building_construction = {
+                    type = air_base
+                    level = 5
+                }
+            }
+        }
+        search_filters = { FOCUS_FILTER_INDUSTRY }
+
+    }
+    focus = {
+        id = STL_our_town_fortress
+        icon = GFX_goal_generic_fortify_city
+        cost = 10.00
+        prerequisite = {
+            focus = STL_equestrian_airbridge
+        }
+        ai_will_do = {
+            factor = 1
+        }
+        x = 15
+        y = 5
+        completion_reward = {
+            57 = {
+                add_building_construction = {
+                    type = bunker
+                    level = 5
+                    province = 3335
+                }
+            }
+        }
+        search_filters = { FOCUS_FILTER_INDUSTRY }
+
+    }
+    focus = {
+        id = STL_eqs_exped_forces
+        icon = GFX_focus_generic_paratrooper
+        cost = 10.00
+        prerequisite = {
+            focus = STL_our_town_fortress
+        }
+        ai_will_do = {
+            factor = 1
+        }
+        x = 15
+        y = 6
+        completion_reward = {
+            add_ideas = STL_volunteers
+        }
+    }
+    focus = {
+        id = STL_griffon_transition
+        icon = GFX_goal_planning_bonus
+        cost = 10.00
+        prerequisite = {
+            focus = STL_twilight_teaching
+        }
+        ai_will_do = {
+            factor = 1
+        }
+        x = 17
+        y = 4
+        completion_reward = {
+            swap_ideas = {
+                remove_idea = STL_city_state
+                add_idea = STL_city_state2
+            }
+        }
+    }
+    focus = {
+        id = STL_GRF_cedeing_land
+        icon = GFX_goal_planning_bonus
+        cost = 10.00
+        prerequisite = {
+            focus = STL_griffon_transition
+        }
+        ai_will_do = {
+            factor = 1
+        }
+        x = 17
+        y = 5
+        completion_reward = {
+            remove_ideas = STL_city_state2
+        }
+
+    }
+    focus = {
+        id = STL_our_town_institute
+        icon = GFX_focus_research2
+        cost = 10.00
+        prerequisite = {
+            focus = STL_research_facility
+        }
+        ai_will_do = {
+            factor = 1
+        }
+        x = 11
+        y = 7
+        completion_reward = {
+            log = "[GetDateText]: [Root.GetName]: Focus STL_our_town_institute"
+            add_research_slot = 1
+        }
+    }
+    focus = {
+        id = STL_call_to_war
+        icon = GFX_goal_planning_bonus
+        cost = 10.00
+        prerequisite = {
+            focus = STL_eqs_exped_forces
+        }
+        x = 15
+        y = 7
+        completion_reward = {
+            EQS = {
+                country_event = starlight.17
+            }
+        }
+    }
+    focus = {
+        id = STL_war_on_GRF
+        icon = GFX_goal_planning_bonus
+        cost = 3.00
+        prerequisite = {
+            focus = STL_demand_griffon_land
+        }
+        ai_will_do = {
+            factor = 0.1
+            modifier = {
+                factor = 0
+                is_historical_focus_on = yes
+            }
+        }
+        x = 1
+        y = 7
+        will_lead_to_war_with = GRF
+        will_lead_to_war_with = GFF
+        completion_reward = {
+            create_wargoal = {
+                target = GRF
+                type = annex_everything
+            }
+            create_wargoal = {
+                target = GFF
+                type = annex_everything
+            }
+        }
+    }
+    focus = {
+        id = STL_second_factory
+        icon = GFX_focus_generic_industry_1
+        cost = 3.00
+        prerequisite = {
+            focus = STL_one_factory
+        }
+        ai_will_do = {
+            factor = 10
+        }
+        x = 17
+        y = 1
+        completion_reward = {
+            log = "[GetDateText]: [Root.GetName]: Focus STL_second_factory"
+            57 = {add_extra_state_shared_building_slots = 1
+            add_building_construction = { type = industrial_complex
+            level = 1
+            instant_build = yes } }
+        }
+        search_filters = { FOCUS_FILTER_INDUSTRY }
+    }
+    focus = {
+        id = STL_third_factory
+        icon = GFX_focus_generic_industry_2
+        cost = 4.00
+        prerequisite = {
+            focus = STL_second_factory
+        }
+        ai_will_do = {
+            factor = 10
+        }
+        x = 16
+        y = 2
+        completion_reward = {
+            log = "[GetDateText]: [Root.GetName]: Focus STL_third_factory"
+            57 = {add_extra_state_shared_building_slots = 3
+            add_building_construction = { type = industrial_complex
+            level = 2
+            instant_build = yes } }
+        }
+        search_filters = { FOCUS_FILTER_INDUSTRY }
+    }
+
+    focus = {
+        id = STL_military_factory
+        icon = GFX_goal_generic_construct_mil_factory
+        cost = 4.00
+        prerequisite = {
+            focus = STL_second_factory
+        }
+        ai_will_do = {
+            factor = 10
+        }
+        x = 18
+        y = 2
+        completion_reward = {
+            log = "[GetDateText]: [Root.GetName]: Focus STL_military_factories"
+            57 = {add_extra_state_shared_building_slots = 3
+            add_building_construction = { type = industrial_complex
+            level = 2
+            instant_build = yes } }
+        }
+        search_filters = { FOCUS_FILTER_INDUSTRY }
+    }
+    focus = {
+        id = STL_GRF_revolution
+        icon = GFX_goal_planning_bonus
+        cost = 10.00
+        prerequisite = {
+            focus = STL_demand_griffon_land
+        }
+        available = {
+            any_owned_state = {
+                OR = {
+                    is_core_of = GRF
+                    is_core_of = GFF
+                }
+            }
+        }
+        ai_will_do = {
+            factor = 1
+        }
+        x = 3
+        y = 7
+        completion_reward = {
+            every_owned_state = {
+                limit = {
+                    OR = {
+                        is_core_of = GRF
+                        is_core_of = GFF
+                    }
+                }
+                add_compliance = 20
+            }
+        }
+    }
+
+    focus = {
+        id = STL_industrial_flourish
+        icon = GFX_SOV_move_industry_to_the_urals_ccp_2d_sov_compatibility
+        cost = 5
+
+
+
+        available = {
+            NOT = { has_idea = STL_city_state }
+            NOT = { has_idea = STL_city_state2 }
+        }
+
+        x = 30
+        y = 0
+        completion_reward = {
+            add_ideas = "STL_terrible_economy2"
+        }
+    }
+
+    focus = {
+        id = STL_offshore_patrol
+        icon = GFX_goal_generic_navy_cruiser
+
+        prerequisite = {
+            focus = STL_industrial_flourish
+        }
+
+        x = 54
+        y = 1
+
+        cost = 10
+
+        available = {
+            any_owned_state = {
+                is_coastal = yes
+            }
+        }
+
+        bypass = {
+        }
+
+        ai_will_do = {
+            base = 1
+
+            modifier = {
+                factor = 2
+                date > 1937.1.1
+            }
+
+            modifier = {
+                factor = 2
+                date > 1939.1.1
+            }
+        }
+
+        completion_reward = {
+            any_owned_state = {
+                limit = {
+                    is_coastal = yes
+                    # only add if a slot exists
+                    free_building_slots = {
+                        building = dockyard
+                        size > 0
+                    }
+                }
+                add_building_construction = {
+                    type = dockyard
+                    level = 1
+                    instant_build = yes
+                }
+                break = yes  # stops after adding to first possible state
+            }
+        }
+        search_filters = { FOCUS_FILTER_INDUSTRY }
+    }
+
+    # Convoy Efficiency Path
+    focus = {
+        id = STL_convoy_protection
+        icon = GFX_goal_generic_navy_battleship
+        prerequisite = { focus = STL_offshore_patrol }
+        x = 56
+        y = 2
+        cost = 2
+        completion_reward = {
+            add_to_variable = { STL_defunct_navy_convoy_efficiency = 0.35 tooltip = "Convoy Efficiency" }
+            add_to_variable = { STL_defunct_navy_exp = 0.05 tooltip = "Naval Experience" }
+        }
+        search_filters = { FOCUS_FILTER_NAVY }
+    }
+
+    focus = {
+        id = STL_advanced_convoy_tactics
+        icon = GFX_goal_generic_navy_submarine
+        prerequisite = { focus = STL_convoy_protection }
+        x = 57
+        y = 3
+        cost = 2
+        completion_reward = {
+            add_to_variable = { STL_defunct_navy_convoy_efficiency = 0.30 tooltip = "Convoy Efficiency" }
+            add_to_variable = { STL_defunct_navy_exp = 0.05 tooltip = "Naval Experience" }
+        }
+        search_filters = { FOCUS_FILTER_NAVY }
+    }
+
+    # Naval Combat Path
+    focus = {
+        id = STL_naval_training
+        icon = GFX_SOV_naval_infantry_ccp_2d_sov_compatibility
+        prerequisite = { focus = STL_offshore_patrol }
+        x = 53
+        y = 3
+        cost = 2
+        completion_reward = {
+            add_to_variable = { STL_defunct_navy_naval_detection = 0.50 tooltip = "Naval Detection" }
+            add_to_variable = { STL_defunct_navy_max_range = 0.60 tooltip = "Max Range" }
+            add_to_variable = { STL_defunct_navy_exp = 0.25 tooltip = "Naval Experience" }
+        }
+        search_filters = { FOCUS_FILTER_NAVY }
+    }
+
+    focus = {
+        id = STL_fleet_coordination
+        icon = GFX_focus_BRA_navy
+        prerequisite = { focus = STL_naval_training }
+        x = 53
+        y = 4
+        cost = 2
+        completion_reward = {
+            add_to_variable = { STL_defunct_navy_navy_coordination = 0.65 tooltip = "Navy Coordination" }
+            add_to_variable = { STL_defunct_navy_exp = 0.25 tooltip = "Naval Experience" }
+        }
+        search_filters = { FOCUS_FILTER_NAVY }
+    }
+
+    # Logistics / Fuel / Accidents Path
+    focus = {
+        id = STL_naval_safety
+        icon = GFX_focus_generic_navy_battleship2
+        prerequisite = { focus = STL_offshore_patrol }
+        x = 52
+        y = 2
+        cost = 2
+        completion_reward = {
+            add_to_variable = { STL_defunct_navy_accidents_chance = -0.40 tooltip = "Accident Reduction" }
+            add_to_variable = { STL_defunct_navy_fuel_factor = -0.15 tooltip = "Fuel Efficiency" }
+        }
+        search_filters = { FOCUS_FILTER_NAVY }
+    }
+
+    focus = {
+        id = STL_fuel_and_supply
+        icon = GFX_SOV_pc_of_the_ussr_navy_ccp_2d_sov_compatibility
+        prerequisite = { focus = STL_naval_safety }
+        x = 51
+        y = 3
+        cost = 2
+        completion_reward = {
+            add_to_variable = { STL_defunct_navy_fuel_factor = -0.35 tooltip = "Fuel Efficiency" }
+            add_to_variable = { STL_defunct_navy_accidents_chance = -0.60 tooltip = "Accident Reduction" }
+            add_to_variable = { STL_defunct_navy_exp = 0.15 tooltip = "Naval Experience" }
+        }
+        search_filters = { FOCUS_FILTER_NAVY }
+    }
+
+    focus = {
+        id = STL_detection
+        icon = GFX_SOV_pc_of_the_ussr_navy_ccp_2d_sov_compatibility
+        prerequisite = { focus = STL_offshore_patrol }
+        x = 55
+        y = 3
+        cost = 2
+        completion_reward = {
+            add_to_variable = { STL_defunct_navy_fuel_factor = -0.35 tooltip = "Fuel Efficiency" }
+            add_to_variable = { STL_defunct_navy_naval_detection = 0.60 tooltip = "Detection" }
+            add_to_variable = { STL_defunct_navy_exp = 0.15 tooltip = "Naval Experience" }
+        }
+        search_filters = { FOCUS_FILTER_NAVY }
+    }
+
+    focus = {
+        id = STL_detection_extended
+        icon = GFX_SOV_pc_of_the_ussr_navy_ccp_2d_sov_compatibility
+        prerequisite = { focus = STL_detection }
+        x = 55
+        y = 4
+        cost = 2
+        completion_reward = {
+            add_to_variable = { STL_defunct_navy_fuel_factor = -0.35 tooltip = "Fuel Efficiency" }
+            add_to_variable = { STL_defunct_navy_naval_detection = 0.60 tooltip = "Detection" }
+            add_to_variable = { STL_defunct_navy_navy_coordination = 0.15 tooltip = "Naval Coordination" }
+        }
+        search_filters = { FOCUS_FILTER_NAVY }
+    }
+
+    focus = {
+        id = STL_prioritize_economic_growth
+        icon = GFX_focus_usa_reestablish_the_gold_standard
+        x = 23
+        y = 1
+        cost = 5
+        prerequisite = { focus = STL_industrial_flourish }
+
+        search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_STABILITY }
+
+        completion_reward = {
+            add_ideas = civilian_economy
+
+            add_stability = -0.1
+            add_popularity = { ideology = ROOT popularity = -0.1 }
+
+            every_core_state = {
+                limit = {
+                    is_fully_controlled_by = ROOT
+                    free_building_slots = { building = industrial_complex size > 0 include_locked = yes }
+                }
+                random_select_amount = 2
+                add_extra_state_shared_building_slots = 1
+                add_building_construction = {
+                    type = industrial_complex
+                    level = 1
+                    instant_build = yes
+                }
+            }
+        }
+    }
+
+    focus = {
+        id = STL_currency_reforms
+        icon = GFX_focus_generic_currency_reforms
+        prerequisite = { focus = STL_prioritize_economic_growth }
+        x = 23
+        y = 2
+        cost = 5
+
+        available = {			
+			OR = {
+                AND = {
+                    has_war = no
+			        custom_trigger_tooltip = {
+    		        	tooltip = STL_stg_check
+			        	owns_state = 240
+			        	owns_state = 334
+			        	owns_state = 678
+			        	owns_state = 165
+			        	owns_state = 153
+			        	owns_state = 235
+			        	owns_state = 237
+			        	owns_state = 153
+			        	owns_state = 161
+			        	owns_state = 225
+			        	owns_state = 168
+			        	owns_state = 166
+			        	owns_state = 233
+			        	owns_state = 332
+			        	owns_state = 234
+			        }
+			        NOT = {
+			        	country_exists = STG
+			        }
+                }
+                is_in_faction_with = EQS
+            }
+		}
+
+        search_filters = { FOCUS_FILTER_INDUSTRY }
+
+        completion_reward = {
+            every_core_state = {
+                limit = {
+                    is_fully_controlled_by = ROOT
+                    free_building_slots = { building = industrial_complex size > 0 include_locked = yes }
+                }
+                random_select_amount = 2
+                add_extra_state_shared_building_slots = 1
+                add_building_construction = {
+                    type = industrial_complex
+                    level = 1
+                    instant_build = yes
+                }
+            }
+
+            add_to_variable = {
+                STL_industrial_consumer_goods_factor = -0.2
+                tooltip = consumer_goods_factor_tt
+            }
+        }
+    }
+
+    focus = {
+        id = STL_lower_taxes
+        icon = GFX_focus_mex_privatisation
+        prerequisite = { focus = STL_currency_reforms }
+        x = 22
+        y = 3
+        cost = 5
+
+        search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_STABILITY }
+
+        completion_reward = {
+            add_stability = 0.05
+            add_popularity = { ideology = ROOT popularity = 0.05 }
+
+            random_core_state = {
+                limit = {
+                    is_fully_controlled_by = ROOT
+                    free_building_slots = { building = industrial_complex size > 0 include_locked = yes }
+                }
+                add_extra_state_shared_building_slots = 1
+                add_building_construction = {
+                    type = industrial_complex
+                    level = 1
+                    instant_build = yes
+                }
+            }
+
+            add_to_variable = {
+                STL_industrial_consumer_goods_factor = -0.15
+                tooltip = consumer_goods_factor_tt
+            }
+        }
+    }
+
+    focus = {
+        id = STL_abolish_price_controls
+        icon = GFX_focus_ARG_anti_corruption_policies
+        prerequisite = { focus = STL_lower_taxes }
+        x = 21
+        y = 4
+        cost = 5
+
+        search_filters = { FOCUS_FILTER_STABILITY FOCUS_FILTER_INDUSTRY }
+
+        completion_reward = {
+            add_stability = 0.05
+
+            random_core_state = {
+                limit = { is_fully_controlled_by = ROOT }
+                add_extra_state_shared_building_slots = 1
+                add_building_construction = {
+                    type = industrial_complex
+                    level = 1
+                    instant_build = yes
+                }
+            }
+
+            add_to_variable = {
+                STL_industrial_consumer_goods_factor = -0.15
+                tooltip = consumer_goods_factor_tt
+            }
+        }
+    }
+
+    focus = {
+        id = STL_increased_trade
+        icon = GFX_goal_generic_positive_trade_relations
+        prerequisite = { focus = STL_abolish_price_controls }
+        x = 20
+        y = 5
+        cost = 5
+
+        search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_STABILITY }
+
+        completion_reward = {
+            add_to_variable = {
+                STL_industrial_resource_trade_cost_bonus_per_factory = 1
+                tooltip = resource_trade_cost_bonus_per_factory_tt
+            }
+        }
+    }
+
+    focus = {
+        id = STL_housing_developments
+        icon = GFX_focus_generic_low_cost_housing
+        prerequisite = { focus = STL_currency_reforms }
+        x = 24
+        y = 3
+        cost = 5
+
+        search_filters = { FOCUS_FILTER_INDUSTRY }
+
+        completion_reward = {
+            every_core_state = {
+                limit = { is_fully_controlled_by = ROOT }
+                random_select_amount = 2
+                add_extra_state_shared_building_slots = 1
+            }
+
+            add_to_variable = {
+                STL_industrial_production_speed_buildings_factor = 0.05
+                tooltip = production_speed_buildings_factor_tt
+            }
+        }
+    }
+
+    focus = {
+        id = STL_workers_rights
+        icon = GFX_focus_generic_workers
+        prerequisite = { focus = STL_housing_developments }
+        x = 25
+        y = 4
+        cost = 5
+
+        search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY }
+
+        completion_reward = {
+            add_popularity = { ideology = ROOT popularity = 0.05 }
+
+            add_to_variable = { STL_industrial_production_factory_max_efficiency_factor = 0.05 tooltip = production_factory_max_efficiency_factor_tt }
+            add_to_variable = { STL_industrial_production_factory_efficiency_gain_factor = 0.05 tooltip = production_factory_efficiency_gain_factor_tt }
+            add_to_variable = { STL_industrial_production_factory_start_efficiency_factor = 0.05 tooltip = production_factory_start_efficiency_factor_tt }
+            add_to_variable = { STL_industrial_line_change_production_efficiency_factor = 0.05 tooltip = line_change_production_efficiency_factor_tt }
+        }
+    }
+
+    focus = {
+        id = STL_industrial_expansion
+        icon = GFX_focus_generic_modernize_industry
+        prerequisite = { focus = STL_housing_developments }
+        prerequisite = { focus = STL_lower_taxes }
+        x = 23
+        y = 4
+        cost = 10
+
+        search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_INDUSTRY }
+
+        completion_reward = {
+            random_core_state = {
+                limit = {
+                    is_fully_controlled_by = ROOT
+                    free_building_slots = { building = industrial_complex size > 0 include_locked = yes }
+                }
+                add_extra_state_shared_building_slots = 1
+                add_building_construction = {
+                    type = industrial_complex
+                    level = 1
+                    instant_build = yes
+                }
+            }
+
+            add_research_slot = 1
+        }
+    }
+}
+
+

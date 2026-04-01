@@ -1,0 +1,9 @@
+add_namespace = equestria
+add_namespace = equestriachn
+
+country_event = { #Starlight joins the Equestrian Army
+	id = equestria.1200
+	title = equestria.1200.t
+
+	is_triggered_only = yes
+}
