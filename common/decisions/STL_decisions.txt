@@ -349,7 +349,7 @@ form_equ_stg = {
         }
 
         visible = {
-            has_completed_focus = CHI_sea_push_into_manchuria
+            has_completed_focus = STL_integrate_the_yaks
         }
 
         available = {
@@ -368,11 +368,7 @@ form_equ_stg = {
                 NOT = { is_core_of = ROOT }
                 is_fully_controlled_by = ROOT
                 OR = {
-                    state = 408
-                    state = 409
-                    state = 657
-                    state = 560
-                    state = 561
+
                 }
             }
         }

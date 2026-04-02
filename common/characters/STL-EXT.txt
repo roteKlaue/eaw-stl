@@ -12,7 +12,7 @@ characters={
 			}
 		}
         country_leader={
-			desc="POLITICS_DOUBLEDIAMOND"
+			desc="POLITICS_STARLIGHTGLIMMER_DESC"
 			ideology=equalism
 			expire="1965.1.1.1"
 			id=-1
@@ -39,7 +39,7 @@ characters={
             }
 		}
 
-        corps_commander = {
+        field_marshal = {
 			traits = {
                 pony_race_trait aggressive_assaulter adaptable war_hero trait_SOV_determined skilled_staffer logistics_wizard organizer thorough_planner organisational_leader inspirational_leader offensive_doctrine trait_cautious career_officer
             }
@@ -50,5 +50,6 @@ characters={
 			logistics_skill = 4
 			desc = EQS_starlight_glimmer_desc
         }
+		gender = female
     }
 }

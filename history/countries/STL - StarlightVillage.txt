@@ -2,7 +2,7 @@
 
 oob = "STL_1007"
 
-set_research_slots = 3
+set_research_slots = 2
 
 set_technology = {
 	pony_race = 1
@@ -172,7 +172,7 @@ set_variable = { STL_defunct_navy_accidents_chance = 0.70 }
 set_variable = { STL_defunct_navy_fuel_factor = 0.9 }
 set_variable = { STL_defunct_navy_exp = 0.0 }
 
-set_variable = { STL_industrial_consumer_goods_factor = 0.2 }
+set_variable = { STL_industrial_consumer_goods_factor = 0.6 }
 set_variable = { STL_industrial_civilian_intel_to_others = -25 }
 set_variable = { STL_industrial_army_intel_to_others = -25 }
 set_variable = { STL_industrial_navy_intel_to_others = -25 }

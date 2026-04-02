@@ -30,7 +30,7 @@ focus_tree = {
         icon = GFX_goal_government_icon
         prerequisite = { focus = STL_abolish_equality }
         cost = 5.00
-        x = 12
+        x = 1
         y = 1
         ai_will_do = {
             factor = 5
@@ -41,6 +41,7 @@ focus_tree = {
                 id = starlight.9 days = 1
             }
         }
+       relative_position_id = STL_abolish_equality
     }
     focus = {
         id = STL_one_factory
@@ -162,6 +163,22 @@ focus_tree = {
             }
         }
     }
+
+    focus = {
+        id = STL_army_recruiting
+        icon = GFX_focus_SOV_builder_of_the_red_army
+        cost = 5
+        x = -5
+        y = 1
+        relative_position_id = STL_neighbors_help
+        prerequisite = {
+            focus = STL_neighbors_help
+        }
+        completion_reward = {
+            create_unit = { type = infantry_division amount = 3 location = ROOT }
+        }
+    }
+
     focus = {
         id = STL_new_army
         icon = GFX_goal_generic_allies_build_infantry
@@ -339,7 +356,7 @@ focus_tree = {
             focus = STL_double_diamond_supreme
         }
         icon = GFX_SOV_demand_eastern_poland_ccp_2d_sov_compatibility
-        cost = 5
+        cost = 10
         x = 1
         y = 8
         completion_reward = {
@@ -351,9 +368,26 @@ focus_tree = {
     }
 
     focus = {
+        id = STL_decent_into_madness
+        icon = GFX_focus_GER_establish_protectorates_in_america
+        prerequisite = {
+            focus = STL_double_diamond_supreme
+        }
+        available = {
+            has_country_flag = STL_has_formed_our_eqs
+        }
+
+        cost = 10
+        x = -1
+        y = 1
+        relative_position_id = STL_double_diamond_supreme
+        completion_reward = { }
+    }
+
+    focus = {
         id = STL_starlight_as_a_figure_head
         icon = GFX_STL_sussy-888222
-        cost = 5
+        cost = 10
         available = {
             has_country_flag = STL_has_formed_our_eqs
         }
@@ -452,6 +486,11 @@ focus_tree = {
                     instant_build = yes
                 }
             }
+
+            add_to_variable = {
+                STL_industrial_consumer_goods_factor = -0.10
+                tooltip = consumer_goods_factor_tt
+            }
         }
     }
 
@@ -461,7 +500,7 @@ focus_tree = {
             focus = STL_double_diamond_supreme
             focus = STL_invite_starlight_back
         }
-        icon=GFX_goal_stg_eqs
+        icon=GFX_goal_stg_sinister_war_on_eqs
         cost = 5
         x = 6
         y = 9
@@ -472,6 +511,263 @@ focus_tree = {
             }
         }
     }
+
+    focus = {
+        id = STL_our_beloved_ruler
+        icon = GFX_STL_sussy-888222
+        cost = 7
+        x = 1
+        y = 1
+        available = {
+            has_country_flag = STL_has_formed_our_eqs
+            NOT = { has_country_leader = { character = STL_starlight_glimmer } }
+        }
+        relative_position_id = STL_invite_starlight_back
+        prerequisite = {
+            focus = STL_invite_starlight_back
+        }
+        completion_reward = {
+            recruit_character = STL_starlight_glimmer
+        }
+    }
+
+    focus = {
+        id = STL_accention_of_our_ruler
+        icon = GFX_goal_celestia_raising_the_sun
+        cost = 7
+        x = 0
+        y = 2
+        relative_position_id = STL_invite_starlight_back
+        available = {
+            has_country_flag = STL_has_formed_our_eqs
+        }
+        prerequisite = {
+            focus = STL_invite_starlight_back
+        }
+        completion_reward = { }
+    }
+
+    focus = {
+        id = STL_recruit_old_friends
+        icon = GFX_goal_ELF_duumvirs
+        cost = 5
+        x = 0
+        y = 2
+
+        relative_position_id = STL_accention_of_our_ruler
+        prerequisite = {
+            focus = STL_accention_of_our_ruler
+        }
+        completion_reward = {
+            EQS ={
+                EQS_twilight_sparkle = {
+                    set_nationality = STL
+                }
+                EQS_maudpie = {
+                    set_nationality = STL
+                }
+                EQS_big_macintosh = {
+                    set_nationality = STL
+                }
+
+            }
+            ELF = {
+                ELF_trixie_lulamoon = {
+                    set_nationality = STL
+                }
+            }
+        }
+    }
+
+    focus = {
+        id = STL_applejack
+        icon = GFX_goal_ELF_applejack_mark
+        cost = 1.5
+        ai_will_do = { factor = 50 }
+        x = 0
+        y = 1
+        relative_position_id = STL_recruit_old_friends
+        prerequisite = {
+            focus = STL_recruit_old_friends
+        }
+
+        select_effect = {
+            hidden_effect = {
+                country_event = { id = MAN_ELF_new.196 days = 15 }
+            }
+        }
+
+        completion_reward = {
+            log = "[GetDateText]: [Root.GetName]: Focus ELF_postwar_1"
+            country_event = { id = MAN_ELF_new.197 }
+        }
+    }
+
+    focus = {
+        id = STL_rarity
+        icon = GFX_goal_ELF_rarity
+        cost = 1.5
+        ai_will_do = { factor = 50 }
+        x = -2
+        y = 1
+        relative_position_id = STL_recruit_old_friends
+        prerequisite = {
+            focus = STL_recruit_old_friends
+        }
+
+        select_effect = {
+            hidden_effect = {
+                country_event = { id = MAN_ELF_new.194 days = 15 }
+            }
+        }
+
+        completion_reward = {
+            log = "[GetDateText]: [Root.GetName]: Focus ELF_postwar_2"
+            country_event = { id = MAN_ELF_new.195 }
+        }
+    }
+
+    focus = {
+        id = STL_fluttershy
+        icon = GFX_goal_ELF_fluttershy
+        cost = 1.5
+        ai_will_do = { factor = 50 }
+        x = 2
+        y = 1
+        relative_position_id = STL_recruit_old_friends
+        prerequisite = {
+            focus = STL_recruit_old_friends
+        }
+
+        available = {
+            OR = {
+                has_full_control_of_state = 1
+                1 = {
+                    owner = {
+                        tag = ZRS
+                        controls_state = PREV
+                    }
+                }
+            }
+        }
+
+        select_effect = {
+            hidden_effect = {
+                country_event = { id = MAN_ELF_new.203 days = 15 }
+            }
+        }
+
+        completion_reward = {
+            log = "[GetDateText]: [Root.GetName]: Focus ELF_postwar_3"
+            country_event = { id = MAN_ELF_new.204 }
+        }
+    }
+
+    focus = {
+        id = STL_pinkie
+        icon = GFX_goal_ELF_pinkie
+        cost = 1.5
+        ai_will_do = { factor = 50 }
+        x = -4
+        y = 1
+        relative_position_id = STL_recruit_old_friends
+        prerequisite = {
+            focus = STL_recruit_old_friends
+        }
+
+        available = {
+            has_full_control_of_state = 38
+        }
+
+        select_effect = {
+            hidden_effect = {
+                country_event = { id = MAN_ELF_new.198 days = 15 }
+            }
+        }
+
+        completion_reward = {
+            log = "[GetDateText]: [Root.GetName]: Focus ELF_postwar_4"
+            country_event = { id = MAN_ELF_new.199 }
+        }
+    }
+
+    focus = {
+        id = STL_revive_institute
+        icon = GFX_goal_ELF_EEA
+        cost = 5
+        ai_will_do = { factor = 30 }
+        x = -1
+        y = 1
+        relative_position_id = STL_industrial_integration_of_eqs
+        prerequisite = { focus = STL_industrial_integration_of_eqs }
+        completion_reward = {
+            log = "[GetDateText]: [Root.GetName]: Focus ELF_left_4_b"
+            country_event = { id = MAN_ELF_new.155 hours = 1 }
+            add_stability = 0.05
+            add_research_slot = 1
+        }
+        search_filters = { FOCUS_FILTER_STABILITY FOCUS_FILTER_RESEARCH }
+    }
+
+    focus = {
+        id = STL_welfare
+        icon = GFX_goal_cry_welfare
+        cost = 10
+        prerequisite = {
+            focus = STL_invite_starlight_back
+            focus = STL_double_diamond_supreme
+        }
+        relative_position_id = STL_invite_starlight_back
+        x = -1
+        y = 1
+        completion_reward = {
+            log = "[GetDateText]: [Root.GetName]: Focus CRY_welfare"
+            custom_effect_tooltip = available_political_advisor
+            show_ideas_tooltip = ponies_act
+        }
+    }
+
+    focus = {
+        id = STL_rainbow
+        icon = GFX_goal_ELF_rainbow
+        cost = 1.5
+        ai_will_do = { factor = 50 }
+        x = 4
+        y = 1
+        relative_position_id = STL_recruit_old_friends
+        prerequisite = {
+            focus = STL_recruit_old_friends
+        }
+
+        select_effect = {
+            hidden_effect = {
+                country_event = { id = MAN_ELF_new.201 days = 15 }
+            }
+        }
+
+        completion_reward = {
+            log = "[GetDateText]: [Root.GetName]: Focus ELF_postwar_5"
+            country_event = { id = MAN_ELF_new.202 }
+        }
+    }
+
+    focus = {
+        id = STL_reastablish_normality
+        icon = GFX_SOV_smersh_ccp_2d_sov_compatibility
+        cost = 5
+        x = 0
+        y = 1
+        relative_position_id = STL_applejack
+        prerequisite = { focus = STL_applejack }
+        prerequisite = { focus = STL_rarity }
+        prerequisite = { focus = STL_fluttershy }
+        prerequisite = { focus = STL_rainbow }
+        prerequisite = { focus = STL_pinkie }
+        completion_reward = {
+            remove_ideas = STL_civil_unrest
+        }
+    }
+
 
     focus = {
         id = STL_industrial_integration_of_eqs
@@ -494,7 +790,7 @@ focus_tree = {
             }
         }
 
-        cost = 5
+        cost = 10
         x = 5
         y = 10
         completion_reward = {
@@ -559,6 +855,11 @@ focus_tree = {
                     instant_build = yes
                 }
             }
+
+            add_to_variable = {
+                STL_industrial_consumer_goods_factor = -0.25
+                tooltip = consumer_goods_factor_tt
+            }
         }
     }
 
@@ -587,8 +888,89 @@ focus_tree = {
             focus = STL_bring_equality_to_equestria
         }
 
+        completion_reward = {}
+    }
+
+    focus = {
+        id = STL_industrial_integration_of_griffins
+        icon = GFX_focus_GER_integration_of_puppet_economies
+        cost = 5
+        x = -1
+        y = 1
+        prerequisite = {
+            focus = STL_integrate_griffon_lands
+        }
+        prerequisite = {
+            focus = STL_industrial_integration_of_eqs
+        }
+        relative_position_id = STL_integrate_griffon_lands
         completion_reward = {
-            tooltip = STL_integrate_griffon_lands_tt
+            random_owned_controlled_state = {
+                limit = {
+                    free_building_slots = {
+                        building = industrial_complex
+                        size > 1
+                        include_locked = yes
+                    }
+                    OR = {
+                        is_in_home_area = yes
+                        NOT = {
+                            owner = {
+                                any_owned_state = {
+                                    free_building_slots = {
+                                        building = industrial_complex
+                                        size > 0
+                                        include_locked = yes
+                                    }
+                                    is_in_home_area = yes
+                                }
+                            }
+                        }
+                    }
+                }
+                add_extra_state_shared_building_slots = 1
+                add_building_construction = {
+                    type = industrial_complex
+                    level = 1
+                    instant_build = yes
+                }
+            }
+
+            random_owned_controlled_state = {
+                limit = {
+                    free_building_slots = {
+                        building = industrial_complex
+                        size > 1
+                        include_locked = yes
+                    }
+                    OR = {
+                        is_in_home_area = yes
+                        NOT = {
+                            owner = {
+                                any_owned_state = {
+                                    free_building_slots = {
+                                        building = industrial_complex
+                                        size > 0
+                                        include_locked = yes
+                                    }
+                                    is_in_home_area = yes
+                                }
+                            }
+                        }
+                    }
+                }
+                add_extra_state_shared_building_slots = 1
+                    add_building_construction = {
+                    type = industrial_complex
+                    level = 1
+                    instant_build = yes
+                }
+            }
+
+            add_to_variable = {
+                STL_industrial_consumer_goods_factor = -0.05
+                tooltip = consumer_goods_factor_tt
+            }
         }
     }
 
@@ -599,7 +981,7 @@ focus_tree = {
             focus = STL_invite_starlight_back
         }
         available = {
-            has_country_leader = STL_starlight_glimmer
+            has_country_leader = { character =  STL_starlight_glimmer }
         }
         cost = 5
         x = 11
@@ -619,7 +1001,7 @@ focus_tree = {
         }
 
         available = {
-            has_country_leader = STL_starlight_glimmer
+            has_country_leader = { character =  STL_starlight_glimmer }
             has_country_flag = STL_has_formed_our_eqs
         }
 
@@ -683,7 +1065,12 @@ focus_tree = {
         cost = 7
         x = 6
         y = 6
-        completion_reward = { }
+        completion_reward = {
+            swap_ideas = {
+                remove_idea = STL_garden_spirit
+                add_idea = STL_breeding
+            }
+        }
     }
 
     focus = {
@@ -721,7 +1108,7 @@ focus_tree = {
         ai_will_do = {
             factor = 1
         }
-        x = 11
+        x = 0
         y = 2
         completion_reward = {
             log = "[GetDateText]: [Root.GetName]: Focus STL_elections"
@@ -729,7 +1116,9 @@ focus_tree = {
                 id = starlight.14 days = 1
             }
         }
+        relative_position_id = STL_abolish_equality
     }
+
     focus = {
         id = STL_twilight_teaching
         icon = GFX_goal_generic_equestria
@@ -953,7 +1342,7 @@ focus_tree = {
         ai_will_do = {
             factor = 10
         }
-        x = 17
+        x = 0
         y = 1
         completion_reward = {
             log = "[GetDateText]: [Root.GetName]: Focus STL_second_factory"
@@ -963,6 +1352,7 @@ focus_tree = {
             instant_build = yes } }
         }
         search_filters = { FOCUS_FILTER_INDUSTRY }
+        relative_position_id = STL_one_factory
     }
 
     focus = {
@@ -1543,9 +1933,50 @@ focus_tree = {
         x = 16
         y = 15
 
+        available = {
+            has_country_flag = STL_has_formed_our_eqs
+        }
+
         # allow_branch = {
-        #     has_country_flag = STL_has_formed_our_eqs
+        #
         # }
+        completion_reward = { }
+    }
+
+    focus = {
+        id = STL_war_on_the_yaks
+        icon = GFX_idea_STL_starlight_glimmer-888107
+        cost = 5
+        x = 1
+        y = 1
+
+        prerequisite = {
+            focus = STL_equality_for_the_continet
+        }
+        relative_position_id = STL_equality_for_the_continet
+        completion_reward = {
+            create_wargoal = {
+                type = annex_everything
+                target = YAK
+            }
+
+            create_wargoal = {
+                type = annex_everything
+                target = JAK
+            }
+        }
+    }
+
+    focus = {
+        id = STL_integrate_the_yaks
+        icon = GFX_idea_STL_starlight_glimmer-888107
+        cost = 5
+        x = 0
+        y = 1
+        prerequisite = {
+            focus = STL_war_on_the_yaks
+        }
+        relative_position_id = STL_war_on_the_yaks
         completion_reward = { }
     }
 }
