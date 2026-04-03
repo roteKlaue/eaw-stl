@@ -127,7 +127,7 @@ STL_equestrian_airbridge_desc:0 "A burgeoning friendship with Equestria faces a 
 STL_our_town_fortress:0 "The Fortress of Townsville"
 STL_our_town_fortress_desc:0 "Friendship is all well and good, but Equestrian delegates have yet to offer any good suggestions on how friendship can be used against communist tanks and heavily armoured griffon knights. More practically, they can smuggle us large shipments of concrete, barbed wire and heavy machine guns to fortify with. How? Apparently, a cat is involved..."
 
-STL_invite_starlight_back:0 "Invite the True Ruler Back"
+STL_invite_starlight_back:0 "Invite Our True Ruler Back"
 STL_invite_starlight_back_desc:0 "The time has come to welcome our rightful ruler home. Our recent victory over Stalliongrad has proven both the strength of our ideals and the might of our armies, reminding the world that the true heart of communism beats here. With our triumph secured, we can finally petition Starlight to return and pursue her—*and our*—vision of a truly equal Equestria."
 
 STL_eqs_exped_forces:0 "Equestrian Expeditionary Forces"
@@ -175,6 +175,59 @@ STL_garden_spirit:0 "Our Garden"
 STL_garden_spirit_desc:0 "Our drab town has been transformed into a colourful, relaxing paradise for ponies to rest and play in." 
 STL_STG_advisory_military:0 "Stalliongrad Military Advisors"
 STL_STG_advisory_industry:0 "Stalliongrad Industry Assistance"
+STL_double_diamond_supreme:0 "Our Supreme Equalist"
+STL_double_diamond_supreme_tt:0 "§PDouble Diamond will assume complete control of the Equalist movement, shaping Our Nation in his image.§!"
+STL_double_diamond_supreme_desc:0 "With Stalliongrad subdued and our ideals triumphant, Double Diamond's conviction has hardened into something… more. No longer content with leading Our Town or even Our Stalliongrad, he now speaks of a borderless world where every being lives under the banner of perfect Equality."
+equalist_mad_man:0 "Mad Equalist Visionary"
+equalist_mad_man_desc:0 "Once a disciplined follower of Starlight's teachings, Double Diamond has gone far beyond mere ideology. His pursuit of absolute Equality now borders on obsession, blending fanatic faith with reckless enthusiasm. His soldiers march with fervor, his speeches ignite crowds, and his reforms push the nation toward radical transformation—though often at the cost of stability and sanity."
+STL_embraced_past:0 "Embracing the Past"
+STL_embraced_past_desc:0 "After years of ideological struggle, the ponies of Our Town have begun to look back rather than recoil. Instead of burying their history, they now seek lessons within it—reviving old traditions, reexamining abandoned doctrines, and drawing strength from what once was. This introspection fuels new political interest and rekindles revolutionary sentiment, though the clarity found in the past also stirs ambitions for future conflict."
+STL_equality_reastablished:0 "Equality Re-established"
+STL_equality_reastablished_desc:0 "The old ways have returned with renewed force. Equality is once again proclaimed as the supreme guiding principle, enforced with a zeal unseen since Starlight's earliest sermons. Political fervor surges through the nation, even as rigid ideological demands fracture social stability. Everypony must contribute equally to the cause—and as a result, ponies flock to the recruitment halls in unprecedented numbers."
+STL_equality_solidified:0 "Equality Solidified"
+STL_equality_solidified_desc:0 "What began as a resurgence has hardened into a true regime. Equality is no longer simply taught or encouraged—it is woven into the fabric of governance, administration, and daily life. While dissent fades and compliance grows, the system's ruthlessly efficient structure fuels the state's expanding manpower pool and consolidates political authority. The dream of a perfectly ordered society finally appears within reach."
+STL_civil_unrest:0 "Civil Unrest"
+STL_civil_unrest_desc:0 "The nation teeters on the edge of chaos. Protests, strikes, and violent clashes erupt across towns and villages, overwhelming the authorities. The government struggles to maintain legitimacy, and the people's will to resist grows ever stronger. With political dysfunction at its peak, the state cannot muster the unity required for war—or even for coherent governance."
+STL_breeding:0 "Repopulation Initiative"
+STL_breeding_desc:0 "Determined to secure the future of the nation, the government has launched an aggressive repopulation program. Policies encouraging family growth and communal living are paired with generous support for foal-rearing. The resulting population boom strengthens both society and the army—but some whisper that the program's methods are unsettlingly intrusive."
+STL_decent_into_madness:0 "Our Descent Into Madness"
+STL_decent_into_madness_desc:0 "The dream of perfect equality has begun to twist into something far darker. Surrounded by loyalists and stripped of dissent, Double Diamond now marches toward a future shaped entirely by its own unchallenged vision. What began as an ideal has become an obsession—one that demands absolute control, no matter the cost."
+starlight_equalism.1.t:0 "The Descent Begins"
+starlight_equalism.1.d:0 "Double Diamond stands before the council once more, the Equalist banner behind him fluttering like a warning. Recent reforms have grown harsher—stricter oversight, harsher penalties for dissent, and a growing cult of personality around the ideals he once believed were pure.\n\nYet he does not waver. 'Equality must be protected,' he says, though there's a tremor behind the confidence. The state is changing, and with it, so is he. The question now is whether he will temper the movement... or be consumed by it."
+
+starlight_equalism.1.a:0 "We stay the course. Equality must be absolute."
+starlight_equalism.1.b:0 "Double Diamond hesitates—he questions the path..."
+starlight_equalism.2.t:0 "Doubt in the Ranks"
+starlight_equalism.2.d:0 "For the first time, Double Diamond openly questions the direction the movement is taking. His concern spreads quickly among his followers, leading to heated debates and quiet murmurs throughout the administration. But in the end, loyalty outweighs fear—as it always does."
+
+starlight_equalism.2.a:0 "He falls back in line."
+STL_industrial_integration_of_stg:0 "Industrial Integration of Our Stalliongrad"
+STL_industrial_integration_of_stg_desc:0 "We will bring the industries of Stalliongrad under our control, reorganizing their factories and resources to serve our national economy. This integration will increase our production capacity and state efficiency."
+STL_bring_equality_to_equestria:0 "Bring Equality to Equestria"
+STL_bring_equality_to_equestria_desc:0 "It is time to spread the principles of perfect Equality across all of Equestria. Our ideals shall guide everypony, from Canterlot to Manehattan, ensuring the dream of a truly equal society becomes reality."
+STL_bring_equality_to_equestria_tt:0 "§PWe shall mobilize our forces and ideology to annex Equestria under the banner of perfect Equality. §!"
+STL_breeding_program:0 "Our Repopulation Initiative"
+STL_breeding_program_desc:0 "With Our Town reborn and the spirit of community restored, we turn our attention to ensuring its future. A structured program encourages foal-rearing, communal families, and the careful nurturing of the next generation. Everypony's contribution strengthens our society and our defenses—though some whisper that the methods may be… overly zealous."
+
+STL_breeding_program_tt:0 "§PThe gardens of Our Town have flourished, but a city is only as strong as its citizens. By guiding families and nurturing foals, we shall secure the future of Our Nation.§!\n\n§wCareful planning and communal effort ensure our continued strength—but rumors suggest some methods are unsettlingly thorough."
+
+STL_third_factory:0 "Our Third Factory"
+STL_third_factory_desc:0 "Three factories, three streams of steel and fire. Each pony now knows their place in the grand rhythm of production, and the hum of machines sings the song of equality. The future is built with our own hooves."
+
+STL_military_factory:0 "Arms of the Equal"
+STL_military_factory_desc:0 "A nation must be ready, not with pomp, but with the quiet certainty of production. Here we craft the tools of defense, ensuring that no threat can undermine the unity of our collective labor."
+
+STL_fourth_factory:0 "Our Fourth Forge"
+STL_fourth_factory_desc:0 "Our empire of steel grows. Four factories now stand as beacons of industry, each a testament to the diligence of the equal pony. The sound of creation is deafening, and the world will take notice."
+
+STL_second_military_factory:0 "Our Twin Arms"
+STL_second_military_factory_desc:0 "One is never enough. To secure our lands and our labor, we build again—two factories producing the engines of defense, twin symbols of preparedness and unity."
+
+STL_army_recruiting:0 "Our Army Recruitment"
+STL_army_recruiting_desc:0 "To secure our lands and safeguard the future of the Equal, we call upon every capable pony to enlist. Discipline and duty will forge the backbone of our defense, and the strength of our army shall be unmatched."
+
+STL_recruitment_rush:0 "Recruitment Rush"
+STL_recruitment_rush_desc:0 "Through swift enlistment drives and vigorous training programs, our forces grow rapidly. Every new recruit strengthens the spine of our army, and every hoof on the parade grounds echoes our unity and resolve."
 
 STL_new_army_spirit:0 "Equality Army"
 STL_new_army_spirit_desc:0 "Working together to build an army has been a surprising success, as an equalist philosophy is a good fit for the life of the soldier."

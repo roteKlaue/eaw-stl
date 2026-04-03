@@ -87,17 +87,55 @@ ideas = {
         }
     }
 
-    STL_breeding = {
-        allowed = {
-            tag = STL
+    country = {
+        STL_breeding = {
+            allowed = {
+                tag = STL
+            }
+
+            removal_cost = -1
+
+            modifier = {
+                land_reinforce_rate = 0.1
+                stability_factor = 0.20
+                MONTHLY_POPULATION = 0.25
+            }
         }
+    }
 
-        removal_cost = -1
+    country = {
+        STL_recruitment_rush = {
+            allowed = { }
 
-        modifier = {
-            land_reinforce_rate = 0.1
-            stability_factor = 0.20
-            MONTHLY_POPULATION = 0.25
+            modifier = {
+                training_time_factor = -0.5
+                political_power_cost = 0.2
+                consumer_goods_factor = 0.2
+            }
+
+            picture = MEX_politicised_army_2
+            remove_after = 60
+        }
+    }
+
+    country = {
+        STL_social_welfare_expansion = {
+            allowed = {
+                original_tag = STL
+            }
+
+            picture = GFX_idea_social_welfare
+
+            removal_cost = -1
+
+            modifier = {
+                stability_factor = 0.25
+                war_support_factor = 0.15
+                consumer_goods_factor = 0.20
+                political_power_cost = 0.10
+                weekly_manpower = 350
+            }
         }
     }
 }
+
