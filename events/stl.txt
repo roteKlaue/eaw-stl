@@ -17,14 +17,14 @@ country_event = { # The requested return of Starlight Glimmer
     option = {
         name = starlight.20.a
 
-        # AI will always pick this if democratic
-        ai_chance = {
-            base = 1
-            modifier = {
-                factor = 0
-                has_government = democratic
-            }
-        }
+        # # AI will always pick this if democratic
+        # ai_chance = {
+        #     base = 1
+        #     modifier = {
+        #         factor = 0
+        #         has_government = democratic
+        #     }
+        # }
 
         country_event = { id = starlight.21 }
     }
@@ -47,7 +47,7 @@ country_event = { # EQS accepts
     fire_only_once = yes
 
     immediate = {
-        log = "[GetDateText]: EQS accepted Starlight’s return"
+        log = "[GetDateText]: EQS accepted Starlight's return"
 
         
     }
@@ -65,7 +65,7 @@ country_event = {
     fire_only_once = yes
 
     immediate = {
-        log = "[GetDateText]: EQS declined Starlight’s return"
+        log = "[GetDateText]: EQS declined Starlight's return"
         add_opinion = { target = EQS value = -25 }
     }
 
@@ -83,6 +83,9 @@ country_event = {
         has_country_flag = STL_has_formed_our_eqs
         has_completed_focus = STL_decent_into_madness
     }
+
+    is_triggered_only = yes
+    fire_only_once = yes
 
     immediate = { }
 
@@ -111,7 +114,8 @@ country_event = {
     desc = starlight_equalism.2.d
     picture = GFX_report_event_generic_protest
 
-    trigger = { always = yes }
+    is_triggered_only = yes
+    fire_only_once = yes
 
     option = {
         name = starlight_equalism.2.a
@@ -120,17 +124,17 @@ country_event = {
         add_political_power = -25
     }
 }
-
-country_event = {
-    id = starlight.100
-    title = starlight.100.t
-    desc = starlight.100.d
-
-    immediate = {
-        create_unit = {
-            division = "name = \"Volunteers\" division_template = \"infantry_template\" start_manpower_factor = 1"
-            amount = 3
-            owner = ROOT
-        }
-    }
-}
+# 
+# country_event = {
+#     id = starlight.100
+#     title = starlight.100.t
+#     desc = starlight.100.d
+# 
+#     immediate = {
+#         create_unit = {
+#             division = "name = \"Volunteers\" division_template = \"infantry_template\" start_manpower_factor = 1"
+#             amount = 3
+#             owner = ROOT
+#         }
+#     }
+# }

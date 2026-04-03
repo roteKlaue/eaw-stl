@@ -1,0 +1,22 @@
+on_actions = {
+    on_daily_STL = {
+        effect = {
+            if = {
+                limit = {
+                    NOT = { has_country_flag = starlight_recruited }
+                    has_character = STL_starlight_glimmer
+                }
+                set_country_flag = starlight_recruited
+
+                STL_starlight_glimmer = {
+                    promote_character = yes
+                    country_leader = {
+                        ideology = despotism
+                        expire = 1965.1.1.1
+                        traits = { equalism }
+                    }
+                }
+            }
+        }
+    }
+}
