@@ -1,14 +1,14 @@
 spriteTypes = {
-	spriteType = {
-		name = "GFX_starlight_glimmer__large"
-		texturefile = "gfx/characters/starlight_glimmer/starlight_glimmer__large.dds"
-	}
-	spriteType = {
-		name = "GFX_starlight_glimmer__small"
-		texturefile = "gfx/characters/starlight_glimmer/starlight_glimmer__small.dds"
-	}
-	spriteType = {
-		name = "GFX_starlight_glimmer__small"
-		texturefile = "gfx/characters/starlight_glimmer/starlight_glimmer__advisor.dds"
-	}
+    spriteType = {
+        name = "GFX_starlight_glimmer__large"
+        texturefile = "gfx/characters/starlight_glimmer/starlight_glimmer__large.dds"
+    }
+    spriteType = {
+        name = "GFX_starlight_glimmer__small"
+        texturefile = "gfx/characters/starlight_glimmer/starlight_glimmer__small.dds"
+    }
+    spriteType = {
+        name = "GFX_starlight_glimmer__small"
+        texturefile = "gfx/characters/starlight_glimmer/starlight_glimmer__advisor.dds"
+    }
 }

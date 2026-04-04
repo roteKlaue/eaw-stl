@@ -1,55 +1,69 @@
 characters={
     STL_starlight_glimmer = {
         name=STL_starlight_glimmer
+
+
+
         portraits = {
-			civilian = {
-				large = GFX_starlight_glimmer__large
-				small = GFX_starlight_glimmer__advisor
-			}
-			army = {
-				large = GFX_starlight_glimmer__large
-				small = GFX_starlight_glimmer__small
-			}
-		}
-        country_leader={
-			desc="POLITICS_STARLIGHTGLIMMER_DESC"
-			ideology=equalism
-			expire="1965.1.1.1"
-			id=-1
-		}
-        advisor = {
-			slot = army_chief
-			idea_token = starlight_glimmer_ac
-			allowed = {
-				original_tag = STL
-			}
-			traits = {
-                veteran_communist red_army_organizer
+            civilian = {
+                large = GFX_starlight_glimmer__large
+                small = GFX_starlight_glimmer__advisor
             }
-		}
+            army = {
+                large = GFX_starlight_glimmer__large
+                small = GFX_starlight_glimmer__small
+            }
+        }
+        country_leader={
+            desc="POLITICS_STARLIGHTGLIMMER_DESC"
+            ideology=equalism
+            expire="1965.1.1.1"
+            id=-1
+        }
 
         advisor = {
-			slot = political_advisor
-			idea_token = starlight_glimmer_pa
-			allowed = {
-				original_tag = STL
-			}
-			traits = {
+            slot = army_chief
+            idea_token = starlight_glimmer_ac
+            allowed = {
+                original_tag = STL
+            }
+            traits = {
                 veteran_communist red_army_organizer
             }
-		}
+        }
+
+        advisor = {
+            slot = political_advisor
+            idea_token = starlight_glimmer_pa
+            allowed = {
+                original_tag = STL
+            }
+            traits = {
+                veteran_communist red_army_organizer
+            }
+            visible = {
+                has_country_flag = STL_the_star_is_back
+            }
+            available = {
+                has_country_flag = STL_the_star_is_back
+            }
+        }
 
         field_marshal = {
-			traits = {
+            traits = {
                 pony_race_trait aggressive_assaulter adaptable war_hero trait_SOV_determined skilled_staffer logistics_wizard organizer thorough_planner organisational_leader inspirational_leader offensive_doctrine trait_cautious career_officer
             }
-			skill = 4
-			attack_skill = 2
-			defense_skill = 2
-			planning_skill = 5
-			logistics_skill = 4
-			desc = EQS_starlight_glimmer_desc
+            skill = 4
+            attack_skill = 2
+            defense_skill = 2
+            planning_skill = 5
+            logistics_skill = 4
+            desc = EQS_starlight_glimmer_desc
+            visible = {
+                has_country_flag = STL_the_star_is_back
+            }
         }
-		gender = female
+
+        gender = female
     }
 }

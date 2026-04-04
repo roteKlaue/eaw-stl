@@ -93,6 +93,8 @@ ideas = {
                 tag = STL
             }
 
+            picture = SWI_spirit_of_helvetia_defensive_peace
+
             removal_cost = -1
 
             modifier = {
@@ -136,6 +138,48 @@ ideas = {
                 weekly_manpower = 350
             }
         }
+
+        STL_foreigners = {
+            allowed_civil_war = {
+                always = yes
+            }
+
+            removal_cost = -1
+            picture = idea_por_colonial_army
+            modifier = {
+                non_core_manpower = 0.15
+            }
+        }
+
+        STL_autarky = {
+            allowed_civil_war = {
+                always = yes
+            }
+
+            removal_cost = -1
+
+            picture = idea_generic_exploit_mines
+
+            modifier = {
+                local_resources_factor = 0.25
+                consumer_goods_factor = -0.05
+                min_export = -0.1
+            }
+        }
+
+        STL_export = {
+            allowed_civil_war = {
+                always = yes
+            }
+
+            removal_cost = -1
+
+            picture = idea_can_wartime_prices_and_trade_board
+            modifier = {
+                local_resources_factor = 0.35
+                consumer_goods_factor = -0.1
+                min_export = 0.25
+            }
+        }
     }
 }
-
