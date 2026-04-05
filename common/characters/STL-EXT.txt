@@ -2,8 +2,6 @@ characters={
     STL_starlight_glimmer = {
         name=STL_starlight_glimmer
 
-
-
         portraits = {
             civilian = {
                 large = GFX_starlight_glimmer__large

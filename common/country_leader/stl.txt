@@ -12,6 +12,5 @@ leader_traits = {
 		ai_will_do = {
             base = 2
         }
-        command_cap = @tier1
     }
 }

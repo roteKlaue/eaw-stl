@@ -1,8 +1,8 @@
 STL_navy_dynamic_modifier = {
 	enable = { always = yes }
-	icon = GFX_AUS_navy
-	
-	convoy_escort_efficiency = STL_defunct_navy_convoy_efficiency
+	icon = AUS_navy
+
+    convoy_escort_efficiency = STL_defunct_navy_convoy_efficiency
     naval_detection = STL_defunct_navy_naval_detection
     navy_max_range_factor = STL_defunct_navy_max_range
     spotting_chance = STL_defunct_navy_spotting_chance

@@ -221,23 +221,38 @@ focus_tree = {
                     infantry = { x = 0 y = 0 }
                     infantry = { x = 0 y = 1 }
                     infantry = { x = 0 y = 2 }
+                    infantry = { x = 0 y = 3 }
+                    infantry = { x = 0 y = 4 }
 
                     infantry = { x = 1 y = 0 }
                     infantry = { x = 1 y = 1 }
                     infantry = { x = 1 y = 2 }
+                    infantry = { x = 1 y = 3 }
+                    infantry = { x = 1 y = 4 }
 
                     infantry = { x = 2 y = 0 }
-                    artillery_brigade = { x = 2 y = 1 }
-                    artillery_brigade = { x = 2 y = 2 }
+                    infantry = { x = 2 y = 1 }
+                    infantry = { x = 2 y = 2 }
+                    infantry = { x = 2 y = 3 }
+                    infantry = { x = 2 y = 4 }
+
+
+                    artillery_brigade = { x = 3 y = 0 }
+                    artillery_brigade = { x = 3 y = 1 }
+                    artillery_brigade = { x = 3 y = 2 }
+                    artillery_brigade = { x = 3 y = 3 }
+                    artillery_brigade = { x = 3 y = 4 }
                 }
                 support = {
                     engineer = { x = 0 y = 0 }
                     recon = { x = 0 y = 1 }
+                    artillery = { x = 0 y = 2 }
+                    logistics_company = { x = 0 y = 3 }
+                    field_hospital = { x = 0 y = 4 }
                 }
             }
             random_owned_controlled_state = {
                 limit = { ROOT = { has_full_control_of_state = PREV } }
-                prioritize = { 46 }
                 create_unit = {
                     division = "name = \"Guards Division\" division_template = \"Guards Division\" start_experience_factor = 1.0"
                     owner = ROOT
@@ -245,7 +260,6 @@ focus_tree = {
             }
             random_owned_controlled_state = {
                 limit = { ROOT = { has_full_control_of_state = PREV } }
-                prioritize = { 46 }
                 create_unit = {
                     division = "name = \"Guards Division\" division_template = \"Guards Division\" start_experience_factor = 1.0"
                     owner = ROOT
@@ -253,7 +267,20 @@ focus_tree = {
             }
             random_owned_controlled_state = {
                 limit = { ROOT = { has_full_control_of_state = PREV } }
-                prioritize = { 46 }
+                create_unit = {
+                    division = "name = \"Guards Division\" division_template = \"Guards Division\" start_experience_factor = 1.0"
+                    owner = ROOT
+                }
+            }
+            random_owned_controlled_state = {
+                limit = { ROOT = { has_full_control_of_state = PREV } }
+                create_unit = {
+                    division = "name = \"Guards Division\" division_template = \"Guards Division\" start_experience_factor = 1.0"
+                    owner = ROOT
+                }
+            }
+            random_owned_controlled_state = {
+                limit = { ROOT = { has_full_control_of_state = PREV } }
                 create_unit = {
                     division = "name = \"Guards Division\" division_template = \"Guards Division\" start_experience_factor = 1.0"
                     owner = ROOT
@@ -370,7 +397,10 @@ focus_tree = {
                 remove_core_of = STL
             }
             STG = {
-                transfer_state = 57
+                annex_country = {
+                    target = STL
+                    transfer_troops = yes
+                }
             }
         }
         search_filters = { FOCUS_FILTER_ANNEXATION }
@@ -682,11 +712,6 @@ focus_tree = {
             set_country_flag = STL_the_star_is_back
             STL_starlight_glimmer = {
                 promote_character = yes
-                country_leader = {
-                    ideology = despotism
-                    expire = 1965.1.1.1
-                    traits = { equalism }
-                }
             }
         }
         search_filters = { FOCUS_FILTER_POLITICAL_CHARACTER FOCUS_FILTER_POLITICAL }
@@ -720,7 +745,7 @@ focus_tree = {
             focus = STL_accention_of_our_ruler
         }
         completion_reward = {
-            EQS ={
+            EQS = {
                 EQS_twilight_sparkle = {
                     set_nationality = STL
                 }
@@ -730,7 +755,6 @@ focus_tree = {
                 EQS_big_macintosh = {
                     set_nationality = STL
                 }
-
             }
             ELF = {
                 ELF_trixie_lulamoon = {
@@ -753,14 +777,13 @@ focus_tree = {
         }
 
         select_effect = {
-            hidden_effect = {
-                country_event = { id = MAN_ELF_new.196 days = 15 }
-            }
+            # hidden_effect = {
+            #     country_event = { id = MAN_ELF_new.196 days = 15 }
+            # }
         }
 
         completion_reward = {
-            log = "[GetDateText]: [Root.GetName]: Focus ELF_postwar_1"
-            country_event = { id = MAN_ELF_new.197 }
+            # country_event = { id = MAN_ELF_new.197 }
         }
     }
 
@@ -777,14 +800,13 @@ focus_tree = {
         }
 
         select_effect = {
-            hidden_effect = {
-                country_event = { id = MAN_ELF_new.194 days = 15 }
-            }
+            # hidden_effect = {
+            #     country_event = { id = MAN_ELF_new.194 days = 15 }
+            # }
         }
 
         completion_reward = {
-            log = "[GetDateText]: [Root.GetName]: Focus ELF_postwar_2"
-            country_event = { id = MAN_ELF_new.195 }
+            # country_event = { id = MAN_ELF_new.195 }
         }
     }
 
@@ -813,14 +835,13 @@ focus_tree = {
         }
 
         select_effect = {
-            hidden_effect = {
-                country_event = { id = MAN_ELF_new.203 days = 15 }
-            }
+            # hidden_effect = {
+            #     country_event = { id = MAN_ELF_new.203 days = 15 }
+            # }
         }
 
         completion_reward = {
-            log = "[GetDateText]: [Root.GetName]: Focus ELF_postwar_3"
-            country_event = { id = MAN_ELF_new.204 }
+            # country_event = { id = MAN_ELF_new.204 }
         }
     }
 
@@ -841,20 +862,19 @@ focus_tree = {
         }
 
         select_effect = {
-            hidden_effect = {
-                country_event = { id = MAN_ELF_new.198 days = 15 }
-            }
+            # hidden_effect = {
+            #     country_event = { id = MAN_ELF_new.198 days = 15 }
+            # }
         }
 
         completion_reward = {
-            log = "[GetDateText]: [Root.GetName]: Focus ELF_postwar_4"
-            country_event = { id = MAN_ELF_new.199 }
+            # country_event = { id = MAN_ELF_new.199 }
         }
     }
 
     focus = {
         id = STL_welfare
-        icon = GFX_goal_cry_welfare
+        icon = GFX_focus_generic_welfare
         cost = 10
         prerequisite = {
             focus = STL_invite_starlight_back
@@ -881,14 +901,13 @@ focus_tree = {
         }
 
         select_effect = {
-            hidden_effect = {
-                country_event = { id = MAN_ELF_new.201 days = 15 }
-            }
+            # hidden_effect = {
+            #     country_event = { id = MAN_ELF_new.201 days = 15 }
+            # }
         }
 
         completion_reward = {
-            log = "[GetDateText]: [Root.GetName]: Focus ELF_postwar_5"
-            country_event = { id = MAN_ELF_new.202 }
+            # country_event = { id = MAN_ELF_new.202 }
         }
     }
 
@@ -1247,8 +1266,8 @@ focus_tree = {
     focus = {
         id = STL_twilight_teaching
         icon = GFX_goal_generic_equestria
-        mutually_exclusive = {focus = STL_neighbors_help }
-        cost = 10.00
+        mutually_exclusive = { focus = STL_neighbors_help }
+        cost = 5
         prerequisite = {
             focus = STL_elections
         }
@@ -1379,7 +1398,7 @@ focus_tree = {
             }
 
             add_equipment_to_stockpile = {
-                type = motorized_equipment_1 
+                type = motorized_equipment_1
                 amount = 2000
                 producer = STL
             }
@@ -1556,7 +1575,7 @@ focus_tree = {
     focus = {
         id = STL_equestrian_airbridge
         icon = GFX_goal_eqs_airfields_south
-        cost = 10.00
+        cost = 5
         prerequisite = {
             focus = STL_twilight_teaching
         }
@@ -1580,7 +1599,7 @@ focus_tree = {
     focus = {
         id = STL_our_town_fortress
         icon = GFX_goal_generic_fortify_city
-        cost = 10.00
+        cost = 5
         prerequisite = {
             focus = STL_equestrian_airbridge
         }
@@ -1605,7 +1624,7 @@ focus_tree = {
     focus = {
         id = STL_eqs_exped_forces
         icon = GFX_focus_generic_paratrooper
-        cost = 10.00
+        cost = 5
         prerequisite = {
             focus = STL_our_town_fortress
         }
@@ -1624,7 +1643,7 @@ focus_tree = {
     focus = {
         id = STL_griffon_transition
         icon = GFX_goal_planning_bonus
-        cost = 10.00
+        cost = 5
         prerequisite = {
             focus = STL_twilight_teaching
         }
@@ -1652,6 +1671,66 @@ focus_tree = {
             focus = STL_our_town_fortress
         }
         relative_position_id = STL_our_town_fortress
+        completion_reward = {
+
+        }
+    }
+
+    focus = {
+        id = STL_save_ourselves
+        icon = GFX_idea_STL_starlight_glimmer-888107
+        cost = 5
+        x = 0
+        y = 1
+
+        allow_branch = { NOT = { has_country_flag = going_fascist } }
+        prerequisite = {
+            focus = STL_shining_example_of_democracy
+        }
+        relative_position_id = STL_shining_example_of_democracy
+
+        mutually_exclusive = { focus = STL_proactive_democracy }
+        completion_reward = { }
+    }
+
+    focus = {
+        id = STL_proactive_democracy
+        icon = GFX_goal_generic_propaganda
+        cost = 5
+        x = 4
+        y = 1
+
+        allow_branch = { NOT = { has_country_flag = going_fascist } }
+
+        prerequisite = {
+            focus = STL_shining_example_of_democracy
+        }
+        relative_position_id = STL_shining_example_of_democracy
+        mutually_exclusive = { focus = STL_save_ourselves }
+        completion_reward = { }
+    }
+
+    focus = {
+        id = STL_assasination_of_feather_bangs
+        icon = GFX_focus_IRQ_attempted_assasination_of_sidqi
+        cost = 5
+        x = 5
+        y = 1
+        relative_position_id = STL_proactive_democracy
+        prerequisite = { focus = STL_proactive_democracy }
+        mutually_exclusive = { focus = STL_solid_leadership }
+        completion_reward = { }
+    }
+
+    focus = {
+        id = STL_solid_leadership
+        icon = GFX_STL_solidified_leadership-889333_shine
+        cost = 5
+        x = 0
+        y = 1
+        relative_position_id = STL_proactive_democracy
+        prerequisite = { focus = STL_proactive_democracy }
+        mutually_exclusive = { focus = STL_assasination_of_feather_bangs }
         completion_reward = { }
     }
 
@@ -1661,6 +1740,9 @@ focus_tree = {
         cost = 5
         x = 0
         y = 1
+        allow_branch = {
+            has_country_flag = going_fascist
+        }
         relative_position_id = STL_shining_example_of_democracy
         prerequisite = {
             focus = STL_shining_example_of_democracy
@@ -1671,7 +1753,7 @@ focus_tree = {
     focus = {
         id = STL_GRF_cedeing_land
         icon = GFX_goal_planning_bonus
-        cost = 10.00
+        cost = 5
         prerequisite = {
             focus = STL_griffon_transition
         }
@@ -1709,13 +1791,20 @@ focus_tree = {
     focus = {
         id = STL_call_to_war
         icon = GFX_goal_planning_bonus
-        cost = 10.00
+        cost = 5
         prerequisite = {
             focus = STL_eqs_exped_forces
         }
         x = 0
         y = 1
         relative_position_id = STL_eqs_exped_forces
+
+        available = {
+            any_character = {
+                is_country_leader = yes
+                has_ideology = populism
+            }
+        }
 
         completion_reward = {
             EQS = {
@@ -3479,7 +3568,7 @@ focus_tree = {
     }
 
     focus = { # INDUSTRY
-        id = STL_bbo_focus
+        id = STL_new_industry
         icon = GFX_focus_AUS_bbo_focus
         prerequisite = { focus = STL_infra_3 focus = STL_infra_1 focus = STL_infra_2 }
         x = 0
@@ -3496,8 +3585,8 @@ focus_tree = {
         completion_reward = {
             add_political_power = 75
             custom_effect_tooltip = generic_skip_one_line_tt
-            custom_effect_tooltip = AUS_bbo_focus_tt
-            show_ideas_tooltip = AUS_bbo_improved
+            # custom_effect_tooltip = AUS_bbo_focus_tt
+            # show_ideas_tooltip = AUS_bbo_improved
 
             # IF = {
             #     limit = {

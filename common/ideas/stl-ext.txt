@@ -34,7 +34,7 @@ ideas = {
                     has_government = fascism
                 }
             }
-            picture = STL_sussy-888222
+            picture = FRA_liberte_egalite_solidarite
 
             removal_cost = -1
             modifier = {
@@ -58,7 +58,7 @@ ideas = {
                     has_government = fascism
                 }
             }
-            picture = STL_sussy-888222
+            picture = ITA_il_sol_dell_avvenire_ns
 
             removal_cost = -1
             modifier = {
@@ -126,7 +126,7 @@ ideas = {
                 original_tag = STL
             }
 
-            picture = GFX_idea_social_welfare
+            picture = ARG_social_welfare_fund_ns
 
             removal_cost = -1
 
