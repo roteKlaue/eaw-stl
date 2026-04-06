@@ -96,6 +96,12 @@ form_EQS_tt:0 "\n§gGains §YCores§! on §RGreater Equestria§! [EQS.GetFlag]§
 STL_abolish_equality:0 "Our Rebirth"
 STL_abolish_equality_desc:0 "Our previous effort as a cutie mark free society was a disaster. It is time to recognise it once and for all and begin to rebuild. "
 
+STL_infinite_courage:0 "Infinite Courage"
+STL_infinite_courage_desc:0 "Crushed but unbroken, the ponies of Townsville now fight with a desperation that no invader can truly comprehend. Having endured occupation, loss, and humiliation, the population has rallied with fierce determination—filling the ranks faster than they can be trained.\nThis stubborn resolve fuels every defender. Each street becomes a fortress, each citizen a potential soldier. Their courage is endless, their resolve unyielding… even as exhaustion and instability grow behind the front lines."
+
+STL_surrenders:0 "Hearts That Do Not Break"
+STL_surrenders_desc:0 "Even in defeat, the ponies of Townsville hold onto the light within their hearts. Occupation may shatter buildings and borders, but it cannot erase kindness, loyalty, or the quiet bravery of ordinary ponies helping one another through hardship."
+
 STL_society_reform:0 "Our Future"
 STL_society_reform_desc:0 "Starlight Glimmer left her mark on every aspect of Our Town even as she took every mark from us. We must consider and debate our future, and how it shall be organised, everypony equal, everypony's voice heard. We shall not lose our way again."
 
@@ -105,6 +111,32 @@ STL_elections_desc:0 "How can ponies be equal if everyone cannot have the opport
 ## COMMUNIST PATH ##
 STL_neighbors_help:0 "Our Neighbours"
 STL_neighbors_help_desc:0 "The ponies of Stalliongrad are kindred spirits - they may speak of workers and production instead of Equality, but the end result is the same. We should establish trade and seek industrial assistance."
+
+STL_replace_recovering_economy_with_wirtschaftswunder_tt: "Replace §Y$STL_recovering_economy_modifier$§! with §Y$STL_wirtschaftswunder_modifier$§!, effective change:"
+
+STL_recovering_economy_modifier:0 "Recovering Economy"
+STL_recovering_economy_modifier_desc:0 "After years of disruption, the nation is slowly regaining its economic stability. Industrial output is improving, resources are becoming more accessible, and the groundwork for future growth is being rebuilt."
+STL_wirtschaftswunder_modifier:0 "Economic Miracle"
+STL_wirtschaftswunder_modifier_desc:0 "A sudden surge in productivity sweeps across the nation. Factories expand, research accelerates, and industrial efficiency reaches unprecedented levels. This rapid transformation propels the country into a new era of prosperity."
+STL_effective_change_for_army_tt:0 "§Y$STL_army_modifier$§! — Effective Change:\n"
+
+STL_army_modifier:0 "Our Army"
+STL_army_modifier_desc:0 "In a world of griffon raiders, communist steel, and Equestrian optimism, our armed forces stand as the quiet proof that Equality needs more than friendly smiles. Built from volunteers, expatriates, and the occasional pony who wandered into the recruitment tent by mistake, our army is held together by discipline, shared purpose, and a very strict schedule.\n\nEvery soldier trains not for glory, but for the safety of everypony beside them. No heroes, no elites—only comrades moving as one. Through careful planning, hard lessons, and a touch of stubborn Townsvillian grit, our army grows into a force capable of meeting any challenge the world dares to send our way."
+
+STL_streamline_artillery_production_idea:0 "Refined Artillery Production"
+STL_streamline_artillery_production_idea_desc:0 "Our workshops shall streamline the manufacture of artillery, ensuring every cannon and howitzer rolls off the assembly line with efficiency and precision. Fewer resources wasted, more guns ready for those who defend Equality."
+
+STL_streamline_infantry_equipment_production_idea:0 "Infantry Gear Optimization"
+STL_streamline_infantry_equipment_production_idea_desc:0 "From saddles to rifles, every piece of infantry equipment shall be produced faster and with less strain on our factories. The soldiers of Townsville deserve reliable tools to uphold our collective ideals."
+
+STL_streamline_truck_production_idea:0 "Motorized Supply Initiative"
+STL_streamline_truck_production_idea_desc:0 "Our newly optimized truck factories will keep the wheels of Equality turning. Supplies, troops, and support shall move swiftly, unhindered by outdated production methods."
+
+STL_streamline_tank_production_idea:0 "Armored Might Efficiency"
+STL_streamline_tank_production_idea_desc:0 "Tanks and armored cars shall emerge from our factories more efficiently than ever. Mechanized units will now form the backbone of our defensive and offensive efforts, embodying the strength of a united Townsville."
+
+STL_employment_efforts:0 "Mobilization of Labor"
+STL_employment_efforts_desc:0 "Our citizens shall be guided to contribute their full potential to the national effort."
 
 STL_STG_military_advisors:0 "Our Stalliongrad Advisors"
 STL_STG_military_advisors_desc:0 "Should the griffons ever advance south, we shall be the first to be hit. We must seek military support from our neighbours in Stalliongrad."

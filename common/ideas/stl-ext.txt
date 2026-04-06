@@ -145,7 +145,7 @@ ideas = {
             }
 
             removal_cost = -1
-            picture = idea_por_colonial_army
+            picture = hol_expand_the_colonial_army
             modifier = {
                 non_core_manpower = 0.15
             }
@@ -181,5 +181,88 @@ ideas = {
                 min_export = 0.25
             }
         }
+
+        STL_infinite_courage = {
+            allowed = {
+                has_capitulated = yes
+            }
+
+            picture = generic_women_in_the_army
+            removal_cost = -1
+
+            modifier = {
+                weekly_manpower = 500
+                defence = 0.15
+                offence = 0.15
+                stability_factor = -0.05
+            }
+        }
+
+        STL_streamline_artillery_production_idea = {
+            removal_cost = -1
+            picture = generic_artillery_regiments
+            equipment_bonus = {
+                artillery_equipment = {
+                    build_cost_ic = -0.025
+                    instant = yes
+                }
+            }
+        }
+
+        STL_streamline_infantry_equipment_production_idea = {
+            removal_cost = -1
+            picture = generic_infantry_equipment_manufacturer_2
+            equipment_bonus = {
+                infantry_equipment = {
+                    build_cost_ic = -0.025
+                    instant = yes
+                }
+            }
+        }
+
+        STL_streamline_truck_production_idea = {
+            removal_cost = -1
+            picture = FRA_motorized_focus
+            equipment_bonus = {
+                truck = {
+                    build_cost_ic = -0.025
+                    instant = yes
+                }
+            }
+        }
+
+        STL_streamline_tank_production_idea = {
+            removal_cost = -1
+            picture = generic_armor
+            equipment_bonus = {
+                armored_car = {
+                    build_cost_ic = -0.025
+                    instant = yes
+                }
+                tank = {
+                    build_cost_ic = -0.025
+                    instant = yes
+                }
+            }
+        }
+
+        STL_employment_efforts = {
+			allowed = {
+				always = no
+				tag = STL
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			picture = generic_production_bonus
+			modifier = {
+				consumer_goods_factor = -0.1
+				stability_factor = 0.1
+				political_power_factor = 0.1
+			}
+		}
     }
 }

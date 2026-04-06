@@ -5,7 +5,7 @@ tags={
 	"National Focuses"
 	"Ideologies"
 }
-name="[EaW] Our Town"
+name="[EaW] Our Town Reworked"
 supported_version="1.17.*"
 dependencies={
     "Equestria at War"

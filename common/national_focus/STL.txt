@@ -279,13 +279,6 @@ focus_tree = {
                     owner = ROOT
                 }
             }
-            random_owned_controlled_state = {
-                limit = { ROOT = { has_full_control_of_state = PREV } }
-                create_unit = {
-                    division = "name = \"Guards Division\" division_template = \"Guards Division\" start_experience_factor = 1.0"
-                    owner = ROOT
-                }
-            }
             add_timed_idea = {
                 idea = STL_recruitment_rush
                 days = 60
@@ -900,6 +893,13 @@ focus_tree = {
             focus = STL_recruit_old_friends
         }
 
+        available = {
+            68 = {
+                is_owned_by = ROOT
+                is_controlled_by = ROOT
+            }
+        }
+
         select_effect = {
             # hidden_effect = {
             #     country_event = { id = MAN_ELF_new.201 days = 15 }
@@ -1282,6 +1282,9 @@ focus_tree = {
         relative_position_id = STL_elections
         completion_reward = {
             log = "[GetDateText]: [Root.GetName]: Focus STL_twilight_teaching"
+            country_event = {
+                id = starlight.31
+            }
         }
     }
 
@@ -1322,13 +1325,43 @@ focus_tree = {
     focus = {
         id = STL_army_effort
         icon = GFX_goal_generic_allies_build_infantry
-        x = 6
+        x = 8
         y = 0
         cost = 5
         relative_position_id = STL_one_factory
         ai_will_do = { factor = 1 }
         available_if_capitulated = yes
         completion_reward = {
+            random_owned_controlled_state = {
+                limit = {
+                    free_building_slots = {
+                        building = arms_factory
+                        size > 1
+                        include_locked = yes
+                    }
+                    OR = {
+                        is_in_home_area = yes
+                        NOT = {
+                            owner = {
+                                any_owned_state = {
+                                    free_building_slots = {
+                                        building = arms_factory
+                                        size > 0
+                                        include_locked = yes
+                                    }
+                                    is_in_home_area = yes
+                                }
+                            }
+                        }
+                    }
+                }
+                add_extra_state_shared_building_slots = 1
+                add_building_construction = {
+                    type = arms_factory
+                    level = 1
+                    instant_build = yes
+                }
+            }
             army_experience = 50
             add_manpower = 20000
             add_doctrine_cost_reduction = {
@@ -1336,6 +1369,10 @@ focus_tree = {
                 cost_reduction = 0.5
                 uses = 1
                 category = land_doctrine
+            }
+
+            add_dynamic_modifier = {
+                modifier = STL_army_modifier
             }
         }
     }
@@ -1350,19 +1387,59 @@ focus_tree = {
         prerequisite = { focus = STL_army_effort }
 
         completion_reward = {
+            add_equipment_to_stockpile = {
+                type = artillery_equipment
+                amount = 1000
+                producer = ROOT
+            }
+            add_equipment_to_stockpile = {
+                type = support_equipment_1
+                amount = 1000
+                producer = ROOT
+            }
 
+            add_ideas = STL_streamline_artillery_production_idea
+
+            custom_effect_tooltip = STL_effective_change_for_army_tt
+            add_to_variable = {
+                STL_military_supply_consumption_factor = -0.05
+                tooltip = supply_consumption_factor_tt
+            }
+            add_to_variable = {
+                STL_military_army_artillery_attack_factor = 0.1
+                tooltip = army_artillery_attack_factor_tt
+            }
+            add_to_variable = {
+                STL_military_army_artillery_defence_factor = 0.1
+                tooltip = army_artillery_defence_factor_tt
+            }
         }
     }
 
     focus = {
         id = STL_army_strength
-        icon = GFX_focus_GER_proletarian_solidarity
+        icon = GFX_focus_generic_advanced_military_studies
         cost = 5
         x = 0
         y = 1
         relative_position_id = STL_army_effort
         prerequisite = { focus = STL_army_effort }
-        completion_reward = { }
+        completion_reward = {
+            add_ideas = militarism_focus
+            custom_effect_tooltip = STL_effective_change_for_army_tt
+            add_to_variable = {
+                STL_military_supply_consumption_factor = -0.05
+                tooltip = supply_consumption_factor_tt
+            }
+            add_to_variable = {
+                STL_military_initiative_factor = 0.1
+                tooltip = initiative_factor_tt
+            }
+            add_to_variable = {
+                STL_military_army_infantry_attack_factor = 0.05
+                tooltip = army_infantry_attack_factor_tt
+            }
+        }
     }
 
     focus = {
@@ -1375,7 +1452,44 @@ focus_tree = {
         prerequisite = {
             focus = STL_army_strength
         }
-        completion_reward = { }
+        completion_reward = {
+            random_owned_controlled_state = {
+                limit = {
+                    free_building_slots = {
+                        building = arms_factory
+                        size > 1
+                        include_locked = yes
+                    }
+                    OR = {
+                        is_in_home_area = yes
+                        NOT = {
+                            owner = {
+                                any_owned_state = {
+                                    free_building_slots = {
+                                        building = arms_factory
+                                        size > 0
+                                        include_locked = yes
+                                    }
+                                    is_in_home_area = yes
+                                }
+                            }
+                        }
+                    }
+                }
+                add_extra_state_shared_building_slots = 1
+                add_building_construction = {
+                    type = arms_factory
+                    level = 1
+                    instant_build = yes
+                }
+            }
+            add_ideas = STL_streamline_infantry_equipment_production_idea
+            custom_effect_tooltip = STL_effective_change_for_army_tt
+            add_to_variable = {
+                STL_military_equipment_capture = 0.05
+                tooltip = equipment_capture_tt
+            }
+        }
     }
 
     focus = {
@@ -1397,10 +1511,43 @@ focus_tree = {
                 set_technology = { motorised_infantry = 1 }
             }
 
-            add_equipment_to_stockpile = {
-                type = motorized_equipment_1
-                amount = 2000
-                producer = STL
+            division_template = {
+                name = "Motorized Infantry Division"
+                priority = 1
+
+                regiments = {
+                    motorized = { x = 0 y = 0 }
+                    motorized = { x = 0 y = 1 }
+                    motorized = { x = 0 y = 2 }
+                    motorized = { x = 1 y = 0 }
+                    motorized = { x = 1 y = 1 }
+                    motorized = { x = 1 y = 2 }
+                    motorized = { x = 2 y = 0 }
+                    motorized = { x = 2 y = 1 }
+                    motorized = { x = 2 y = 2 }
+                }
+
+                support = {
+                    recon = { x = 0 y = 0 }
+                    engineer = { x = 0 y = 1 }
+                    logistics_company = { x = 0 y = 2 }
+                    maintenance_company = { x = 0 y = 3 }
+                }
+            }
+
+            random_owned_controlled_state = {
+                limit = { ROOT = { has_full_control_of_state = PREV } }
+                create_unit = {
+                    division = "name = \"Motorized Infantry Division\" division_template = \"Motorized Infantry Division\" start_experience_factor = 0.7"
+                    owner = ROOT
+                }
+            }
+            random_owned_controlled_state = {
+                limit = { ROOT = { has_full_control_of_state = PREV } }
+                create_unit = {
+                    division = "name = \"Motorized Infantry Division\" division_template = \"Motorized Infantry Division\" start_experience_factor = 0.7"
+                    owner = ROOT
+                }
             }
         }
     }
@@ -1415,7 +1562,17 @@ focus_tree = {
         prerequisite = {
             focus = STL_army_moterization
         }
-        completion_reward = { }
+        completion_reward = {
+            custom_effect_tooltip = STL_effective_change_for_army_tt
+            add_to_variable = {
+                STL_military_supply_consumption_factor = -0.05
+                tooltip = supply_consumption_factor_tt
+            }
+            add_to_variable = {
+                STL_military_army_fuel_consumption_factor = -0.1
+                tooltip = army_fuel_consumption_factor_tt
+            }
+        }
     }
 
     focus = {
@@ -1428,7 +1585,39 @@ focus_tree = {
         prerequisite = {
             focus = STL_army_moterization
         }
-        completion_reward = { }
+        completion_reward = {
+            add_ideas = STL_streamline_truck_production_idea
+            random_owned_controlled_state = {
+                limit = {
+                    free_building_slots = {
+                        building = arms_factory
+                        size > 1
+                        include_locked = yes
+                    }
+                    OR = {
+                        is_in_home_area = yes
+                        NOT = {
+                            owner = {
+                                any_owned_state = {
+                                    free_building_slots = {
+                                        building = arms_factory
+                                        size > 0
+                                        include_locked = yes
+                                    }
+                                    is_in_home_area = yes
+                                }
+                            }
+                        }
+                    }
+                }
+                add_extra_state_shared_building_slots = 1
+                add_building_construction = {
+                    type = arms_factory
+                    level = 1
+                    instant_build = yes
+                }
+            }
+        }
     }
 
     focus = {
@@ -1538,10 +1727,42 @@ focus_tree = {
             focus = STL_army_moterization
         }
         completion_reward = {
-            add_equipment_to_stockpile = {
-                type = medium_tank_chassis_1
-                amount = 100
-                variant_name = "Panzer III"
+            add_tech_bonus = {
+                name = armor_bonus
+                bonus = 0.7
+                uses = 5
+                category = armor
+            }
+
+            random_owned_controlled_state = {
+                limit = {
+                    free_building_slots = {
+                        building = arms_factory
+                        size > 1
+                        include_locked = yes
+                    }
+                    OR = {
+                        is_in_home_area = yes
+                        NOT = {
+                            owner = {
+                                any_owned_state = {
+                                    free_building_slots = {
+                                        building = arms_factory
+                                        size > 0
+                                        include_locked = yes
+                                    }
+                                    is_in_home_area = yes
+                                }
+                            }
+                        }
+                    }
+                }
+                add_extra_state_shared_building_slots = 1
+                add_building_construction = {
+                    type = arms_factory
+                    level = 1
+                    instant_build = yes
+                }
             }
         }
     }
@@ -1556,7 +1777,48 @@ focus_tree = {
             focus = STL_armor_effort
         }
         relative_position_id = STL_armor_effort
-        completion_reward = { }
+        completion_reward = {
+            add_ideas = STL_streamline_tank_production_idea
+
+            division_template = {
+                name = "Armored Division"
+                priority = 2
+                division_names_group = ROM_ARM_01
+                regiments = {
+                    medium_armor = { x = 0 y = 0 }
+                    medium_armor = { x = 0 y = 1 }
+
+                    medium_armor = { x = 1 y = 0 }
+                    medium_armor = { x = 1 y = 1 }
+
+                    motorized = { x = 2 y = 0 }
+                    motorized = { x = 2 y = 1 }
+
+                    motorized = { x = 3 y = 0 }
+                    motorized = { x = 3 y = 1 }
+                }
+                support = {
+                    engineer = { x = 0 y = 0 }
+                    artillery = { x = 0 y = 1 }
+                    recon = { x = 0 y = 2 }
+                }
+            }
+
+            random_owned_controlled_state = {
+                limit = { ROOT = { has_full_control_of_state = PREV } }
+                create_unit = {
+                    division = "name = \"Armored Division\" division_template = \"Armored Division\" start_experience_factor = 0.7"
+                    owner = ROOT
+                }
+            }
+            random_owned_controlled_state = {
+                limit = { ROOT = { has_full_control_of_state = PREV } }
+                create_unit = {
+                    division = "name = \"Armored Division\" division_template = \"Armored Division\" start_experience_factor = 0.7"
+                    owner = ROOT
+                }
+            }
+        }
     }
 
     focus = {
@@ -1569,7 +1831,17 @@ focus_tree = {
             focus = STL_armor_effort
         }
         relative_position_id = STL_armor_effort
-        completion_reward = { }
+        completion_reward = {
+            custom_effect_tooltip = STL_effective_change_for_army_tt
+            add_to_variable = {
+                STL_military_supply_consumption_factor = -0.05
+                tooltip = supply_consumption_factor_tt
+            }
+            add_to_variable = {
+                STL_military_army_fuel_consumption_factor = -0.1
+                tooltip = army_fuel_consumption_factor_tt
+            }
+        }
     }
 
     focus = {
@@ -1622,6 +1894,117 @@ focus_tree = {
     }
 
     focus = {
+        id = STL_defensive_posture
+        icon = GFX_focus_CZE_military_aeronautical_institute
+        cost = 5
+        x = -2
+        y = 1
+        relative_position_id = STL_equestrian_airbridge
+        prerequisite = {
+            focus = STL_equestrian_airbridge
+        }
+        completion_reward = { }
+    }
+
+    focus = {
+        id = STL_surrenders
+        icon = GFX_focus_generic_surrender
+        cost = 1
+        x = 32
+        y = 13
+
+        available = {
+            has_government = democratic
+            has_capitulated = yes
+        }
+
+        available_if_capitulated = yes
+
+        completion_reward = {
+            division_template = {
+                name = "Guards Division"
+                priority = 2
+                regiments = {
+                    infantry = { x = 0 y = 0 }
+                    infantry = { x = 0 y = 1 }
+                    infantry = { x = 0 y = 2 }
+                    infantry = { x = 0 y = 3 }
+                    infantry = { x = 0 y = 4 }
+
+                    infantry = { x = 1 y = 0 }
+                    infantry = { x = 1 y = 1 }
+                    infantry = { x = 1 y = 2 }
+                    infantry = { x = 1 y = 3 }
+                    infantry = { x = 1 y = 4 }
+
+                    infantry = { x = 2 y = 0 }
+                    infantry = { x = 2 y = 1 }
+                    infantry = { x = 2 y = 2 }
+                    infantry = { x = 2 y = 3 }
+                    infantry = { x = 2 y = 4 }
+
+
+                    artillery_brigade = { x = 3 y = 0 }
+                    artillery_brigade = { x = 3 y = 1 }
+                    artillery_brigade = { x = 3 y = 2 }
+                    artillery_brigade = { x = 3 y = 3 }
+                    artillery_brigade = { x = 3 y = 4 }
+                }
+                support = {
+                    engineer = { x = 0 y = 0 }
+                    recon = { x = 0 y = 1 }
+                    artillery = { x = 0 y = 2 }
+                    logistics_company = { x = 0 y = 3 }
+                    field_hospital = { x = 0 y = 4 }
+                }
+            }
+            random_controlled_state = {
+                limit = { ROOT = { has_full_control_of_state = PREV } }
+                create_unit = {
+                    division = "name = \"Guards Division\" division_template = \"Guards Division\" start_experience_factor = 1.0"
+                    owner = ROOT
+                }
+            }
+            random_controlled_state = {
+                limit = { ROOT = { has_full_control_of_state = PREV } }
+                create_unit = {
+                    division = "name = \"Guards Division\" division_template = \"Guards Division\" start_experience_factor = 1.0"
+                    owner = ROOT
+                }
+            }
+            random_controlled_state = {
+                limit = { ROOT = { has_full_control_of_state = PREV } }
+                create_unit = {
+                    division = "name = \"Guards Division\" division_template = \"Guards Division\" start_experience_factor = 1.0"
+                    owner = ROOT
+                }
+            }
+            random_controlled_state = {
+                limit = { ROOT = { has_full_control_of_state = PREV } }
+                create_unit = {
+                    division = "name = \"Guards Division\" division_template = \"Guards Division\" start_experience_factor = 1.0"
+                    owner = ROOT
+                }
+            }
+            random_controlled_state = {
+                limit = { ROOT = { has_full_control_of_state = PREV } }
+                create_unit = {
+                    division = "name = \"Guards Division\" division_template = \"Guards Division\" start_experience_factor = 1.0"
+                    owner = ROOT
+                }
+            }
+            add_ideas = STL_infinite_courage
+
+            every_owned_state = {
+                limit = {
+                    NOT = { is_controlled_by = ROOT }
+                }
+                add_resistance = 40
+            }
+        }
+    }
+
+    focus = {
         id = STL_eqs_exped_forces
         icon = GFX_focus_generic_paratrooper
         cost = 5
@@ -1658,12 +2041,20 @@ focus_tree = {
                 remove_idea = STL_city_state
                 add_idea = STL_city_state2
             }
+
+            random_core_state = {
+                add_building_construction = {
+                    type = industrial_complex
+                    level = 1
+                    instant_build = yes
+                }
+            }
         }
     }
 
     focus = {
         id = STL_shining_example_of_democracy
-        icon = GFX_goal_support_democracy
+        icon = GFX_focus_generic_democratic_europe
         cost = 5
         x = 2
         y = 1
@@ -1672,17 +2063,22 @@ focus_tree = {
         }
         relative_position_id = STL_our_town_fortress
         completion_reward = {
-
+            country_event = {
+                id = starlight.40
+            }
         }
     }
 
     focus = {
         id = STL_save_ourselves
-        icon = GFX_idea_STL_starlight_glimmer-888107
+        icon = GFX_focus_ARG_defense_and_democracy
         cost = 5
         x = 0
         y = 1
 
+        available = {
+            always = no
+        }
         allow_branch = { NOT = { has_country_flag = going_fascist } }
         prerequisite = {
             focus = STL_shining_example_of_democracy
@@ -1700,6 +2096,9 @@ focus_tree = {
         x = 4
         y = 1
 
+        available = {
+            always = no
+        }
         allow_branch = { NOT = { has_country_flag = going_fascist } }
 
         prerequisite = {
@@ -1716,18 +2115,26 @@ focus_tree = {
         cost = 5
         x = 5
         y = 1
+        available = {
+            always = no
+        }
         relative_position_id = STL_proactive_democracy
         prerequisite = { focus = STL_proactive_democracy }
         mutually_exclusive = { focus = STL_solid_leadership }
-        completion_reward = { }
+        completion_reward = {
+            kill_country_leader = yes
+        }
     }
 
     focus = {
         id = STL_solid_leadership
-        icon = GFX_STL_solidified_leadership-889333_shine
+        icon = GFX_STL_solidified_leadership-889333
         cost = 5
         x = 0
         y = 1
+        available = {
+            always = no
+        }
         relative_position_id = STL_proactive_democracy
         prerequisite = { focus = STL_proactive_democracy }
         mutually_exclusive = { focus = STL_assasination_of_feather_bangs }
@@ -1765,6 +2172,14 @@ focus_tree = {
         relative_position_id = STL_griffon_transition
         completion_reward = {
             remove_ideas = STL_city_state2
+
+            random_core_state = {
+                add_building_construction = {
+                    type = industrial_complex
+                    level = 2
+                    instant_build = yes
+                }
+            }
         }
     }
 
@@ -1800,10 +2215,7 @@ focus_tree = {
         relative_position_id = STL_eqs_exped_forces
 
         available = {
-            any_character = {
-                is_country_leader = yes
-                has_ideology = populism
-            }
+            has_government = democratic
         }
 
         completion_reward = {
@@ -2107,7 +2519,7 @@ focus_tree = {
             NOT = { has_idea = STL_city_state2 }
         }
 
-        x = 13
+        x = 15
         y = 0
         relative_position_id = STL_army_effort
         completion_reward = {
@@ -2516,6 +2928,11 @@ focus_tree = {
                 STL_industrial_consumer_goods_factor = -0.15
                 tooltip = consumer_goods_factor_tt
             }
+
+            add_to_variable = {
+                STL_industrial_production_speed_buildings_factor = 0.1
+                tooltip = production_speed_buildings_factor_tt
+            }
         }
     }
 
@@ -2544,6 +2961,15 @@ focus_tree = {
             }
 
             add_to_variable = {
+                STL_industrial_production_factory_start_efficiency_factor = 0.05
+                tooltip = production_factory_start_efficiency_factor_tt
+            }
+            add_to_variable = {
+                STL_industrial_line_change_production_efficiency_factor = 0.05
+                tooltip = line_change_production_efficiency_factor_tt
+            }
+
+            add_to_variable = {
                 STL_industrial_consumer_goods_factor = -0.15
                 tooltip = consumer_goods_factor_tt
             }
@@ -2554,12 +2980,12 @@ focus_tree = {
         id = STL_increased_trade
         icon = GFX_goal_generic_trade
         prerequisite = { focus = STL_abolish_price_controls }
-        x = 0
+        x = -1
         y = 1
         cost = 5
         relative_position_id = STL_abolish_price_controls
 
-        search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_STABILITY }
+        search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY }
 
         completion_reward = {
             add_to_variable = {
@@ -2578,7 +3004,7 @@ focus_tree = {
         cost = 5
 
         relative_position_id = STL_currency_reforms
-        search_filters = { FOCUS_FILTER_INDUSTRY }
+        search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_STABILITY }
 
         available = {
             57 = {
@@ -2660,6 +3086,15 @@ focus_tree = {
                 }
             }
 
+            add_to_variable = {
+                STL_industrial_production_factory_max_efficiency_factor = 0.05
+                tooltip = production_factory_max_efficiency_factor_tt
+            }
+            add_to_variable = {
+                STL_industrial_production_factory_efficiency_gain_factor = 0.05
+                tooltip = production_factory_efficiency_gain_factor_tt
+            }
+
             add_research_slot = 1
         }
     }
@@ -2676,18 +3111,35 @@ focus_tree = {
         prerequisite = {
             focus = STL_abolish_price_controls
         }
+        available = {
+            has_country_flag = STL_has_formed_our_eqs
+        }
         cost = 5
-        x = -1
+        x = -2
         y = 1
         relative_position_id = STL_workers_rights
-        completion_reward = { }
+        completion_reward = {
+            hidden_effect = {
+                remove_dynamic_modifier = {
+                    modifier = STL_recovering_economy_modifier
+                }
+                add_dynamic_modifier = {
+                    modifier = STL_wirtschaftswunder_modifier
+                }
+            }
+            custom_effect_tooltip = STL_replace_recovering_economy_with_wirtschaftswunder_tt
+            add_to_variable = {
+                STL_industrial_production_speed_buildings_factor = 0.1
+                tooltip = production_speed_buildings_factor_tt
+            }
+        }
         search_filters = { FOCUS_FILTER_INDUSTRY }
     }
 
     focus = {
         id = STL_autarky
         icon = GFX_focus_generic_self_management
-        x = 2
+        x = 3
         y = 1
         relative_position_id = STL_flourishing_economy
         cost = 8
@@ -2704,9 +3156,77 @@ focus_tree = {
     }
 
     focus = {
+        id = STL_laborers
+        icon = GFX_SOV_the_trade_union_as_labor_organizer_ccp_2d_sov_compatibility
+        cost = 5
+        x = -2
+        y = 1
+
+        prerequisite = {
+            focus = STL_flourishing_economy
+        }
+
+        relative_position_id = STL_flourishing_economy
+
+        search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_STABILITY }
+        completion_reward = {
+            add_ideas = STL_employment_efforts
+        }
+    }
+
+    focus = {
+        id = STL_mass_production
+        icon = GFX_focus_generic_military_industry
+        prerequisite = { focus = STL_flourishing_economy }
+
+        x = 0
+        y = 1
+        relative_position_id = STL_flourishing_economy
+        cost = 10
+        available = {
+            OR = {
+                has_war = yes
+                threat > 0.45
+            }
+        }
+
+        search_filters = { FOCUS_FILTER_INDUSTRY }
+
+        completion_reward = {
+            random_core_state = {
+                limit = {
+                    is_fully_controlled_by = ROOT
+                    free_building_slots = {
+                        building = arms_factory
+                        size > 1
+                        include_locked = yes
+                    }
+                }
+                add_extra_state_shared_building_slots = 2
+                add_building_construction = {
+                    type = arms_factory
+                    level = 2
+                    instant_build = yes
+                }
+            }
+
+            custom_effect_tooltip = generic_skip_one_line_tt
+
+            add_to_variable = {
+                STL_industrial_production_lack_of_resource_penalty_factor = -0.1
+                tooltip = production_lack_of_resource_penalty_factor_tt
+            }
+            add_to_variable = {
+                STL_industrial_industrial_capacity_factory = 0.1
+                tooltip = industrial_capacity_factory_tt
+            }
+        }
+    }
+
+    focus = {
         id = STL_export_goods
         icon = GFX_goal_generic_positive_trade_relations
-        x = 4
+        x = 5
         y = 1
         relative_position_id = STL_flourishing_economy
         cost = 8
@@ -2735,7 +3255,7 @@ focus_tree = {
         icon = GFX_idea_STL_starlight_glimmer-888107
         cost = 1.5
         x = 16
-        y = 15
+        y = 22
 
         available = {
             has_country_flag = STL_has_formed_our_eqs
@@ -3057,41 +3577,23 @@ focus_tree = {
     }
 
     focus = { # INDUSTRY
-        id = STL_pulverfabrik_skodawerke
+        id = STL_oiler
         icon = GFX_focus_generic_industry_1
         prerequisite = { focus = STL_expand_stpoltner_steelworks focus = STL_crytals }
-        mutually_exclusive = { }
         x = -1
         y = 1
         relative_position_id = STL_expand_stpoltner_steelworks
 
         search_filters = { FOCUS_FILTER_INDUSTRY }
 
-        cost = 10
+        cost = 5
 
         ai_will_do = {
             factor = 1
         }
 
-        available = {
-            4 = {
-                is_owned_and_controlled_by = ROOT
-            }
-        }
-
-        bypass = {
-            4 = {
-                NOT = {
-                    is_owned_and_controlled_by = ROOT
-                }
-            }
-        }
-
-        available_if_capitulated = no
-
         completion_reward = {
-
-            4 = {
+            random_controlled_state = {
                 add_extra_state_shared_building_slots = 1
                 add_building_construction = {
                     type = industrial_complex
@@ -3104,7 +3606,7 @@ focus_tree = {
                 limit = {
                     has_tech = fuel_silos
                 }
-                4 = {
+                random_controlled_state = {
                     add_extra_state_shared_building_slots = 2
                     add_building_construction = {
                         type = fuel_silo
@@ -3136,7 +3638,6 @@ focus_tree = {
                     }
                 }
             }
-
         }
     }
 
@@ -3335,10 +3836,10 @@ focus_tree = {
     focus = { # INDUSTRY
         id = STL_oils
         icon = GFX_focus_PER_invite_oil_nations
-        prerequisite = { focus = STL_synthetics focus = STL_pulverfabrik_skodawerke }
+        prerequisite = { focus = STL_synthetics focus = STL_oiler }
         x = -1
         y = 1
-        relative_position_id = STL_pulverfabrik_skodawerke
+        relative_position_id = STL_oiler
         search_filters = { FOCUS_FILTER_INDUSTRY }
         cost = 10
         ai_will_do = {

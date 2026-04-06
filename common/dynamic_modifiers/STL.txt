@@ -1,6 +1,6 @@
 STL_navy_dynamic_modifier = {
 	enable = { always = yes }
-	icon = AUS_navy
+	icon = GFX_idea_AUS_navy
 
     convoy_escort_efficiency = STL_defunct_navy_convoy_efficiency
     naval_detection = STL_defunct_navy_naval_detection
@@ -14,7 +14,7 @@ STL_navy_dynamic_modifier = {
 
 STL_recovering_economy_modifier = {
     enable = { always = yes }
-    icon = GFx_idea_POL_disjointed_industry
+    icon = GFX_idea_POL_disjointed_industry
 
     consumer_goods_factor = STL_industrial_consumer_goods_factor
     production_speed_arms_factory_factor = STL_industrial_production_speed_arms_factory_factor
@@ -45,7 +45,7 @@ STL_recovering_economy_modifier = {
 
 STL_wirtschaftswunder_modifier = {
     enable = { always = yes }
-    icon = GFX_GER_wirtschaftswunder
+    icon = GFX_idea_GER_wirtschaftswunder
 
     consumer_goods_factor = STL_industrial_consumer_goods_factor
     production_speed_arms_factory_factor = STL_industrial_production_speed_arms_factory_factor
@@ -72,4 +72,31 @@ STL_wirtschaftswunder_modifier = {
     production_factory_start_efficiency_factor = STL_industrial_production_factory_start_efficiency_factor
     line_change_production_efficiency_factor = STL_industrial_line_change_production_efficiency_factor
     equipment_conversion_speed = STL_industrial_equipment_conversion_speed
+}
+
+STL_army_modifier = { #Army NS
+	enable = { always = yes }
+	icon = GFX_idea_NORDIC_army_communist
+
+	army_infantry_attack_factor = STL_military_army_infantry_attack_factor
+	army_artillery_attack_factor = STL_military_army_artillery_attack_factor
+	army_armor_attack_factor = STL_military_army_armor_attack_factor
+	army_armor_speed_factor = STL_military_army_armor_speed_factor
+	org_loss_when_moving = STL_military_org_loss_when_moving
+	motorized_attack_factor = STL_military_motorized_attack_factor
+	mechanized_attack_factor = STL_military_mechanized_attack_factor
+	army_org_factor = STL_military_army_org_factor
+	planning_speed = STL_military_planning_speed
+	supply_consumption_factor = STL_military_supply_consumption_factor
+	equipment_capture = STL_military_equipment_capture
+	initiative_factor = STL_military_initiative_factor
+	army_fuel_consumption_factor = STL_military_army_fuel_consumption_factor
+	coordination_bonus = STL_military_coordination_bonus
+	army_bonus_air_superiority_factor = STL_military_air_superiority_bonus_in_combat
+	max_dig_in_factor = STL_military_max_dig_in_factor
+	army_artillery_defence_factor = STL_military_army_artillery_defence_factor
+	special_forces_cap = STL_military_special_forces_cap
+	acclimatization_hot_climate_gain_factor = STL_military_acclimatization_hot_climate_gain_factor
+	acclimatization_cold_climate_gain_factor = STL_military_acclimatization_cold_climate_gain_factor
+	land_doctrine_cost_factor = STL_military_land_doctrine_cost_factor
 }

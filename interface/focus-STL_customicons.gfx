@@ -131,9 +131,8 @@ spriteTypes = {	##Icon For:
 			animationblendmode = "add"
 			animationtype = "scrolling"
 			animationrotationoffset = { x = 0.0 y = 0.0 }
-			animationtexturescale = { x = 1.0 y = 1.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
 		}
-
 		animation = {
 			animationmaskfile = "gfx/interface/goals/GFX_STL_solidified_leadership-889333.dds"
 			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
@@ -144,7 +143,7 @@ spriteTypes = {	##Icon For:
 			animationblendmode = "add"
 			animationtype = "scrolling"
 			animationrotationoffset = { x = 0.0 y = 0.0 }
-			animationtexturescale = { x = 1.0 y = 1.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
 		}
 		legacy_lazy_load = no
 	}

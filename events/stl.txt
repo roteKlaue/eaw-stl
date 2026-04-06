@@ -62,8 +62,8 @@ country_event = { # EQS accepts
         log = "[GetDateText]: EQS accepted Starlight's return"
     }
 
-    option = { 
-        name = starlight.21.a 
+    option = {
+        name = starlight.21.a
         add_stability = 0.2
 
         set_country_flag = STL_the_star_is_back
@@ -86,7 +86,7 @@ country_event = {
         log = "[GetDateText]: EQS declined Starlight's return"
     }
 
-    option = { 
+    option = {
         name = starlight.22.a
         add_stability = -0.1
         add_war_support = 0.3
@@ -119,8 +119,23 @@ country_event = {
     is_triggered_only = yes
     fire_only_once = yes
 
-    option = { name = starlight.40.a }
-    option = { name = starlight.40.b }
+    option = {
+        name = starlight.40.a
+
+        complete_national_focus = {
+            focus = STL_save_ourselves
+        }
+    }
+    option = {
+        name = starlight.40.b
+        complete_national_focus = {
+            focus = STL_proactive_democracy
+        }
+        country_event = {
+            id = starlight.41
+            days = 2
+        }
+    }
 }
 
 country_event = {
@@ -132,21 +147,12 @@ country_event = {
     is_triggered_only = yes
     fire_only_once = yes
 
-    option = { name = starlight.41.a }
-    option = { name = starlight.41.b }
-}
-
-country_event = {
-    id =        starlight.42
-    title =     starlight.42.t
-    desc =      starlight.42.d
-    picture = GFX_event_our_town
-
-    is_triggered_only = yes
-    fire_only_once = yes
-
-    option = { name = starlight.41.a }
-    option = { name = starlight.41.b }
+    option = {
+        name = starlight.41.a
+    }
+    option = {
+        name = starlight.41.b
+    }
     option = {
         name = starlight.41.c
         trigger = {
@@ -154,6 +160,56 @@ country_event = {
                 is_political_advisor = yes
                 has_trait = fascist_demagogue
             }
+        }
+        country_event = {
+            id = starlight.42
+            days = 2
+        }
+    }
+}
+
+country_event = {
+	id = starlight.31
+	immediate = {log = "[GetDateText]: [Root.GetName]: event starlight.31"}
+	title = starlight.31.t
+	desc = starlight.31.d
+	picture = GFX_event_our_town
+
+	is_triggered_only = yes
+
+	option = {
+		name = starlight.31.a
+		add_political_power = 50
+		add_opinion_modifier = { target = EQS modifier = EQC_strengthen_equestrian_ties }
+		EQS = {
+			add_opinion_modifier = { target = STL modifier = EQC_strengthen_equestrian_ties }
+		}
+	}
+}
+
+country_event = {
+    id = starlight.42
+    title = starlight.42.t
+    desc = starlight.42.d
+    picture = GFX_event_our_town
+
+    is_triggered_only = yes
+    fire_only_once = yes
+
+    option = {
+        set_country_flag = going_fascist
+        mark_focus_tree_layout_dirty = yes
+
+        name = starlight.42.a
+        add_popularity = {
+            ideology = fascism
+            popularity = 45
+        }
+        set_party_rule = {
+            ideology = fascism
+        }
+        STL_feather_bangs = {
+            promote_character = yes
         }
     }
 }
