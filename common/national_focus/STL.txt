@@ -1331,6 +1331,7 @@ focus_tree = {
         relative_position_id = STL_one_factory
         ai_will_do = { factor = 1 }
         available_if_capitulated = yes
+        search_filters = { FOCUS_FILTER_ARMY_XP }
         completion_reward = {
             random_owned_controlled_state = {
                 limit = {
@@ -1402,7 +1403,7 @@ focus_tree = {
 
             custom_effect_tooltip = STL_effective_change_for_army_tt
             add_to_variable = {
-                STL_military_supply_consumption_factor = -0.05
+                STL_military_supply_consumption_factor = -0.07
                 tooltip = supply_consumption_factor_tt
             }
             add_to_variable = {
@@ -1428,7 +1429,7 @@ focus_tree = {
             add_ideas = militarism_focus
             custom_effect_tooltip = STL_effective_change_for_army_tt
             add_to_variable = {
-                STL_military_supply_consumption_factor = -0.05
+                STL_military_supply_consumption_factor = -0.07
                 tooltip = supply_consumption_factor_tt
             }
             add_to_variable = {
@@ -1565,12 +1566,20 @@ focus_tree = {
         completion_reward = {
             custom_effect_tooltip = STL_effective_change_for_army_tt
             add_to_variable = {
-                STL_military_supply_consumption_factor = -0.05
+                STL_military_supply_consumption_factor = -0.07
                 tooltip = supply_consumption_factor_tt
             }
             add_to_variable = {
                 STL_military_army_fuel_consumption_factor = -0.1
                 tooltip = army_fuel_consumption_factor_tt
+            }
+            add_to_variable = {
+                STL_military_motorized_attack_factor = 0.05
+                tooltip = motorized_attack_factor_tt
+            }
+            add_to_variable = {
+                STL_military_mechanized_attack_factor = 0.05
+                tooltip = mechanized_attack_factor_tt
             }
         }
     }
@@ -1834,12 +1843,20 @@ focus_tree = {
         completion_reward = {
             custom_effect_tooltip = STL_effective_change_for_army_tt
             add_to_variable = {
-                STL_military_supply_consumption_factor = -0.05
+                STL_military_supply_consumption_factor = -0.07
                 tooltip = supply_consumption_factor_tt
             }
             add_to_variable = {
                 STL_military_army_fuel_consumption_factor = -0.1
                 tooltip = army_fuel_consumption_factor_tt
+            }
+            add_to_variable = {
+                STL_military_army_armor_speed_factor = 0.15
+                tooltip = army_armor_speed_factor_tt
+            }
+            add_to_variable = {
+                STL_military_army_armor_attack_factor = 0.05
+                tooltip = army_armor_attack_factor_tt
             }
         }
     }

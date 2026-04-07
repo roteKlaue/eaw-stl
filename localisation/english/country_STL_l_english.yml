@@ -201,6 +201,32 @@ STL_first_move_desc:0 ""
 STL_war_on_GRF:0 "Our Liberation of the Colony"
 STL_war_on_GRF_desc:0 ""
 
+STL_armor_effort:0 "Our Iron Resolve"
+STL_armor_effort_desc:0 "Steel is the only thing that can truly withstand the fires of modern war. We shall pivot our industrial research toward the development of armored fighting vehicles. These 'Iron Ponies' will provide the breakthrough power we need to ensure our borders remain uncrossed and our sovereignty remains intact."
+
+STL_armorizations:0 "Our Armored Vanguard"
+STL_armorizations_desc:0 "The ultimate expression of our industrial and military unity is the Armored Division. By integrating medium tanks with motorized support, we create a fist that can shatter any line. In these steel hulls, our soldiers are protected by the very industry they work so hard to build."
+
+STL_buff_armor:0 "Our Unstoppable Momentum"
+STL_buff_armor_desc:0 "Heavy plating and powerful engines are useless if not used with purpose. We will refine our tank designs to be faster, more efficient, and more lethal. When our armor moves, the ground shall shake, and our enemies will realize that the spirit of Equality is as hard as Krupp steel."
+
+STL_army_moterization:0 "Our Rapid Response"
+STL_army_moterization_desc:0 "The vast distances between our settlements and the borders of our neighbors require a force that can move faster than a gallop. By embracing the combustion engine, we can deploy our infantry across the country at a moment’s notice. Equality must be defended everywhere, and it must be defended quickly."
+
+STL_motorized_stronger:0 "Our Mobile Synergy"
+STL_motorized_stronger_desc:0 "A truck is more than just a transport; it is a tool of coordination. We will train our motorized and mechanized units to operate in perfect synchronization, reducing fuel waste and maximizing their impact on the frontline. Speed is the ultimate advantage when the world tries to hem us in."
+
+STL_motorized_improved_production:0 "Our Assembly Lines"
+STL_motorized_improved_production_desc:0 "Producing complex machinery like trucks requires a level of industrial harmony we have only just begun to master. By streamlining our automotive plants, we will ensure a steady stream of vehicles for our logistics and motorized divisions. No soldier should have to march when we can provide them with wheels."
+
+STL_army_strength:0 "Our Collective Might"
+STL_army_strength_desc:0 "Strength does not come from the heroism of a few, but from the unwavering discipline of the many. By studying advanced military doctrines and refining our command structure, we will transform our volunteer levies into a professional fighting force. When we strike, we strike with the weight of every pony in Townsville."
+
+STL_army_equipment:0 "Our Standardized Kits"
+STL_army_equipment_desc:0 "To truly move as one, we must be equipped as one. We shall optimize our production lines to ensure every soldier carries the same reliable gear. By eliminating logistical variety, we maximize efficiency, ensuring that every factory output directly strengthens the common soldier."
+
+STL_artillery:0 "Our Great Equalizers"
+STL_artillery_desc:0 "They say that on the battlefield, all ponies are equal—but they are even more equal when facing a barrage of high-explosive shells. By standardizing our artillery pieces and training dedicated crews, we ensure that no enemy fortification or formation is superior to our resolve. Large or small, the shell treats every target the same."
 
 STL_GRF_revolution:0 "Our Revolution in Nova Griffonia"
 STL_GRF_revolution_desc:0 ""
