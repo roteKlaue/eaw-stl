@@ -100,3 +100,16 @@ STL_army_modifier = { #Army NS
 	acclimatization_cold_climate_gain_factor = STL_military_acclimatization_cold_climate_gain_factor
 	land_doctrine_cost_factor = STL_military_land_doctrine_cost_factor
 }
+
+STL_instability = {
+	enable = { always = yes }
+	icon = GFX_idea_RAJ_partition_chaos_bad
+
+    stability_factor = STL_instability_stability
+    political_advisor_cost_factor = STL_instability_advisor_cost
+    air_advisor_cost_factor = STL_instability_advisor_cost
+    political_power_factor = STL_instability_political_power
+    stability_weekly = STL_instability_stability_weekly
+    war_support_weekly = STL_instability_war_weekly
+    resistance_target = STL_instability_resistance
+}

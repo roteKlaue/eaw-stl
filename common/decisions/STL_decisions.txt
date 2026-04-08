@@ -156,9 +156,6 @@ form_equ_stg = {
             any_owned_state = {
                 is_core_of = EQS
             }
-            OR = {
-                has_government = communism
-            }
         }
         available = {
             has_war = no
@@ -230,6 +227,12 @@ form_equ_stg = {
             }
             custom_effect_tooltip = form_EQS_tt2
             EQS = { STL = { transfer_technology = yes } }
+
+            country_event = {
+                id = starlight.19
+                days = 1
+            }
+
             hidden_effect = {
                 every_state = {
                     limit = {

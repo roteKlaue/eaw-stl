@@ -221,6 +221,13 @@ set_variable = { STL_military_acclimatization_hot_climate_gain_factor = 0 }
 set_variable = { STL_military_acclimatization_cold_climate_gain_factor = 0 }
 set_variable = { STL_military_land_doctrine_cost_factor = 0 }
 
+set_variable = { STL_instability_stability = -0.10 }
+set_variable = { STL_instability_advisor_cost = 1.20 }
+set_variable = { STL_instability_political_power = -0.80 }
+set_variable = { STL_instability_stability_weekly = -0.002 }
+set_variable = { STL_instability_war_weekly = -0.005 }
+set_variable = { STL_instability_resistance = 0.10 }
+
 set_rule = {
 	can_generate_female_aces = yes
 	can_generate_female_unit_leaders  = yes

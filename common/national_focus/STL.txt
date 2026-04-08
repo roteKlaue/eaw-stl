@@ -58,10 +58,14 @@ focus_tree = {
         relative_position_id = STL_abolish_equality
         completion_reward = {
             log = "[GetDateText]: [Root.GetName]: Focus STL_one_factory"
-            57 = {add_extra_state_shared_building_slots = 1
-            add_building_construction = { type = industrial_complex
-            level = 1
-            instant_build = yes } }
+            57 = {
+                add_extra_state_shared_building_slots = 1
+                add_building_construction = {
+                    type = industrial_complex
+                    level = 1
+                    instant_build = yes
+                }
+            }
         }
         search_filters = { FOCUS_FILTER_INDUSTRY }
     }
@@ -447,7 +451,12 @@ focus_tree = {
         relative_position_id = STL_conquest_of_STG
         will_lead_to_war_with = STG
         completion_reward = {
-            country_event = { id = starlight.20 }
+            EQS = {
+                country_event = {
+                    id = starlight.20
+                    days = 1
+                }
+            }
         }
     }
 
@@ -537,6 +546,8 @@ focus_tree = {
         y = 1
         relative_position_id = STL_double_diamond_supreme
         completion_reward = {
+            set_cosmetic_tag = STL_MADNESS_STATE
+
             every_country = {
                 limit = {
                     NOT = { tag = ROOT }
@@ -676,13 +687,48 @@ focus_tree = {
         cost = 5
         x = 6
         y = 9
+
+        bypass = {
+            3 = {
+                is_owned_and_controlled_by = ROOT
+                is_fully_controlled_by = ROOT
+            }
+        }
+
         will_lead_to_war_with = EQS
         completion_reward = {
-            create_wargoal = {
-                type = annex_everything
-                target = EQS
+            IF = {
+                limit = {
+                    EQS = {
+                        has_government = communism
+                        country_exists = THIS
+                    }
+                }
+                EQS = {
+                    country_event = starlight.25
+                }
+            } ELSE_IF = {
+                limit = {
+                    EQS = { country_exists = THIS }
+                }
+                create_wargoal = {
+                    type = annex_everything
+                    target = EQS
+                }
+                custom_effect_tooltip = STL_bring_equality_to_equestria_tt
+            } ELSE = {
+                3 = {
+                    owner = {
+                        ROOT = {
+                            create_wargoal = {
+                                type = take_state_focus
+                                target = PREV
+                                generator = { 3 }
+                            }
+                        }
+                    }
+                }
             }
-            custom_effect_tooltip = STL_bring_equality_to_equestria_tt
         }
         search_filters = { FOCUS_FILTER_ANNEXATION }
     }
@@ -713,11 +759,12 @@ focus_tree = {
     focus = {
         id = STL_accention_of_our_ruler
         icon = GFX_goal_celestia_raising_the_sun
-        cost = 7
+        cost = 7.2
         x = 0
         y = 2
         relative_position_id = STL_invite_starlight_back
         available = {
+            has_country_leader = { character =  STL_starlight_glimmer }
             has_country_flag = STL_has_formed_our_eqs
         }
         prerequisite = {
@@ -760,19 +807,13 @@ focus_tree = {
     focus = {
         id = STL_applejack
         icon = GFX_goal_ELF_applejack_mark
-        cost = 1.5
+        cost = 2.9
         ai_will_do = { factor = 50 }
         x = 0
         y = 1
         relative_position_id = STL_recruit_old_friends
         prerequisite = {
             focus = STL_recruit_old_friends
-        }
-
-        select_effect = {
-            # hidden_effect = {
-            #     country_event = { id = MAN_ELF_new.196 days = 15 }
-            # }
         }
 
         completion_reward = {
@@ -783,19 +824,13 @@ focus_tree = {
     focus = {
         id = STL_rarity
         icon = GFX_goal_ELF_rarity
-        cost = 1.5
+        cost = 2.9
         ai_will_do = { factor = 50 }
         x = -2
         y = 1
         relative_position_id = STL_recruit_old_friends
         prerequisite = {
             focus = STL_recruit_old_friends
-        }
-
-        select_effect = {
-            # hidden_effect = {
-            #     country_event = { id = MAN_ELF_new.194 days = 15 }
-            # }
         }
 
         completion_reward = {
@@ -806,7 +841,7 @@ focus_tree = {
     focus = {
         id = STL_fluttershy
         icon = GFX_goal_ELF_fluttershy
-        cost = 1.5
+        cost = 2.9
         ai_will_do = { factor = 50 }
         x = 2
         y = 1
@@ -827,12 +862,6 @@ focus_tree = {
             }
         }
 
-        select_effect = {
-            # hidden_effect = {
-            #     country_event = { id = MAN_ELF_new.203 days = 15 }
-            # }
-        }
-
         completion_reward = {
             # country_event = { id = MAN_ELF_new.204 }
         }
@@ -841,7 +870,7 @@ focus_tree = {
     focus = {
         id = STL_pinkie
         icon = GFX_goal_ELF_pinkie
-        cost = 1.5
+        cost = 2.9
         ai_will_do = { factor = 50 }
         x = -4
         y = 1
@@ -852,12 +881,6 @@ focus_tree = {
 
         available = {
             has_full_control_of_state = 38
-        }
-
-        select_effect = {
-            # hidden_effect = {
-            #     country_event = { id = MAN_ELF_new.198 days = 15 }
-            # }
         }
 
         completion_reward = {
@@ -884,7 +907,7 @@ focus_tree = {
     focus = {
         id = STL_rainbow
         icon = GFX_goal_ELF_rainbow
-        cost = 1.5
+        cost = 2.9
         ai_will_do = { factor = 50 }
         x = 4
         y = 1
@@ -898,12 +921,6 @@ focus_tree = {
                 is_owned_by = ROOT
                 is_controlled_by = ROOT
             }
-        }
-
-        select_effect = {
-            # hidden_effect = {
-            #     country_event = { id = MAN_ELF_new.201 days = 15 }
-            # }
         }
 
         completion_reward = {
@@ -925,6 +942,13 @@ focus_tree = {
         prerequisite = { focus = STL_pinkie }
         completion_reward = {
             remove_ideas = STL_civil_unrest
+            remove_dynamic_modifier = {
+                modifier = STL_instability
+            }
+            add_timed_idea = {
+                idea = STL_tmp_stability
+                days = 60
+            }
         }
         search_filters = { FOCUS_FILTER_STABILITY }
     }
@@ -1186,6 +1210,7 @@ focus_tree = {
         available = {
             has_country_leader = { character =  STL_starlight_glimmer }
             has_country_flag = STL_has_formed_our_eqs
+            NOT = { has_idea = STL_civil_unrest }
         }
 
         cost = 5
@@ -1935,6 +1960,15 @@ focus_tree = {
             has_capitulated = yes
         }
 
+        allow_branch = {
+            NOT = {
+                OR = {
+                    has_completed_focus = STL_assasination_of_feather_bangs
+                    has_country_flag = going_fascist
+                }
+            }
+        }
+
         available_if_capitulated = yes
 
         completion_reward = {
@@ -2139,7 +2173,9 @@ focus_tree = {
         prerequisite = { focus = STL_proactive_democracy }
         mutually_exclusive = { focus = STL_solid_leadership }
         completion_reward = {
-            kill_country_leader = yes
+            country_event = {
+                id = starlight.43
+            }
         }
     }
 
@@ -3278,9 +3314,9 @@ focus_tree = {
             has_country_flag = STL_has_formed_our_eqs
         }
 
-        # allow_branch = {
-        #
-        # }
+        allow_branch = {
+            has_country_flag = STL_has_formed_our_eqs
+        }
         completion_reward = { }
     }
 

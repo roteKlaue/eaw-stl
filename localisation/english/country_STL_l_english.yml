@@ -212,6 +212,10 @@ STL_buff_armor_desc:0 "Heavy plating and powerful engines are useless if not use
 
 STL_army_moterization:0 "Our Rapid Response"
 STL_army_moterization_desc:0 "The vast distances between our settlements and the borders of our neighbors require a force that can move faster than a gallop. By embracing the combustion engine, we can deploy our infantry across the country at a moment’s notice. Equality must be defended everywhere, and it must be defended quickly."
+STL_MADNESS_STATE:0 "The Infinite Delirium"
+STL_MADNESS_STATE_ADJ:0 "Delirious"
+STL_increase_radicalism:0 "Radicalisation of Equality"
+STL_increase_radicalism_desc:0 "With Double Diamond firmly in control, the movement accelerates. Past hesitations are discarded, and the ponies of Our Town embrace a more radical vision. Ideals are intensified, reforms become bolder, and a new revolutionary fervor sweeps through the population."
 
 STL_motorized_stronger:0 "Our Mobile Synergy"
 STL_motorized_stronger_desc:0 "A truck is more than just a transport; it is a tool of coordination. We will train our motorized and mechanized units to operate in perfect synchronization, reducing fuel waste and maximizing their impact on the frontline. Speed is the ultimate advantage when the world tries to hem us in."

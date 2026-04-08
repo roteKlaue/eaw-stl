@@ -12,10 +12,12 @@ characters={
                 small = GFX_starlight_glimmer__small
             }
         }
-        country_leader={
+
+        country_leader = {
             desc="POLITICS_STARLIGHTGLIMMER_DESC"
             ideology=equalism
             expire="1965.1.1.1"
+            traits = { veteran_communist red_army_organizer }
             id=-1
         }
 
@@ -27,6 +29,9 @@ characters={
             }
             traits = {
                 veteran_communist red_army_organizer
+            }
+            visible = {
+                has_country_flag = STL_the_star_is_back
             }
         }
 

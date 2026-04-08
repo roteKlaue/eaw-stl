@@ -264,5 +264,42 @@ ideas = {
 				political_power_factor = 0.1
 			}
 		}
+
+        STL_illegal_regime = {
+			picture = generic_purge
+		
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = no			
+			}
+
+			removal_cost = -1			
+			modifier = {
+				stability_factor = -0.5
+				war_support_factor = -0.65
+				surrender_limit = -0.20
+			}
+		}
+
+        STL_tmp_stability = {
+            picture = generic_purge
+		
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = no			
+			}
+
+            removal_cost = -1			
+			modifier = {
+				stability_factor = 0.2
+                stability_weekly = 0.02
+			}
+        }
     }
 }

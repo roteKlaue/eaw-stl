@@ -2,6 +2,23 @@ add_namespace = starlight
 add_namespace = starlight_equalism
 add_namespace = starlight_news
 
+country_event = {
+    id =   starlight.19
+    title = starlight.19.t
+    desc = starlight.19.d
+    picture = GFX_event_our_town
+    is_triggered_only = yes
+    fire_only_once = yes
+
+    option = {
+        name = starlight.19.a
+        add_ideas = STL_civil_unrest
+        add_dynamic_modifier = {
+            modifier = STL_instability
+        }
+    }
+}
+
 country_event = { # The requested return of Starlight Glimmer
     id = starlight.20
     title = starlight.20.t
@@ -99,6 +116,69 @@ country_event = {
 }
 
 country_event = {
+    id = starlight.25
+    title = starlight.25.t
+    desc = starlight.25.d
+    picture = GFX_event_our_town
+
+    is_triggered_only = yes
+
+    option = {
+        name = starlight.25.a
+        add_stability = -0.1
+        add_war_support = 0.3
+
+        STL = {
+            add_ideas = STL_illegal_regime
+            country_event = { id = starlight.26 }
+        }
+    }
+    option = {
+        name = starlight.25.b
+        STL = {
+            country_event = { id = starlight.27 }
+        }
+    }
+}
+
+country_event = {
+    id = starlight.26
+    title = starlight.26.t
+    desc = starlight.26.d
+    picture = GFX_event_our_town
+    is_triggered_only = yes
+
+    option = {
+        name = starlight.25.a
+        add_stability = 0.15
+        add_war_support = 0.25
+
+        create_wargoal = {
+            target = EQS
+            type = annex_everything
+        }
+    }
+}
+
+country_event = {
+    id = starlight.27
+    title = starlight.27.t
+    desc = starlight.27.d
+    picture = GFX_event_our_town
+    is_triggered_only = yes
+
+    option = {
+        name = starlight.25.a
+        add_stability = 0.1
+
+        annex_country = {
+            target = EQS
+            transfer_troops = yes
+        }
+    }
+}
+
+country_event = {
     id = starlight.30
     title = starlight.30.t
     desc = starlight.30.d
@@ -169,22 +249,23 @@ country_event = {
 }
 
 country_event = {
-	id = starlight.31
-	immediate = {log = "[GetDateText]: [Root.GetName]: event starlight.31"}
-	title = starlight.31.t
-	desc = starlight.31.d
-	picture = GFX_event_our_town
+    id = starlight.31
+    immediate = {log = "[GetDateText]: [Root.GetName]: event starlight.31"}
+    title = starlight.31.t
+    desc = starlight.31.d
+    picture = GFX_event_our_town
 
-	is_triggered_only = yes
+    is_triggered_only = yes
+    fire_only_once = yes
 
-	option = {
-		name = starlight.31.a
-		add_political_power = 50
-		add_opinion_modifier = { target = EQS modifier = EQC_strengthen_equestrian_ties }
-		EQS = {
-			add_opinion_modifier = { target = STL modifier = EQC_strengthen_equestrian_ties }
-		}
-	}
+    option = {
+        name = starlight.31.a
+        add_political_power = 50
+        add_opinion_modifier = { target = EQS modifier = EQC_strengthen_equestrian_ties }
+        EQS = {
+            add_opinion_modifier = { target = STL modifier = EQC_strengthen_equestrian_ties }
+        }
+    }
 }
 
 country_event = {
@@ -213,6 +294,22 @@ country_event = {
         }
     }
 }
+
+country_event = {
+    id = starlight.43
+    title = starlight.43.t
+    desc = starlight.43.d
+    picture = GFX_event_our_town
+
+    is_triggered_only = yes
+    fire_only_once = yes
+
+    option = {
+        kill_country_leader = yes
+        add_stability = -0.4
+    }
+}
+
 
 country_event = {
     id = starlight_equalism.1

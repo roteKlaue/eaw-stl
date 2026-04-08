@@ -13,4 +13,8 @@ leader_traits = {
             base = 2
         }
     }
+
+	the_equal_alicorn = {
+		
+	}
 }
