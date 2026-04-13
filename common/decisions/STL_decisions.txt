@@ -256,6 +256,14 @@ form_equ_stg = {
                     }
                     add_core_of = STL
                 }
+                hidden_effect = {
+                    every_state = {
+                        limit = {
+                            is_core_of = PCB
+                        }
+                        add_core_of = STL
+                    }
+                }
             }
         }
     }

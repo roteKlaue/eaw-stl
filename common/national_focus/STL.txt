@@ -678,6 +678,54 @@ focus_tree = {
     }
 
     focus = {
+        id = STL_purge_the_dissidents
+        icon = GFX_SOV_coup_detat_ccp_2d_sov_compatibility
+        cost = 30
+        x = 0
+        y = 1
+        prerequisite = {
+            focus = STL_starlight_as_a_figure_head
+        }
+        available = {
+            has_dynamic_modifier = STL_instability
+        }
+        relative_position_id = STL_starlight_as_a_figure_head
+        completion_reward = {
+            remove_dynamic_modifier = {
+                modifier = STL_instability
+            }
+        }
+    }
+
+    focus = {
+        id = STL_restore_normality
+        icon = GFX_SOV_war_heroes_ccp_2d_sov_compatibility
+        cost = 20
+        x = 1
+        y = 2
+        available = {
+            has_idea = STL_civil_unrest
+        }
+        prerequisite = {
+            focus = STL_purge_the_dissidents
+        }
+        prerequisite = {
+            focus = STL_revive_institute
+        }
+        prerequisite = {
+            focus = STL_decent_into_madness
+        }
+        relative_position_id = STL_purge_the_dissidents
+        completion_reward = {
+            remove_ideas = STL_civil_unrest
+            add_timed_idea = {
+                idea = STL_civil_unrest
+                days = 60
+            }
+        }
+    }
+
+    focus = {
         id = STL_bring_equality_to_equestria
         prerequisite = {
             focus = STL_double_diamond_supreme
@@ -778,7 +826,7 @@ focus_tree = {
         icon = GFX_goal_ELF_duumvirs
         cost = 5
         x = 0
-        y = 2
+        y = 3
 
         relative_position_id = STL_accention_of_our_ruler
         prerequisite = {
@@ -800,6 +848,21 @@ focus_tree = {
                 ELF_trixie_lulamoon = {
                     set_nationality = STL
                 }
+            }
+            if = {
+                limit = {
+                    CRY = {
+                        has_character = CRY_sunburst
+                    }
+                }
+                CRY = {
+                    CRY_sunburst = {
+                        set_nationality = STL
+                    }
+                }
+            } 
+            else = {
+                recruit_character = CRY_sunburst
             }
         }
     }
@@ -1821,9 +1884,11 @@ focus_tree = {
                 regiments = {
                     medium_armor = { x = 0 y = 0 }
                     medium_armor = { x = 0 y = 1 }
+                    medium_armor = { x = 0 y = 2 }
 
                     medium_armor = { x = 1 y = 0 }
                     medium_armor = { x = 1 y = 1 }
+                    medium_armor = { x = 1 y = 2 }
 
                     motorized = { x = 2 y = 0 }
                     motorized = { x = 2 y = 1 }
@@ -3312,6 +3377,7 @@ focus_tree = {
 
         available = {
             has_country_flag = STL_has_formed_our_eqs
+            NOT = { CRY = { exists = yes } }
         }
 
         allow_branch = {
@@ -3358,16 +3424,158 @@ focus_tree = {
     }
 
     focus = {
+        id = STL_war_on_the_penguins
+        icon = GFX_idea_STL_starlight_glimmer-888107
+        cost = 5
+        x = -1
+        y = 1
+
+        prerequisite = {
+            focus = STL_equality_for_the_continet
+        }
+        relative_position_id = STL_equality_for_the_continet
+        completion_reward = {
+            create_wargoal = {
+                type = annex_everything
+                target = png
+            }
+        }
+    }
+
+    focus = {
+        id = STL_integrate_the_penguins
+        icon = GFX_idea_STL_starlight_glimmer-888107
+        cost = 5
+        x = 0
+        y = 1
+        prerequisite = {
+            focus = STL_war_on_the_penguins
+        }
+        relative_position_id = STL_war_on_the_penguins
+        completion_reward = { }
+    }
+
+    focus = {
+        id = STL_war_on_the_bears
+        icon = GFX_idea_STL_starlight_glimmer-888107
+        cost = 5
+        x = -3
+        y = 1
+
+        prerequisite = {
+            focus = STL_equality_for_the_continet
+        }
+        relative_position_id = STL_equality_for_the_continet
+        completion_reward = {
+            create_wargoal = {
+                type = annex_everything
+                target = plb
+            }
+        }
+    }
+
+    focus = {
+        id = STL_integrate_the_bears
+        icon = GFX_idea_STL_starlight_glimmer-888107
+        cost = 5
+        x = 0
+        y = 1
+        prerequisite = {
+            focus = STL_war_on_the_bears
+        }
+        relative_position_id = STL_war_on_the_bears
+        completion_reward = { }
+    }
+
+    focus = {
+        id = STL_war_on_the_deers
+        icon = GFX_idea_STL_starlight_glimmer-888107
+        cost = 5
+        x = 3
+        y = 1
+
+        prerequisite = {
+            focus = STL_equality_for_the_continet
+        }
+        relative_position_id = STL_equality_for_the_continet
+        completion_reward = {
+            create_wargoal = {
+                type = annex_everything
+                target = ole
+            }
+        }
+    }
+
+    focus = {
+        id = STL_integrate_the_deers
+        icon = GFX_idea_STL_starlight_glimmer-888107
+        cost = 5
+        x = 0
+        y = 1
+        prerequisite = {
+            focus = STL_war_on_the_deers
+        }
+        relative_position_id = STL_war_on_the_deers
+        completion_reward = { }
+    }
+
+    focus = {
+        id = STL_war_on_the_changelings
+        icon = GFX_idea_STL_starlight_glimmer-888107
+        cost = 5
+        x = 0
+        y = 3
+        prerequisite = {
+            focus = STL_integrate_the_yaks
+            focus = STL_integrate_the_penguins
+            focus = STL_integrate_the_bears
+            focus = STL_integrate_the_deers
+        }
+        relative_position_id = STL_equality_for_the_continet
+        completion_reward = {
+            create_wargoal = {
+                target = chn
+                type = annex_everything
+            }
+        }
+    }
+
+    focus = {
+        id = STL_integrate_the_changelings
+        icon = GFX_idea_STL_starlight_glimmer-888107
+        cost = 5
+        x = 0
+        y = 1
+        relative_position_id = STL_war_on_the_changelings
+        prerequisite = {
+            focus = STL_war_on_the_changelings
+        }
+        completion_reward = { }
+    }
+
+    focus = {
         id = STL_core_claims
         icon = GFX_idea_STL_starlight_glimmer-888107
         cost = 10
         x = 0
-        y = 6
+        y = 5
         available = {
             always = no
         }
+        prerequisite = {
+            focus = STL_integrate_the_changelings
+        }
         relative_position_id = STL_equality_for_the_continet
-        completion_reward = { }
+        completion_reward = {
+            every_state = {
+                limit = {
+                    is_on_continent = 0
+                    NOT = { is_owned_and_controlled_by = ROOT }
+                }
+
+                add_claim_by = ROOT
+            }
+        }
     }
 
     focus = { # INDUSTRY
