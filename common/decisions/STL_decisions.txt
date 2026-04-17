@@ -291,8 +291,10 @@ form_equ_stg = {
         }
 
         available = {
-            FROM = {
-                NOT = { has_state_flag = STL_coring_state_in_progress_flag }
+            hidden_trigger = {
+                FROM = {
+                    NOT = { has_state_flag = STL_coring_state_in_progress_flag }
+                }
             }
             FROM = {
                 compliance > 40

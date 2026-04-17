@@ -538,7 +538,10 @@ focus_tree = {
             focus = STL_double_diamond_supreme
         }
         available = {
-            has_country_flag = STL_has_formed_our_eqs
+            custom_trigger_tooltip = {
+                tooltip = formed_our_eqs_stl
+                has_country_flag = STL_has_formed_our_eqs
+            }
         }
 
         cost = 10
@@ -629,6 +632,7 @@ focus_tree = {
                             }
                         }
                     }
+                    is_core_of = STG
                 }
                 add_extra_state_shared_building_slots = 2
                 add_building_construction = {
@@ -642,7 +646,7 @@ focus_tree = {
                 limit = {
                     free_building_slots = {
                         building = industrial_complex
-                        size > 1
+                        size > 0
                         include_locked = yes
                     }
                     OR = {
@@ -652,7 +656,7 @@ focus_tree = {
                                 any_owned_state = {
                                     free_building_slots = {
                                         building = industrial_complex
-                                        size > 1
+                                        size > 0
                                         include_locked = yes
                                     }
                                     is_in_home_area = yes
@@ -660,11 +664,47 @@ focus_tree = {
                             }
                         }
                     }
+                    is_core_of = STG
                 }
-                add_extra_state_shared_building_slots = 2
+                add_extra_state_shared_building_slots = 1
                 add_building_construction = {
                     type = industrial_complex
-                    level = 2
+                    level = 1
+                    instant_build = yes
+                }
+            }
+
+            random_owned_controlled_state = {
+                limit = {
+                    free_building_slots = {
+                        building = arms_factory
+                        size > 0
+                        include_locked = yes
+                    }
+                    OR = {
+                        is_in_home_area = yes
+                        NOT = {
+                            owner = {
+                                any_owned_state = {
+                                    free_building_slots = {
+                                        building = arms_factory
+                                        size > 0
+                                        include_locked = yes
+                                    }
+                                    is_in_home_area = yes
+                                }
+                            }
+                        }
+                    }
+                    OR = {
+                        is_core_of = STG
+                    }
+                }
+
+                add_extra_state_shared_building_slots = 1
+                add_building_construction = {
+                    type = arms_factory
+                    level = 1
                     instant_build = yes
                 }
             }
@@ -813,12 +853,18 @@ focus_tree = {
         relative_position_id = STL_invite_starlight_back
         available = {
             has_country_leader = { character =  STL_starlight_glimmer }
-            has_country_flag = STL_has_formed_our_eqs
+            custom_trigger_tooltip = {
+                tooltip = formed_our_eqs_stl
+                has_country_flag = STL_has_formed_our_eqs
+            }
         }
         prerequisite = {
             focus = STL_invite_starlight_back
         }
-        completion_reward = { }
+        completion_reward = {
+            add_country_leader_trait = the_equal_alicorn
+            custom_effect_tooltip = STL_accention_of_our_ruler_tt
+        }
     }
 
     focus = {
@@ -860,7 +906,7 @@ focus_tree = {
                         set_nationality = STL
                     }
                 }
-            } 
+            }
             else = {
                 recruit_character = CRY_sunburst
             }
@@ -880,7 +926,15 @@ focus_tree = {
         }
 
         completion_reward = {
-            # country_event = { id = MAN_ELF_new.197 }
+            custom_effect_tooltip = STL_effective_change_for_instability_tt
+            add_to_variable = {
+                STL_instability_stability = 0.02
+                tooltip = stability_factor_tt
+            }
+            add_to_variable = {
+                STL_instability_political_power = 0.10
+                tooltip = political_power_factor_tt
+            }
         }
     }
 
@@ -897,7 +951,15 @@ focus_tree = {
         }
 
         completion_reward = {
-            # country_event = { id = MAN_ELF_new.195 }
+            custom_effect_tooltip = STL_effective_change_for_instability_tt
+            add_to_variable = {
+                STL_instability_advisor_cost = -0.20
+                tooltip = political_advisor_cost_factor_tt
+            }
+            add_to_variable = {
+                STL_instability_political_power = 0.10
+                tooltip = political_power_factor_tt
+            }
         }
     }
 
@@ -926,7 +988,15 @@ focus_tree = {
         }
 
         completion_reward = {
-            # country_event = { id = MAN_ELF_new.204 }
+            custom_effect_tooltip = STL_effective_change_for_instability_tt
+            add_to_variable = {
+                STL_instability_resistance = -0.03
+                tooltip = resistance_target_tt
+            }
+            add_to_variable = {
+                STL_instability_stability_weekly = 0.0005
+                tooltip = stability_weekly_tt
+            }
         }
     }
 
@@ -947,23 +1017,15 @@ focus_tree = {
         }
 
         completion_reward = {
-            # country_event = { id = MAN_ELF_new.199 }
-        }
-    }
-
-    focus = {
-        id = STL_welfare
-        icon = GFX_focus_generic_welfare
-        cost = 10
-        prerequisite = {
-            focus = STL_invite_starlight_back
-            focus = STL_double_diamond_supreme
-        }
-        relative_position_id = STL_invite_starlight_back
-        x = -1
-        y = 1
-        completion_reward = {
-            add_ideas = STL_social_welfare_expansion
+            custom_effect_tooltip = STL_effective_change_for_instability_tt
+            add_to_variable = {
+                STL_instability_stability = 0.03
+                tooltip = stability_factor_tt
+            }
+            add_to_variable = {
+                STL_instability_war_weekly = 0.0010
+                tooltip = STL_instability_war_weekly_change_tt
+            }
         }
     }
 
@@ -987,14 +1049,50 @@ focus_tree = {
         }
 
         completion_reward = {
-            # country_event = { id = MAN_ELF_new.202 }
+            custom_effect_tooltip = STL_effective_change_for_instability_tt
+            add_to_variable = {
+                STL_instability_advisor_cost = -0.40
+                tooltip = political_advisor_cost_factor_tt
+            }
+            add_to_variable = {
+                STL_instability_political_power = 0.20
+                tooltip = political_power_factor_tt
+            }
+            add_to_variable = {
+                STL_instability_stability_weekly = 0.0005
+                tooltip = stability_weekly_tt
+            }
+            add_to_variable = {
+                STL_instability_war_weekly = 0.0015
+                tooltip = STL_instability_war_weekly_change_tt
+            }
+            add_to_variable = {
+                STL_instability_resistance = -0.02
+                tooltip = resistance_target_tt
+            }
+        }
+    }
+
+    focus = {
+        id = STL_welfare
+        icon = GFX_focus_generic_welfare
+        cost = 10
+        prerequisite = {
+            focus = STL_invite_starlight_back
+            focus = STL_double_diamond_supreme
+        }
+        relative_position_id = STL_invite_starlight_back
+        x = -1
+        y = 1
+        completion_reward = {
+            add_ideas = STL_social_welfare_expansion
         }
     }
 
     focus = {
         id = STL_reastablish_normality
         icon = GFX_SOV_smersh_ccp_2d_sov_compatibility
-        cost = 5
+        cost = 10
         x = 0
         y = 1
         relative_position_id = STL_applejack
@@ -1022,6 +1120,14 @@ focus_tree = {
 
         prerequisite = {
             focus = STL_bring_equality_to_equestria
+        }
+
+        available = {
+            custom_trigger_tooltip = {
+                tooltip = formed_our_eqs_stl
+                has_country_flag = STL_has_formed_our_eqs
+            }
+            NOT = { has_dynamic_modifier = STL_instability }
         }
 
         bypass = {
@@ -1063,6 +1169,7 @@ focus_tree = {
                             }
                         }
                     }
+                    is_core_of = EQS
                 }
                 add_extra_state_shared_building_slots = 2
                 add_building_construction = {
@@ -1076,7 +1183,7 @@ focus_tree = {
                 limit = {
                     free_building_slots = {
                         building = industrial_complex
-                        size > 1
+                        size > 0
                         include_locked = yes
                     }
                     OR = {
@@ -1086,6 +1193,38 @@ focus_tree = {
                                 any_owned_state = {
                                     free_building_slots = {
                                         building = industrial_complex
+                                        size > 0
+                                        include_locked = yes
+                                    }
+                                    is_in_home_area = yes
+                                }
+                            }
+                        }
+                    }
+                    is_core_of = EQS
+                }
+                add_extra_state_shared_building_slots = 1
+                add_building_construction = {
+                    type = industrial_complex
+                    level = 1
+                    instant_build = yes
+                }
+            }
+
+            random_owned_controlled_state = {
+                limit = {
+                    free_building_slots = {
+                        building = arms_factory
+                        size > 1
+                        include_locked = yes
+                    }
+                    OR = {
+                        is_in_home_area = yes
+                        NOT = {
+                            owner = {
+                                any_owned_state = {
+                                    free_building_slots = {
+                                        building = arms_factory
                                         size > 1
                                         include_locked = yes
                                     }
@@ -1094,10 +1233,11 @@ focus_tree = {
                             }
                         }
                     }
+                    is_core_of = EQS
                 }
                 add_extra_state_shared_building_slots = 2
                 add_building_construction = {
-                    type = industrial_complex
+                    type = arms_factory
                     level = 2
                     instant_build = yes
                 }
@@ -1137,7 +1277,10 @@ focus_tree = {
         y = 10
 
         available = {
-            has_country_flag = STL_has_formed_our_eqs
+            custom_trigger_tooltip = {
+                tooltip = formed_our_eqs_stl
+                has_country_flag = STL_has_formed_our_eqs
+            }
             any_owned_state = {
                 NOT = {
                     is_core_of = ROOT
@@ -1148,13 +1291,26 @@ focus_tree = {
                     is_core_of = GFF
                 }
             }
+            NOT = { has_idea = STL_civil_unrest }
+        }
+
+        bypass = {
+            all_state = {
+                OR = {
+                    is_core_of = GRF
+                    is_core_of = GFF
+                }
+                is_core_of = ROOT
+            }
         }
 
         prerequisite = {
             focus = STL_bring_equality_to_equestria
         }
 
-        completion_reward = {}
+        completion_reward = {
+            custom_effect_tooltip = STL_integrate_griffon_lands_tt
+        }
     }
 
     focus = {
@@ -1168,6 +1324,14 @@ focus_tree = {
         }
         prerequisite = {
             focus = STL_industrial_integration_of_eqs
+        }
+        available = {
+            any_owned_state = {
+                OR = {
+                    is_core_of = GRF
+                    is_core_of = GFF
+                }
+            }
         }
         relative_position_id = STL_integrate_griffon_lands
         completion_reward = {
@@ -1192,6 +1356,10 @@ focus_tree = {
                                 }
                             }
                         }
+                    }
+                    OR = {
+                        is_core_of = GRF
+                        is_core_of = GFF
                     }
                 }
                 add_extra_state_shared_building_slots = 1
@@ -1224,10 +1392,50 @@ focus_tree = {
                             }
                         }
                     }
+                    OR = {
+                        is_core_of = GRF
+                        is_core_of = GFF
+                    }
                 }
                 add_extra_state_shared_building_slots = 1
                 add_building_construction = {
                     type = industrial_complex
+                    level = 1
+                    instant_build = yes
+                }
+            }
+
+            random_owned_controlled_state = {
+                limit = {
+                    free_building_slots = {
+                        building = arms_factory
+                        size > 0
+                        include_locked = yes
+                    }
+                    OR = {
+                        is_in_home_area = yes
+                        NOT = {
+                            owner = {
+                                any_owned_state = {
+                                    free_building_slots = {
+                                        building = arms_factory
+                                        size > 0
+                                        include_locked = yes
+                                    }
+                                    is_in_home_area = yes
+                                }
+                            }
+                        }
+                    }
+                    OR = {
+                        is_core_of = GRF
+                        is_core_of = GFF
+                    }
+                }
+
+                add_extra_state_shared_building_slots = 1
+                add_building_construction = {
+                    type = arms_factory
                     level = 1
                     instant_build = yes
                 }
@@ -1272,7 +1480,10 @@ focus_tree = {
 
         available = {
             has_country_leader = { character =  STL_starlight_glimmer }
-            has_country_flag = STL_has_formed_our_eqs
+            custom_trigger_tooltip = {
+                tooltip = formed_our_eqs_stl
+                has_country_flag = STL_has_formed_our_eqs
+            }
             NOT = { has_idea = STL_civil_unrest }
         }
 
@@ -1337,7 +1548,7 @@ focus_tree = {
             focus = STL_garden
         }
         icon = GFX_focus_jap_spiritual_mobilization
-        cost = 7
+        cost = 7.2
         x = 0
         y = 1
         relative_position_id = STL_garden
@@ -2010,7 +2221,9 @@ focus_tree = {
         prerequisite = {
             focus = STL_equestrian_airbridge
         }
-        completion_reward = { }
+        completion_reward = {
+            add_ideas = STL_defensive_posturing
+        }
     }
 
     focus = {
@@ -2596,7 +2809,7 @@ focus_tree = {
     focus = {
         id = STL_GRF_revolution
         icon = GFX_goal_planning_bonus
-        cost = 10.00
+        cost = 7.20
         prerequisite = {
             focus = STL_demand_griffon_land
         }
@@ -3230,7 +3443,10 @@ focus_tree = {
             focus = STL_abolish_price_controls
         }
         available = {
-            has_country_flag = STL_has_formed_our_eqs
+            custom_trigger_tooltip = {
+                tooltip = formed_our_eqs_stl
+                has_country_flag = STL_has_formed_our_eqs
+            }
         }
         cost = 5
         x = -2
@@ -3376,7 +3592,10 @@ focus_tree = {
         y = 22
 
         available = {
-            has_country_flag = STL_has_formed_our_eqs
+            custom_trigger_tooltip = {
+                tooltip = formed_our_eqs_stl
+                has_country_flag = STL_has_formed_our_eqs
+            }
             NOT = { CRY = { exists = yes } }
         }
 
@@ -3586,7 +3805,7 @@ focus_tree = {
         y = 1
         relative_position_id = STL_industrial_flourish
 
-        search_filters = { FOCUS_FILTER_INDUSTRY }
+        search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_RESOURCES }
 
         cost = 10
 
@@ -3746,25 +3965,13 @@ focus_tree = {
         }
 
         available = {
-            152 = {
-                is_owned_and_controlled_by = ROOT
-            }
             has_tech = excavation2
-        }
-
-        bypass = {
-            152 = {
-                NOT = {
-                    is_owned_and_controlled_by = ROOT
-                }
-            }
         }
 
         available_if_capitulated = no
 
         completion_reward = {
-
-            152 = {
+            random_core_state = {
                 add_resource = {
                     type = steel
                     amount = 14
@@ -3776,7 +3983,6 @@ focus_tree = {
                     instant_build = yes
                 }
             }
-
         }
     }
 

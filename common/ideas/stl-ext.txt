@@ -301,5 +301,23 @@ ideas = {
                 stability_weekly = 0.02
 			}
         }
+
+        STL_defensive_posturing = {
+            picture = YUG_federal_defense_council
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = no			
+			}
+
+            removal_cost = -1			
+			modifier = {
+				army_defence_factor = 0.15
+                training_time_factor = -0.05
+			}
+        }
     }
 }

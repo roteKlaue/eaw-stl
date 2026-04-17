@@ -15,6 +15,19 @@ leader_traits = {
     }
 
 	the_equal_alicorn = {
-		
-	}
+        random = no
+        sprite = 1
+
+        political_power_gain = 0.10
+        stability_factor = 0.10
+        war_support_factor = 0.10
+        weekly_manpower = 250
+        division_attack_factor = 0.05
+        division_defense_factor = 0.05
+        justify_war_goal_time = -0.15
+
+        ai_will_do = {
+            base = 2
+        }
+    }
 }
