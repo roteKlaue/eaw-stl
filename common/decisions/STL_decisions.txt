@@ -277,15 +277,6 @@ form_equ_stg = {
 
         priority = 25
 
-        #highlight_states = {
-        #	highlight_state_targets = {
-        #		state = FROM
-        #	}
-        #}
-
-        allowed = {
-        }
-
         visible = {
             has_completed_focus = STL_integrate_griffon_lands
         }
@@ -452,16 +443,6 @@ form_equ_stg = {
 
         priority = 25
 
-        #highlight_states = {
-        #	highlight_state_targets = {
-        #		state = FROM
-        #	}
-        #}
-
-        allowed = {
-
-        }
-
         visible = {
             has_completed_focus = STL_integrate_the_yaks
         }
@@ -482,10 +463,313 @@ form_equ_stg = {
                 NOT = { is_core_of = ROOT }
                 is_fully_controlled_by = ROOT
                 OR = {
-
+                    is_core_of = YAK
+                    is_core_of = JAK
                 }
             }
         }
+        on_map_mode = map_only
+
+        cost = 50
+
+        fire_only_once = yes
+
+        days_remove = 35
+
+        complete_effect = {
+            hidden_effect = {
+                FROM = {
+                    set_state_flag = { flag = STL_coring_state_in_progress_flag value = 1 	days = 31 }
+                }
+            }
+        }
+
+        remove_effect = {
+            hidden_effect = {
+                FROM = {
+                    clr_state_flag = STL_coring_state_in_progress_flag
+                }
+            }
+
+            FROM = {
+                add_core_of = ROOT
+            }
+        }
+
+        cancel_trigger = {
+            FROM = {
+                NOT = { is_fully_controlled_by = ROOT }
+            }
+        }
+
+        cancel_effect = {
+            hidden_effect = {
+                FROM = {
+                    clr_state_flag = STL_coring_state_in_progress_flag
+                }
+            }
+        }
+    }
+
+    STL_core_deer = {
+        icon = GFX_decision_generic_form_nation
+
+        ai_will_do = {
+            base = 50
+        }
+
+        priority = 25
+
+        visible = {
+            has_completed_focus = STL_integrate_the_deers
+        }
+
+        available = {
+            FROM = {
+                NOT = { has_state_flag = STL_coring_state_in_progress_flag }
+            }
+            FROM = {
+                compliance > 45
+            }
+        }
+
+        state_target = any_controlled_state
+
+        target_trigger = {
+            FROM = {
+                NOT = { is_core_of = ROOT }
+                is_fully_controlled_by = ROOT
+                is_core_of = OLE
+            }
+        }
+
+        on_map_mode = map_only
+
+        cost = 50
+
+        fire_only_once = yes
+
+        days_remove = 35
+
+        complete_effect = {
+            hidden_effect = {
+                FROM = {
+                    set_state_flag = { flag = STL_coring_state_in_progress_flag value = 1 	days = 31 }
+                }
+            }
+        }
+
+        remove_effect = {
+            hidden_effect = {
+                FROM = {
+                    clr_state_flag = STL_coring_state_in_progress_flag
+                }
+            }
+
+            FROM = {
+                add_core_of = ROOT
+            }
+        }
+
+        cancel_trigger = {
+            FROM = {
+                NOT = { is_fully_controlled_by = ROOT }
+            }
+        }
+
+        cancel_effect = {
+            hidden_effect = {
+                FROM = {
+                    clr_state_flag = STL_coring_state_in_progress_flag
+                }
+            }
+        }
+    }
+
+    STL_core_changelings = {
+        icon = GFX_decision_generic_form_nation
+
+        ai_will_do = {
+            base = 50
+        }
+
+        priority = 25
+
+        visible = {
+            has_completed_focus = STL_integrate_the_changelings
+        }
+
+        available = {
+            FROM = {
+                NOT = { has_state_flag = STL_coring_state_in_progress_flag }
+            }
+            FROM = {
+                compliance > 45
+            }
+        }
+
+        state_target = any_controlled_state
+
+        target_trigger = {
+            FROM = {
+                NOT = { is_core_of = ROOT }
+                is_fully_controlled_by = ROOT
+                is_core_of = CHN
+            }
+        }
+
+        on_map_mode = map_only
+
+        cost = 50
+
+        fire_only_once = yes
+
+        days_remove = 35
+
+        complete_effect = {
+            hidden_effect = {
+                FROM = {
+                    set_state_flag = { flag = STL_coring_state_in_progress_flag value = 1 	days = 31 }
+                }
+            }
+        }
+
+        remove_effect = {
+            hidden_effect = {
+                FROM = {
+                    clr_state_flag = STL_coring_state_in_progress_flag
+                }
+            }
+
+            FROM = {
+                add_core_of = ROOT
+            }
+
+        }
+
+        cancel_trigger = {
+            FROM = {
+                NOT = { is_fully_controlled_by = ROOT }
+            }
+        }
+
+        cancel_effect = {
+            hidden_effect = {
+                FROM = {
+                    clr_state_flag = STL_coring_state_in_progress_flag
+                }
+            }
+        }
+    }
+
+    STL_core_bears = {
+        icon = GFX_decision_generic_form_nation
+
+        ai_will_do = {
+            base = 50
+        }
+
+        priority = 25
+
+        visible = {
+            has_completed_focus = STL_integrate_the_bears
+        }
+
+        available = {
+            FROM = {
+                NOT = { has_state_flag = STL_coring_state_in_progress_flag }
+            }
+            FROM = {
+                compliance > 45
+            }
+        }
+
+        state_target = any_controlled_state
+
+        target_trigger = {
+            FROM = {
+                NOT = { is_core_of = ROOT }
+                is_fully_controlled_by = ROOT
+                is_core_of = PLB
+            }
+        }
+
+        on_map_mode = map_only
+
+        cost = 50
+
+        fire_only_once = yes
+
+        days_remove = 35
+
+        complete_effect = {
+            hidden_effect = {
+                FROM = {
+                    set_state_flag = { flag = STL_coring_state_in_progress_flag value = 1 	days = 31 }
+                }
+            }
+        }
+
+        remove_effect = {
+            hidden_effect = {
+                FROM = {
+                    clr_state_flag = STL_coring_state_in_progress_flag
+                }
+            }
+
+            FROM = {
+                add_core_of = ROOT
+            }
+
+        }
+
+        cancel_trigger = {
+            FROM = {
+                NOT = { is_fully_controlled_by = ROOT }
+            }
+        }
+
+        cancel_effect = {
+            hidden_effect = {
+                FROM = {
+                    clr_state_flag = STL_coring_state_in_progress_flag
+                }
+            }
+        }
+    }
+
+    STL_core_penguins = {
+        icon = GFX_decision_generic_form_nation
+
+        ai_will_do = {
+            base = 50
+        }
+
+        priority = 25
+
+        visible = {
+            has_completed_focus = STL_integrate_the_penguins
+        }
+
+        available = {
+            FROM = {
+                NOT = { has_state_flag = STL_coring_state_in_progress_flag }
+            }
+            FROM = {
+                compliance > 45
+            }
+        }
+
+        state_target = any_controlled_state
+
+        target_trigger = {
+            FROM = {
+                NOT = { is_core_of = ROOT }
+                is_fully_controlled_by = ROOT
+                is_core_of = PNG
+            }
+        }
+
         on_map_mode = map_only
 
         cost = 50

@@ -376,6 +376,12 @@ STL_accention_of_our_ruler_desc:0 "Starlight Glimmer has returned to guide Our E
 STL_accention_of_our_ruler_tt:0 "§PStarlight Glimmer shall ascend beyond mortality and become an Alicorn of Equality.§!"
 STL_social_welfare_expansion:0 "Equalist Social Welfare"
 STL_social_welfare_expansion_desc:0 "The ideals of equality demand that no creature be left behind. Our government has expanded welfare programs across the nation, ensuring that housing, food, and basic necessities are available to all. While such policies place strain on the treasury, they help bind society together under the promise of shared prosperity."
+STL_coal:0 "Our Coal"
+STL_coal_desc:0 ""
+STL_expand_steelworks:0 "Our Steelworks"
+STL_expand_steelworks_desc:0 ""
+STL_aluminium:0 "Our Aluminium"
+STL_aluminium_desc:0 ""
 
 starlight_equalism.1.a:0 "We stay the course. Equality must be absolute."
 starlight_equalism.1.b:0 "Double Diamond hesitates—he questions the path..."

@@ -400,12 +400,11 @@ focus_tree = {
                 }
             }
         }
-        search_filters = { FOCUS_FILTER_ANNEXATION }
     }
 
     focus = {
         id = STL_invite_starlight_back
-        icon = GFX_STL_sussy2-888223
+        icon = GFX_STL_commi_starlight
         cost = 5.00
 
         available = {
@@ -511,6 +510,7 @@ focus_tree = {
             add_country_leader_trait = equalist_mad_man
             custom_effect_tooltip = STL_double_diamond_supreme_tt
         }
+        search_filters = { FOCUS_FILTER_WAR_SUPPORT }
     }
 
     focus = {
@@ -529,6 +529,7 @@ focus_tree = {
                 add_idea = STL_embraced_past
             }
         }
+        search_filters = { FOCUS_FILTER_WAR_SUPPORT }
     }
 
     focus = {
@@ -556,7 +557,16 @@ focus_tree = {
                     NOT = { tag = ROOT }
                     country_exists = THIS
                 }
-
+                every_state = {
+                    limit = {
+                        is_core_of = THIS
+                    }
+                    add_claim_by = ROOT
+                }
+                add_opinion_modifier = { 
+                    target = STL
+                    modifier = distrustful_relations 
+                }
                 ROOT = {
                     create_wargoal = {
                         type = annex_everything
@@ -564,16 +574,21 @@ focus_tree = {
                     }
                 }
             }
+
+            add_ideas = world_revolution
         }
-        search_filters = { FOCUS_FILTER_ANNEXATION }
+        search_filters = { FOCUS_FILTER_ANNEXATION FOCUS_FILTER_STABILITY }
     }
 
     focus = {
         id = STL_starlight_as_a_figure_head
-        icon = GFX_STL_sussy-888222
+        icon = GFX_pipe-starlight
         cost = 10
         available = {
-            has_country_flag = STL_has_formed_our_eqs
+            custom_trigger_tooltip = {
+                tooltip = formed_our_eqs_stl
+                has_country_flag = STL_has_formed_our_eqs
+            }
         }
         prerequisite = {
             focus = STL_increase_radicalism
@@ -735,6 +750,7 @@ focus_tree = {
                 modifier = STL_instability
             }
         }
+        search_filters = { FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_STABILITY }
     }
 
     focus = {
@@ -763,6 +779,7 @@ focus_tree = {
                 days = 60
             }
         }
+        search_filters = { FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_STABILITY }
     }
 
     focus = {
@@ -771,7 +788,7 @@ focus_tree = {
             focus = STL_double_diamond_supreme
             focus = STL_invite_starlight_back
         }
-        icon=GFX_goal_stg_sinister_war_on_eqs
+        icon=GFX_STL_our_eqs
         cost = 5
         x = 6
         y = 9
@@ -823,12 +840,15 @@ focus_tree = {
 
     focus = {
         id = STL_our_beloved_ruler
-        icon = GFX_STL_sussy-888222
+        icon = GFX_pipe-starlight
         cost = 5
         x = 1
         y = 1
         available = {
-            has_country_flag = STL_has_formed_our_eqs
+            custom_trigger_tooltip = {
+                tooltip = formed_our_eqs_stl
+                has_country_flag = STL_has_formed_our_eqs
+            }
             NOT = { has_country_leader = { character = STL_starlight_glimmer } }
         }
         relative_position_id = STL_invite_starlight_back
@@ -865,6 +885,7 @@ focus_tree = {
             add_country_leader_trait = the_equal_alicorn
             custom_effect_tooltip = STL_accention_of_our_ruler_tt
         }
+        search_filters = { FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_STABILITY FOCUS_FILTER_MANPOWER }
     }
 
     focus = {
@@ -1087,6 +1108,7 @@ focus_tree = {
         completion_reward = {
             add_ideas = STL_social_welfare_expansion
         }
+        search_filters = { FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_STABILITY FOCUS_FILTER_MANPOWER }
     }
 
     focus = {
@@ -1630,7 +1652,7 @@ focus_tree = {
         relative_position_id = STL_one_factory
         ai_will_do = { factor = 1 }
         available_if_capitulated = yes
-        search_filters = { FOCUS_FILTER_ARMY_XP }
+        search_filters = { FOCUS_FILTER_ARMY_XP FOCUS_FILTER_ARMY_BONUS FOCUS_FILTER_MANPOWER }
         completion_reward = {
             random_owned_controlled_state = {
                 limit = {
@@ -1714,6 +1736,7 @@ focus_tree = {
                 tooltip = army_artillery_defence_factor_tt
             }
         }
+        search_filters = { FOCUS_FILTER_ARMY_BONUS }
     }
 
     focus = {
@@ -1740,6 +1763,7 @@ focus_tree = {
                 tooltip = army_infantry_attack_factor_tt
             }
         }
+        search_filters = { FOCUS_FILTER_ARMY_BONUS }
     }
 
     focus = {
@@ -1790,6 +1814,7 @@ focus_tree = {
                 tooltip = equipment_capture_tt
             }
         }
+        search_filters = { FOCUS_FILTER_ARMY_BONUS }
     }
 
     focus = {
@@ -1849,7 +1874,9 @@ focus_tree = {
                     owner = ROOT
                 }
             }
+            army_experience = 20
         }
+        search_filters = { FOCUS_FILTER_ARMY_XP }
     }
 
     focus = {
@@ -1881,6 +1908,7 @@ focus_tree = {
                 tooltip = mechanized_attack_factor_tt
             }
         }
+        search_filters = { FOCUS_FILTER_ARMY_BONUS }
     }
 
     focus = {
@@ -1926,6 +1954,7 @@ focus_tree = {
                 }
             }
         }
+        search_filters = { FOCUS_FILTER_ARMY_BONUS }
     }
 
     focus = {
@@ -1940,7 +1969,9 @@ focus_tree = {
         completion_reward = {
             add_war_support = 0.1
             add_manpower = 5000
+            army_experience = 20
         }
+        search_filters = { FOCUS_FILTER_MANPOWER FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_ARMY_XP }
     }
 
     focus = {
@@ -1957,6 +1988,7 @@ focus_tree = {
         completion_reward = {
             add_ideas = military_youth_focus
         }
+        search_filters = { FOCUS_FILTER_ARMY_BONUS }
     }
 
     focus = {
@@ -1973,6 +2005,7 @@ focus_tree = {
         completion_reward = {
             add_ideas = STL_foreigners
         }
+        search_filters = { FOCUS_FILTER_ARMY_BONUS }
     }
 
     focus = {
@@ -1997,7 +2030,9 @@ focus_tree = {
                 technology = tech_mountaineers
                 technology = tech_mountaineers2
             }
+            army_experience = 20
         }
+        search_filters = { FOCUS_FILTER_ARMY_BONUS FOCUS_FILTER_ARMY_XP }
     }
 
     focus = {
@@ -2072,7 +2107,9 @@ focus_tree = {
                     instant_build = yes
                 }
             }
+            army_experience = 20
         }
+        search_filters = { FOCUS_FILTER_ARMY_XP }
     }
 
     focus = {
@@ -2129,6 +2166,7 @@ focus_tree = {
                 }
             }
         }
+        search_filters = { FOCUS_FILTER_ARMY_BONUS }
     }
 
     focus = {
@@ -2160,6 +2198,7 @@ focus_tree = {
                 tooltip = army_armor_attack_factor_tt
             }
         }
+        search_filters = { FOCUS_FILTER_ARMY_BONUS }
     }
 
     focus = {
@@ -2224,6 +2263,7 @@ focus_tree = {
         completion_reward = {
             add_ideas = STL_defensive_posturing
         }
+        search_filters = { FOCUS_FILTER_ARMY_BONUS }
     }
 
     focus = {
@@ -2848,6 +2888,7 @@ focus_tree = {
         available = {
             NOT = { has_idea = STL_city_state }
             NOT = { has_idea = STL_city_state2 }
+            has_completed_focus = STL_fourth_factory
         }
 
         x = 15
@@ -2867,7 +2908,7 @@ focus_tree = {
             focus = STL_industrial_flourish
         }
 
-        x = 8
+        x = 9
         y = 1
         relative_position_id = STL_industrial_flourish
 
@@ -3603,6 +3644,7 @@ focus_tree = {
             has_country_flag = STL_has_formed_our_eqs
         }
         completion_reward = { }
+        search_filters = { FOCUS_FILTER_ANNEXATION }
     }
 
     focus = {
@@ -3627,6 +3669,7 @@ focus_tree = {
                 target = JAK
             }
         }
+        search_filters = { FOCUS_FILTER_ANNEXATION }
     }
 
     focus = {
@@ -3659,6 +3702,7 @@ focus_tree = {
                 target = png
             }
         }
+        search_filters = { FOCUS_FILTER_ANNEXATION }
     }
 
     focus = {
@@ -3691,6 +3735,7 @@ focus_tree = {
                 target = plb
             }
         }
+        search_filters = { FOCUS_FILTER_ANNEXATION }
     }
 
     focus = {
@@ -3723,6 +3768,7 @@ focus_tree = {
                 target = ole
             }
         }
+        search_filters = { FOCUS_FILTER_ANNEXATION }
     }
 
     focus = {
@@ -3757,6 +3803,7 @@ focus_tree = {
                 type = annex_everything
             }
         }
+        search_filters = { FOCUS_FILTER_ANNEXATION }
     }
 
     focus = {
@@ -3805,7 +3852,7 @@ focus_tree = {
         y = 1
         relative_position_id = STL_industrial_flourish
 
-        search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_RESOURCES }
+        search_filters = { FOCUS_FILTER_INDUSTRY }
 
         cost = 10
 
@@ -3948,10 +3995,9 @@ focus_tree = {
     }
 
     focus = { # INDUSTRY
-        id = STL_expand_stpoltner_steelworks
+        id = STL_expand_steelworks
         icon = GFX_focus_generic_steel
-        prerequisite = { focus = STL_coal}
-        mutually_exclusive = { }
+        prerequisite = { focus = STL_coal }
         x = 0
         y = 1
         relative_position_id = STL_coal
@@ -3987,12 +4033,50 @@ focus_tree = {
     }
 
     focus = { # INDUSTRY
+        id = STL_aluminium
+        icon = GFX_focus_generic_aluminum
+        prerequisite = { focus = STL_coal }
+        x = 2
+        y = 1
+        relative_position_id = STL_coal
+
+        search_filters = { FOCUS_FILTER_INDUSTRY }
+
+        cost = 10
+
+        ai_will_do = {
+            factor = 1
+        }
+
+        available = {
+            has_tech = excavation2
+        }
+
+        available_if_capitulated = no
+
+        completion_reward = {
+            random_core_state = {
+                add_resource = {
+                    type = aluminium
+                    amount = 14
+                }
+                add_extra_state_shared_building_slots = 1
+                add_building_construction = {
+                    type = industrial_complex
+                    level = 1
+                    instant_build = yes
+                }
+            }
+        }
+    }
+
+    focus = { # INDUSTRY
         id = STL_synthetics
         icon = GFX_goal_generic_oil_refinery
-        prerequisite = { focus = STL_expand_stpoltner_steelworks focus = STL_crytals }
+        prerequisite = { focus = STL_expand_steelworks focus = STL_crytals }
         x = -3
         y = 1
-        relative_position_id = STL_expand_stpoltner_steelworks
+        relative_position_id = STL_expand_steelworks
         search_filters = { FOCUS_FILTER_INDUSTRY }
 
         cost = 10
@@ -4046,10 +4130,10 @@ focus_tree = {
     focus = { # INDUSTRY
         id = STL_oiler
         icon = GFX_focus_generic_industry_1
-        prerequisite = { focus = STL_expand_stpoltner_steelworks focus = STL_crytals }
+        prerequisite = { focus = STL_expand_steelworks focus = STL_crytals }
         x = -1
         y = 1
-        relative_position_id = STL_expand_stpoltner_steelworks
+        relative_position_id = STL_expand_steelworks
 
         search_filters = { FOCUS_FILTER_INDUSTRY }
 
@@ -4337,10 +4421,10 @@ focus_tree = {
     focus = { # INDUSTRY
         id = STL_architechtual_advancements
         icon = GFX_goal_generic_construct_civilian
-        prerequisite = { focus = STL_expand_stpoltner_steelworks }
+        prerequisite = { focus = STL_expand_steelworks }
         x = 2
         y = 1
-        relative_position_id = STL_expand_stpoltner_steelworks
+        relative_position_id = STL_expand_steelworks
         search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_RESEARCH }
 
         cost = 5
