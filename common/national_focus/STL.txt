@@ -549,6 +549,15 @@ focus_tree = {
             }
         }
 
+        select_effect = {
+            hidden_effect = {
+                country_event = {
+                    id = starlight_equalism.1
+                    days = 15
+                }
+            }
+        }
+
         cost = 10
         x = -1
         y = 1

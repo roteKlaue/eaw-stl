@@ -828,3 +828,40 @@ STL_vp_our_canterlot:0 "Equalopolis"
  STL_proactive_democracy_desc:0 "Harmony has only recently taken root here, yet its ideals demand action. A more active role must be taken in guiding the future of Equus toward cooperation and peace."
 
  STL_shining_example_of_democracy_tt:0 "§YBegins a 70 day event chain.§!\nThe choices made during these events will determine which subsequent focuses are completed."
+
+ starlight.19.t:0 "Unrest Across Our Equestria"
+ starlight.19.d:0 "With the proclamation of Our Equestria, the ideals of Equality have spread far beyond the quiet streets of Our Town. Yet not every pony welcomes this new order. Across the land, former elites, loyalists of the old regime, and fearful citizens whisper their dissent. While the banner of Equality flies high, unrest simmers beneath the surface. If our new state is to endure, dissent must be managed before it grows into open resistance."
+ starlight.19.a:0 "Equality will prevail."
+ starlight.20.t:0 "A Petition for Starlight Glimmer"
+
+ starlight.20.d:0 "A formal petition has arrived from the rulers of [STL.GetName]. They request that Starlight Glimmer be allowed to leave Equestria and return to the state founded in her name and image. To some, granting this request would remove a troublesome revolutionary from our soil. To others, it would mean allowing a dangerous symbol of Equalism to return to power elsewhere. Whatever the case, the decision now rests with us."
+ starlight.20.a:0 "Let her go."
+ starlight.20.b:0 "She stays here."
+
+ starlight.21.t:0 "Starlight Returns to [STL.GetName]"
+ starlight.21.d:0 "Equestria has granted our petition. Starlight Glimmer is free to leave and return to [STL.GetName], where her arrival is already being celebrated by loyalists and idealists alike. For many, this is more than a political victory - it is the return of the mare who first gave voice to their dream of Equality."
+ starlight.21.a:0 "The star returns to guide us."
+
+ starlight.22.t:0 "Our Petition Rejected"
+ starlight.22.d:0 "Equestria has denied our petition and refused to release Starlight Glimmer. Whether out of fear, spite, or political calculation, they have made clear that they will not allow her to return willingly. This insult cannot be ignored, and many now argue that if Equestria will not surrender her, then we must take both Starlight and the land that wrongfully holds her."
+ starlight.22.a:0 "Then we shall claim both her and Equestria."
+ starlight.25.t:0 "The Equalist Proposal"
+ starlight.25.d:0 "Delegates from [STL.GetFlag][STL.GetName] have arrived with a proposal unlike any other. Their state, founded upon the doctrine of Equality, now claims that the revolution must extend across all of Equestria. They argue that since both of our nations now share a communist ideology, the next logical step is unity under the principles of Equalism.\n\nSome in our government see this as an opportunity for a peaceful ideological unification, while others warn that submitting to [STL.GetLeader]'s radical vision would mean the end of Equestria as we know it."
+ starlight.25.a:0 "[EQS.GetName] will never submit to Equalism!"
+ starlight.25.b:0 "Perhaps unity is the logical next step."
+
+ starlight.26.t:0 "[EQS.GetName] Rejects Equalism"
+ starlight.26.d:0 "The government of [EQS.GetName] has rejected our proposal outright. They refuse to embrace the Equalist revolution and deny the legitimacy of our vision for a unified Equestria. Their defiance proves that the old order still clings desperately to power.\n\nIf Equality is to prevail across Equestria, it may have to be enforced."
+ starlight.26.a:0 "Then we will bring Equality by force."
+ 
+ starlight.27.t:0 "[EQS.GetName] Accepts Unity"
+ starlight.27.d:0 "In a historic decision, the government of [EQS.GetName] has agreed to our proposal. Recognizing the shared ideals of Equality between our states, they have consented to unification under [STL.GetLeader]'s leadership.\n\nThe dream of a truly Equalist Equestria is one step closer to reality."
+ starlight.27.a:0 "Together, we build Our Equestria."
+
+ starlight.31.t:0 "A New Direction"
+ starlight.31.d:0 "With the recent election victory, [ROOT.GetLeader] has made it clear that [ROOT.GetName] will pursue a different course than the radical policies of the past. In his first major act as leader, he has proposed reopening diplomatic channels with [EQS.GetName], hoping to mend relations that were strained during the Equalist period.\n\nWhile some remain skeptical of reconciliation, many believe that cooperation between our nations could bring stability and prosperity to the region."
+ starlight.31.a:0 "Let us strengthen our ties with Equestria."
+
+ STL_MADNESS_STATE:0 "The Equalist State"
+ STL_MADNESS_STATE_DEF:0 "the Equalist State"
+ STL_MADNESS_STATE_ADJ:0 "Equalist"
