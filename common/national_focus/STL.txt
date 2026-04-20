@@ -25,6 +25,7 @@ focus_tree = {
                 id = starlight.3 days = 1
             }
         }
+        search_filters = { FOCUS_FILTER_POLITICAL }
     }
 
     focus = {
@@ -44,6 +45,7 @@ focus_tree = {
             }
         }
         relative_position_id = STL_abolish_equality
+        search_filters = { FOCUS_FILTER_POLITICAL }
     }
 
     focus = {
@@ -92,6 +94,7 @@ focus_tree = {
             }
         }
         relative_position_id = STL_abolish_equality
+        search_filters = { FOCUS_FILTER_POLITICAL }
     }
 
     focus = {
@@ -117,7 +120,7 @@ focus_tree = {
                 id = starlight.4 days = 1
             }
         }
-
+        search_filters = { FOCUS_FILTER_POLITICAL }
     }
 
     focus = {
@@ -139,6 +142,7 @@ focus_tree = {
                 id = starlight.5 days = 1
             }
         }
+        search_filters = { FOCUS_FILTER_POLITICAL }
     }
 
     focus = {
@@ -2128,7 +2132,6 @@ focus_tree = {
             division_template = {
                 name = "Armored Division"
                 priority = 2
-                division_names_group = ROM_ARM_01
                 regiments = {
                     medium_armor = { x = 0 y = 0 }
                     medium_armor = { x = 0 y = 1 }
@@ -2432,10 +2435,12 @@ focus_tree = {
         }
         relative_position_id = STL_our_town_fortress
         completion_reward = {
+            custom_effect_tooltip = STL_shining_example_of_democracy_tt
             country_event = {
                 id = starlight.40
             }
         }
+        search_filters = { FOCUS_FILTER_POLITICAL }
     }
 
     focus = {
@@ -2456,6 +2461,7 @@ focus_tree = {
 
         mutually_exclusive = { focus = STL_proactive_democracy }
         completion_reward = { }
+        search_filters = { FOCUS_FILTER_COMPLETED_BY_EVENT FOCUS_FILTER_POLITICAL }
     }
 
     focus = {
@@ -2476,6 +2482,7 @@ focus_tree = {
         relative_position_id = STL_shining_example_of_democracy
         mutually_exclusive = { focus = STL_save_ourselves }
         completion_reward = { }
+        search_filters = { FOCUS_FILTER_COMPLETED_BY_EVENT FOCUS_FILTER_POLITICAL }
     }
 
     focus = {
@@ -2495,6 +2502,7 @@ focus_tree = {
                 id = starlight.43
             }
         }
+        search_filters = { FOCUS_FILTER_COMPLETED_BY_EVENT FOCUS_FILTER_POLITICAL }
     }
 
     focus = {
@@ -2510,6 +2518,7 @@ focus_tree = {
         prerequisite = { focus = STL_proactive_democracy }
         mutually_exclusive = { focus = STL_assasination_of_feather_bangs }
         completion_reward = { }
+        search_filters = { FOCUS_FILTER_COMPLETED_BY_EVENT FOCUS_FILTER_POLITICAL }
     }
 
     focus = {
@@ -2526,6 +2535,7 @@ focus_tree = {
             focus = STL_shining_example_of_democracy
         }
         completion_reward = { }
+        search_filters = { FOCUS_FILTER_COMPLETED_BY_EVENT FOCUS_FILTER_POLITICAL }
     }
 
     focus = {
@@ -2594,6 +2604,7 @@ focus_tree = {
                 country_event = starlight.17
             }
         }
+        search_filters = { FOCUS_FILTER_POLITICAL }
     }
 
     focus = {

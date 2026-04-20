@@ -821,3 +821,10 @@ STL_vp_our_canterlot:0 "Equalopolis"
  is_starlight_glimmer_desc:0 "Twilight's Student"
  is_starlight_glimmer:0 "Starlight Glimmer"
  is_starlight_glimmer_desc:0 "Twilight's Student"
+ STL_defensive_posture:0 "Defensive Posture"
+ STL_defensive_posture_desc:0 "With pressure mounting from [STG.GetName] in the south and [GRF.GetName] in the north, it must be made clear that this nation will not be pushed around."
+
+ STL_proactive_democracy:0 "A Proactive Harmony"
+ STL_proactive_democracy_desc:0 "Harmony has only recently taken root here, yet its ideals demand action. A more active role must be taken in guiding the future of Equus toward cooperation and peace."
+
+ STL_shining_example_of_democracy_tt:0 "§YBegins a 70 day event chain.§!\nThe choices made during these events will determine which subsequent focuses are completed."
