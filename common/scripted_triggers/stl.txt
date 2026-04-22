@@ -1,0 +1,16 @@
+STL_can_increase_infiltration_in_state = {
+    OR = {
+        NOT = { has_state_flag = STL_infiltration_@PREV }
+        has_state_flag = {
+            flag = STL_infiltration_@PREV
+            value < 3
+        }
+    }
+}
+
+STL_is_infiltrated_by_ROOT = {
+	has_state_flag = {
+		flag = STL_infiltration_@PREV
+		value > 0
+	}
+}

@@ -319,5 +319,29 @@ ideas = {
                 training_time_factor = -0.05
 			}
         }
+
+        STL_equipment_from_copper_coins = {
+			picture = SWE_let_fly_all_guns
+			removal_cost = -1
+
+			equipment_bonus = {
+				artillery_equipment = {
+					instant = yes
+					build_cost_ic = -0.15
+				}
+				infantry_equipment = {
+					build_cost_ic = -0.10
+					instant = yes
+				}
+				support_equipment = {
+					instant = yes
+					build_cost_ic = -0.075
+				}
+			}
+
+			modifier = {
+				production_lack_of_resource_penalty_factor = -0.125
+			}
+		}
     }
 }

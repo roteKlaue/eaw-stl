@@ -221,6 +221,9 @@ set_variable = { STL_military_acclimatization_hot_climate_gain_factor = 0 }
 set_variable = { STL_military_acclimatization_cold_climate_gain_factor = 0 }
 set_variable = { STL_military_land_doctrine_cost_factor = 0 }
 set_variable = { STL_military_non_core_manpower = 0 }
+set_variable = { STL_military_conscription = 0 }
+set_variable = { STL_military_mobilization_speed = 0 }
+set_variable = { STL_military_resistance_damage_to_garrison = 0 }
 
 set_variable = { STL_instability_stability = -0.10 }
 set_variable = { STL_instability_advisor_cost = 1.20 }

@@ -12,7 +12,25 @@ form_equ_stg = {
         complete_effect = {
             add_timed_idea = {
                 idea = STL_recruitment_rush
-                days = 60
+                days = 90
+            }
+        }
+    }
+
+    scrap_to_weapons = {
+        icon = ""
+        cost = 150
+        visible = {
+            has_completed_focus = STL_equipment_from_copper_coins
+        }
+        available = {
+            NOT = { has_idea = PRC_equipment_from_copper_coins }
+        }
+
+        complete_effect = {
+            add_timed_idea = {
+                idea = PRC_equipment_from_copper_coins
+                days = 90
             }
         }
     }
@@ -812,5 +830,2064 @@ form_equ_stg = {
                 }
             }
         }
+    }
+
+    STL_infiltrate_state_154 = {
+        icon = infiltrate_state
+
+        visible = {
+            NOT = { has_war_with = STG }
+            154 = {
+                is_owned_by = STG
+                is_controlled_by = STG
+            }
+        }
+
+        available = {
+            NOT = { has_war_with = STG }
+            has_equipment = { infantry_equipment > 499 }
+            154 = {
+                is_owned_by = STG
+                is_controlled_by = STG
+                STL_can_increase_infiltration_in_state = yes
+                OR = {
+                    any_neighbor_state = {
+                        is_owned_by = ROOT
+                        is_controlled_by = ROOT
+                    }
+                    any_neighbor_state = {
+                        has_state_flag = {
+                            flag = STL_infiltration_@ROOT
+                            value > 0
+                        }
+                    }
+                }
+            }
+        }
+
+        highlight_states = {
+            highlight_state_targets = { state = 154 }
+        }
+
+        modifier = { command_power_gain = -0.2 }
+
+        days_remove = 30
+        days_re_enable = 0
+        cost = 25
+
+        complete_effect = {
+            add_equipment_to_stockpile = {
+                type = infantry_equipment
+                amount = -500
+            }
+            154 = {
+                if = {
+                    limit = { NOT = { has_state_flag = STL_infiltration_@ROOT } }
+                    set_state_flag = {
+                        flag = STL_infiltration_@ROOT
+                        value = 0
+                    }
+                }
+            }
+        }
+
+        remove_effect = {
+            154 = {
+                modify_state_flag = {
+                    flag = STL_infiltration_@ROOT
+                    value = 1
+                }
+            }
+        }
+
+        ai_will_do = { base = 0 }
+    }
+
+    STL_infiltrate_state_155 = {
+        icon = infiltrate_state
+
+        visible = {
+            NOT = { has_war_with = STG }
+            155 = {
+                is_owned_by = STG
+                is_controlled_by = STG
+            }
+        }
+
+        available = {
+            NOT = { has_war_with = STG }
+            has_equipment = { infantry_equipment > 499 }
+            155 = {
+                is_owned_by = STG
+                is_controlled_by = STG
+                STL_can_increase_infiltration_in_state = yes
+                OR = {
+                    any_neighbor_state = {
+                        is_owned_by = ROOT
+                        is_controlled_by = ROOT
+                    }
+                    any_neighbor_state = {
+                        has_state_flag = {
+                            flag = STL_infiltration_@ROOT
+                            value > 0
+                        }
+                    }
+                }
+            }
+        }
+
+        highlight_states = {
+            highlight_state_targets = { state = 155 }
+        }
+
+        modifier = { command_power_gain = -0.2 }
+
+        days_remove = 30
+        days_re_enable = 0
+        cost = 25
+
+        complete_effect = {
+            add_equipment_to_stockpile = {
+                type = infantry_equipment
+                amount = -500
+            }
+            155 = {
+                if = {
+                    limit = { NOT = { has_state_flag = STL_infiltration_@ROOT } }
+                    set_state_flag = {
+                        flag = STL_infiltration_@ROOT
+                        value = 0
+                    }
+                }
+            }
+        }
+
+        remove_effect = {
+            155 = {
+                modify_state_flag = {
+                    flag = STL_infiltration_@ROOT
+                    value = 1
+                }
+            }
+        }
+
+        ai_will_do = { base = 0 }
+    }
+
+    STL_infiltrate_state_156 = {
+        icon = infiltrate_state
+
+        visible = {
+            NOT = { has_war_with = STG }
+            156 = {
+                is_owned_by = STG
+                is_controlled_by = STG
+            }
+        }
+
+        available = {
+            NOT = { has_war_with = STG }
+            has_equipment = { infantry_equipment > 499 }
+            156 = {
+                is_owned_by = STG
+                is_controlled_by = STG
+                STL_can_increase_infiltration_in_state = yes
+                OR = {
+                    any_neighbor_state = {
+                        is_owned_by = ROOT
+                        is_controlled_by = ROOT
+                    }
+                    any_neighbor_state = {
+                        has_state_flag = {
+                            flag = STL_infiltration_@ROOT
+                            value > 0
+                        }
+                    }
+                }
+            }
+        }
+
+        highlight_states = {
+            highlight_state_targets = { state = 156 }
+        }
+
+        modifier = { command_power_gain = -0.2 }
+
+        days_remove = 30
+        days_re_enable = 0
+        cost = 25
+
+        complete_effect = {
+            add_equipment_to_stockpile = {
+                type = infantry_equipment
+                amount = -500
+            }
+            156 = {
+                if = {
+                    limit = { NOT = { has_state_flag = STL_infiltration_@ROOT } }
+                    set_state_flag = {
+                        flag = STL_infiltration_@ROOT
+                        value = 0
+                    }
+                }
+            }
+        }
+
+        remove_effect = {
+            156 = {
+                modify_state_flag = {
+                    flag = STL_infiltration_@ROOT
+                    value = 1
+                }
+            }
+        }
+
+        ai_will_do = { base = 0 }
+    }
+
+    STL_infiltrate_state_157 = {
+        icon = infiltrate_state
+
+        visible = {
+            NOT = { has_war_with = STG }
+            157 = {
+                is_owned_by = STG
+                is_controlled_by = STG
+            }
+        }
+
+        available = {
+            NOT = { has_war_with = STG }
+            has_equipment = { infantry_equipment > 499 }
+            157 = {
+                is_owned_by = STG
+                is_controlled_by = STG
+                STL_can_increase_infiltration_in_state = yes
+                OR = {
+                    any_neighbor_state = {
+                        is_owned_by = ROOT
+                        is_controlled_by = ROOT
+                    }
+                    any_neighbor_state = {
+                        has_state_flag = {
+                            flag = STL_infiltration_@ROOT
+                            value > 0
+                        }
+                    }
+                }
+            }
+        }
+
+        highlight_states = {
+            highlight_state_targets = { state = 157 }
+        }
+
+        modifier = { command_power_gain = -0.2 }
+
+        days_remove = 30
+        days_re_enable = 0
+        cost = 25
+
+        complete_effect = {
+            add_equipment_to_stockpile = {
+                type = infantry_equipment
+                amount = -500
+            }
+            157 = {
+                if = {
+                    limit = { NOT = { has_state_flag = STL_infiltration_@ROOT } }
+                    set_state_flag = {
+                        flag = STL_infiltration_@ROOT
+                        value = 0
+                    }
+                }
+            }
+        }
+
+        remove_effect = {
+            157 = {
+                modify_state_flag = {
+                    flag = STL_infiltration_@ROOT
+                    value = 1
+                }
+            }
+        }
+
+        ai_will_do = { base = 0 }
+    }
+
+    STL_infiltrate_state_158 = {
+        icon = infiltrate_state
+
+        visible = {
+            NOT = { has_war_with = STG }
+            158 = {
+                is_owned_by = STG
+                is_controlled_by = STG
+            }
+        }
+
+        available = {
+            NOT = { has_war_with = STG }
+            has_equipment = { infantry_equipment > 499 }
+            158 = {
+                is_owned_by = STG
+                is_controlled_by = STG
+                STL_can_increase_infiltration_in_state = yes
+                OR = {
+                    any_neighbor_state = {
+                        is_owned_by = ROOT
+                        is_controlled_by = ROOT
+                    }
+                    any_neighbor_state = {
+                        has_state_flag = {
+                            flag = STL_infiltration_@ROOT
+                            value > 0
+                        }
+                    }
+                }
+            }
+        }
+
+        highlight_states = {
+            highlight_state_targets = { state = 158 }
+        }
+
+        modifier = { command_power_gain = -0.2 }
+
+        days_remove = 30
+        days_re_enable = 0
+        cost = 25
+
+        complete_effect = {
+            add_equipment_to_stockpile = {
+                type = infantry_equipment
+                amount = -500
+            }
+            158 = {
+                if = {
+                    limit = { NOT = { has_state_flag = STL_infiltration_@ROOT } }
+                    set_state_flag = {
+                        flag = STL_infiltration_@ROOT
+                        value = 0
+                    }
+                }
+            }
+        }
+
+        remove_effect = {
+            158 = {
+                modify_state_flag = {
+                    flag = STL_infiltration_@ROOT
+                    value = 1
+                }
+            }
+        }
+
+        ai_will_do = { base = 0 }
+    }
+
+    STL_infiltrate_state_159 = {
+        icon = infiltrate_state
+
+        visible = {
+            NOT = { has_war_with = STG }
+            159 = {
+                is_owned_by = STG
+                is_controlled_by = STG
+            }
+        }
+
+        available = {
+            NOT = { has_war_with = STG }
+            has_equipment = { infantry_equipment > 499 }
+            159 = {
+                is_owned_by = STG
+                is_controlled_by = STG
+                STL_can_increase_infiltration_in_state = yes
+                OR = {
+                    any_neighbor_state = {
+                        is_owned_by = ROOT
+                        is_controlled_by = ROOT
+                    }
+                    any_neighbor_state = {
+                        has_state_flag = {
+                            flag = STL_infiltration_@ROOT
+                            value > 0
+                        }
+                    }
+                }
+            }
+        }
+
+        highlight_states = {
+            highlight_state_targets = { state = 159 }
+        }
+
+        modifier = { command_power_gain = -0.2 }
+
+        days_remove = 30
+        days_re_enable = 0
+        cost = 25
+
+        complete_effect = {
+            add_equipment_to_stockpile = {
+                type = infantry_equipment
+                amount = -500
+            }
+            159 = {
+                if = {
+                    limit = { NOT = { has_state_flag = STL_infiltration_@ROOT } }
+                    set_state_flag = {
+                        flag = STL_infiltration_@ROOT
+                        value = 0
+                    }
+                }
+            }
+        }
+
+        remove_effect = {
+            159 = {
+                modify_state_flag = {
+                    flag = STL_infiltration_@ROOT
+                    value = 1
+                }
+            }
+        }
+
+        ai_will_do = { base = 0 }
+    }
+
+    STL_infiltrate_state_161 = {
+        icon = infiltrate_state
+
+        visible = {
+            NOT = { has_war_with = STG }
+            161 = {
+                is_owned_by = STG
+                is_controlled_by = STG
+            }
+        }
+
+        available = {
+            NOT = { has_war_with = STG }
+            has_equipment = { infantry_equipment > 499 }
+            161 = {
+                is_owned_by = STG
+                is_controlled_by = STG
+                STL_can_increase_infiltration_in_state = yes
+                OR = {
+                    any_neighbor_state = {
+                        is_owned_by = ROOT
+                        is_controlled_by = ROOT
+                    }
+                    any_neighbor_state = {
+                        has_state_flag = {
+                            flag = STL_infiltration_@ROOT
+                            value > 0
+                        }
+                    }
+                }
+            }
+        }
+
+        highlight_states = {
+            highlight_state_targets = { state = 161 }
+        }
+
+        modifier = { command_power_gain = -0.2 }
+
+        days_remove = 30
+        days_re_enable = 0
+        cost = 25
+
+        complete_effect = {
+            add_equipment_to_stockpile = {
+                type = infantry_equipment
+                amount = -500
+            }
+            161 = {
+                if = {
+                    limit = { NOT = { has_state_flag = STL_infiltration_@ROOT } }
+                    set_state_flag = {
+                        flag = STL_infiltration_@ROOT
+                        value = 0
+                    }
+                }
+            }
+        }
+
+        remove_effect = {
+            161 = {
+                modify_state_flag = {
+                    flag = STL_infiltration_@ROOT
+                    value = 1
+                }
+            }
+        }
+
+        ai_will_do = { base = 0 }
+    }
+
+    STL_infiltrate_state_162 = {
+        icon = infiltrate_state
+
+        visible = {
+            NOT = { has_war_with = STG }
+            162 = {
+                is_owned_by = STG
+                is_controlled_by = STG
+            }
+        }
+
+        available = {
+            NOT = { has_war_with = STG }
+            has_equipment = { infantry_equipment > 499 }
+            162 = {
+                is_owned_by = STG
+                is_controlled_by = STG
+                STL_can_increase_infiltration_in_state = yes
+                OR = {
+                    any_neighbor_state = {
+                        is_owned_by = ROOT
+                        is_controlled_by = ROOT
+                    }
+                    any_neighbor_state = {
+                        has_state_flag = {
+                            flag = STL_infiltration_@ROOT
+                            value > 0
+                        }
+                    }
+                }
+            }
+        }
+
+        highlight_states = {
+            highlight_state_targets = { state = 162 }
+        }
+
+        modifier = { command_power_gain = -0.2 }
+
+        days_remove = 30
+        days_re_enable = 0
+        cost = 25
+
+        complete_effect = {
+            add_equipment_to_stockpile = {
+                type = infantry_equipment
+                amount = -500
+            }
+            162 = {
+                if = {
+                    limit = { NOT = { has_state_flag = STL_infiltration_@ROOT } }
+                    set_state_flag = {
+                        flag = STL_infiltration_@ROOT
+                        value = 0
+                    }
+                }
+            }
+        }
+
+        remove_effect = {
+            162 = {
+                modify_state_flag = {
+                    flag = STL_infiltration_@ROOT
+                    value = 1
+                }
+            }
+        }
+
+        ai_will_do = { base = 0 }
+    }
+
+    STL_infiltrate_state_163 = {
+        icon = infiltrate_state
+
+        visible = {
+            NOT = { has_war_with = STG }
+            163 = {
+                is_owned_by = STG
+                is_controlled_by = STG
+            }
+        }
+
+        available = {
+            NOT = { has_war_with = STG }
+            has_equipment = { infantry_equipment > 499 }
+            163 = {
+                is_owned_by = STG
+                is_controlled_by = STG
+                STL_can_increase_infiltration_in_state = yes
+                OR = {
+                    any_neighbor_state = {
+                        is_owned_by = ROOT
+                        is_controlled_by = ROOT
+                    }
+                    any_neighbor_state = {
+                        has_state_flag = {
+                            flag = STL_infiltration_@ROOT
+                            value > 0
+                        }
+                    }
+                }
+            }
+        }
+
+        highlight_states = {
+            highlight_state_targets = { state = 163 }
+        }
+
+        modifier = { command_power_gain = -0.2 }
+
+        days_remove = 30
+        days_re_enable = 0
+        cost = 25
+
+        complete_effect = {
+            add_equipment_to_stockpile = {
+                type = infantry_equipment
+                amount = -500
+            }
+            163 = {
+                if = {
+                    limit = { NOT = { has_state_flag = STL_infiltration_@ROOT } }
+                    set_state_flag = {
+                        flag = STL_infiltration_@ROOT
+                        value = 0
+                    }
+                }
+            }
+        }
+
+        remove_effect = {
+            163 = {
+                modify_state_flag = {
+                    flag = STL_infiltration_@ROOT
+                    value = 1
+                }
+            }
+        }
+
+        ai_will_do = { base = 0 }
+    }
+
+    STL_infiltrate_state_164 = {
+        icon = infiltrate_state
+
+        visible = {
+            NOT = { has_war_with = STG }
+            164 = {
+                is_owned_by = STG
+                is_controlled_by = STG
+            }
+        }
+
+        available = {
+            NOT = { has_war_with = STG }
+            has_equipment = { infantry_equipment > 499 }
+            164 = {
+                is_owned_by = STG
+                is_controlled_by = STG
+                STL_can_increase_infiltration_in_state = yes
+                OR = {
+                    any_neighbor_state = {
+                        is_owned_by = ROOT
+                        is_controlled_by = ROOT
+                    }
+                    any_neighbor_state = {
+                        has_state_flag = {
+                            flag = STL_infiltration_@ROOT
+                            value > 0
+                        }
+                    }
+                }
+            }
+        }
+
+        highlight_states = {
+            highlight_state_targets = { state = 164 }
+        }
+
+        modifier = { command_power_gain = -0.2 }
+
+        days_remove = 30
+        days_re_enable = 0
+        cost = 25
+
+        complete_effect = {
+            add_equipment_to_stockpile = {
+                type = infantry_equipment
+                amount = -500
+            }
+            164 = {
+                if = {
+                    limit = { NOT = { has_state_flag = STL_infiltration_@ROOT } }
+                    set_state_flag = {
+                        flag = STL_infiltration_@ROOT
+                        value = 0
+                    }
+                }
+            }
+        }
+
+        remove_effect = {
+            164 = {
+                modify_state_flag = {
+                    flag = STL_infiltration_@ROOT
+                    value = 1
+                }
+            }
+        }
+
+        ai_will_do = { base = 0 }
+    }
+
+    STL_infiltrate_state_165 = {
+        icon = infiltrate_state
+
+        visible = {
+            NOT = { has_war_with = STG }
+            165 = {
+                is_owned_by = STG
+                is_controlled_by = STG
+            }
+        }
+
+        available = {
+            NOT = { has_war_with = STG }
+            has_equipment = { infantry_equipment > 499 }
+            165 = {
+                is_owned_by = STG
+                is_controlled_by = STG
+                STL_can_increase_infiltration_in_state = yes
+                OR = {
+                    any_neighbor_state = {
+                        is_owned_by = ROOT
+                        is_controlled_by = ROOT
+                    }
+                    any_neighbor_state = {
+                        has_state_flag = {
+                            flag = STL_infiltration_@ROOT
+                            value > 0
+                        }
+                    }
+                }
+            }
+        }
+
+        highlight_states = {
+            highlight_state_targets = { state = 165 }
+        }
+
+        modifier = { command_power_gain = -0.2 }
+
+        days_remove = 30
+        days_re_enable = 0
+        cost = 25
+
+        complete_effect = {
+            add_equipment_to_stockpile = {
+                type = infantry_equipment
+                amount = -500
+            }
+            165 = {
+                if = {
+                    limit = { NOT = { has_state_flag = STL_infiltration_@ROOT } }
+                    set_state_flag = {
+                        flag = STL_infiltration_@ROOT
+                        value = 0
+                    }
+                }
+            }
+        }
+
+        remove_effect = {
+            165 = {
+                modify_state_flag = {
+                    flag = STL_infiltration_@ROOT
+                    value = 1
+                }
+            }
+        }
+
+        ai_will_do = { base = 0 }
+    }
+
+    STL_infiltrate_state_166 = {
+        icon = infiltrate_state
+
+        visible = {
+            NOT = { has_war_with = STG }
+            166 = {
+                is_owned_by = STG
+                is_controlled_by = STG
+            }
+        }
+
+        available = {
+            NOT = { has_war_with = STG }
+            has_equipment = { infantry_equipment > 499 }
+            166 = {
+                is_owned_by = STG
+                is_controlled_by = STG
+                STL_can_increase_infiltration_in_state = yes
+                OR = {
+                    any_neighbor_state = {
+                        is_owned_by = ROOT
+                        is_controlled_by = ROOT
+                    }
+                    any_neighbor_state = {
+                        has_state_flag = {
+                            flag = STL_infiltration_@ROOT
+                            value > 0
+                        }
+                    }
+                }
+            }
+        }
+
+        highlight_states = {
+            highlight_state_targets = { state = 166 }
+        }
+
+        modifier = { command_power_gain = -0.2 }
+
+        days_remove = 30
+        days_re_enable = 0
+        cost = 25
+
+        complete_effect = {
+            add_equipment_to_stockpile = {
+                type = infantry_equipment
+                amount = -500
+            }
+            166 = {
+                if = {
+                    limit = { NOT = { has_state_flag = STL_infiltration_@ROOT } }
+                    set_state_flag = {
+                        flag = STL_infiltration_@ROOT
+                        value = 0
+                    }
+                }
+            }
+        }
+
+        remove_effect = {
+            166 = {
+                modify_state_flag = {
+                    flag = STL_infiltration_@ROOT
+                    value = 1
+                }
+            }
+        }
+
+        ai_will_do = { base = 0 }
+    }
+
+    STL_infiltrate_state_167 = {
+        icon = infiltrate_state
+
+        visible = {
+            NOT = { has_war_with = STG }
+            167 = {
+                is_owned_by = STG
+                is_controlled_by = STG
+            }
+        }
+
+        available = {
+            NOT = { has_war_with = STG }
+            has_equipment = { infantry_equipment > 499 }
+            167 = {
+                is_owned_by = STG
+                is_controlled_by = STG
+                STL_can_increase_infiltration_in_state = yes
+                OR = {
+                    any_neighbor_state = {
+                        is_owned_by = ROOT
+                        is_controlled_by = ROOT
+                    }
+                    any_neighbor_state = {
+                        has_state_flag = {
+                            flag = STL_infiltration_@ROOT
+                            value > 0
+                        }
+                    }
+                }
+            }
+        }
+
+        highlight_states = {
+            highlight_state_targets = { state = 167 }
+        }
+
+        modifier = { command_power_gain = -0.2 }
+
+        days_remove = 30
+        days_re_enable = 0
+        cost = 25
+
+        complete_effect = {
+            add_equipment_to_stockpile = {
+                type = infantry_equipment
+                amount = -500
+            }
+            167 = {
+                if = {
+                    limit = { NOT = { has_state_flag = STL_infiltration_@ROOT } }
+                    set_state_flag = {
+                        flag = STL_infiltration_@ROOT
+                        value = 0
+                    }
+                }
+            }
+        }
+
+        remove_effect = {
+            167 = {
+                modify_state_flag = {
+                    flag = STL_infiltration_@ROOT
+                    value = 1
+                }
+            }
+        }
+
+        ai_will_do = { base = 0 }
+    }
+
+    STL_infiltrate_state_168 = {
+        icon = infiltrate_state
+
+        visible = {
+            NOT = { has_war_with = STG }
+            168 = {
+                is_owned_by = STG
+                is_controlled_by = STG
+            }
+        }
+
+        available = {
+            NOT = { has_war_with = STG }
+            has_equipment = { infantry_equipment > 499 }
+            168 = {
+                is_owned_by = STG
+                is_controlled_by = STG
+                STL_can_increase_infiltration_in_state = yes
+                OR = {
+                    any_neighbor_state = {
+                        is_owned_by = ROOT
+                        is_controlled_by = ROOT
+                    }
+                    any_neighbor_state = {
+                        has_state_flag = {
+                            flag = STL_infiltration_@ROOT
+                            value > 0
+                        }
+                    }
+                }
+            }
+        }
+
+        highlight_states = {
+            highlight_state_targets = { state = 168 }
+        }
+
+        modifier = { command_power_gain = -0.2 }
+
+        days_remove = 30
+        days_re_enable = 0
+        cost = 25
+
+        complete_effect = {
+            add_equipment_to_stockpile = {
+                type = infantry_equipment
+                amount = -500
+            }
+            168 = {
+                if = {
+                    limit = { NOT = { has_state_flag = STL_infiltration_@ROOT } }
+                    set_state_flag = {
+                        flag = STL_infiltration_@ROOT
+                        value = 0
+                    }
+                }
+            }
+        }
+
+        remove_effect = {
+            168 = {
+                modify_state_flag = {
+                    flag = STL_infiltration_@ROOT
+                    value = 1
+                }
+            }
+        }
+
+        ai_will_do = { base = 0 }
+    }
+
+    STL_infiltrate_state_225 = {
+        icon = infiltrate_state
+
+        visible = {
+            NOT = { has_war_with = STG }
+            225 = {
+                is_owned_by = STG
+                is_controlled_by = STG
+            }
+        }
+
+        available = {
+            NOT = { has_war_with = STG }
+            has_equipment = { infantry_equipment > 499 }
+            225 = {
+                is_owned_by = STG
+                is_controlled_by = STG
+                STL_can_increase_infiltration_in_state = yes
+                OR = {
+                    any_neighbor_state = {
+                        is_owned_by = ROOT
+                        is_controlled_by = ROOT
+                    }
+                    any_neighbor_state = {
+                        has_state_flag = {
+                            flag = STL_infiltration_@ROOT
+                            value > 0
+                        }
+                    }
+                }
+            }
+        }
+
+        highlight_states = {
+            highlight_state_targets = { state = 225 }
+        }
+
+        modifier = { command_power_gain = -0.2 }
+
+        days_remove = 30
+        days_re_enable = 0
+        cost = 25
+
+        complete_effect = {
+            add_equipment_to_stockpile = {
+                type = infantry_equipment
+                amount = -500
+            }
+            225 = {
+                if = {
+                    limit = { NOT = { has_state_flag = STL_infiltration_@ROOT } }
+                    set_state_flag = {
+                        flag = STL_infiltration_@ROOT
+                        value = 0
+                    }
+                }
+            }
+        }
+
+        remove_effect = {
+            225 = {
+                modify_state_flag = {
+                    flag = STL_infiltration_@ROOT
+                    value = 1
+                }
+            }
+        }
+
+        ai_will_do = { base = 0 }
+    }
+
+    STL_infiltrate_state_229 = {
+        icon = infiltrate_state
+
+        visible = {
+            NOT = { has_war_with = STG }
+            229 = {
+                is_owned_by = STG
+                is_controlled_by = STG
+            }
+        }
+
+        available = {
+            NOT = { has_war_with = STG }
+            has_equipment = { infantry_equipment > 499 }
+            229 = {
+                is_owned_by = STG
+                is_controlled_by = STG
+                STL_can_increase_infiltration_in_state = yes
+                OR = {
+                    any_neighbor_state = {
+                        is_owned_by = ROOT
+                        is_controlled_by = ROOT
+                    }
+                    any_neighbor_state = {
+                        has_state_flag = {
+                            flag = STL_infiltration_@ROOT
+                            value > 0
+                        }
+                    }
+                }
+            }
+        }
+
+        highlight_states = {
+            highlight_state_targets = { state = 229 }
+        }
+
+        modifier = { command_power_gain = -0.2 }
+
+        days_remove = 30
+        days_re_enable = 0
+        cost = 25
+
+        complete_effect = {
+            add_equipment_to_stockpile = {
+                type = infantry_equipment
+                amount = -500
+            }
+            229 = {
+                if = {
+                    limit = { NOT = { has_state_flag = STL_infiltration_@ROOT } }
+                    set_state_flag = {
+                        flag = STL_infiltration_@ROOT
+                        value = 0
+                    }
+                }
+            }
+        }
+
+        remove_effect = {
+            229 = {
+                modify_state_flag = {
+                    flag = STL_infiltration_@ROOT
+                    value = 1
+                }
+            }
+        }
+
+        ai_will_do = { base = 0 }
+    }
+
+    STL_infiltrate_state_233 = {
+        icon = infiltrate_state
+
+        visible = {
+            NOT = { has_war_with = STG }
+            233 = {
+                is_owned_by = STG
+                is_controlled_by = STG
+            }
+        }
+
+        available = {
+            NOT = { has_war_with = STG }
+            has_equipment = { infantry_equipment > 499 }
+            233 = {
+                is_owned_by = STG
+                is_controlled_by = STG
+                STL_can_increase_infiltration_in_state = yes
+                OR = {
+                    any_neighbor_state = {
+                        is_owned_by = ROOT
+                        is_controlled_by = ROOT
+                    }
+                    any_neighbor_state = {
+                        has_state_flag = {
+                            flag = STL_infiltration_@ROOT
+                            value > 0
+                        }
+                    }
+                }
+            }
+        }
+
+        highlight_states = {
+            highlight_state_targets = { state = 233 }
+        }
+
+        modifier = { command_power_gain = -0.2 }
+
+        days_remove = 30
+        days_re_enable = 0
+        cost = 25
+
+        complete_effect = {
+            add_equipment_to_stockpile = {
+                type = infantry_equipment
+                amount = -500
+            }
+            233 = {
+                if = {
+                    limit = { NOT = { has_state_flag = STL_infiltration_@ROOT } }
+                    set_state_flag = {
+                        flag = STL_infiltration_@ROOT
+                        value = 0
+                    }
+                }
+            }
+        }
+
+        remove_effect = {
+            233 = {
+                modify_state_flag = {
+                    flag = STL_infiltration_@ROOT
+                    value = 1
+                }
+            }
+        }
+
+        ai_will_do = { base = 0 }
+    }
+
+    STL_infiltrate_state_234 = {
+        icon = infiltrate_state
+
+        visible = {
+            NOT = { has_war_with = STG }
+            234 = {
+                is_owned_by = STG
+                is_controlled_by = STG
+            }
+        }
+
+        available = {
+            NOT = { has_war_with = STG }
+            has_equipment = { infantry_equipment > 499 }
+            234 = {
+                is_owned_by = STG
+                is_controlled_by = STG
+                STL_can_increase_infiltration_in_state = yes
+                OR = {
+                    any_neighbor_state = {
+                        is_owned_by = ROOT
+                        is_controlled_by = ROOT
+                    }
+                    any_neighbor_state = {
+                        has_state_flag = {
+                            flag = STL_infiltration_@ROOT
+                            value > 0
+                        }
+                    }
+                }
+            }
+        }
+
+        highlight_states = {
+            highlight_state_targets = { state = 234 }
+        }
+
+        modifier = { command_power_gain = -0.2 }
+
+        days_remove = 30
+        days_re_enable = 0
+        cost = 25
+
+        complete_effect = {
+            add_equipment_to_stockpile = {
+                type = infantry_equipment
+                amount = -500
+            }
+            234 = {
+                if = {
+                    limit = { NOT = { has_state_flag = STL_infiltration_@ROOT } }
+                    set_state_flag = {
+                        flag = STL_infiltration_@ROOT
+                        value = 0
+                    }
+                }
+            }
+        }
+
+        remove_effect = {
+            234 = {
+                modify_state_flag = {
+                    flag = STL_infiltration_@ROOT
+                    value = 1
+                }
+            }
+        }
+
+        ai_will_do = { base = 0 }
+    }
+
+    STL_infiltrate_state_235 = {
+        icon = infiltrate_state
+
+        visible = {
+            NOT = { has_war_with = STG }
+            235 = {
+                is_owned_by = STG
+                is_controlled_by = STG
+            }
+        }
+
+        available = {
+            NOT = { has_war_with = STG }
+            has_equipment = { infantry_equipment > 499 }
+            235 = {
+                is_owned_by = STG
+                is_controlled_by = STG
+                STL_can_increase_infiltration_in_state = yes
+                OR = {
+                    any_neighbor_state = {
+                        is_owned_by = ROOT
+                        is_controlled_by = ROOT
+                    }
+                    any_neighbor_state = {
+                        has_state_flag = {
+                            flag = STL_infiltration_@ROOT
+                            value > 0
+                        }
+                    }
+                }
+            }
+        }
+
+        highlight_states = {
+            highlight_state_targets = { state = 235 }
+        }
+
+        modifier = { command_power_gain = -0.2 }
+
+        days_remove = 30
+        days_re_enable = 0
+        cost = 25
+
+        complete_effect = {
+            add_equipment_to_stockpile = {
+                type = infantry_equipment
+                amount = -500
+            }
+            235 = {
+                if = {
+                    limit = { NOT = { has_state_flag = STL_infiltration_@ROOT } }
+                    set_state_flag = {
+                        flag = STL_infiltration_@ROOT
+                        value = 0
+                    }
+                }
+            }
+        }
+
+        remove_effect = {
+            235 = {
+                modify_state_flag = {
+                    flag = STL_infiltration_@ROOT
+                    value = 1
+                }
+            }
+        }
+
+        ai_will_do = { base = 0 }
+    }
+
+    STL_infiltrate_state_237 = {
+        icon = infiltrate_state
+
+        visible = {
+            NOT = { has_war_with = STG }
+            237 = {
+                is_owned_by = STG
+                is_controlled_by = STG
+            }
+        }
+
+        available = {
+            NOT = { has_war_with = STG }
+            has_equipment = { infantry_equipment > 499 }
+            237 = {
+                is_owned_by = STG
+                is_controlled_by = STG
+                STL_can_increase_infiltration_in_state = yes
+                OR = {
+                    any_neighbor_state = {
+                        is_owned_by = ROOT
+                        is_controlled_by = ROOT
+                    }
+                    any_neighbor_state = {
+                        has_state_flag = {
+                            flag = STL_infiltration_@ROOT
+                            value > 0
+                        }
+                    }
+                }
+            }
+        }
+
+        highlight_states = {
+            highlight_state_targets = { state = 237 }
+        }
+
+        modifier = { command_power_gain = -0.2 }
+
+        days_remove = 30
+        days_re_enable = 0
+        cost = 25
+
+        complete_effect = {
+            add_equipment_to_stockpile = {
+                type = infantry_equipment
+                amount = -500
+            }
+            237 = {
+                if = {
+                    limit = { NOT = { has_state_flag = STL_infiltration_@ROOT } }
+                    set_state_flag = {
+                        flag = STL_infiltration_@ROOT
+                        value = 0
+                    }
+                }
+            }
+        }
+
+        remove_effect = {
+            237 = {
+                modify_state_flag = {
+                    flag = STL_infiltration_@ROOT
+                    value = 1
+                }
+            }
+        }
+
+        ai_will_do = { base = 0 }
+    }
+
+    STL_infiltrate_state_240 = {
+        icon = infiltrate_state
+
+        visible = {
+            NOT = { has_war_with = STG }
+            240 = {
+                is_owned_by = STG
+                is_controlled_by = STG
+            }
+        }
+
+        available = {
+            NOT = { has_war_with = STG }
+            has_equipment = { infantry_equipment > 499 }
+            240 = {
+                is_owned_by = STG
+                is_controlled_by = STG
+                STL_can_increase_infiltration_in_state = yes
+                OR = {
+                    any_neighbor_state = {
+                        is_owned_by = ROOT
+                        is_controlled_by = ROOT
+                    }
+                    any_neighbor_state = {
+                        has_state_flag = {
+                            flag = STL_infiltration_@ROOT
+                            value > 0
+                        }
+                    }
+                }
+            }
+        }
+
+        highlight_states = {
+            highlight_state_targets = { state = 240 }
+        }
+
+        modifier = { command_power_gain = -0.2 }
+
+        days_remove = 30
+        days_re_enable = 0
+        cost = 25
+
+        complete_effect = {
+            add_equipment_to_stockpile = {
+                type = infantry_equipment
+                amount = -500
+            }
+            240 = {
+                if = {
+                    limit = { NOT = { has_state_flag = STL_infiltration_@ROOT } }
+                    set_state_flag = {
+                        flag = STL_infiltration_@ROOT
+                        value = 0
+                    }
+                }
+            }
+        }
+
+        remove_effect = {
+            240 = {
+                modify_state_flag = {
+                    flag = STL_infiltration_@ROOT
+                    value = 1
+                }
+            }
+        }
+
+        ai_will_do = { base = 0 }
+    }
+
+    STL_infiltrate_state_326 = {
+        icon = infiltrate_state
+
+        visible = {
+            NOT = { has_war_with = STG }
+            326 = {
+                is_owned_by = STG
+                is_controlled_by = STG
+            }
+        }
+
+        available = {
+            NOT = { has_war_with = STG }
+            has_equipment = { infantry_equipment > 499 }
+            326 = {
+                is_owned_by = STG
+                is_controlled_by = STG
+                STL_can_increase_infiltration_in_state = yes
+                OR = {
+                    any_neighbor_state = {
+                        is_owned_by = ROOT
+                        is_controlled_by = ROOT
+                    }
+                    any_neighbor_state = {
+                        has_state_flag = {
+                            flag = STL_infiltration_@ROOT
+                            value > 0
+                        }
+                    }
+                }
+            }
+        }
+
+        highlight_states = {
+            highlight_state_targets = { state = 326 }
+        }
+
+        modifier = { command_power_gain = -0.2 }
+
+        days_remove = 30
+        days_re_enable = 0
+        cost = 25
+
+        complete_effect = {
+            add_equipment_to_stockpile = {
+                type = infantry_equipment
+                amount = -500
+            }
+            326 = {
+                if = {
+                    limit = { NOT = { has_state_flag = STL_infiltration_@ROOT } }
+                    set_state_flag = {
+                        flag = STL_infiltration_@ROOT
+                        value = 0
+                    }
+                }
+            }
+        }
+
+        remove_effect = {
+            326 = {
+                modify_state_flag = {
+                    flag = STL_infiltration_@ROOT
+                    value = 1
+                }
+            }
+        }
+
+        ai_will_do = { base = 0 }
+    }
+
+    STL_infiltrate_state_332 = {
+        icon = infiltrate_state
+
+        visible = {
+            NOT = { has_war_with = STG }
+            332 = {
+                is_owned_by = STG
+                is_controlled_by = STG
+            }
+        }
+
+        available = {
+            NOT = { has_war_with = STG }
+            has_equipment = { infantry_equipment > 499 }
+            332 = {
+                is_owned_by = STG
+                is_controlled_by = STG
+                STL_can_increase_infiltration_in_state = yes
+                OR = {
+                    any_neighbor_state = {
+                        is_owned_by = ROOT
+                        is_controlled_by = ROOT
+                    }
+                    any_neighbor_state = {
+                        has_state_flag = {
+                            flag = STL_infiltration_@ROOT
+                            value > 0
+                        }
+                    }
+                }
+            }
+        }
+
+        highlight_states = {
+            highlight_state_targets = { state = 332 }
+        }
+
+        modifier = { command_power_gain = -0.2 }
+
+        days_remove = 30
+        days_re_enable = 0
+        cost = 25
+
+        complete_effect = {
+            add_equipment_to_stockpile = {
+                type = infantry_equipment
+                amount = -500
+            }
+            332 = {
+                if = {
+                    limit = { NOT = { has_state_flag = STL_infiltration_@ROOT } }
+                    set_state_flag = {
+                        flag = STL_infiltration_@ROOT
+                        value = 0
+                    }
+                }
+            }
+        }
+
+        remove_effect = {
+            332 = {
+                modify_state_flag = {
+                    flag = STL_infiltration_@ROOT
+                    value = 1
+                }
+            }
+        }
+
+        ai_will_do = { base = 0 }
+    }
+
+    STL_infiltrate_state_333 = {
+        icon = infiltrate_state
+
+        visible = {
+            NOT = { has_war_with = STG }
+            333 = {
+                is_owned_by = STG
+                is_controlled_by = STG
+            }
+        }
+
+        available = {
+            NOT = { has_war_with = STG }
+            has_equipment = { infantry_equipment > 499 }
+            333 = {
+                is_owned_by = STG
+                is_controlled_by = STG
+                STL_can_increase_infiltration_in_state = yes
+                OR = {
+                    any_neighbor_state = {
+                        is_owned_by = ROOT
+                        is_controlled_by = ROOT
+                    }
+                    any_neighbor_state = {
+                        has_state_flag = {
+                            flag = STL_infiltration_@ROOT
+                            value > 0
+                        }
+                    }
+                }
+            }
+        }
+
+        highlight_states = {
+            highlight_state_targets = { state = 333 }
+        }
+
+        modifier = { command_power_gain = -0.2 }
+
+        days_remove = 30
+        days_re_enable = 0
+        cost = 25
+
+        complete_effect = {
+            add_equipment_to_stockpile = {
+                type = infantry_equipment
+                amount = -500
+            }
+            333 = {
+                if = {
+                    limit = { NOT = { has_state_flag = STL_infiltration_@ROOT } }
+                    set_state_flag = {
+                        flag = STL_infiltration_@ROOT
+                        value = 0
+                    }
+                }
+            }
+        }
+
+        remove_effect = {
+            333 = {
+                modify_state_flag = {
+                    flag = STL_infiltration_@ROOT
+                    value = 1
+                }
+            }
+        }
+
+        ai_will_do = { base = 0 }
+    }
+
+    STL_infiltrate_state_334 = {
+        icon = infiltrate_state
+
+        visible = {
+            NOT = { has_war_with = STG }
+            334 = {
+                is_owned_by = STG
+                is_controlled_by = STG
+            }
+        }
+
+        available = {
+            NOT = { has_war_with = STG }
+            has_equipment = { infantry_equipment > 499 }
+            334 = {
+                is_owned_by = STG
+                is_controlled_by = STG
+                STL_can_increase_infiltration_in_state = yes
+                OR = {
+                    any_neighbor_state = {
+                        is_owned_by = ROOT
+                        is_controlled_by = ROOT
+                    }
+                    any_neighbor_state = {
+                        has_state_flag = {
+                            flag = STL_infiltration_@ROOT
+                            value > 0
+                        }
+                    }
+                }
+            }
+        }
+
+        highlight_states = {
+            highlight_state_targets = { state = 334 }
+        }
+
+        modifier = { command_power_gain = -0.2 }
+
+        days_remove = 30
+        days_re_enable = 0
+        cost = 25
+
+        complete_effect = {
+            add_equipment_to_stockpile = {
+                type = infantry_equipment
+                amount = -500
+            }
+            334 = {
+                if = {
+                    limit = { NOT = { has_state_flag = STL_infiltration_@ROOT } }
+                    set_state_flag = {
+                        flag = STL_infiltration_@ROOT
+                        value = 0
+                    }
+                }
+            }
+        }
+
+        remove_effect = {
+            334 = {
+                modify_state_flag = {
+                    flag = STL_infiltration_@ROOT
+                    value = 1
+                }
+            }
+        }
+
+        ai_will_do = { base = 0 }
+    }
+
+    STL_infiltrate_state_653 = {
+        icon = infiltrate_state
+
+        visible = {
+            NOT = { has_war_with = STG }
+            653 = {
+                is_owned_by = STG
+                is_controlled_by = STG
+            }
+        }
+
+        available = {
+            NOT = { has_war_with = STG }
+            has_equipment = { infantry_equipment > 499 }
+            653 = {
+                is_owned_by = STG
+                is_controlled_by = STG
+                STL_can_increase_infiltration_in_state = yes
+                OR = {
+                    any_neighbor_state = {
+                        is_owned_by = ROOT
+                        is_controlled_by = ROOT
+                    }
+                    any_neighbor_state = {
+                        has_state_flag = {
+                            flag = STL_infiltration_@ROOT
+                            value > 0
+                        }
+                    }
+                }
+            }
+        }
+
+        highlight_states = {
+            highlight_state_targets = { state = 653 }
+        }
+
+        modifier = { command_power_gain = -0.2 }
+
+        days_remove = 30
+        days_re_enable = 0
+        cost = 25
+
+        complete_effect = {
+            add_equipment_to_stockpile = {
+                type = infantry_equipment
+                amount = -500
+            }
+            653 = {
+                if = {
+                    limit = { NOT = { has_state_flag = STL_infiltration_@ROOT } }
+                    set_state_flag = {
+                        flag = STL_infiltration_@ROOT
+                        value = 0
+                    }
+                }
+            }
+        }
+
+        remove_effect = {
+            653 = {
+                modify_state_flag = {
+                    flag = STL_infiltration_@ROOT
+                    value = 1
+                }
+            }
+        }
+
+        ai_will_do = { base = 0 }
+    }
+
+    STL_infiltrate_state_661 = {
+        icon = infiltrate_state
+
+        visible = {
+            NOT = { has_war_with = STG }
+            661 = {
+                is_owned_by = STG
+                is_controlled_by = STG
+            }
+        }
+
+        available = {
+            NOT = { has_war_with = STG }
+            has_equipment = { infantry_equipment > 499 }
+            661 = {
+                is_owned_by = STG
+                is_controlled_by = STG
+                STL_can_increase_infiltration_in_state = yes
+                OR = {
+                    any_neighbor_state = {
+                        is_owned_by = ROOT
+                        is_controlled_by = ROOT
+                    }
+                    any_neighbor_state = {
+                        has_state_flag = {
+                            flag = STL_infiltration_@ROOT
+                            value > 0
+                        }
+                    }
+                }
+            }
+        }
+
+        highlight_states = {
+            highlight_state_targets = { state = 661 }
+        }
+
+        modifier = { command_power_gain = -0.2 }
+
+        days_remove = 30
+        days_re_enable = 0
+        cost = 25
+
+        complete_effect = {
+            add_equipment_to_stockpile = {
+                type = infantry_equipment
+                amount = -500
+            }
+            661 = {
+                if = {
+                    limit = { NOT = { has_state_flag = STL_infiltration_@ROOT } }
+                    set_state_flag = {
+                        flag = STL_infiltration_@ROOT
+                        value = 0
+                    }
+                }
+            }
+        }
+
+        remove_effect = {
+            661 = {
+                modify_state_flag = {
+                    flag = STL_infiltration_@ROOT
+                    value = 1
+                }
+            }
+        }
+
+        ai_will_do = { base = 0 }
+    }
+
+    STL_infiltrate_state_662 = {
+        icon = infiltrate_state
+
+        visible = {
+            NOT = { has_war_with = STG }
+            662 = {
+                is_owned_by = STG
+                is_controlled_by = STG
+            }
+        }
+
+        available = {
+            NOT = { has_war_with = STG }
+            has_equipment = { infantry_equipment > 499 }
+            662 = {
+                is_owned_by = STG
+                is_controlled_by = STG
+                STL_can_increase_infiltration_in_state = yes
+                OR = {
+                    any_neighbor_state = {
+                        is_owned_by = ROOT
+                        is_controlled_by = ROOT
+                    }
+                    any_neighbor_state = {
+                        has_state_flag = {
+                            flag = STL_infiltration_@ROOT
+                            value > 0
+                        }
+                    }
+                }
+            }
+        }
+
+        highlight_states = {
+            highlight_state_targets = { state = 662 }
+        }
+
+        modifier = { command_power_gain = -0.2 }
+
+        days_remove = 30
+        days_re_enable = 0
+        cost = 25
+
+        complete_effect = {
+            add_equipment_to_stockpile = {
+                type = infantry_equipment
+                amount = -500
+            }
+            662 = {
+                if = {
+                    limit = { NOT = { has_state_flag = STL_infiltration_@ROOT } }
+                    set_state_flag = {
+                        flag = STL_infiltration_@ROOT
+                        value = 0
+                    }
+                }
+            }
+        }
+
+        remove_effect = {
+            662 = {
+                modify_state_flag = {
+                    flag = STL_infiltration_@ROOT
+                    value = 1
+                }
+            }
+        }
+
+        ai_will_do = { base = 0 }
+    }
+
+    STL_infiltrate_state_678 = {
+        icon = infiltrate_state
+
+        visible = {
+            NOT = { has_war_with = STG }
+            678 = {
+                is_owned_by = STG
+                is_controlled_by = STG
+            }
+        }
+
+        available = {
+            NOT = { has_war_with = STG }
+            has_equipment = { infantry_equipment > 499 }
+            678 = {
+                is_owned_by = STG
+                is_controlled_by = STG
+                STL_can_increase_infiltration_in_state = yes
+                OR = {
+                    any_neighbor_state = {
+                        is_owned_by = ROOT
+                        is_controlled_by = ROOT
+                    }
+                    any_neighbor_state = {
+                        has_state_flag = {
+                            flag = STL_infiltration_@ROOT
+                            value > 0
+                        }
+                    }
+                }
+            }
+        }
+
+        highlight_states = {
+            highlight_state_targets = { state = 678 }
+        }
+
+        modifier = { command_power_gain = -0.2 }
+
+        days_remove = 30
+        days_re_enable = 0
+        cost = 25
+
+        complete_effect = {
+            add_equipment_to_stockpile = {
+                type = infantry_equipment
+                amount = -500
+            }
+            678 = {
+                if = {
+                    limit = { NOT = { has_state_flag = STL_infiltration_@ROOT } }
+                    set_state_flag = {
+                        flag = STL_infiltration_@ROOT
+                        value = 0
+                    }
+                }
+            }
+        }
+
+        remove_effect = {
+            678 = {
+                modify_state_flag = {
+                    flag = STL_infiltration_@ROOT
+                    value = 1
+                }
+            }
+        }
+
+        ai_will_do = { base = 0 }
     }
 }

@@ -7,7 +7,7 @@ on_actions = {
     #                has_character = STL_starlight_glimmer
     #            }
     #            set_country_flag = starlight_recruited
-#
+    #
     #            STL_starlight_glimmer = {
     #                promote_character = yes
     #                country_leader = {
@@ -19,4 +19,26 @@ on_actions = {
     #        }
     #    }
     #}
+    on_war = {
+        effect = {
+            if = {
+                limit = {
+                    OR = {
+                        AND = { ROOT = { tag = STL } FROM = { tag = STG } }
+                        AND = { ROOT = { tag = STG } FROM = { tag = STL } }
+                    }
+                }
+                log = "[GetDateText]: [Root.GetName]: attacked [FROM.GetName]"
+
+                if = {
+                    limit = { ROOT = { tag = STL } }
+                    ROOT = { STL_trigger_stg_infiltration_states = yes }
+                }
+                if = {
+                    limit = { FROM = { tag = STL } }
+                    FROM = { STL_trigger_stg_infiltration_states = yes }
+                }
+            }
+        }
+    }
 }

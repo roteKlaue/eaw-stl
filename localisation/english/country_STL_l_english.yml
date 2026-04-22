@@ -117,7 +117,7 @@ STL_recovering_economy_modifier:0 "Recovering Economy"
 STL_recovering_economy_modifier_desc:0 "After years of disruption, the nation is slowly regaining its economic stability. Industrial output is improving, resources are becoming more accessible, and the groundwork for future growth is being rebuilt."
 STL_wirtschaftswunder_modifier:0 "Economic Miracle"
 STL_wirtschaftswunder_modifier_desc:0 "A sudden surge in productivity sweeps across the nation. Factories expand, research accelerates, and industrial efficiency reaches unprecedented levels. This rapid transformation propels the country into a new era of prosperity."
-STL_effective_change_for_army_tt:0 "§Y$STL_army_modifier$§! — Effective Change:\n"
+STL_effective_change_for_army_tt:0 "§Y$STL_army_modifier$§! - Effective Change:\n"
 
 STL_army_modifier:0 "Our Army"
 STL_army_modifier_desc:0 "In a world of griffon raiders, communist steel, and Equestrian optimism, our armed forces stand as the quiet proof that Equality needs more than friendly smiles. Built from volunteers, expatriates, and the occasional pony who wandered into the recruitment tent by mistake, our army is held together by discipline, shared purpose, and a very strict schedule.\n\nEvery soldier trains not for glory, but for the safety of everypony beside them. No heroes, no elites—only comrades moving as one. Through careful planning, hard lessons, and a touch of stubborn Townsvillian grit, our army grows into a force capable of meeting any challenge the world dares to send our way."
@@ -865,3 +865,90 @@ STL_vp_our_canterlot:0 "Equalopolis"
  STL_MADNESS_STATE:0 "The Equalist State"
  STL_MADNESS_STATE_DEF:0 "the Equalist State"
  STL_MADNESS_STATE_ADJ:0 "Equalist"
+
+ STL_infiltrate_state_154:0 "Infiltrate State 154"
+ STL_infiltrate_state_154_desc:0 "Our agents will work to establish underground cells in this region. This operation can only be launched if the state borders our territory or another state we have already infiltrated."
+
+ STL_infiltrate_state_155:0 "Infiltrate State 155"
+ STL_infiltrate_state_155_desc:0 "Our agents will work to establish underground cells in this region. This operation can only be launched if the state borders our territory or another state we have already infiltrated."
+
+ STL_infiltrate_state_156:0 "Infiltrate State 156"
+ STL_infiltrate_state_156_desc:0 "Our agents will work to establish underground cells in this region. This operation can only be launched if the state borders our territory or another state we have already infiltrated."
+
+ STL_infiltrate_state_157:0 "Infiltrate State 157"
+ STL_infiltrate_state_157_desc:0 "Our agents will work to establish underground cells in this region. This operation can only be launched if the state borders our territory or another state we have already infiltrated."
+
+ STL_infiltrate_state_158:0 "Infiltrate State 158"
+ STL_infiltrate_state_158_desc:0 "Our agents will work to establish underground cells in this region. This operation can only be launched if the state borders our territory or another state we have already infiltrated."
+
+ STL_infiltrate_state_159:0 "Infiltrate State 159"
+ STL_infiltrate_state_159_desc:0 "Our agents will work to establish underground cells in this region. This operation can only be launched if the state borders our territory or another state we have already infiltrated."
+
+ STL_infiltrate_state_161:0 "Infiltrate State 161"
+ STL_infiltrate_state_161_desc:0 "Our agents will work to establish underground cells in this region. This operation can only be launched if the state borders our territory or another state we have already infiltrated."
+
+ STL_infiltrate_state_162:0 "Infiltrate State 162"
+ STL_infiltrate_state_162_desc:0 "Our agents will work to establish underground cells in this region. This operation can only be launched if the state borders our territory or another state we have already infiltrated."
+
+ STL_infiltrate_state_163:0 "Infiltrate State 163"
+ STL_infiltrate_state_163_desc:0 "Our agents will work to establish underground cells in this region. This operation can only be launched if the state borders our territory or another state we have already infiltrated."
+
+ STL_infiltrate_state_164:0 "Infiltrate State 164"
+ STL_infiltrate_state_164_desc:0 "Our agents will work to establish underground cells in this region. This operation can only be launched if the state borders our territory or another state we have already infiltrated."
+
+ STL_infiltrate_state_165:0 "Infiltrate State 165"
+ STL_infiltrate_state_165_desc:0 "Our agents will work to establish underground cells in this region. This operation can only be launched if the state borders our territory or another state we have already infiltrated."
+
+ STL_infiltrate_state_166:0 "Infiltrate State 166"
+ STL_infiltrate_state_166_desc:0 "Our agents will work to establish underground cells in this region. This operation can only be launched if the state borders our territory or another state we have already infiltrated."
+
+ STL_infiltrate_state_167:0 "Infiltrate State 167"
+ STL_infiltrate_state_167_desc:0 "Our agents will work to establish underground cells in this region. This operation can only be launched if the state borders our territory or another state we have already infiltrated."
+
+ STL_infiltrate_state_168:0 "Infiltrate State 168"
+ STL_infiltrate_state_168_desc:0 "Our agents will work to establish underground cells in this region. This operation can only be launched if the state borders our territory or another state we have already infiltrated."
+
+ STL_infiltrate_state_225:0 "Infiltrate State 225"
+ STL_infiltrate_state_225_desc:0 "Our agents will work to establish underground cells in this region. This operation can only be launched if the state borders our territory or another state we have already infiltrated."
+
+ STL_infiltrate_state_229:0 "Infiltrate State 229"
+ STL_infiltrate_state_229_desc:0 "Our agents will work to establish underground cells in this region. This operation can only be launched if the state borders our territory or another state we have already infiltrated."
+
+ STL_infiltrate_state_233:0 "Infiltrate State 233"
+ STL_infiltrate_state_233_desc:0 "Our agents will work to establish underground cells in this region. This operation can only be launched if the state borders our territory or another state we have already infiltrated."
+
+ STL_infiltrate_state_234:0 "Infiltrate State 234"
+ STL_infiltrate_state_234_desc:0 "Our agents will work to establish underground cells in this region. This operation can only be launched if the state borders our territory or another state we have already infiltrated."
+
+ STL_infiltrate_state_235:0 "Infiltrate State 235"
+ STL_infiltrate_state_235_desc:0 "Our agents will work to establish underground cells in this region. This operation can only be launched if the state borders our territory or another state we have already infiltrated."
+
+ STL_infiltrate_state_237:0 "Infiltrate State 237"
+ STL_infiltrate_state_237_desc:0 "Our agents will work to establish underground cells in this region. This operation can only be launched if the state borders our territory or another state we have already infiltrated."
+
+ STL_infiltrate_state_240:0 "Infiltrate State 240"
+ STL_infiltrate_state_240_desc:0 "Our agents will work to establish underground cells in this region. This operation can only be launched if the state borders our territory or another state we have already infiltrated."
+
+ STL_infiltrate_state_326:0 "Infiltrate State 326"
+ STL_infiltrate_state_326_desc:0 "Our agents will work to establish underground cells in this region. This operation can only be launched if the state borders our territory or another state we have already infiltrated."
+
+ STL_infiltrate_state_332:0 "Infiltrate State 332"
+ STL_infiltrate_state_332_desc:0 "Our agents will work to establish underground cells in this region. This operation can only be launched if the state borders our territory or another state we have already infiltrated."
+
+ STL_infiltrate_state_333:0 "Infiltrate State 333"
+ STL_infiltrate_state_333_desc:0 "Our agents will work to establish underground cells in this region. This operation can only be launched if the state borders our territory or another state we have already infiltrated."
+
+ STL_infiltrate_state_334:0 "Infiltrate State 334"
+ STL_infiltrate_state_334_desc:0 "Our agents will work to establish underground cells in this region. This operation can only be launched if the state borders our territory or another state we have already infiltrated."
+
+ STL_infiltrate_state_653:0 "Infiltrate State 653"
+ STL_infiltrate_state_653_desc:0 "Our agents will work to establish underground cells in this region. This operation can only be launched if the state borders our territory or another state we have already infiltrated."
+
+ STL_infiltrate_state_661:0 "Infiltrate State 661"
+ STL_infiltrate_state_661_desc:0 "Our agents will work to establish underground cells in this region. This operation can only be launched if the state borders our territory or another state we have already infiltrated."
+
+ STL_infiltrate_state_662:0 "Infiltrate State 662"
+ STL_infiltrate_state_662_desc:0 "Our agents will work to establish underground cells in this region. This operation can only be launched if the state borders our territory or another state we have already infiltrated."
+
+ STL_infiltrate_state_678:0 "Infiltrate State 678"
+ STL_infiltrate_state_678_desc:0 "Our agents will work to establish underground cells in this region. This operation can only be launched if the state borders our territory or another state we have already infiltrated."
