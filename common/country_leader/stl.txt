@@ -22,12 +22,23 @@ leader_traits = {
         stability_factor = 0.10
         war_support_factor = 0.10
         weekly_manpower = 250
-        division_attack_factor = 0.05
+        ground_attack_factor = 0.05
         division_defense_factor = 0.05
         justify_war_goal_time = -0.15
 
         ai_will_do = {
             base = 2
         }
+    }
+
+    the_mother_of_equalism = {
+        random = no
+        sprite = 1
+
+        drift_defence_factor = 0.15
+        ground_attack_factor = 0.1
+        research_speed_factor = 0.05
+        resistance_target = -0.05
+        agency_upgrade_time = -0.10
     }
 }

@@ -17,7 +17,7 @@ characters={
             desc="POLITICS_STARLIGHTGLIMMER_DESC"
             ideology=equalism
             expire="1965.1.1.1"
-            traits = { veteran_communist red_army_organizer }
+            traits = { the_mother_of_equalism veteran_communist }
             id=-1
         }
 
@@ -28,7 +28,7 @@ characters={
                 original_tag = STL
             }
             traits = {
-                veteran_communist red_army_organizer
+                red_army_organizer
             }
             visible = {
                 has_country_flag = STL_the_star_is_back
@@ -42,13 +42,13 @@ characters={
                 original_tag = STL
             }
             traits = {
-                veteran_communist red_army_organizer
+                veteran_communist
             }
             visible = {
                 has_country_flag = STL_the_star_is_back
             }
             available = {
-                has_country_flag = STL_the_star_is_back
+                is_country_leader = NO
             }
         }
 
