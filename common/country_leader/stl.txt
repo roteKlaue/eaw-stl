@@ -41,4 +41,13 @@ leader_traits = {
         resistance_target = -0.05
         agency_upgrade_time = -0.10
     }
+
+    the_backery_chain = {
+        random = no
+        sprite = 1
+
+        political_power_gain = 0.15
+        global_building_slots_factor = 0.2
+        production_factory_efficiency_gain_factor = 0.05
+    }
 }

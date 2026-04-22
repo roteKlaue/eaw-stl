@@ -296,6 +296,29 @@ focus_tree = {
     }
 
     focus = {
+        id = STL_equipment_from_copper_coins
+        icon = GFX_focus_PRC_equipment_from_copper_coins
+
+        prerequisite = { focus = STL_army_recruiting }
+        x = 0
+        y = 1
+        relative_position_id = STL_army_recruiting
+
+        cost = 5
+
+        ai_will_do = {
+            factor = 1
+        }
+
+        completion_reward = {
+            add_timed_idea = {
+                idea = STL_equipment_from_copper_coins
+                days = 90
+            }
+        }
+    }
+
+    focus = {
         id = STL_new_army
         icon = GFX_goal_generic_allies_build_infantry
         cost = 5.00
@@ -576,9 +599,9 @@ focus_tree = {
                     }
                     add_claim_by = ROOT
                 }
-                add_opinion_modifier = { 
+                add_opinion_modifier = {
                     target = STL
-                    modifier = distrustful_relations 
+                    modifier = distrustful_relations
                 }
                 ROOT = {
                     create_wargoal = {
@@ -609,7 +632,12 @@ focus_tree = {
         x = 0
         y = 1
         relative_position_id = STL_increase_radicalism
-        completion_reward = { }
+        completion_reward = {
+            set_country_flag = STL_the_star_is_back
+            custom_effect_tooltip = available_political_advisor
+            show_unit_leaders_tooltip = STL_starlight_glimmer
+        }
+        search_filters = { FOCUS_FILTER_POLITICAL_CHARACTER }
     }
 
     focus = {
@@ -1761,7 +1789,6 @@ focus_tree = {
         relative_position_id = STL_army_effort
         prerequisite = { focus = STL_army_effort }
         completion_reward = {
-            add_ideas = militarism_focus
             custom_effect_tooltip = STL_effective_change_for_army_tt
             add_to_variable = {
                 STL_military_supply_consumption_factor = -0.07
@@ -1774,6 +1801,10 @@ focus_tree = {
             add_to_variable = {
                 STL_military_army_infantry_attack_factor = 0.05
                 tooltip = army_infantry_attack_factor_tt
+            }
+            add_to_variable = {
+                STL_military_resistance_damage_to_garrison = -0.15
+                tooltip = resistance_damage_to_garrison_tt
             }
         }
         search_filters = { FOCUS_FILTER_ARMY_BONUS }
@@ -1999,7 +2030,15 @@ focus_tree = {
             focus = STL_army_effort
         }
         completion_reward = {
-            add_ideas = military_youth_focus
+            custom_effect_tooltip = STL_effective_change_for_army_tt
+            add_to_variable = {
+                STL_military_conscription = 0.03
+                tooltip = conscription_tt
+            }
+            add_to_variable = {
+                STL_military_mobilization_speed = 0.25
+                tooltip = mobilization_speed_tt
+            }
         }
         search_filters = { FOCUS_FILTER_ARMY_BONUS }
     }
@@ -2016,7 +2055,11 @@ focus_tree = {
             factor = 1
         }
         completion_reward = {
-            add_ideas = STL_foreigners
+            custom_effect_tooltip = STL_effective_change_for_army_tt
+            add_to_variable = {
+                STL_military_non_core_manpower = 0.15
+                tooltip = non_core_manpower_tt
+            }
         }
         search_filters = { FOCUS_FILTER_ARMY_BONUS }
     }
@@ -2938,6 +2981,7 @@ focus_tree = {
             any_owned_state = {
                 is_coastal = yes
             }
+            STL_economy_cd_over = yes
         }
 
         bypass = {
@@ -2958,6 +3002,7 @@ focus_tree = {
         }
 
         completion_reward = {
+            navy_experience = 100
             random_owned_controlled_state = {
                 limit = {
                     is_coastal = yes
@@ -2973,7 +3018,7 @@ focus_tree = {
                 }
             }
         }
-        search_filters = { FOCUS_FILTER_INDUSTRY }
+        search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_NAVY_XP }
     }
 
     # Convoy Efficiency Path
@@ -3000,10 +3045,17 @@ focus_tree = {
                     instant_build = yes
                 }
             }
-            add_to_variable = { STL_defunct_navy_convoy_efficiency = 0.35 tooltip = "Convoy Efficiency" }
-            add_to_variable = { STL_defunct_navy_exp = 0.05 tooltip = "Naval Experience" }
+            custom_effect_tooltip = STL_effective_change_for_navy_tt
+            add_to_variable = {
+                STL_defunct_navy_convoy_efficiency = 0.35
+                tooltip = convoy_escort_efficiency_tt
+            }
+            add_to_variable = {
+                STL_defunct_navy_exp = 0.05
+                tooltip = experience_gain_navy_tt
+            }
         }
-        search_filters = { FOCUS_FILTER_NAVY }
+        search_filters = { FOCUS_FILTER_NAVY_XP }
     }
 
     focus = {
@@ -3029,10 +3081,17 @@ focus_tree = {
                     instant_build = yes
                 }
             }
-            add_to_variable = { STL_defunct_navy_convoy_efficiency = 0.30 tooltip = "Convoy Efficiency" }
-            add_to_variable = { STL_defunct_navy_exp = 0.05 tooltip = "Naval Experience" }
+            custom_effect_tooltip = STL_effective_change_for_navy_tt
+            add_to_variable = {
+                STL_defunct_navy_convoy_efficiency = 0.30
+                tooltip = convoy_escort_efficiency_tt
+            }
+            add_to_variable = {
+                STL_defunct_navy_exp = 0.05
+                tooltip = experience_gain_navy_tt
+            }
         }
-        search_filters = { FOCUS_FILTER_NAVY }
+        search_filters = { FOCUS_FILTER_NAVY_XP }
     }
 
     # Naval Combat Path
@@ -3059,11 +3118,21 @@ focus_tree = {
                     instant_build = yes
                 }
             }
-            add_to_variable = { STL_defunct_navy_naval_detection = 0.50 tooltip = "Naval Detection" }
-            add_to_variable = { STL_defunct_navy_max_range = 0.60 tooltip = "Max Range" }
-            add_to_variable = { STL_defunct_navy_exp = 0.25 tooltip = "Naval Experience" }
+            custom_effect_tooltip = STL_effective_change_for_navy_tt
+            add_to_variable = {
+                STL_defunct_navy_naval_detection = 0.50
+                tooltip = naval_detection_tt
+            }
+            add_to_variable = {
+                STL_defunct_navy_max_range = 0.60
+                tooltip = navy_max_range_factor_tt
+            }
+            add_to_variable = {
+                STL_defunct_navy_exp = 0.25
+                tooltip = experience_gain_navy_tt
+            }
         }
-        search_filters = { FOCUS_FILTER_NAVY }
+        search_filters = { FOCUS_FILTER_NAVY_XP }
     }
 
     focus = {
@@ -3089,10 +3158,17 @@ focus_tree = {
                     instant_build = yes
                 }
             }
-            add_to_variable = { STL_defunct_navy_navy_coordination = 0.65 tooltip = "Navy Coordination" }
-            add_to_variable = { STL_defunct_navy_exp = 0.25 tooltip = "Naval Experience" }
+            custom_effect_tooltip = STL_effective_change_for_navy_tt
+            add_to_variable = {
+                STL_defunct_navy_navy_coordination = 0.65
+                tooltip = naval_coordination_tt
+            }
+            add_to_variable = {
+                STL_defunct_navy_exp = 0.25
+                tooltip = experience_gain_navy_tt
+            }
         }
-        search_filters = { FOCUS_FILTER_NAVY }
+        search_filters = { FOCUS_FILTER_NAVY_XP }
     }
 
     # Logistics / Fuel / Accidents Path
@@ -3119,8 +3195,15 @@ focus_tree = {
                     instant_build = yes
                 }
             }
-            add_to_variable = { STL_defunct_navy_accidents_chance = -0.40 tooltip = "Accident Reduction" }
-            add_to_variable = { STL_defunct_navy_fuel_factor = -0.15 tooltip = "Fuel Efficiency" }
+            custom_effect_tooltip = STL_effective_change_for_navy_tt
+            add_to_variable = {
+                STL_defunct_navy_accidents_chance = -0.40
+                tooltip = naval_accidents_chance_tt
+            }
+            add_to_variable = {
+                STL_defunct_navy_fuel_factor = -0.15
+                tooltip = navy_fuel_consumption_factor_tt
+            }
         }
         search_filters = { FOCUS_FILTER_NAVY }
     }
@@ -3148,11 +3231,21 @@ focus_tree = {
                     instant_build = yes
                 }
             }
-            add_to_variable = { STL_defunct_navy_fuel_factor = -0.35 tooltip = "Fuel Efficiency" }
-            add_to_variable = { STL_defunct_navy_accidents_chance = -0.60 tooltip = "Accident Reduction" }
-            add_to_variable = { STL_defunct_navy_exp = 0.15 tooltip = "Naval Experience" }
+            custom_effect_tooltip = STL_effective_change_for_navy_tt
+            add_to_variable = {
+                STL_defunct_navy_fuel_factor = -0.35
+                tooltip = navy_fuel_consumption_factor_tt
+            }
+            add_to_variable = {
+                STL_defunct_navy_accidents_chance = -0.60
+                tooltip = naval_accidents_chance_tt
+            }
+            add_to_variable = {
+                STL_defunct_navy_exp = 0.15
+                tooltip = experience_gain_navy_tt
+            }
         }
-        search_filters = { FOCUS_FILTER_NAVY }
+        search_filters = { FOCUS_FILTER_NAVY_XP }
     }
 
     focus = {
@@ -3178,11 +3271,21 @@ focus_tree = {
                     instant_build = yes
                 }
             }
-            add_to_variable = { STL_defunct_navy_fuel_factor = -0.35 tooltip = "Fuel Efficiency" }
-            add_to_variable = { STL_defunct_navy_naval_detection = 0.60 tooltip = "Detection" }
-            add_to_variable = { STL_defunct_navy_exp = 0.15 tooltip = "Naval Experience" }
+            custom_effect_tooltip = STL_effective_change_for_navy_tt
+            add_to_variable = {
+                STL_defunct_navy_fuel_factor = -0.35
+                tooltip = navy_fuel_consumption_factor_tt
+            }
+            add_to_variable = {
+                STL_defunct_navy_naval_detection = 0.60
+                tooltip = naval_detection_tt
+            }
+            add_to_variable = {
+                STL_defunct_navy_exp = 0.15
+                tooltip = experience_gain_navy_tt
+            }
         }
-        search_filters = { FOCUS_FILTER_NAVY }
+        search_filters = { FOCUS_FILTER_NAVY_XP }
     }
 
     focus = {
@@ -3208,9 +3311,19 @@ focus_tree = {
                     instant_build = yes
                 }
             }
-            add_to_variable = { STL_defunct_navy_fuel_factor = -0.35 tooltip = "Fuel Efficiency" }
-            add_to_variable = { STL_defunct_navy_naval_detection = 0.60 tooltip = "Detection" }
-            add_to_variable = { STL_defunct_navy_navy_coordination = 0.15 tooltip = "Naval Coordination" }
+            custom_effect_tooltip = STL_effective_change_for_navy_tt
+            add_to_variable = {
+                STL_defunct_navy_fuel_factor = -0.35
+                tooltip = navy_fuel_consumption_factor_tt
+            }
+            add_to_variable = {
+                STL_defunct_navy_naval_detection = 0.60
+                tooltip = naval_detection_tt
+            }
+            add_to_variable = {
+                STL_defunct_navy_navy_coordination = 0.15
+                tooltip = naval_coordination_tt
+            }
         }
         search_filters = { FOCUS_FILTER_NAVY }
     }
@@ -3223,6 +3336,10 @@ focus_tree = {
         relative_position_id = STL_industrial_flourish
         cost = 5
         prerequisite = { focus = STL_industrial_flourish }
+
+        available = {
+            STL_economy_cd_over = yes
+        }
 
         search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_STABILITY }
 
@@ -3245,6 +3362,7 @@ focus_tree = {
                     instant_build = yes
                 }
             }
+            set_country_flag = STL_economy_cd_flag
         }
     }
 
@@ -3316,6 +3434,7 @@ focus_tree = {
                 }
             }
 
+            custom_effect_tooltip = STL_effective_change_for_economy_recovery_tt
             add_to_variable = {
                 STL_industrial_consumer_goods_factor = -0.15
                 tooltip = consumer_goods_factor_tt
@@ -3352,6 +3471,7 @@ focus_tree = {
                 }
             }
 
+            custom_effect_tooltip = STL_effective_change_for_economy_recovery_tt
             add_to_variable = {
                 STL_industrial_production_factory_start_efficiency_factor = 0.05
                 tooltip = production_factory_start_efficiency_factor_tt
@@ -3380,6 +3500,7 @@ focus_tree = {
         search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY }
 
         completion_reward = {
+            custom_effect_tooltip = STL_effective_change_for_economy_recovery_tt
             add_to_variable = {
                 STL_industrial_resource_trade_cost_bonus_per_factory = 1
                 tooltip = resource_trade_cost_bonus_per_factory_tt
@@ -3419,6 +3540,7 @@ focus_tree = {
             57 = { set_state_category = large_city }
             153 = { set_state_category = large_city }
 
+            custom_effect_tooltip = STL_effective_change_for_economy_recovery_tt
             add_to_variable = {
                 STL_industrial_production_speed_buildings_factor = 0.05
                 tooltip = production_speed_buildings_factor_tt
@@ -3441,6 +3563,7 @@ focus_tree = {
         completion_reward = {
             add_popularity = { ideology = ROOT popularity = 0.05 }
 
+            custom_effect_tooltip = STL_effective_change_for_economy_recovery_tt
             add_to_variable = { STL_industrial_production_factory_max_efficiency_factor = 0.05 tooltip = production_factory_max_efficiency_factor_tt }
             add_to_variable = { STL_industrial_production_factory_efficiency_gain_factor = 0.05 tooltip = production_factory_efficiency_gain_factor_tt }
             add_to_variable = { STL_industrial_production_factory_start_efficiency_factor = 0.05 tooltip = production_factory_start_efficiency_factor_tt }
@@ -3453,7 +3576,7 @@ focus_tree = {
     }
 
     focus = {
-        id = STL_industrial_expansion
+        id = STL_expand_the_backery
         icon = GFX_focus_generic_modernize_industry
         prerequisite = { focus = STL_build_houses }
         prerequisite = { focus = STL_lower_taxes }
@@ -3477,7 +3600,16 @@ focus_tree = {
                     instant_build = yes
                 }
             }
+            STL_sugar_belle = {
+                remove_trait = {
+                    trait = best_baker_in_town
+                }
+                add_trait = {
+                    trait = the_backery_chain
+                }
+            }
 
+            custom_effect_tooltip = STL_effective_change_for_economy_recovery_tt
             add_to_variable = {
                 STL_industrial_production_factory_max_efficiency_factor = 0.05
                 tooltip = production_factory_max_efficiency_factor_tt
@@ -3498,7 +3630,7 @@ focus_tree = {
             focus = STL_workers_rights
         }
         prerequisite = {
-            focus = STL_industrial_expansion
+            focus = STL_expand_the_backery
         }
         prerequisite = {
             focus = STL_abolish_price_controls
@@ -3607,6 +3739,7 @@ focus_tree = {
 
             custom_effect_tooltip = generic_skip_one_line_tt
 
+            custom_effect_tooltip = STL_effective_change_for_economy_boom_tt
             add_to_variable = {
                 STL_industrial_production_lack_of_resource_penalty_factor = -0.1
                 tooltip = production_lack_of_resource_penalty_factor_tt
@@ -3882,6 +4015,7 @@ focus_tree = {
 
         available = {
             has_tech = excavation1
+            STL_economy_cd_over = yes
         }
 
         completion_reward = {
@@ -3897,6 +4031,7 @@ focus_tree = {
                     instant_build = yes
                 }
             }
+            set_country_flag = STL_economy_cd_flag
         }
     }
 

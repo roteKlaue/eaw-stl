@@ -24,12 +24,12 @@ form_equ_stg = {
             has_completed_focus = STL_equipment_from_copper_coins
         }
         available = {
-            NOT = { has_idea = PRC_equipment_from_copper_coins }
+            NOT = { has_idea = STL_equipment_from_copper_coins }
         }
 
         complete_effect = {
             add_timed_idea = {
-                idea = PRC_equipment_from_copper_coins
+                idea = STL_equipment_from_copper_coins
                 days = 90
             }
         }

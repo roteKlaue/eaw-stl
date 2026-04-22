@@ -952,3 +952,14 @@ STL_vp_our_canterlot:0 "Equalopolis"
 
  STL_infiltrate_state_678:0 "Infiltrate State 678"
  STL_infiltrate_state_678_desc:0 "Our agents will work to establish underground cells in this region. This operation can only be launched if the state borders our territory or another state we have already infiltrated."
+
+ STL_economy_cd_days_tt:0 "Days until next §YEconomy-Subpath§!! can be taken: [?STL_economy_cd_flag:days_left|Y0]"
+ STL_economy_cd_flag:0 " Has started another §YEconomy-Subpath§!!"
+
+ STL_effective_change_for_economy_recovery_tt:0 "§Y$STL_recovering_economy_modifier$§! - Effective Change:\n"
+ STL_effective_change_for_economy_boom_tt:0 "§Y$STL_wirtschaftswunder_modifier$§! - Effective Change:\n"
+ navy_fuel_consumption_factor_tt: " $MODIFIER_NAVY_FUEL_CONSUMPTION_FACTOR$: $RIGHT|-=%1$"
+
+ STL_effective_change_for_navy_tt:0 "§Y$STL_navy_dynamic_modifier$§! - Effective Change:\n"
+
+
