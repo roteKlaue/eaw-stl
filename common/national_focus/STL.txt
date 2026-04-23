@@ -1,3 +1,7 @@
+search_filter_prios = {
+    FOCUS_FILTER_NAVY = 104
+}
+
 focus_tree = {
     id = starlight_village
     country = {
@@ -483,12 +487,31 @@ focus_tree = {
                     days = 1
                 }
             }
+            effect_tooltip = {
+                custom_effect_tooltip = if_they_accept_tt
+                STL_starlight_glimmer = {
+                    promote_character = yes
+                }
+                custom_effect_tooltip = available_chief_of_army
+                show_ideas_tooltip = starlight_glimmer_ac
+                custom_effect_tooltip = generic_skip_one_line_tt
+                show_unit_leaders_tooltip = STL_starlight_glimmer
+
+                custom_effect_tooltip = if_they_refuse_tt
+                STL_supreme_equalist_council = {
+                    promote_character = yes
+                }
+                create_wargoal = {
+                    type = annex_everything
+                    target = EQS
+                }
+            }
         }
     }
 
     focus = {
         id = STL_double_diamond_supreme
-        icon = GFX_focus_eqc_memories_of_our_town
+        icon = GFX_STL_double_diamond_supreme
         cost = 5.00
         prerequisite = {
             focus = STL_conquest_of_STG
@@ -635,6 +658,11 @@ focus_tree = {
         completion_reward = {
             set_country_flag = STL_the_star_is_back
             custom_effect_tooltip = available_political_advisor
+            show_ideas_tooltip = starlight_glimmer_pa
+            custom_effect_tooltip = generic_skip_one_line_tt
+            custom_effect_tooltip = available_chief_of_army
+            show_ideas_tooltip = starlight_glimmer_ac
+            custom_effect_tooltip = generic_skip_one_line_tt
             show_unit_leaders_tooltip = STL_starlight_glimmer
         }
         search_filters = { FOCUS_FILTER_POLITICAL_CHARACTER }
@@ -798,7 +826,7 @@ focus_tree = {
         id = STL_restore_normality
         icon = GFX_SOV_war_heroes_ccp_2d_sov_compatibility
         cost = 20
-        x = 1
+        x = 2
         y = 2
         available = {
             has_idea = STL_civil_unrest
@@ -901,6 +929,10 @@ focus_tree = {
             STL_starlight_glimmer = {
                 promote_character = yes
             }
+            custom_effect_tooltip = available_chief_of_army
+            show_ideas_tooltip = starlight_glimmer_ac
+            custom_effect_tooltip = generic_skip_one_line_tt
+            show_unit_leaders_tooltip = STL_starlight_glimmer
         }
         search_filters = { FOCUS_FILTER_POLITICAL_CHARACTER FOCUS_FILTER_POLITICAL }
     }
@@ -973,6 +1005,7 @@ focus_tree = {
                 recruit_character = CRY_sunburst
             }
         }
+        search_filters = { FOCUS_FILTER_POLITICAL_CHARACTER }
     }
 
     focus = {
@@ -1760,8 +1793,10 @@ focus_tree = {
                 amount = 1000
                 producer = ROOT
             }
+            custom_effect_tooltip = generic_skip_one_line_tt
 
             add_ideas = STL_streamline_artillery_production_idea
+            custom_effect_tooltip = generic_skip_one_line_tt
 
             custom_effect_tooltip = STL_effective_change_for_army_tt
             add_to_variable = {
@@ -1851,7 +1886,9 @@ focus_tree = {
                     instant_build = yes
                 }
             }
+            custom_effect_tooltip = generic_skip_one_line_tt
             add_ideas = STL_streamline_infantry_equipment_production_idea
+            custom_effect_tooltip = generic_skip_one_line_tt
             custom_effect_tooltip = STL_effective_change_for_army_tt
             add_to_variable = {
                 STL_military_equipment_capture = 0.05
@@ -2133,6 +2170,7 @@ focus_tree = {
                 category = armor
             }
 
+            custom_effect_tooltip = generic_skip_one_line_tt
             random_owned_controlled_state = {
                 limit = {
                     free_building_slots = {
@@ -2163,6 +2201,7 @@ focus_tree = {
                     instant_build = yes
                 }
             }
+            custom_effect_tooltip = generic_skip_one_line_tt
             army_experience = 20
         }
         search_filters = { FOCUS_FILTER_ARMY_XP }
@@ -2472,6 +2511,7 @@ focus_tree = {
                     level = 1
                     instant_build = yes
                 }
+                add_extra_state_shared_building_slots = 1
             }
         }
     }
@@ -2606,12 +2646,14 @@ focus_tree = {
         completion_reward = {
             remove_ideas = STL_city_state2
 
+            custom_effect_tooltip = generic_skip_one_line_tt
             random_core_state = {
                 add_building_construction = {
                     type = industrial_complex
                     level = 2
                     instant_build = yes
                 }
+                add_extra_state_shared_building_slots = 2
             }
         }
     }
@@ -2971,7 +3013,7 @@ focus_tree = {
             focus = STL_industrial_flourish
         }
 
-        x = 9
+        x = 19
         y = 1
         relative_position_id = STL_industrial_flourish
 
@@ -3018,7 +3060,7 @@ focus_tree = {
                 }
             }
         }
-        search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_NAVY_XP }
+        search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_NAVY_XP FOCUS_FILTER_NAVY }
     }
 
     # Convoy Efficiency Path
@@ -3055,7 +3097,7 @@ focus_tree = {
                 tooltip = experience_gain_navy_tt
             }
         }
-        search_filters = { FOCUS_FILTER_NAVY_XP }
+        search_filters = { FOCUS_FILTER_NAVY_XP FOCUS_FILTER_NAVY }
     }
 
     focus = {
@@ -3091,7 +3133,7 @@ focus_tree = {
                 tooltip = experience_gain_navy_tt
             }
         }
-        search_filters = { FOCUS_FILTER_NAVY_XP }
+        search_filters = { FOCUS_FILTER_NAVY_XP FOCUS_FILTER_NAVY }
     }
 
     # Naval Combat Path
@@ -3132,7 +3174,7 @@ focus_tree = {
                 tooltip = experience_gain_navy_tt
             }
         }
-        search_filters = { FOCUS_FILTER_NAVY_XP }
+        search_filters = { FOCUS_FILTER_NAVY_XP FOCUS_FILTER_NAVY }
     }
 
     focus = {
@@ -3168,7 +3210,7 @@ focus_tree = {
                 tooltip = experience_gain_navy_tt
             }
         }
-        search_filters = { FOCUS_FILTER_NAVY_XP }
+        search_filters = { FOCUS_FILTER_NAVY_XP FOCUS_FILTER_NAVY }
     }
 
     # Logistics / Fuel / Accidents Path
@@ -3245,7 +3287,7 @@ focus_tree = {
                 tooltip = experience_gain_navy_tt
             }
         }
-        search_filters = { FOCUS_FILTER_NAVY_XP }
+        search_filters = { FOCUS_FILTER_NAVY_XP FOCUS_FILTER_NAVY }
     }
 
     focus = {
@@ -3285,7 +3327,7 @@ focus_tree = {
                 tooltip = experience_gain_navy_tt
             }
         }
-        search_filters = { FOCUS_FILTER_NAVY_XP }
+        search_filters = { FOCUS_FILTER_NAVY_XP FOCUS_FILTER_NAVY }
     }
 
     focus = {
@@ -3585,7 +3627,7 @@ focus_tree = {
         cost = 10
 
         relative_position_id = STL_lower_taxes
-        search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_INDUSTRY }
+        search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_INDUSTRY FOCUS_FILTER_POLITICAL_CHARACTER }
 
         completion_reward = {
             random_core_state = {
@@ -3600,6 +3642,7 @@ focus_tree = {
                     instant_build = yes
                 }
             }
+            custom_effect_tooltip = generic_skip_one_line_tt
             STL_sugar_belle = {
                 remove_trait = {
                     trait = best_baker_in_town
@@ -3609,6 +3652,7 @@ focus_tree = {
                 }
             }
 
+            custom_effect_tooltip = generic_skip_one_line_tt
             custom_effect_tooltip = STL_effective_change_for_economy_recovery_tt
             add_to_variable = {
                 STL_industrial_production_factory_max_efficiency_factor = 0.05

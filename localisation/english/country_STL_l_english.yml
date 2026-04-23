@@ -961,5 +961,11 @@ STL_vp_our_canterlot:0 "Equalopolis"
  navy_fuel_consumption_factor_tt: " $MODIFIER_NAVY_FUEL_CONSUMPTION_FACTOR$: $RIGHT|-=%1$"
 
  STL_effective_change_for_navy_tt:0 "§Y$STL_navy_dynamic_modifier$§! - Effective Change:\n"
+ STL_navy_dynamic_modifier:0 "Our Navy"
+ FOCUS_FILTER_NAVY:0 "Navy Bonuses"
+ STL_supreme_equalist_council:0 "Supreme Equalist Council"
+ POLITICS_SUPREME_EQUALIST_COUNCIL_DESC:0 "With Starlight Glimmer denied to us, the leadership of Our Town has fallen into the hooves of a hastily assembled council. United in ideology but divided in vision, the Supreme Equalist Council seeks to uphold the principles of equality — yet without a guiding star, their rule grows increasingly unstable and dogmatic."
+ STL_invite_starlight_back_tt_start:0 "§PWe will petition [EQS.GetName] for Starlight Glimmer's return.§!\n\n"
+ STL_invite_starlight_back_tt:0 "\nIf they §Gaccept§!:\n  §GStarlight Glimmer returns and may once more lead our nation.§!\nIf they §Rdecline§!:\n  §ROur people will be outraged, and war with [EQS.GetName] may follow.§!"
 
 

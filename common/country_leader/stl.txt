@@ -3,18 +3,18 @@ leader_traits = {
         random = no
         sprite = 1
 
-		army_org_factor = 0.05
-		army_morale_factor = -0.02
-		political_power_gain = 0.05
-		stability_factor = -0.15
-		war_support_factor = 0.10
+        army_org_factor = 0.05
+        army_morale_factor = -0.02
+        political_power_gain = 0.05
+        stability_factor = -0.15
+        war_support_factor = 0.10
 
-		ai_will_do = {
+        ai_will_do = {
             base = 2
         }
     }
 
-	the_equal_alicorn = {
+    the_equal_alicorn = {
         random = no
         sprite = 1
 
@@ -49,5 +49,15 @@ leader_traits = {
         political_power_gain = 0.15
         global_building_slots_factor = 0.2
         production_factory_efficiency_gain_factor = 0.05
+    }
+
+    STL_supreme_equalist_council_idea = {
+        random = no
+        sprite = 1
+
+        stability_factor = -0.20
+        political_power_gain = -1.00
+        war_support_factor = 0.05
+        drift_defence_factor = 0.10
     }
 }

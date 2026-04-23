@@ -154,6 +154,7 @@ recruit_character = STL_party_flavour
 recruit_character = STL_sugar_belle
 recruit_character = UESR_country_leader
 recruit_character = STL_starlight_glimmer
+recruit_character = STL_supreme_equalist_council
 
 add_dynamic_modifier = { 
 	modifier = STL_navy_dynamic_modifier

@@ -112,6 +112,10 @@ country_event = {
             target = EQS
             type = annex_everything
         }
+
+        STL_supreme_equalist_council = {
+            promote_character = yes
+        }
     }
 }
 
