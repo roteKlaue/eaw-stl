@@ -22,7 +22,7 @@ leader_traits = {
         stability_factor = 0.10
         war_support_factor = 0.10
         weekly_manpower = 250
-        ground_attack_factor = 0.05
+        army_attack_factor = 0.05
         division_defense_factor = 0.05
         justify_war_goal_time = -0.15
 
@@ -36,7 +36,7 @@ leader_traits = {
         sprite = 1
 
         drift_defence_factor = 0.15
-        ground_attack_factor = 0.1
+        army_attack_factor = 0.1
         research_speed_factor = 0.05
         resistance_target = -0.05
         agency_upgrade_time = -0.10

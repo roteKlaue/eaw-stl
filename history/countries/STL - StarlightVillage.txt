@@ -5,117 +5,117 @@ oob = "STL_1007"
 set_research_slots = 2
 
 set_technology = {
-	pony_race = 1
-	melee_weapons = 1
-	melee_weapons1 = 1
-	pre_gw_artillery = 1
-	infantry_weapons = 1
-	interwar_antitank = 1
-	gw_artillery = 1
-	tech_support = 1
-	tech_pegasi = 1
-	infantry_weapons1 = 1
-	tech_recon = 1
-	tech_military_police = 1
-	tech_engineers = 1
-	tech_trucks = 1
-	interwar_antiair = 1
-	basic_train = 1
+    pony_race = 1
+    melee_weapons = 1
+    melee_weapons1 = 1
+    pre_gw_artillery = 1
+    infantry_weapons = 1
+    interwar_antitank = 1
+    gw_artillery = 1
+    tech_support = 1
+    tech_pegasi = 1
+    infantry_weapons1 = 1
+    tech_recon = 1
+    tech_military_police = 1
+    tech_engineers = 1
+    tech_trucks = 1
+    interwar_antiair = 1
+    basic_train = 1
 }
 if = {
-	limit = { has_dlc = "By Blood Alone" }
-	set_technology = {
-		aa_lmg = 1
-		early_bombs = 1
-		aircraft_construction = 1
-		engines_1 = 1
-		iw_small_airframe = 1
-		iw_medium_airframe = 1
-		bba_early_transport_plane = 1
-	}
+    limit = { has_dlc = "By Blood Alone" }
+    set_technology = {
+        aa_lmg = 1
+        early_bombs = 1
+        aircraft_construction = 1
+        engines_1 = 1
+        iw_small_airframe = 1
+        iw_medium_airframe = 1
+        bba_early_transport_plane = 1
+    }
 
-	create_equipment_variant = {
-		name = "I-15"
-		type = small_plane_airframe_0
-		modules = {
-			fixed_main_weapon_slot = light_mg_2x
-			engine_type_slot = engine_1_1x
-			special_type_slot_1 = empty
-		}
-		icon = "GFX_stalliongrad_2d_early_fighter_medium"
-	}
-	create_equipment_variant = {
-		name = "DB-3"
-		type = medium_plane_airframe_0
-		modules = {
-			fixed_main_weapon_slot = medium_bomb_bay
-			engine_type_slot = engine_1_3x
-			special_type_slot_1 = lmg_defense_turret
-		}
-		icon = "GFX_stalliongrad_2d_early_bomber_medium"
-	}
+    create_equipment_variant = {
+        name = "I-15"
+        type = small_plane_airframe_0
+        modules = {
+            fixed_main_weapon_slot = light_mg_2x
+            engine_type_slot = engine_1_1x
+            special_type_slot_1 = empty
+        }
+        icon = "GFX_stalliongrad_2d_early_fighter_medium"
+    }
+    create_equipment_variant = {
+        name = "DB-3"
+        type = medium_plane_airframe_0
+        modules = {
+            fixed_main_weapon_slot = medium_bomb_bay
+            engine_type_slot = engine_1_3x
+            special_type_slot_1 = lmg_defense_turret
+        }
+        icon = "GFX_stalliongrad_2d_early_bomber_medium"
+    }
 
-	else = {
-		set_technology = {
-			early_fighter = 1
-			early_bomber = 1
-			early_transport_plane = 1
-		}
-	}
+    else = {
+        set_technology = {
+            early_fighter = 1
+            early_bomber = 1
+            early_transport_plane = 1
+        }
+    }
 }
 actually_fix_weapon_techs = yes #THIS HAS TO BE CALLED IN EVERY HISTORY FILE RIGHT AFTER MAIN set_technology!
 
 if = {
-	limit = {
-		NOT = { has_dlc = "No Step Back" }
-	}
-	set_technology = {
-		gwtank = 1
-	}
+    limit = {
+        NOT = { has_dlc = "No Step Back" }
+    }
+    set_technology = {
+        gwtank = 1
+    }
 }
 if = {
-	limit = {
-		has_dlc = "No Step Back"
-	}
-	set_technology = {
-		gwtank_chassis = 1
-	}
+    limit = {
+        has_dlc = "No Step Back"
+    }
+    set_technology = {
+        gwtank_chassis = 1
+    }
 
-	create_equipment_variant = {
-		name = "Early Light Tank"
-		type = light_tank_chassis_0
-		parent_version = 0
-		modules = {
-			main_armament_slot = tank_heavy_machine_gun
-			turret_type_slot = tank_light_one_man_tank_turret
-			suspension_type_slot = tank_bogie_suspension
-			armor_type_slot = tank_riveted_armor
-			engine_type_slot = tank_gasoline_engine
-		}
-		upgrades = {
-			tank_nsb_engine_upgrade = 1
-			tank_nsb_armor_upgrade = 1
-		}
-		icon = "gfx/interface/technologies/gwtank.dds"
-	}
+    create_equipment_variant = {
+        name = "Early Light Tank"
+        type = light_tank_chassis_0
+        parent_version = 0
+        modules = {
+            main_armament_slot = tank_heavy_machine_gun
+            turret_type_slot = tank_light_one_man_tank_turret
+            suspension_type_slot = tank_bogie_suspension
+            armor_type_slot = tank_riveted_armor
+            engine_type_slot = tank_gasoline_engine
+        }
+        upgrades = {
+            tank_nsb_engine_upgrade = 1
+            tank_nsb_armor_upgrade = 1
+        }
+        icon = "gfx/interface/technologies/gwtank.dds"
+    }
 }
 
 set_technology = {
-	torpedo_gunboats = 1
-	early_ship_hull_light = 1
-	protected_cruisers = 1
-	early_ship_hull_cruiser = 1
+    torpedo_gunboats = 1
+    early_ship_hull_light = 1
+    protected_cruisers = 1
+    early_ship_hull_cruiser = 1
     basic_battery = 1
     basic_torpedo = 1
-	mtg_transport = 1
+    mtg_transport = 1
 }
 if = {
-	limit = {
-		has_dlc = "La Resistance"
-	}
-	set_technology = {
-		armored_car1 = 1
-	}
+    limit = {
+        has_dlc = "La Resistance"
+    }
+    set_technology = {
+        armored_car1 = 1
+    }
 }
 
 generic_DD_template = yes
@@ -123,21 +123,21 @@ generic_CL_template = yes
 
 set_convoys = 69
 set_popularities = {
-	democratic = 23
-	fascism = 1
-	communism = 75
-	neutrality = 1
+    democratic = 23
+    fascism = 1
+    communism = 75
+    neutrality = 1
 }
 set_politics = {
-	ruling_party = communism
-	last_election = "1000.10.10"
-	election_frequency = 36
-	elections_allowed = no
+    ruling_party = communism
+    last_election = "1000.10.10"
+    election_frequency = 36
+    elections_allowed = no
 }
 
 add_ideas = {
-	STL_city_state
-	STL_equality_past
+    STL_city_state
+    STL_equality_past
 }
 
 set_stability = 0.5
@@ -156,12 +156,12 @@ recruit_character = UESR_country_leader
 recruit_character = STL_starlight_glimmer
 recruit_character = STL_supreme_equalist_council
 
-add_dynamic_modifier = { 
-	modifier = STL_navy_dynamic_modifier
+add_dynamic_modifier = {
+    modifier = STL_navy_dynamic_modifier
 }
 
 add_dynamic_modifier = {
-	modifier = STL_recovering_economy_modifier
+    modifier = STL_recovering_economy_modifier
 }
 
 set_variable = { STL_defunct_navy_convoy_efficiency = -0.50 }
@@ -197,7 +197,7 @@ set_variable = { STL_industrial_production_factory_start_efficiency_factor = 0 }
 set_variable = { STL_industrial_line_change_production_efficiency_factor = 0 }
 set_variable = { STL_industrial_equipment_conversion_speed = 0 }
 set_variable = { STL_industrial_consumer_goods_expected_value = 0 }
-set_variable = { STL_economic_crash_consumer_goods = 0.75 } 
+set_variable = { STL_economic_crash_consumer_goods = 0.75 }
 # set_country_flag = { flag = CORE_ALLOWED value = 1 }
 
 set_variable = { STL_military_army_infantry_attack_factor = 0 }
@@ -233,8 +233,29 @@ set_variable = { STL_instability_stability_weekly = -0.002 }
 set_variable = { STL_instability_war_weekly = -0.005 }
 set_variable = { STL_instability_resistance = 0.10 }
 
+set_variable = { STL_airforce_xp_gain_air = 0.1 }
+set_variable = { STL_airforce_airforce_intel_factor = 0 }
+set_variable = { STL_airforce_ground_attack_factor = 0 }
+set_variable = { STL_airforce_air_superiority_efficiency = 0 }
+set_variable = { STL_airforce_air_doctrine_cost_factor = 0 }
+set_variable = { STL_airforce_industrial_capacity_factory = 0 }
+set_variable = { STL_airforce_production_speed_air_base_factor = 0 }
+set_variable = { STL_airforce_production_speed_anti_air_building_factor = 0 }
+set_variable = { STL_airforce_production_speed_radar_station_factor = 0 }
+set_variable = { STL_airforce_air_ace_generation_chance_factor = 0 }
+set_variable = { STL_airforce_air_untrained_pilots_penalty_factor = 0 }
+set_variable = { STL_airforce_air_accidents_factor = 0 }
+set_variable = { STL_airforce_air_manpower_requirement_factor = 0 }
+set_variable = { STL_airforce_air_agility_factor = 0 }
+set_variable = { STL_airforce_air_ace_generation_chance_factor = 0 }
+set_variable = { STL_airforce_air_nav_efficiency = 0 }
+set_variable = { STL_airforce_air_cas_efficiency = 0 }
+set_variable = { STL_airforce_air_strategic_bomber_bombing_factor = 0 }
+set_variable = { STL_airforce_air_range_factor = 0 }
+set_variable = { STL_airforce_air_fuel_consumption_factor = 0 }
+
 set_rule = {
-	can_generate_female_aces = yes
-	can_generate_female_unit_leaders  = yes
-	can_generate_female_country_leaders = yes
+    can_generate_female_aces = yes
+    can_generate_female_unit_leaders  = yes
+    can_generate_female_country_leaders = yes
 }

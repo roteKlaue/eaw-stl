@@ -291,10 +291,13 @@ focus_tree = {
                     owner = ROOT
                 }
             }
+            custom_effect_tooltip = generic_skip_one_line_tt
             add_timed_idea = {
                 idea = STL_recruitment_rush
-                days = 60
+                days = 90
             }
+            custom_effect_tooltip = generic_skip_one_line_tt
+            custom_effect_tooltip = STL_army_recruiting_tt
         }
         search_filters = { FOCUS_FILTER_ARMY_BONUS }
     }
@@ -319,6 +322,8 @@ focus_tree = {
                 idea = STL_equipment_from_copper_coins
                 days = 90
             }
+            custom_effect_tooltip = generic_skip_one_line_tt
+            custom_effect_tooltip = STL_equipment_from_copper_coins_tt
         }
     }
 
@@ -463,6 +468,10 @@ focus_tree = {
             }
         }
 
+        bypass = {
+            EQS = { exists = no }
+        }
+
         prerequisite = {
             focus = STL_conquest_of_STG
         }
@@ -506,6 +515,11 @@ focus_tree = {
                     target = EQS
                 }
             }
+        }
+        search_filters = {
+            FOCUS_FILTER_MILITARY_CHARACTER
+            FOCUS_FILTER_POLITICAL_CHARACTER
+            FOCUS_FILTER_POLITICAL
         }
     }
 
@@ -610,7 +624,11 @@ focus_tree = {
         relative_position_id = STL_double_diamond_supreme
         completion_reward = {
             set_cosmetic_tag = STL_MADNESS_STATE
+            custom_effect_tooltip = generic_skip_one_line_tt
 
+            add_stability = -1
+
+            custom_effect_tooltip = generic_skip_one_line_tt
             every_country = {
                 limit = {
                     NOT = { tag = ROOT }
@@ -634,6 +652,7 @@ focus_tree = {
                 }
             }
 
+            custom_effect_tooltip = generic_skip_one_line_tt
             add_ideas = world_revolution
         }
         search_filters = { FOCUS_FILTER_ANNEXATION FOCUS_FILTER_STABILITY }
@@ -665,7 +684,7 @@ focus_tree = {
             custom_effect_tooltip = generic_skip_one_line_tt
             show_unit_leaders_tooltip = STL_starlight_glimmer
         }
-        search_filters = { FOCUS_FILTER_POLITICAL_CHARACTER }
+        search_filters = { FOCUS_FILTER_POLITICAL_CHARACTER FOCUS_FILTER_MILITARY_CHARACTER }
     }
 
     focus = {
@@ -934,7 +953,7 @@ focus_tree = {
             custom_effect_tooltip = generic_skip_one_line_tt
             show_unit_leaders_tooltip = STL_starlight_glimmer
         }
-        search_filters = { FOCUS_FILTER_POLITICAL_CHARACTER FOCUS_FILTER_POLITICAL }
+        search_filters = { FOCUS_FILTER_POLITICAL_CHARACTER FOCUS_FILTER_POLITICAL FOCUS_FILTER_MILITARY_CHARACTER }
     }
 
     focus = {
@@ -989,20 +1008,10 @@ focus_tree = {
                     set_nationality = STL
                 }
             }
-            if = {
-                limit = {
-                    CRY = {
-                        has_character = CRY_sunburst
-                    }
+            CRY = {
+                CRY_sunburst = {
+                    set_nationality = STL
                 }
-                CRY = {
-                    CRY_sunburst = {
-                        set_nationality = STL
-                    }
-                }
-            }
-            else = {
-                recruit_character = CRY_sunburst
             }
         }
         search_filters = { FOCUS_FILTER_POLITICAL_CHARACTER }
@@ -1059,7 +1068,7 @@ focus_tree = {
     }
 
     focus = {
-        id = STL_fluttershy
+        id = STL_air_base_prepartionluttershy
         icon = GFX_goal_ELF_fluttershy
         cost = 2.9
         ai_will_do = { factor = 50 }
@@ -1194,7 +1203,7 @@ focus_tree = {
         relative_position_id = STL_applejack
         prerequisite = { focus = STL_applejack }
         prerequisite = { focus = STL_rarity }
-        prerequisite = { focus = STL_fluttershy }
+        prerequisite = { focus = STL_air_base_prepartionluttershy }
         prerequisite = { focus = STL_rainbow }
         prerequisite = { focus = STL_pinkie }
         completion_reward = {
@@ -1824,6 +1833,12 @@ focus_tree = {
         relative_position_id = STL_army_effort
         prerequisite = { focus = STL_army_effort }
         completion_reward = {
+            add_equipment_to_stockpile = {
+                type = infantry_equipment_1
+                amount = 1000
+                producer = ROOT
+            }
+
             custom_effect_tooltip = STL_effective_change_for_army_tt
             add_to_variable = {
                 STL_military_supply_consumption_factor = -0.07
@@ -1957,7 +1972,7 @@ focus_tree = {
             }
             army_experience = 20
         }
-        search_filters = { FOCUS_FILTER_ARMY_XP }
+        search_filters = { FOCUS_FILTER_ARMY_XP FOCUS_FILTER_RESEARCH }
     }
 
     focus = {
@@ -2081,7 +2096,7 @@ focus_tree = {
     }
 
     focus = {
-        id = STL_foreign_conscription
+        id = STL_air_base_prepartionoreign_conscription
         icon = GFX_focus_RAJ_indian_gentlemen_offcers
         x = 0
         y = 1
@@ -2204,7 +2219,7 @@ focus_tree = {
             custom_effect_tooltip = generic_skip_one_line_tt
             army_experience = 20
         }
-        search_filters = { FOCUS_FILTER_ARMY_XP }
+        search_filters = { FOCUS_FILTER_ARMY_XP FOCUS_FILTER_RESEARCH }
     }
 
     focus = {
@@ -2853,7 +2868,7 @@ focus_tree = {
     }
 
     focus = {
-        id = STL_fourth_factory
+        id = STL_air_base_prepartionourth_factory
         icon = GFX_focus_generic_industry_2
         cost = 4.00
         prerequisite = {
@@ -2993,7 +3008,7 @@ focus_tree = {
         available = {
             NOT = { has_idea = STL_city_state }
             NOT = { has_idea = STL_city_state2 }
-            has_completed_focus = STL_fourth_factory
+            has_completed_focus = STL_air_base_prepartionourth_factory
         }
 
         x = 15
@@ -3013,7 +3028,7 @@ focus_tree = {
             focus = STL_industrial_flourish
         }
 
-        x = 19
+        x = 25
         y = 1
         relative_position_id = STL_industrial_flourish
 
@@ -3178,7 +3193,7 @@ focus_tree = {
     }
 
     focus = {
-        id = STL_fleet_coordination
+        id = STL_air_base_prepartionleet_coordination
         icon = GFX_focus_BRA_navy
         prerequisite = { focus = STL_naval_training }
         x = 0
@@ -3251,7 +3266,7 @@ focus_tree = {
     }
 
     focus = {
-        id = STL_fuel_and_supply
+        id = STL_air_base_prepartionuel_and_supply
         icon = GFX_SOV_pc_of_the_ussr_navy_ccp_2d_sov_compatibility
         prerequisite = { focus = STL_naval_safety }
         relative_position_id = STL_naval_safety
@@ -3668,7 +3683,7 @@ focus_tree = {
     }
 
     focus = {
-        id = STL_flourishing_economy
+        id = STL_air_base_prepartionlourishing_economy
         icon = GFX_focus_GER_autarky_achieved
         prerequisite = {
             focus = STL_workers_rights
@@ -3712,9 +3727,9 @@ focus_tree = {
         icon = GFX_focus_generic_self_management
         x = 3
         y = 1
-        relative_position_id = STL_flourishing_economy
+        relative_position_id = STL_air_base_prepartionlourishing_economy
         cost = 8
-        prerequisite = { focus = STL_flourishing_economy }
+        prerequisite = { focus = STL_air_base_prepartionlourishing_economy }
         prerequisite = { focus = STL_oils }
         prerequisite = { focus = STL_dam_bales }
         mutually_exclusive = { focus = STL_export_goods }
@@ -3734,10 +3749,10 @@ focus_tree = {
         y = 1
 
         prerequisite = {
-            focus = STL_flourishing_economy
+            focus = STL_air_base_prepartionlourishing_economy
         }
 
-        relative_position_id = STL_flourishing_economy
+        relative_position_id = STL_air_base_prepartionlourishing_economy
 
         search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_STABILITY }
         completion_reward = {
@@ -3748,11 +3763,11 @@ focus_tree = {
     focus = {
         id = STL_mass_production
         icon = GFX_focus_generic_military_industry
-        prerequisite = { focus = STL_flourishing_economy }
+        prerequisite = { focus = STL_air_base_prepartionlourishing_economy }
 
         x = 0
         y = 1
-        relative_position_id = STL_flourishing_economy
+        relative_position_id = STL_air_base_prepartionlourishing_economy
         cost = 10
         available = {
             OR = {
@@ -3800,9 +3815,9 @@ focus_tree = {
         icon = GFX_goal_generic_positive_trade_relations
         x = 5
         y = 1
-        relative_position_id = STL_flourishing_economy
+        relative_position_id = STL_air_base_prepartionlourishing_economy
         cost = 8
-        prerequisite = { focus = STL_flourishing_economy }
+        prerequisite = { focus = STL_air_base_prepartionlourishing_economy }
         prerequisite = { focus = STL_oils }
         prerequisite = { focus = STL_dam_bales }
         mutually_exclusive = { focus = STL_autarky }
@@ -4235,7 +4250,7 @@ focus_tree = {
         id = STL_aluminium
         icon = GFX_focus_generic_aluminum
         prerequisite = { focus = STL_coal }
-        x = 2
+        x = 3
         y = 1
         relative_position_id = STL_coal
 
@@ -4849,6 +4864,610 @@ focus_tree = {
             #     }
             # }
         }
+    }
+
+    focus = {
+        id = STL_our_flying_aces
+        icon = GFX_focus_generic_multi_role_aircraft
+        cost = 5
+        x = 13
+        y = 1
+        prerequisite = { focus = STL_industrial_flourish }
+
+        available = {
+            STL_economy_cd_over = yes
+        }
+
+        relative_position_id = STL_industrial_flourish
+        search_filters = { FOCUS_FILTER_AIR_XP }
+
+        completion_reward = {
+            add_dynamic_modifier = {
+                modifier = STL_airforce
+            }
+        }
+    }
+
+    focus = {
+        id = STL_aeronautical_research_institute
+        icon = GFX_focus_generic_air_research_boost
+        prerequisite = { focus = STL_our_flying_aces }
+
+        x = -3
+        y = 1
+        relative_position_id = STL_our_flying_aces
+        cost = 5
+
+        search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_RESEARCH }
+
+        completion_reward = {
+            random_core_state = {
+                limit = { is_fully_controlled_by = ROOT }
+                add_extra_state_shared_building_slots = 1
+                add_building_construction = {
+                    type = arms_factory
+                    level = 1
+                    instant_build = yes
+                }
+            }
+
+            custom_effect_tooltip = generic_skip_one_line_tt
+
+            add_tech_bonus = {
+                name = STL_aeronautical_research_institute
+                bonus = 0.25
+                uses = 2
+                category = air_equipment
+            }
+
+            add_breakthrough_progress = {
+                specialization = specialization_air
+                value = 0.35
+            }
+
+            custom_effect_tooltip = generic_skip_one_line_tt
+            custom_effect_tooltip = STL_airforce_tt
+            add_to_variable = {
+                STL_airforce_air_doctrine_cost_factor = -0.05
+                tooltip = air_doctrine_cost_factor_tt
+            }
+        }
+    }
+
+    focus = {
+        id = STL_dive_bombers
+        icon = GFX_focus_generic_cas_aircraft
+        alternate_icon = GFX_focus_GER_sturzkampfbomber_historical
+
+        prerequisite = { focus = STL_aeronautical_research_institute }
+        mutually_exclusive = { focus = STL_tactical_bombers focus = STL_uralbomber_program }
+
+        x = -2
+        y = 1
+        relative_position_id = STL_aeronautical_research_institute
+        cost = 5
+
+        available = {
+            OR = {
+                has_country_flag = formed_stg_stl
+                is_in_faction_with = EQS
+            }
+        }
+
+        search_filters = { FOCUS_FILTER_MILITARY_CHARACTER FOCUS_FILTER_RESEARCH FOCUS_FILTER_INDUSTRY }
+
+        completion_reward = {
+            add_doctrine_cost_reduction = {
+                name = STL_dive_bombers
+                cost_reduction = 0.25
+                uses = 1
+                category = air_doctrine
+            }
+
+            add_tech_bonus = {
+                name = STL_dive_bombers
+                bonus = 0.5
+                uses = 1
+                category = light_air
+            }
+
+            custom_effect_tooltip = generic_skip_one_line_tt
+            custom_effect_tooltip = STL_airforce_tt
+            add_to_variable = {
+                STL_airforce_air_cas_efficiency = 0.10
+                tooltip = air_cas_efficiency_tt
+            }
+            add_to_variable = {
+                STL_airforce_ground_attack_factor = 0.05
+                tooltip = ground_attack_factor_tt
+            }
+        }
+    }
+
+    focus = {
+        id = STL_tactical_bombers
+        icon = GFX_goal_generic_air_bomber
+
+        prerequisite = { focus = STL_aeronautical_research_institute }
+        mutually_exclusive = { focus = STL_dive_bombers focus = STL_uralbomber_program }
+
+        x = 0
+        y = 1
+        relative_position_id = STL_aeronautical_research_institute
+        cost = 5
+
+        available = {
+            OR = {
+                has_country_flag = formed_stg_stl
+                is_in_faction_with = EQS
+            }
+        }
+
+        search_filters = { FOCUS_FILTER_MILITARY_CHARACTER FOCUS_FILTER_RESEARCH FOCUS_FILTER_INDUSTRY }
+
+        completion_reward = {
+            add_doctrine_cost_reduction = {
+                name = STL_tactical_bombers
+                cost_reduction = 0.25
+                uses = 1
+                category = air_doctrine
+            }
+
+            add_tech_bonus = {
+                name = STL_tactical_bombers
+                bonus = 0.5
+                uses = 1
+                category = medium_air
+            }
+
+            custom_effect_tooltip = generic_skip_one_line_tt
+            custom_effect_tooltip = STL_airforce_tt
+            add_to_variable = {
+                STL_airforce_air_cas_efficiency = 0.05
+                tooltip = air_cas_efficiency_tt
+            }
+            add_to_variable = {
+                STL_airforce_air_strategic_bomber_bombing_factor = 0.05
+                tooltip = air_strategic_bomber_bombing_factor_tt
+            }
+            add_to_variable = {
+                STL_airforce_air_range_factor = 0.05
+                tooltip = air_range_factor_tt
+            }
+        }
+    }
+
+    focus = {
+        id = STL_uralbomber_program
+        icon = GFX_focus_generic_long_range_aircraft
+
+        prerequisite = { focus = STL_aeronautical_research_institute }
+        mutually_exclusive = { focus = STL_dive_bombers focus = STL_tactical_bombers }
+
+        x = 2
+        y = 1
+        relative_position_id = STL_aeronautical_research_institute
+        cost = 5
+
+        available = {
+            OR = {
+                has_country_flag = formed_stg_stl
+                is_in_faction_with = EQS
+            }
+        }
+
+        search_filters = { FOCUS_FILTER_MILITARY_CHARACTER FOCUS_FILTER_RESEARCH FOCUS_FILTER_INDUSTRY }
+
+        completion_reward = {
+            add_doctrine_cost_reduction = {
+                name = STL_uralbomber_program
+                cost_reduction = 0.25
+                uses = 1
+                category = air_doctrine
+            }
+
+            add_tech_bonus = {
+                name = STL_uralbomber_program
+                bonus = 0.5
+                uses = 1
+                category = heavy_air
+            }
+
+            custom_effect_tooltip = generic_skip_one_line_tt
+            custom_effect_tooltip = STL_airforce_tt
+            add_to_variable = {
+                STL_airforce_air_range_factor = 0.15
+                tooltip = air_range_factor_tt
+            }
+            add_to_variable = {
+                STL_airforce_air_strategic_bomber_bombing_factor = 0.10
+                tooltip = air_strategic_bomber_bombing_factor_tt
+            }
+            add_to_variable = {
+                STL_airforce_air_fuel_consumption_factor = 0.05
+                tooltip = air_fuel_consumption_factor_tt
+            }
+        }
+    }
+
+    focus = {
+        id = STL_make_planes_cheaper
+        icon = GFX_goal_continuous_air_production
+        cost = 5
+
+        x = -1
+        y = 1
+        relative_position_id = STL_dive_bombers
+
+        prerequisite = {
+            focus = STL_dive_bombers
+            focus = STL_tactical_bombers
+            focus = STL_uralbomber_program
+        }
+
+        prerequisite = {
+            focus = STL_aluminium
+        }
+
+        completion_reward = {
+            custom_effect_tooltip = STL_airforce_tt
+            add_to_variable = {
+                STL_airforce_industrial_capacity_factory = 0.05
+                tooltip = industrial_capacity_factory_tt
+            }
+            add_to_variable = {
+                STL_airforce_air_manpower_requirement_factor = -0.05
+                tooltip = air_manpower_requirement_factor_tt
+            }
+        }
+    }
+
+    focus = {
+        id = STL_air_long_range
+        icon = GFX_goal_generic_build_airforce
+        cost = 5
+
+        x = 2
+        y = 1
+        relative_position_id = STL_dive_bombers
+
+        prerequisite = {
+            focus = STL_dive_bombers
+            focus = STL_tactical_bombers
+            focus = STL_uralbomber_program
+        }
+
+        completion_reward = {
+            add_tech_bonus = {
+                name = STL_innovative_airforce_bonus
+                bonus = 0.5
+                uses = 2
+                category = air_equipment
+            }
+
+            custom_effect_tooltip = STL_airforce_tt
+            add_to_variable = {
+                STL_airforce_air_range_factor = 0.05
+                tooltip = air_range_factor_tt
+            }
+        }
+    }
+
+    focus = {
+        id = STL_air_base_prepartion
+        icon = GFX_focus_generic_air_bases
+        cost = 5
+
+        available = {
+            OR = {
+                has_country_flag = formed_stg_stl
+                is_in_faction_with = EQS
+            }
+        }
+
+        x = 1
+        y = 1
+        relative_position_id = STL_our_flying_aces
+
+        prerequisite = {
+            focus = STL_our_flying_aces
+        }
+
+        completion_reward = {
+            random_owned_controlled_state = {
+                limit = { is_core_of = ROOT }
+                add_building_construction = {
+                    type = air_base
+                    level = 2
+                    instant_build = yes
+                }
+            }
+
+            random_owned_controlled_state = {
+                limit = { is_core_of = ROOT }
+                add_building_construction = {
+                    type = air_base
+                    level = 1
+                    instant_build = yes
+                }
+            }
+
+            custom_effect_tooltip = generic_skip_one_line_tt
+            custom_effect_tooltip = STL_airforce_tt
+            add_to_variable = {
+                STL_airforce_production_speed_air_base_factor = 0.10
+                tooltip = production_speed_air_base_factor_tt
+            }
+        }
+    }
+
+    focus = {
+        id = STL_ground_measures
+        icon = GFX_focus_generic_air_defense
+        cost = 5
+
+        available = {
+            OR = {
+                has_country_flag = formed_stg_stl
+                is_in_faction_with = EQS
+            }
+        }
+
+        x = 3
+        y = 1
+        relative_position_id = STL_our_flying_aces
+
+        prerequisite = {
+            focus = STL_our_flying_aces
+        }
+
+        completion_reward = {
+            random_owned_controlled_state = {
+                limit = { is_core_of = ROOT }
+
+                add_building_construction = {
+                    type = anti_air_building
+                    level = 2
+                    instant_build = yes
+                }
+            }
+
+            custom_effect_tooltip = generic_skip_one_line_tt
+            custom_effect_tooltip = STL_airforce_tt
+            add_to_variable = {
+                STL_airforce_production_speed_anti_air_building_factor = 0.10
+                tooltip = production_speed_anti_air_building_factor_tt
+            }
+            add_to_variable = {
+                STL_airforce_airforce_intel_factor = 0.05
+                tooltip = airforce_intel_factor_tt
+            }
+        }
+    }
+
+    focus = {
+        id = STL_domestic_production
+        icon = GFX_focus_generic_aircraft_production
+        cost = 5
+
+        x = 1
+        y = 1
+        relative_position_id = STL_air_base_prepartion
+
+        prerequisite = {
+            focus = STL_ground_measures
+            focus = STL_air_base_prepartion
+        }
+
+        completion_reward = {
+            add_ideas = STL_domestic_air_production
+
+            custom_effect_tooltip = generic_skip_one_line_tt
+            custom_effect_tooltip = STL_airforce_tt
+            add_to_variable = {
+                STL_airforce_industrial_capacity_factory = 0.03
+                tooltip = industrial_capacity_factory_tt
+            }
+        }
+    }
+
+    focus = {
+        id = STL_light_specialization
+        icon = GFX_goal_generic_air_fighter2
+
+        prerequisite = { focus = STL_domestic_production }
+        mutually_exclusive = { focus = STL_medium_specialization focus = STL_heavy_specialization }
+
+        x = -2
+        y = 1
+        relative_position_id = STL_domestic_production
+
+        search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_INDUSTRY }
+
+        cost = 10
+
+        ai_will_do = {
+            factor = 1
+        }
+
+        completion_reward = {
+            swap_ideas = {
+                remove_idea = STL_domestic_air_production
+                add_idea = STL_domestic_air_production_small
+            }
+
+            add_tech_bonus = {
+                name = STL_light_specialization_bonus
+                bonus = 0.5
+                uses = 2
+                category = light_air
+            }
+            air_experience = 40
+
+            custom_effect_tooltip = generic_skip_one_line_tt
+            custom_effect_tooltip = STL_airforce_tt
+            add_to_variable = {
+                STL_airforce_air_agility_factor = 0.05
+                tooltip = air_agility_factor_tt
+            }
+            add_to_variable = {
+                STL_airforce_air_superiority_efficiency = 0.05
+                tooltip = air_superiority_efficiency_tt
+            }
+        }
+    }
+
+    focus = {
+        id = STL_medium_specialization
+        icon = GFX_focus_generic_multi_role_aircraft
+
+        prerequisite = { focus = STL_domestic_production }
+        mutually_exclusive = { focus = STL_light_specialization focus = STL_heavy_specialization }
+
+        x = 0
+        y = 1
+        relative_position_id = STL_domestic_production
+
+        search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_INDUSTRY }
+
+        cost = 10
+
+        ai_will_do = {
+            factor = 1
+        }
+
+        completion_reward = {
+            swap_ideas = {
+                remove_idea = STL_domestic_air_production
+                add_idea = STL_domestic_air_production_medium
+            }
+
+            add_tech_bonus = {
+                name = STL_medium_specialization_bonus
+                bonus = 0.5
+                uses = 2
+                category = medium_air
+            }
+            air_experience = 40
+
+            custom_effect_tooltip = generic_skip_one_line_tt
+            custom_effect_tooltip = STL_airforce_tt
+            add_to_variable = {
+                STL_airforce_air_cas_efficiency = 0.03
+                tooltip = air_cas_efficiency_tt
+            }
+            add_to_variable = {
+                STL_airforce_air_range_factor = 0.03
+                tooltip = air_range_factor_tt
+            }
+            add_to_variable = {
+                STL_airforce_air_superiority_efficiency = 0.03
+                tooltip = air_superiority_efficiency_tt
+            }
+        }
+    }
+
+    focus = {
+        id = STL_heavy_specialization
+        icon = GFX_focus_generic_long_range_aircraft
+
+        prerequisite = { focus = STL_domestic_production }
+        mutually_exclusive = { focus = STL_light_specialization focus = STL_medium_specialization }
+
+        x = 2
+        y = 1
+        relative_position_id = STL_domestic_production
+
+        search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_INDUSTRY }
+
+        cost = 10
+
+        ai_will_do = {
+            factor = 1
+        }
+
+        completion_reward = {
+            swap_ideas = {
+                remove_idea = STL_domestic_air_production
+                add_idea = STL_domestic_air_production_large
+            }
+
+            add_tech_bonus = {
+                name = STL_heavy_specialization_bonus
+                bonus = 0.5
+                uses = 2
+                category = heavy_air
+            }
+            air_experience = 40
+
+            custom_effect_tooltip = generic_skip_one_line_tt
+            custom_effect_tooltip = STL_airforce_tt
+            add_to_variable = {
+                STL_airforce_air_range_factor = 0.07
+                tooltip = air_range_factor_tt
+            }
+            add_to_variable = {
+                STL_airforce_air_strategic_bomber_bombing_factor = 0.05
+                tooltip = air_strategic_bomber_bombing_factor_tt
+            }
+        }
+    }
+
+    focus = {
+        id = STL_our_powerful_airfleet
+        icon = GFX_focus_NORDIC_mon_airforce
+        cost = 5
+
+        x = 3
+        y = 1
+        relative_position_id = STL_air_long_range
+
+        prerequisite = {
+            focus = STL_air_long_range
+        }
+
+        prerequisite = {
+            focus = STL_heavy_specialization
+            focus = STL_light_specialization
+            focus = STL_medium_specialization
+        }
+
+        completion_reward = {
+            custom_effect_tooltip = STL_airforce_tt
+
+            add_to_variable = {
+                STL_airforce_air_superiority_efficiency = 0.10
+                tooltip = air_superiority_efficiency_tt
+            }
+            add_to_variable = {
+                STL_airforce_air_agility_factor = 0.05
+                tooltip = air_agility_factor_tt
+            }
+            add_to_variable = {
+                STL_airforce_air_ace_generation_chance_factor = 0.10
+                tooltip = air_ace_generation_chance_factor_tt
+            }
+            add_to_variable = {
+                STL_airforce_air_accidents_factor = -0.05
+                tooltip = air_accidents_factor_tt
+            }
+        }
+    }
+
+    focus = {
+        id = STL_naval_air_cooperation
+        icon = GFX_goal_generic_navy_carrier
+        cost = 5
+        x = -2
+        y = 1
+        prerequisite = {
+            focus = STL_air_base_prepartionuel_and_supply
+        }
+        prerequisite = {
+            focus = STL_domestic_production
+        }
+        relative_position_id = STL_air_base_prepartionuel_and_supply
+        completion_reward = { }
     }
 }
 

@@ -54,7 +54,7 @@ characters={
 
         field_marshal = {
             traits = {
-                pony_race_trait aggressive_assaulter adaptable war_hero trait_SOV_determined skilled_staffer logistics_wizard organizer thorough_planner organisational_leader inspirational_leader offensive_doctrine trait_cautious career_officer
+                pony_race_trait aggressive_assaulter adaptable war_hero trait_SOV_determined logistics_wizard organizer thorough_planner organisational_leader inspirational_leader offensive_doctrine trait_cautious
             }
             skill = 4
             attack_skill = 2

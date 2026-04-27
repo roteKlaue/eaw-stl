@@ -320,7 +320,7 @@ STL_crytals:0 "Our Crystals"
 STL_crytals_desc:0 "Crystals are a valuable resource, whether for trade, industry, or magical research. Developing new crystal deposits would strengthen both our economy and our strategic position."
 STL_dam_our_town:0 "Dam Our Town"
 STL_dam_our_town_desc:0 "Harnessing the waters near Our Town would provide both development and prestige. A dam here could support local industry while standing as a monument to our modernization."
-STL_dam_home_town:0 "Dam Starlight Glimmers Home"
+STL_dam_home_town:0 "Dam Caramel Marks"
 STL_dam_home_town_desc:0 "The riverlands around Starlight Glimmers Home offer another opportunity for power and development. If properly harnessed, they could support new growth in this important region."
 STL_dam_bales:0 "Dam Bales"
 STL_dam_bales_desc:0 "Bales may yet become more than a provincial town. A new dam would strengthen the local economy and help tie the region more closely to our national development plans."
@@ -413,7 +413,9 @@ STL_second_military_factory_desc:0 "One is never enough. To secure our lands and
 
 STL_army_recruiting:0 "Our Army Recruitment"
 STL_army_recruiting_desc:0 "To secure our lands and safeguard the future of the Equal, we call upon every capable pony to enlist. Discipline and duty will forge the backbone of our defense, and the strength of our army shall be unmatched."
-
+STL_army_recruiting_tt:0 "Unlocks the §Y$recruitment_push$§! Decisions, granting the §Y$STL_recruitment_rush$§! national spirit."
+recruitment_push:0 "Recruitment Rush"
+ 
 STL_recruitment_rush:0 "Recruitment Rush"
 STL_recruitment_rush_desc:0 "Through swift enlistment drives and vigorous training programs, our forces grow rapidly. Every new recruit strengthens the spine of our army, and every hoof on the parade grounds echoes our unity and resolve."
 
@@ -866,91 +868,94 @@ STL_vp_our_canterlot:0 "Equalopolis"
  STL_MADNESS_STATE_DEF:0 "the Equalist State"
  STL_MADNESS_STATE_ADJ:0 "Equalist"
 
- STL_infiltrate_state_154:0 "Infiltrate State 154"
+ STL_infiltrate_state_154:0 "Infiltrate East Goatcasus"
  STL_infiltrate_state_154_desc:0 "Our agents will work to establish underground cells in this region. This operation can only be launched if the state borders our territory or another state we have already infiltrated."
 
- STL_infiltrate_state_155:0 "Infiltrate State 155"
+ STL_infiltrate_state_155:0 "Infiltrate West Goatcasus"
  STL_infiltrate_state_155_desc:0 "Our agents will work to establish underground cells in this region. This operation can only be launched if the state borders our territory or another state we have already infiltrated."
 
- STL_infiltrate_state_156:0 "Infiltrate State 156"
+ STL_infiltrate_state_156:0 "Infiltrate Baicall"
  STL_infiltrate_state_156_desc:0 "Our agents will work to establish underground cells in this region. This operation can only be launched if the state borders our territory or another state we have already infiltrated."
 
- STL_infiltrate_state_157:0 "Infiltrate State 157"
+ STL_infiltrate_state_157:0 "Infiltrate Zakatnie Lands"
  STL_infiltrate_state_157_desc:0 "Our agents will work to establish underground cells in this region. This operation can only be launched if the state borders our territory or another state we have already infiltrated."
 
- STL_infiltrate_state_158:0 "Infiltrate State 158"
+ STL_infiltrate_state_158:0 "Infiltrate Cranberry Marsh"
  STL_infiltrate_state_158_desc:0 "Our agents will work to establish underground cells in this region. This operation can only be launched if the state borders our territory or another state we have already infiltrated."
 
- STL_infiltrate_state_159:0 "Infiltrate State 159"
+ STL_infiltrate_state_159:0 "Infiltrate Kobilkyno"
  STL_infiltrate_state_159_desc:0 "Our agents will work to establish underground cells in this region. This operation can only be launched if the state borders our territory or another state we have already infiltrated."
 
- STL_infiltrate_state_161:0 "Infiltrate State 161"
+ STL_infiltrate_state_160:0 "Infiltrate Kukuruzza"
+ STL_infiltrate_state_160_desc:0 "Our agents will work to establish underground cells in this region. This operation can only be launched if the state borders our territory or another state we have already infiltrated."
+
+ STL_infiltrate_state_161:0 "Infiltrate Red Wheat Farmlands"
  STL_infiltrate_state_161_desc:0 "Our agents will work to establish underground cells in this region. This operation can only be launched if the state borders our territory or another state we have already infiltrated."
 
- STL_infiltrate_state_162:0 "Infiltrate State 162"
+ STL_infiltrate_state_162:0 "Infiltrate Krupochkino"
  STL_infiltrate_state_162_desc:0 "Our agents will work to establish underground cells in this region. This operation can only be launched if the state borders our territory or another state we have already infiltrated."
 
- STL_infiltrate_state_163:0 "Infiltrate State 163"
+ STL_infiltrate_state_163:0 "Infiltrate Hoofbeat Krai"
  STL_infiltrate_state_163_desc:0 "Our agents will work to establish underground cells in this region. This operation can only be launched if the state borders our territory or another state we have already infiltrated."
 
- STL_infiltrate_state_164:0 "Infiltrate State 164"
+ STL_infiltrate_state_164:0 "Infiltrate Landish Fields"
  STL_infiltrate_state_164_desc:0 "Our agents will work to establish underground cells in this region. This operation can only be launched if the state borders our territory or another state we have already infiltrated."
 
- STL_infiltrate_state_165:0 "Infiltrate State 165"
+ STL_infiltrate_state_165:0 "Infiltrate Lightway Farms"
  STL_infiltrate_state_165_desc:0 "Our agents will work to establish underground cells in this region. This operation can only be launched if the state borders our territory or another state we have already infiltrated."
 
- STL_infiltrate_state_166:0 "Infiltrate State 166"
+ STL_infiltrate_state_166:0 "Infiltrate Petershoof"
  STL_infiltrate_state_166_desc:0 "Our agents will work to establish underground cells in this region. This operation can only be launched if the state borders our territory or another state we have already infiltrated."
 
- STL_infiltrate_state_167:0 "Infiltrate State 167"
+ STL_infiltrate_state_167:0 "Infiltrate Redheart"
  STL_infiltrate_state_167_desc:0 "Our agents will work to establish underground cells in this region. This operation can only be launched if the state borders our territory or another state we have already infiltrated."
 
- STL_infiltrate_state_168:0 "Infiltrate State 168"
+ STL_infiltrate_state_168:0 "Infiltrate Severokholm"
  STL_infiltrate_state_168_desc:0 "Our agents will work to establish underground cells in this region. This operation can only be launched if the state borders our territory or another state we have already infiltrated."
 
- STL_infiltrate_state_225:0 "Infiltrate State 225"
+ STL_infiltrate_state_225:0 "Infiltrate Marshmallow"
  STL_infiltrate_state_225_desc:0 "Our agents will work to establish underground cells in this region. This operation can only be launched if the state borders our territory or another state we have already infiltrated."
 
- STL_infiltrate_state_229:0 "Infiltrate State 229"
+ STL_infiltrate_state_229:0 "Infiltrate Bird Territory"
  STL_infiltrate_state_229_desc:0 "Our agents will work to establish underground cells in this region. This operation can only be launched if the state borders our territory or another state we have already infiltrated."
 
- STL_infiltrate_state_233:0 "Infiltrate State 233"
+ STL_infiltrate_state_233:0 "Infiltrate Majestic Gardens"
  STL_infiltrate_state_233_desc:0 "Our agents will work to establish underground cells in this region. This operation can only be launched if the state borders our territory or another state we have already infiltrated."
 
- STL_infiltrate_state_234:0 "Infiltrate State 234"
+ STL_infiltrate_state_234:0 "Infiltrate Krasivsk"
  STL_infiltrate_state_234_desc:0 "Our agents will work to establish underground cells in this region. This operation can only be launched if the state borders our territory or another state we have already infiltrated."
 
- STL_infiltrate_state_235:0 "Infiltrate State 235"
+ STL_infiltrate_state_235:0 "Infiltrate Caramel Marks"
  STL_infiltrate_state_235_desc:0 "Our agents will work to establish underground cells in this region. This operation can only be launched if the state borders our territory or another state we have already infiltrated."
 
- STL_infiltrate_state_237:0 "Infiltrate State 237"
+ STL_infiltrate_state_237:0 "Infiltrate Misty Hills"
  STL_infiltrate_state_237_desc:0 "Our agents will work to establish underground cells in this region. This operation can only be launched if the state borders our territory or another state we have already infiltrated."
 
- STL_infiltrate_state_240:0 "Infiltrate State 240"
+ STL_infiltrate_state_240:0 "Infiltrate Sovyenok"
  STL_infiltrate_state_240_desc:0 "Our agents will work to establish underground cells in this region. This operation can only be launched if the state borders our territory or another state we have already infiltrated."
 
- STL_infiltrate_state_326:0 "Infiltrate State 326"
+ STL_infiltrate_state_326:0 "Infiltrate Malinovka"
  STL_infiltrate_state_326_desc:0 "Our agents will work to establish underground cells in this region. This operation can only be launched if the state borders our territory or another state we have already infiltrated."
 
- STL_infiltrate_state_332:0 "Infiltrate State 332"
+ STL_infiltrate_state_332:0 "Infiltrate Land of Equality"
  STL_infiltrate_state_332_desc:0 "Our agents will work to establish underground cells in this region. This operation can only be launched if the state borders our territory or another state we have already infiltrated."
 
- STL_infiltrate_state_333:0 "Infiltrate State 333"
+ STL_infiltrate_state_333:0 "Infiltrate Azkaban"
  STL_infiltrate_state_333_desc:0 "Our agents will work to establish underground cells in this region. This operation can only be launched if the state borders our territory or another state we have already infiltrated."
 
- STL_infiltrate_state_334:0 "Infiltrate State 334"
+ STL_infiltrate_state_334:0 "Infiltrate Zayatsk"
  STL_infiltrate_state_334_desc:0 "Our agents will work to establish underground cells in this region. This operation can only be launched if the state borders our territory or another state we have already infiltrated."
 
- STL_infiltrate_state_653:0 "Infiltrate State 653"
+ STL_infiltrate_state_653:0 "Infiltrate Chillwing"
  STL_infiltrate_state_653_desc:0 "Our agents will work to establish underground cells in this region. This operation can only be launched if the state borders our territory or another state we have already infiltrated."
 
- STL_infiltrate_state_661:0 "Infiltrate State 661"
+ STL_infiltrate_state_661:0 "Infiltrate Somland"
  STL_infiltrate_state_661_desc:0 "Our agents will work to establish underground cells in this region. This operation can only be launched if the state borders our territory or another state we have already infiltrated."
 
- STL_infiltrate_state_662:0 "Infiltrate State 662"
+ STL_infiltrate_state_662:0 "Infiltrate Mirage"
  STL_infiltrate_state_662_desc:0 "Our agents will work to establish underground cells in this region. This operation can only be launched if the state borders our territory or another state we have already infiltrated."
 
- STL_infiltrate_state_678:0 "Infiltrate State 678"
+ STL_infiltrate_state_678:0 "Infiltrate Zvezdopadovo"
  STL_infiltrate_state_678_desc:0 "Our agents will work to establish underground cells in this region. This operation can only be launched if the state borders our territory or another state we have already infiltrated."
 
  STL_economy_cd_days_tt:0 "Days until next §YEconomy-Subpath§!! can be taken: [?STL_economy_cd_flag:days_left|Y0]"
@@ -968,4 +973,11 @@ STL_vp_our_canterlot:0 "Equalopolis"
  STL_invite_starlight_back_tt_start:0 "§PWe will petition [EQS.GetName] for Starlight Glimmer's return.§!\n\n"
  STL_invite_starlight_back_tt:0 "\nIf they §Gaccept§!:\n  §GStarlight Glimmer returns and may once more lead our nation.§!\nIf they §Rdecline§!:\n  §ROur people will be outraged, and war with [EQS.GetName] may follow.§!"
 
+ STL_equipment_from_copper_coins:0 "Our Copper-Funded Production"
+ STL_equipment_from_copper_coins_desc:0 "Though it may come at the expense of the comfort of the ponies of [STL.GetName], every available resource must be redirected to strengthen our industrial output."
+ STL_equipment_from_copper_coins_tt:0 "Unlocks the §Y$scrap_to_weapons$§! Decisions, granting the §Y$STL_equipment_from_copper_coins$§! national spirit."
+ scrap_to_weapons:0 "Scrap to Weapons"
 
+ STL_airforce_tt:0 "§Y$STL_airforce$§! - Effective Change:\n"
+
+ airforce_intel_factor_tt: " $MODIFIER_AIRFORCE_INTEL_FACTOR$: $RIGHT|+=%1$"

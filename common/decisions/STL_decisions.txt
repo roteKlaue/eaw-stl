@@ -46,6 +46,7 @@ form_equ_stg = {
             any_owned_state = {
                 is_core_of = STG
             }
+            has_government = communism
         }
         available = {
             has_war = no
@@ -174,6 +175,7 @@ form_equ_stg = {
             any_owned_state = {
                 is_core_of = EQS
             }
+            has_government = communism
         }
         available = {
             has_war = no
@@ -836,6 +838,7 @@ form_equ_stg = {
         icon = infiltrate_state
 
         visible = {
+            has_completed_focus = STL_conquest_of_STG
             NOT = { has_war_with = STG }
             154 = {
                 is_owned_by = STG
@@ -907,6 +910,7 @@ form_equ_stg = {
         icon = infiltrate_state
 
         visible = {
+            has_completed_focus = STL_conquest_of_STG
             NOT = { has_war_with = STG }
             155 = {
                 is_owned_by = STG
@@ -978,6 +982,7 @@ form_equ_stg = {
         icon = infiltrate_state
 
         visible = {
+            has_completed_focus = STL_conquest_of_STG
             NOT = { has_war_with = STG }
             156 = {
                 is_owned_by = STG
@@ -1049,6 +1054,7 @@ form_equ_stg = {
         icon = infiltrate_state
 
         visible = {
+            has_completed_focus = STL_conquest_of_STG
             NOT = { has_war_with = STG }
             157 = {
                 is_owned_by = STG
@@ -1120,6 +1126,7 @@ form_equ_stg = {
         icon = infiltrate_state
 
         visible = {
+            has_completed_focus = STL_conquest_of_STG
             NOT = { has_war_with = STG }
             158 = {
                 is_owned_by = STG
@@ -1191,6 +1198,7 @@ form_equ_stg = {
         icon = infiltrate_state
 
         visible = {
+            has_completed_focus = STL_conquest_of_STG
             NOT = { has_war_with = STG }
             159 = {
                 is_owned_by = STG
@@ -1258,10 +1266,83 @@ form_equ_stg = {
         ai_will_do = { base = 0 }
     }
 
+    STL_infiltrate_state_160 = {
+        icon = infiltrate_state
+
+        visible = {
+            has_completed_focus = STL_conquest_of_STG
+            NOT = { has_war_with = STG }
+            160 = {
+                is_owned_by = STG
+                is_controlled_by = STG
+            }
+        }
+
+        available = {
+            NOT = { has_war_with = STG }
+            has_equipment = { infantry_equipment > 499 }
+            160 = {
+                is_owned_by = STG
+                is_controlled_by = STG
+                STL_can_increase_infiltration_in_state = yes
+                OR = {
+                    any_neighbor_state = {
+                        is_owned_by = ROOT
+                        is_controlled_by = ROOT
+                    }
+                    any_neighbor_state = {
+                        has_state_flag = {
+                            flag = STL_infiltration_@ROOT
+                            value > 0
+                        }
+                    }
+                }
+            }
+        }
+
+        highlight_states = {
+            highlight_state_targets = { state = 160 }
+        }
+
+        modifier = { command_power_gain = -0.2 }
+
+        days_remove = 30
+        days_re_enable = 0
+        cost = 25
+
+        complete_effect = {
+            add_equipment_to_stockpile = {
+                type = infantry_equipment
+                amount = -500
+            }
+            160 = {
+                if = {
+                    limit = { NOT = { has_state_flag = STL_infiltration_@ROOT } }
+                    set_state_flag = {
+                        flag = STL_infiltration_@ROOT
+                        value = 0
+                    }
+                }
+            }
+        }
+
+        remove_effect = {
+            160 = {
+                modify_state_flag = {
+                    flag = STL_infiltration_@ROOT
+                    value = 1
+                }
+            }
+        }
+
+        ai_will_do = { base = 0 }
+    }
+
     STL_infiltrate_state_161 = {
         icon = infiltrate_state
 
         visible = {
+            has_completed_focus = STL_conquest_of_STG
             NOT = { has_war_with = STG }
             161 = {
                 is_owned_by = STG
@@ -1333,6 +1414,7 @@ form_equ_stg = {
         icon = infiltrate_state
 
         visible = {
+            has_completed_focus = STL_conquest_of_STG
             NOT = { has_war_with = STG }
             162 = {
                 is_owned_by = STG
@@ -1404,6 +1486,7 @@ form_equ_stg = {
         icon = infiltrate_state
 
         visible = {
+            has_completed_focus = STL_conquest_of_STG
             NOT = { has_war_with = STG }
             163 = {
                 is_owned_by = STG
@@ -1475,6 +1558,7 @@ form_equ_stg = {
         icon = infiltrate_state
 
         visible = {
+            has_completed_focus = STL_conquest_of_STG
             NOT = { has_war_with = STG }
             164 = {
                 is_owned_by = STG
@@ -1546,6 +1630,7 @@ form_equ_stg = {
         icon = infiltrate_state
 
         visible = {
+            has_completed_focus = STL_conquest_of_STG
             NOT = { has_war_with = STG }
             165 = {
                 is_owned_by = STG
@@ -1617,6 +1702,7 @@ form_equ_stg = {
         icon = infiltrate_state
 
         visible = {
+            has_completed_focus = STL_conquest_of_STG
             NOT = { has_war_with = STG }
             166 = {
                 is_owned_by = STG
@@ -1688,6 +1774,7 @@ form_equ_stg = {
         icon = infiltrate_state
 
         visible = {
+            has_completed_focus = STL_conquest_of_STG
             NOT = { has_war_with = STG }
             167 = {
                 is_owned_by = STG
@@ -1759,6 +1846,7 @@ form_equ_stg = {
         icon = infiltrate_state
 
         visible = {
+            has_completed_focus = STL_conquest_of_STG
             NOT = { has_war_with = STG }
             168 = {
                 is_owned_by = STG
@@ -1830,6 +1918,7 @@ form_equ_stg = {
         icon = infiltrate_state
 
         visible = {
+            has_completed_focus = STL_conquest_of_STG
             NOT = { has_war_with = STG }
             225 = {
                 is_owned_by = STG
@@ -1901,6 +1990,7 @@ form_equ_stg = {
         icon = infiltrate_state
 
         visible = {
+            has_completed_focus = STL_conquest_of_STG
             NOT = { has_war_with = STG }
             229 = {
                 is_owned_by = STG
@@ -1972,6 +2062,7 @@ form_equ_stg = {
         icon = infiltrate_state
 
         visible = {
+            has_completed_focus = STL_conquest_of_STG
             NOT = { has_war_with = STG }
             233 = {
                 is_owned_by = STG
@@ -2043,6 +2134,7 @@ form_equ_stg = {
         icon = infiltrate_state
 
         visible = {
+            has_completed_focus = STL_conquest_of_STG
             NOT = { has_war_with = STG }
             234 = {
                 is_owned_by = STG
@@ -2114,6 +2206,7 @@ form_equ_stg = {
         icon = infiltrate_state
 
         visible = {
+            has_completed_focus = STL_conquest_of_STG
             NOT = { has_war_with = STG }
             235 = {
                 is_owned_by = STG
@@ -2185,6 +2278,7 @@ form_equ_stg = {
         icon = infiltrate_state
 
         visible = {
+            has_completed_focus = STL_conquest_of_STG
             NOT = { has_war_with = STG }
             237 = {
                 is_owned_by = STG
@@ -2256,6 +2350,7 @@ form_equ_stg = {
         icon = infiltrate_state
 
         visible = {
+            has_completed_focus = STL_conquest_of_STG
             NOT = { has_war_with = STG }
             240 = {
                 is_owned_by = STG
@@ -2327,6 +2422,7 @@ form_equ_stg = {
         icon = infiltrate_state
 
         visible = {
+            has_completed_focus = STL_conquest_of_STG
             NOT = { has_war_with = STG }
             326 = {
                 is_owned_by = STG
@@ -2398,6 +2494,7 @@ form_equ_stg = {
         icon = infiltrate_state
 
         visible = {
+            has_completed_focus = STL_conquest_of_STG
             NOT = { has_war_with = STG }
             332 = {
                 is_owned_by = STG
@@ -2469,6 +2566,7 @@ form_equ_stg = {
         icon = infiltrate_state
 
         visible = {
+            has_completed_focus = STL_conquest_of_STG
             NOT = { has_war_with = STG }
             333 = {
                 is_owned_by = STG
@@ -2484,11 +2582,13 @@ form_equ_stg = {
                 is_controlled_by = STG
                 STL_can_increase_infiltration_in_state = yes
                 OR = {
-                    any_neighbor_state = {
-                        is_owned_by = ROOT
-                        is_controlled_by = ROOT
+                    any_state = {
+                        is_coastal = yes
+                        is_owned_by = STL
+                        is_controlled_by = STL
                     }
-                    any_neighbor_state = {
+                    any_state = {
+                        is_coastal = yes
                         has_state_flag = {
                             flag = STL_infiltration_@ROOT
                             value > 0
@@ -2540,6 +2640,7 @@ form_equ_stg = {
         icon = infiltrate_state
 
         visible = {
+            has_completed_focus = STL_conquest_of_STG
             NOT = { has_war_with = STG }
             334 = {
                 is_owned_by = STG
@@ -2611,6 +2712,7 @@ form_equ_stg = {
         icon = infiltrate_state
 
         visible = {
+            has_completed_focus = STL_conquest_of_STG
             NOT = { has_war_with = STG }
             653 = {
                 is_owned_by = STG
@@ -2682,6 +2784,7 @@ form_equ_stg = {
         icon = infiltrate_state
 
         visible = {
+            has_completed_focus = STL_conquest_of_STG
             NOT = { has_war_with = STG }
             661 = {
                 is_owned_by = STG
@@ -2753,6 +2856,7 @@ form_equ_stg = {
         icon = infiltrate_state
 
         visible = {
+            has_completed_focus = STL_conquest_of_STG
             NOT = { has_war_with = STG }
             662 = {
                 is_owned_by = STG
@@ -2824,6 +2928,7 @@ form_equ_stg = {
         icon = infiltrate_state
 
         visible = {
+            has_completed_focus = STL_conquest_of_STG
             NOT = { has_war_with = STG }
             678 = {
                 is_owned_by = STG
