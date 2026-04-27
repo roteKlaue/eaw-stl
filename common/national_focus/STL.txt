@@ -1068,7 +1068,7 @@ focus_tree = {
     }
 
     focus = {
-        id = STL_air_base_prepartionluttershy
+        id = STL_fluttershy
         icon = GFX_goal_ELF_fluttershy
         cost = 2.9
         ai_will_do = { factor = 50 }
@@ -1203,7 +1203,7 @@ focus_tree = {
         relative_position_id = STL_applejack
         prerequisite = { focus = STL_applejack }
         prerequisite = { focus = STL_rarity }
-        prerequisite = { focus = STL_air_base_prepartionluttershy }
+        prerequisite = { focus = STL_fluttershy }
         prerequisite = { focus = STL_rainbow }
         prerequisite = { focus = STL_pinkie }
         completion_reward = {
@@ -2096,7 +2096,7 @@ focus_tree = {
     }
 
     focus = {
-        id = STL_air_base_prepartionoreign_conscription
+        id = STL_foreign_conscription
         icon = GFX_focus_RAJ_indian_gentlemen_offcers
         x = 0
         y = 1
@@ -2868,7 +2868,7 @@ focus_tree = {
     }
 
     focus = {
-        id = STL_air_base_prepartionourth_factory
+        id = STL_fourth_factory
         icon = GFX_focus_generic_industry_2
         cost = 4.00
         prerequisite = {
@@ -3008,7 +3008,7 @@ focus_tree = {
         available = {
             NOT = { has_idea = STL_city_state }
             NOT = { has_idea = STL_city_state2 }
-            has_completed_focus = STL_air_base_prepartionourth_factory
+            has_completed_focus = STL_fourth_factory
         }
 
         x = 15
@@ -3266,7 +3266,7 @@ focus_tree = {
     }
 
     focus = {
-        id = STL_air_base_prepartionuel_and_supply
+        id = STL_fuel_and_supply
         icon = GFX_SOV_pc_of_the_ussr_navy_ccp_2d_sov_compatibility
         prerequisite = { focus = STL_naval_safety }
         relative_position_id = STL_naval_safety
@@ -3683,7 +3683,7 @@ focus_tree = {
     }
 
     focus = {
-        id = STL_air_base_prepartionlourishing_economy
+        id = STL_flourishing_economy
         icon = GFX_focus_GER_autarky_achieved
         prerequisite = {
             focus = STL_workers_rights
@@ -3727,9 +3727,9 @@ focus_tree = {
         icon = GFX_focus_generic_self_management
         x = 3
         y = 1
-        relative_position_id = STL_air_base_prepartionlourishing_economy
+        relative_position_id = STL_flourishing_economy
         cost = 8
-        prerequisite = { focus = STL_air_base_prepartionlourishing_economy }
+        prerequisite = { focus = STL_flourishing_economy }
         prerequisite = { focus = STL_oils }
         prerequisite = { focus = STL_dam_bales }
         mutually_exclusive = { focus = STL_export_goods }
@@ -3749,10 +3749,10 @@ focus_tree = {
         y = 1
 
         prerequisite = {
-            focus = STL_air_base_prepartionlourishing_economy
+            focus = STL_flourishing_economy
         }
 
-        relative_position_id = STL_air_base_prepartionlourishing_economy
+        relative_position_id = STL_flourishing_economy
 
         search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_STABILITY }
         completion_reward = {
@@ -3763,11 +3763,11 @@ focus_tree = {
     focus = {
         id = STL_mass_production
         icon = GFX_focus_generic_military_industry
-        prerequisite = { focus = STL_air_base_prepartionlourishing_economy }
+        prerequisite = { focus = STL_flourishing_economy }
 
         x = 0
         y = 1
-        relative_position_id = STL_air_base_prepartionlourishing_economy
+        relative_position_id = STL_flourishing_economy
         cost = 10
         available = {
             OR = {
@@ -3815,9 +3815,9 @@ focus_tree = {
         icon = GFX_goal_generic_positive_trade_relations
         x = 5
         y = 1
-        relative_position_id = STL_air_base_prepartionlourishing_economy
+        relative_position_id = STL_flourishing_economy
         cost = 8
-        prerequisite = { focus = STL_air_base_prepartionlourishing_economy }
+        prerequisite = { focus = STL_flourishing_economy }
         prerequisite = { focus = STL_oils }
         prerequisite = { focus = STL_dam_bales }
         mutually_exclusive = { focus = STL_autarky }
@@ -5461,12 +5461,12 @@ focus_tree = {
         x = -2
         y = 1
         prerequisite = {
-            focus = STL_air_base_prepartionuel_and_supply
+            focus = STL_fuel_and_supply
         }
         prerequisite = {
             focus = STL_domestic_production
         }
-        relative_position_id = STL_air_base_prepartionuel_and_supply
+        relative_position_id = STL_fuel_and_supply
         completion_reward = { }
     }
 }
