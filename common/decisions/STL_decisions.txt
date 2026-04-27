@@ -1,7 +1,7 @@
 form_equ_stg = {
     recruitment_push = {
         icon = ""
-        cost = 150
+        cost = 100
         visible = {
             has_completed_focus = STL_army_recruiting
         }
@@ -19,7 +19,7 @@ form_equ_stg = {
 
     scrap_to_weapons = {
         icon = ""
-        cost = 150
+        cost = 100
         visible = {
             has_completed_focus = STL_equipment_from_copper_coins
         }
@@ -876,7 +876,7 @@ form_equ_stg = {
 
         days_remove = 30
         days_re_enable = 0
-        cost = 25
+        cost = 10
 
         complete_effect = {
             add_equipment_to_stockpile = {
@@ -948,7 +948,7 @@ form_equ_stg = {
 
         days_remove = 30
         days_re_enable = 0
-        cost = 25
+        cost = 10
 
         complete_effect = {
             add_equipment_to_stockpile = {
@@ -1020,7 +1020,7 @@ form_equ_stg = {
 
         days_remove = 30
         days_re_enable = 0
-        cost = 25
+        cost = 10
 
         complete_effect = {
             add_equipment_to_stockpile = {
@@ -1092,7 +1092,7 @@ form_equ_stg = {
 
         days_remove = 30
         days_re_enable = 0
-        cost = 25
+        cost = 10
 
         complete_effect = {
             add_equipment_to_stockpile = {
@@ -1164,7 +1164,7 @@ form_equ_stg = {
 
         days_remove = 30
         days_re_enable = 0
-        cost = 25
+        cost = 10
 
         complete_effect = {
             add_equipment_to_stockpile = {
@@ -1236,7 +1236,7 @@ form_equ_stg = {
 
         days_remove = 30
         days_re_enable = 0
-        cost = 25
+        cost = 10
 
         complete_effect = {
             add_equipment_to_stockpile = {
@@ -1308,7 +1308,7 @@ form_equ_stg = {
 
         days_remove = 30
         days_re_enable = 0
-        cost = 25
+        cost = 10
 
         complete_effect = {
             add_equipment_to_stockpile = {
@@ -1380,7 +1380,7 @@ form_equ_stg = {
 
         days_remove = 30
         days_re_enable = 0
-        cost = 25
+        cost = 10
 
         complete_effect = {
             add_equipment_to_stockpile = {
@@ -1452,7 +1452,7 @@ form_equ_stg = {
 
         days_remove = 30
         days_re_enable = 0
-        cost = 25
+        cost = 10
 
         complete_effect = {
             add_equipment_to_stockpile = {
@@ -1524,7 +1524,7 @@ form_equ_stg = {
 
         days_remove = 30
         days_re_enable = 0
-        cost = 25
+        cost = 10
 
         complete_effect = {
             add_equipment_to_stockpile = {
@@ -1596,7 +1596,7 @@ form_equ_stg = {
 
         days_remove = 30
         days_re_enable = 0
-        cost = 25
+        cost = 10
 
         complete_effect = {
             add_equipment_to_stockpile = {
@@ -1668,7 +1668,7 @@ form_equ_stg = {
 
         days_remove = 30
         days_re_enable = 0
-        cost = 25
+        cost = 10
 
         complete_effect = {
             add_equipment_to_stockpile = {
@@ -1740,7 +1740,7 @@ form_equ_stg = {
 
         days_remove = 30
         days_re_enable = 0
-        cost = 25
+        cost = 10
 
         complete_effect = {
             add_equipment_to_stockpile = {
@@ -1812,7 +1812,7 @@ form_equ_stg = {
 
         days_remove = 30
         days_re_enable = 0
-        cost = 25
+        cost = 10
 
         complete_effect = {
             add_equipment_to_stockpile = {
@@ -1884,7 +1884,7 @@ form_equ_stg = {
 
         days_remove = 30
         days_re_enable = 0
-        cost = 25
+        cost = 10
 
         complete_effect = {
             add_equipment_to_stockpile = {
@@ -1956,7 +1956,7 @@ form_equ_stg = {
 
         days_remove = 30
         days_re_enable = 0
-        cost = 25
+        cost = 10
 
         complete_effect = {
             add_equipment_to_stockpile = {
@@ -2028,7 +2028,7 @@ form_equ_stg = {
 
         days_remove = 30
         days_re_enable = 0
-        cost = 25
+        cost = 10
 
         complete_effect = {
             add_equipment_to_stockpile = {
@@ -2100,7 +2100,7 @@ form_equ_stg = {
 
         days_remove = 30
         days_re_enable = 0
-        cost = 25
+        cost = 10
 
         complete_effect = {
             add_equipment_to_stockpile = {
@@ -2172,7 +2172,7 @@ form_equ_stg = {
 
         days_remove = 30
         days_re_enable = 0
-        cost = 25
+        cost = 10
 
         complete_effect = {
             add_equipment_to_stockpile = {
@@ -2244,7 +2244,7 @@ form_equ_stg = {
 
         days_remove = 30
         days_re_enable = 0
-        cost = 25
+        cost = 10
 
         complete_effect = {
             add_equipment_to_stockpile = {
@@ -2316,7 +2316,7 @@ form_equ_stg = {
 
         days_remove = 30
         days_re_enable = 0
-        cost = 25
+        cost = 10
 
         complete_effect = {
             add_equipment_to_stockpile = {
@@ -2388,7 +2388,7 @@ form_equ_stg = {
 
         days_remove = 30
         days_re_enable = 0
-        cost = 25
+        cost = 10
 
         complete_effect = {
             add_equipment_to_stockpile = {
@@ -2460,7 +2460,7 @@ form_equ_stg = {
 
         days_remove = 30
         days_re_enable = 0
-        cost = 25
+        cost = 10
 
         complete_effect = {
             add_equipment_to_stockpile = {
@@ -2532,7 +2532,7 @@ form_equ_stg = {
 
         days_remove = 30
         days_re_enable = 0
-        cost = 25
+        cost = 10
 
         complete_effect = {
             add_equipment_to_stockpile = {
@@ -2606,7 +2606,7 @@ form_equ_stg = {
 
         days_remove = 30
         days_re_enable = 0
-        cost = 25
+        cost = 10
 
         complete_effect = {
             add_equipment_to_stockpile = {
@@ -2678,7 +2678,7 @@ form_equ_stg = {
 
         days_remove = 30
         days_re_enable = 0
-        cost = 25
+        cost = 10
 
         complete_effect = {
             add_equipment_to_stockpile = {
@@ -2750,7 +2750,7 @@ form_equ_stg = {
 
         days_remove = 30
         days_re_enable = 0
-        cost = 25
+        cost = 10
 
         complete_effect = {
             add_equipment_to_stockpile = {
@@ -2822,7 +2822,7 @@ form_equ_stg = {
 
         days_remove = 30
         days_re_enable = 0
-        cost = 25
+        cost = 10
 
         complete_effect = {
             add_equipment_to_stockpile = {
@@ -2894,7 +2894,7 @@ form_equ_stg = {
 
         days_remove = 30
         days_re_enable = 0
-        cost = 25
+        cost = 10
 
         complete_effect = {
             add_equipment_to_stockpile = {
@@ -2966,7 +2966,7 @@ form_equ_stg = {
 
         days_remove = 30
         days_re_enable = 0
-        cost = 25
+        cost = 10
 
         complete_effect = {
             add_equipment_to_stockpile = {

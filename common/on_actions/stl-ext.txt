@@ -19,24 +19,289 @@ on_actions = {
     #        }
     #    }
     #}
-    on_war = {
+    on_war_relation_added = {
         effect = {
             if = {
                 limit = {
                     OR = {
-                        AND = { ROOT = { tag = STL } FROM = { tag = STG } }
-                        AND = { ROOT = { tag = STG } FROM = { tag = STL } }
+                        AND = {
+                            ROOT = { original_tag = STL }
+                            FROM = {
+                                any_controlled_state = {
+                                    has_state_flag = {
+                                        flag = STL_infiltration_@ROOT
+                                        value > 0
+                                    }
+                                }
+                            }
+                        }
+                        AND = {
+                            FROM = { original_tag = STL }
+                            ROOT = {
+                                any_controlled_state = {
+                                    has_state_flag = {
+                                        flag = STL_infiltration_@FROM
+                                        value > 0
+                                    }
+                                }
+                            }
+                        }
                     }
                 }
-                log = "[GetDateText]: [Root.GetName]: attacked [FROM.GetName]"
 
-                if = {
-                    limit = { ROOT = { tag = STL } }
-                    ROOT = { STL_trigger_stg_infiltration_states = yes }
+                STL = {
+                    division_template = {
+                        name = "Equalist Militia"
+                        division_names_group = STL_MIL_01
+                        template_counter = 118
+
+                        regiments = {
+                            militia = { x = 0 y = 0 }
+                            militia = { x = 0 y = 1 }
+                            militia = { x = 0 y = 2 }
+                            militia = { x = 1 y = 0 }
+                            militia = { x = 1 y = 1 }
+                            militia = { x = 1 y = 2 }
+                            militia = { x = 2 y = 0 }
+                            militia = { x = 2 y = 1 }
+                            militia = { x = 2 y = 2 }
+                        }
+
+                        priority = 1
+                    }
                 }
+
+                # STL attacks country that controls infiltrated states
                 if = {
-                    limit = { FROM = { tag = STL } }
-                    FROM = { STL_trigger_stg_infiltration_states = yes }
+                    limit = {
+                        ROOT = { original_tag = STL }
+                    }
+                    if = {
+                        limit = {
+                            FROM = {
+                                any_controlled_state = {
+                                    has_state_flag = {
+                                        flag = STL_infiltration_@ROOT
+                                        value > 2
+                                    }
+                                }
+                            }
+                        }
+                        FROM = {
+                            every_controlled_state = {
+                                limit = {
+                                    has_state_flag = {
+                                        flag = STL_infiltration_@ROOT
+                                        value > 2
+                                    }
+                                }
+
+                                transfer_state_to = ROOT
+
+                                create_unit = {
+                                    division = "division_template = \"Equalist Militia\" start_experience_factor = 0.3 start_equipment_factor = 0.5"
+                                    owner = ROOT
+                                    count = 2
+                                }
+                            }
+                        }
+                    }
+
+                    if = {
+                        limit = {
+                            FROM = {
+                                any_controlled_state = {
+                                    has_state_flag = {
+                                        flag = STL_infiltration_@ROOT
+                                        value > 1
+                                    }
+                                    has_state_flag = {
+                                        flag = STL_infiltration_@ROOT
+                                        value < 3
+                                    }
+                                }
+                            }
+                        }
+                        FROM = {
+                            every_controlled_state = {
+                                limit = {
+                                    has_state_flag = {
+                                        flag = STL_infiltration_@ROOT
+                                        value > 1
+                                    }
+
+                                    has_state_flag = {
+                                        flag = STL_infiltration_@ROOT
+                                        value < 3
+                                    }
+                                }
+
+                                damage_building = {
+                                    type = arms_factory
+                                    damage = 1
+                                }
+                                damage_building = {
+                                    type = infrastructure
+                                    damage = 1
+                                }
+                            }
+                        }
+                    }
+
+                    if = {
+                        limit = {
+                            FROM = {
+                                any_controlled_state = {
+                                    has_state_flag = {
+                                        flag = STL_infiltration_@ROOT
+                                        value > 0
+                                    }
+                                    has_state_flag = {
+                                        flag = STL_infiltration_@ROOT
+                                        value < 2
+                                    }
+                                }
+                            }
+                        }
+
+                        FROM = {
+                            every_controlled_state = {
+                                limit = {
+                                    has_state_flag = {
+                                        flag = STL_infiltration_@ROOT
+                                        value > 0
+                                    }
+
+                                    has_state_flag = {
+                                        flag = STL_infiltration_@ROOT
+                                        value < 2
+                                    }
+                                }
+
+                                damage_building = {
+                                    type = infrastructure
+                                    damage = 1
+                                }
+                            }
+                        }
+                    }
+                }
+
+                # STL is attacked by country that controls infiltrated states
+                else_if = {
+                    limit = {
+                        FROM = { original_tag = STL }
+                    }
+                    if = {
+                        limit = {
+                            ROOT = {
+                                any_controlled_state = {
+                                    has_state_flag = {
+                                        flag = STL_infiltration_@FROM
+                                        value > 2
+                                    }
+                                }
+                            }
+                        }
+
+                        ROOT = {
+                            every_controlled_state = {
+                                limit = {
+                                    has_state_flag = {
+                                        flag = STL_infiltration_@FROM
+                                        value > 2
+                                    }
+                                }
+
+                                transfer_state_to = FROM
+
+                                create_unit = {
+                                    division = "division_template = \"Equalist Militia\" start_experience_factor = 0.3 start_equipment_factor = 0.5"
+                                    owner = FROM
+                                    count = 2
+                                }
+                            }
+                        }
+                    }
+
+                    if = {
+                        limit = {
+                            ROOT = {
+                                any_controlled_state = {
+                                    has_state_flag = {
+                                        flag = STL_infiltration_@FROM
+                                        value > 1
+                                    }
+                                    has_state_flag = {
+                                        flag = STL_infiltration_@FROM
+                                        value < 3
+                                    }
+                                }
+                            }
+                        }
+                        ROOT = {
+                            every_controlled_state = {
+                                limit = {
+                                    has_state_flag = {
+                                        flag = STL_infiltration_@FROM
+                                        value > 1
+                                    }
+
+                                    has_state_flag = {
+                                        flag = STL_infiltration_@FROM
+                                        value < 3
+                                    }
+                                }
+
+                                damage_building = {
+                                    type = arms_factory
+                                    damage = 1
+                                }
+                                damage_building = {
+                                    type = infrastructure
+                                    damage = 1
+                                }
+                            }
+                        }
+                    }
+
+                    if = {
+                        limit = {
+                            ROOT = {
+                                any_controlled_state = {
+                                    has_state_flag = {
+                                        flag = STL_infiltration_@FROM
+                                        value > 0
+                                    }
+                                    has_state_flag = {
+                                        flag = STL_infiltration_@FROM
+                                        value < 2
+                                    }
+                                }
+                            }
+                        }
+
+                        ROOT = {
+                            every_controlled_state = {
+                                limit = {
+                                    has_state_flag = {
+                                        flag = STL_infiltration_@FROM
+                                        value > 0
+                                    }
+
+                                    has_state_flag = {
+                                        flag = STL_infiltration_@FROM
+                                        value < 2
+                                    }
+                                }
+
+                                damage_building = {
+                                    type = infrastructure
+                                    damage = 1
+                                }
+                            }
+                        }
+                    }
                 }
             }
         }

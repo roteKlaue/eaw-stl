@@ -1,48 +1,49 @@
 STL_infiltration_succesful_show_uprising_effect = {
-	custom_effect_tooltip = PRC_infiltration_succesful
+	custom_effect_tooltip = STL_infiltration_succesful
+
 	if = {
 		limit = {
 			OR = {
-				NOT = { has_state_flag = PRC_infiltration_@ROOT }
+				NOT = { has_state_flag = STL_infiltration_@ROOT }
 				has_state_flag = {
-					flag = PRC_infiltration_@ROOT
+					flag = STL_infiltration_@ROOT
 					value = 0
 				}
 			}
-		}		
-		custom_effect_tooltip = PRC_infiltrate_uprising_header
-		custom_effect_tooltip = PRC_infiltrate_uprising_effect_1
+		}
+		custom_effect_tooltip = STL_infiltrate_uprising_header
+		custom_effect_tooltip = STL_infiltrate_uprising_effect_1
 	}
 	else_if = {
 		limit = {
 			has_state_flag = {
-				flag = PRC_infiltration_@ROOT
+				flag = STL_infiltration_@ROOT
 				value = 1
 			}
 		}
-		custom_effect_tooltip = PRC_infiltrate_uprising_header
-		custom_effect_tooltip = PRC_infiltrate_uprising_effect_1
+		custom_effect_tooltip = STL_infiltrate_uprising_header
+		custom_effect_tooltip = STL_infiltrate_uprising_effect_1
 	}
 	else_if = {
 		limit = {
 			has_state_flag = {
-				flag = PRC_infiltration_@ROOT
+				flag = STL_infiltration_@ROOT
 				value = 2
 			}
 		}
-		custom_effect_tooltip = PRC_infiltrate_uprising_header
-		custom_effect_tooltip = PRC_infiltrate_uprising_effect_2
-		custom_effect_tooltip = PRC_infiltrate_uprising_effect_3
+		custom_effect_tooltip = STL_infiltrate_uprising_header
+		custom_effect_tooltip = STL_infiltrate_uprising_effect_2
+		custom_effect_tooltip = STL_infiltrate_uprising_effect_3
 	}
 	else_if = {
 		limit = {
 			has_state_flag = {
-				flag = PRC_infiltration_@ROOT
+				flag = STL_infiltration_@ROOT
 				value > 2
 			}
 		}
-		custom_effect_tooltip = PRC_infiltrate_uprising_header
-		custom_effect_tooltip = PRC_infiltrate_uprising_effect_2
-		custom_effect_tooltip = PRC_infiltrate_uprising_effect_4
+		custom_effect_tooltip = STL_infiltrate_uprising_header
+		custom_effect_tooltip = STL_infiltrate_uprising_effect_2
+		custom_effect_tooltip = STL_infiltrate_uprising_effect_4
 	}
 }
