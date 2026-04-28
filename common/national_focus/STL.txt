@@ -131,14 +131,24 @@ focus_tree = {
         id = STL_independence_line
         icon = GFX_focus_generic_support_the_left_right
         cost = 5.00
+
+        bypass = {
+            STG = {
+                exists = no
+            }
+        }
+
         prerequisite = {
             focus = STL_neighbors_help
         }
+
         ai_will_do = {
             factor = 5
         }
+
         x = -2
         y = 1
+
         relative_position_id = STL_neighbors_help
         completion_reward = {
             log = "[GetDateText]: [Root.GetName]: Focus STL_independence_line"
@@ -176,14 +186,24 @@ focus_tree = {
         id = STL_industrial_help
         icon = GFX_goal_generic_intelligence_exchange_pony
         cost = 5.00
+
+        bypass = {
+            STG = {
+                exists = no
+            }
+        }
+
         prerequisite = {
             focus = STL_neighbors_help
         }
+
         ai_will_do = {
             factor = 1
         }
+
         x = 0
         y = 1
+
         relative_position_id = STL_neighbors_help
         completion_reward = {
             log = "[GetDateText]: [Root.GetName]: Focus STL_industrial_help"
@@ -197,14 +217,24 @@ focus_tree = {
         id = STL_STG_military_advisors
         icon = GFX_goal_stg_stl
         cost = 5.00
+
         prerequisite = {
             focus = STL_neighbors_help
         }
+
+        bypass = {
+            STG = {
+                exists = no
+            }
+        }
+
         ai_will_do = {
             factor = 1
         }
+
         x = -7
         y = 1
+
         relative_position_id = STL_neighbors_help
         completion_reward = {
             log = "[GetDateText]: [Root.GetName]: Focus STL_STG_military_advisors"
@@ -379,9 +409,17 @@ focus_tree = {
         id = STL_conquest_of_STG
         icon = GFX_goal_crush_stalliongrad
         cost = 5.00
+
         prerequisite = {
             focus = STL_industrial_effort
         }
+
+        bypass = {
+            STG = {
+                exists = no
+            }
+        }
+
         ai_will_do = {
             factor = 0
             modifier = {
@@ -389,12 +427,14 @@ focus_tree = {
                 is_historical_focus_on = yes
             }
         }
+
         x = 0
         y = 1
 
         mutually_exclusive = {
             focus = STL_join_stg
         }
+
         relative_position_id = STL_industrial_effort
         will_lead_to_war_with = STG
         completion_reward = {
@@ -410,18 +450,27 @@ focus_tree = {
         id = STL_join_stg
         icon = GFX_goal_stg_stl
         cost = 5.00
+
         prerequisite = {
             focus = STL_industrial_effort
             focus = STL_new_army
         }
+
         mutually_exclusive = {
             focus = STL_conquest_of_STG
         }
+
+        available = {
+            STG = { exists = yes }
+        }
+
         ai_will_do = {
             factor = 1
         }
+
         x = -2
         y = 1
+
         relative_position_id = STL_industrial_effort
         completion_reward = {
             custom_effect_tooltip = GAME_OVER_TT
@@ -908,7 +957,7 @@ focus_tree = {
                     type = annex_everything
                     target = EQS
                 }
-                custom_effect_tooltip = STL_bring_equality_to_equestria_tt
+                # custom_effect_tooltip = STL_bring_equality_to_equestria_tt
             } ELSE = {
                 3 = {
                     owner = {
@@ -3011,7 +3060,7 @@ focus_tree = {
             has_completed_focus = STL_fourth_factory
         }
 
-        x = 15
+        x = 16
         y = 0
         relative_position_id = STL_army_effort
         completion_reward = {
@@ -3028,7 +3077,7 @@ focus_tree = {
             focus = STL_industrial_flourish
         }
 
-        x = 25
+        x = 26
         y = 1
         relative_position_id = STL_industrial_flourish
 
@@ -3388,7 +3437,7 @@ focus_tree = {
     focus = {
         id = STL_prioritize_economic_growth
         icon = GFX_focus_CHL_silverworking
-        x = -7
+        x = -8
         y = 1
         relative_position_id = STL_industrial_flourish
         cost = 5
@@ -3725,7 +3774,7 @@ focus_tree = {
     focus = {
         id = STL_autarky
         icon = GFX_focus_generic_self_management
-        x = 3
+        x = 4
         y = 1
         relative_position_id = STL_flourishing_economy
         cost = 8
@@ -3813,7 +3862,7 @@ focus_tree = {
     focus = {
         id = STL_export_goods
         icon = GFX_goal_generic_positive_trade_relations
-        x = 5
+        x = 6
         y = 1
         relative_position_id = STL_flourishing_economy
         cost = 8
@@ -4060,7 +4109,7 @@ focus_tree = {
         id = STL_invest_in_resources
         icon = GFX_focus_generic_mining_industry
         prerequisite = { focus = STL_industrial_flourish }
-        x = 2
+        x = 3
         y = 1
         relative_position_id = STL_industrial_flourish
 
@@ -4097,73 +4146,22 @@ focus_tree = {
     focus = {
         id = STL_road_effort
         icon = GFX_focus_generic_road_investment
+
         prerequisite = {
             focus = STL_prioritize_economic_growth
             focus = STL_invest_in_resources
         }
 
-        x = 4
+        x = 5
         y = 1
+
         relative_position_id = STL_prioritize_economic_growth
         cost = 5
-        available = {
-
-        }
 
         search_filters = { FOCUS_FILTER_INDUSTRY }
 
         completion_reward = {
-            custom_effect_tooltip = GER_autobahn_tt
-            hidden_effect = {
-                random_core_state = {
-                    limit = {
-                        is_fully_controlled_by = ROOT
-                        is_core_of = ROOT
-                        is_owned_by = ROOT
-                    }
-                    add_building_construction = {
-                        type = infrastructure
-                        level = 5
-                        instant_build = yes
-                    }
-                }
-                random_core_state = {
-                    limit = {
-                        is_fully_controlled_by = ROOT
-                        is_core_of = ROOT
-                        is_owned_by = ROOT
-                    }
-                    add_building_construction = {
-                        type = infrastructure
-                        level = 5
-                        instant_build = yes
-                    }
-                }
-                random_core_state = {
-                    limit = {
-                        is_fully_controlled_by = ROOT
-                        is_core_of = ROOT
-                        is_owned_by = ROOT
-                    }
-                    add_building_construction = {
-                        type = infrastructure
-                        level = 5
-                        instant_build = yes
-                    }
-                }
-                random_core_state = {
-                    limit = {
-                        is_fully_controlled_by = ROOT
-                        is_core_of = ROOT
-                        is_owned_by = ROOT
-                    }
-                    add_building_construction = {
-                        type = infrastructure
-                        level = 5
-                        instant_build = yes
-                    }
-                }
-            }
+            
         }
     }
 
@@ -4205,6 +4203,10 @@ focus_tree = {
                     instant_build = yes
                 }
             }
+
+            custom_effect_tooltip = generic_skip_one_line_tt
+            custom_effect_tooltip = STL_resource_prospecting_unlock_tt
+            custom_effect_tooltip = STL_resource_prospecting_focus_scaling_tt
         }
     }
 
@@ -4243,6 +4245,9 @@ focus_tree = {
                     instant_build = yes
                 }
             }
+
+            custom_effect_tooltip = generic_skip_one_line_tt
+            custom_effect_tooltip = STL_aluminium_prospecting_tt
         }
     }
 
@@ -4281,6 +4286,9 @@ focus_tree = {
                     instant_build = yes
                 }
             }
+
+            custom_effect_tooltip = generic_skip_one_line_tt
+            custom_effect_tooltip = STL_expand_steelworks_prospecting_tt
         }
     }
 
@@ -4413,7 +4421,7 @@ focus_tree = {
         ai_will_do = { factor = 80 }
         prerequisite = { focus =  STL_road_effort }
         prerequisite = { focus = STL_coal }
-        x = 3
+        x = 4
         y = 1
         relative_position_id = STL_road_effort
         completion_reward = {
@@ -4425,6 +4433,9 @@ focus_tree = {
                     state = THIS
                 }
             }
+
+            custom_effect_tooltip = generic_skip_one_line_tt
+            custom_effect_tooltip = STL_crystals_prospecting_tt
         }
         search_filters = { FOCUS_FILTER_INDUSTRY }
     }
@@ -4629,6 +4640,9 @@ focus_tree = {
                     amount = 10
                 }
             }
+
+            custom_effect_tooltip = generic_skip_one_line_tt
+            custom_effect_tooltip = STL_oils_prospecting_tt
         }
     }
 
@@ -4669,7 +4683,7 @@ focus_tree = {
 
         search_filters = { FOCUS_FILTER_INDUSTRY }
 
-        cost = 5
+        cost = 4
 
         ai_will_do = {
             factor = 1
@@ -4688,6 +4702,7 @@ focus_tree = {
         }
 
         completion_reward = {
+            add_political_power = 50
             random_core_state = {
                 limit = {
                     free_building_slots = {
@@ -4714,6 +4729,9 @@ focus_tree = {
                     instant_build = yes
                 }
             }
+
+            custom_effect_tooltip = generic_skip_one_line_tt
+            custom_effect_tooltip = STL_resource_prospecting_second_use_tt
         }
     }
 
@@ -4727,7 +4745,7 @@ focus_tree = {
 
         search_filters = { FOCUS_FILTER_INDUSTRY }
 
-        cost = 5
+        cost = 4
 
         ai_will_do = {
             factor = 1
@@ -4746,6 +4764,7 @@ focus_tree = {
         }
 
         completion_reward = {
+            add_political_power = 50
             random_core_state = {
                 limit = {
                     free_building_slots = {
@@ -4772,6 +4791,9 @@ focus_tree = {
                     instant_build = yes
                 }
             }
+
+            custom_effect_tooltip = generic_skip_one_line_tt
+            custom_effect_tooltip = STL_resource_prospecting_cheaper_tt
         }
     }
 
@@ -4804,6 +4826,7 @@ focus_tree = {
         }
 
         completion_reward = {
+            add_political_power = 50
             random_core_state = {
                 limit = {
                     free_building_slots = {
@@ -4830,6 +4853,9 @@ focus_tree = {
                     instant_build = yes
                 }
             }
+
+            custom_effect_tooltip = generic_skip_one_line_tt
+            custom_effect_tooltip = STL_resource_prospecting_improved_unlock_tt
         }
     }
 
@@ -4870,7 +4896,7 @@ focus_tree = {
         id = STL_our_flying_aces
         icon = GFX_focus_generic_multi_role_aircraft
         cost = 5
-        x = 13
+        x = 14
         y = 1
         prerequisite = { focus = STL_industrial_flourish }
 

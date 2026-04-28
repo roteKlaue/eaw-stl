@@ -1,0 +1,8 @@
+STL_resource_prospecting = {
+	allowed = {
+		original_tag = STL
+	}
+	priority = {
+		base = 100
+	}
+}

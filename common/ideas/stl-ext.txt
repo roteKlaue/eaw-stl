@@ -11,7 +11,7 @@ ideas = {
                     has_government = fascism
                 }
             }
-            picture = CHL_communist_party_in_power
+            picture = STL_equality_past
 
             removal_cost = -1
             modifier = {
@@ -34,7 +34,7 @@ ideas = {
                     has_government = fascism
                 }
             }
-            picture = FRA_liberte_egalite_solidarite
+            picture = STL_equality_past
 
             removal_cost = -1
             modifier = {
@@ -58,7 +58,7 @@ ideas = {
                     has_government = fascism
                 }
             }
-            picture = ITA_il_sol_dell_avvenire_ns
+            picture = STL_equality_past
 
             removal_cost = -1
             modifier = {
@@ -93,7 +93,7 @@ ideas = {
                 tag = STL
             }
 
-            picture = SWI_spirit_of_helvetia_defensive_peace
+            picture = STL_garden_spirit
 
             removal_cost = -1
 
