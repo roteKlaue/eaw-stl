@@ -254,6 +254,15 @@ set_variable = { STL_airforce_air_strategic_bomber_bombing_factor = 0 }
 set_variable = { STL_airforce_air_range_factor = 0 }
 set_variable = { STL_airforce_air_fuel_consumption_factor = 0 }
 
+set_variable = { STL_fortress_democracy_stability = 0.05 }
+set_variable = { STL_fortress_democracy_war_support = 0.05 }
+set_variable = { STL_fortress_democracy_drift_defence = 0.05 }
+set_variable = { STL_fortress_democracy_resistance = -0.02 }
+set_variable = { STL_fortress_democracy_army_defence = 0 }
+set_variable = { STL_fortress_democracy_dig_in = 0 }
+set_variable = { STL_fortress_democracy_planning_speed = 0 }
+set_variable = { STL_fortress_democracy_trade_opinion = 0 }
+
 set_rule = {
     can_generate_female_aces = yes
     can_generate_female_unit_leaders  = yes

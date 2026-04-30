@@ -1,4 +1,30 @@
-STL_resource_prospecting = {
+STL_industrial = {
+    STL_worker_incentive_program = {
+        icon = GFX_decision_generic_industry
+
+        visible = {
+            has_completed_focus = STL_industrial_flourish
+        }
+
+        available = {
+            NOT = { has_idea = STL_worker_incentive_program_idea }
+        }
+
+        cost = 150
+        days_remove = 90
+
+        complete_effect = {
+            add_timed_idea = {
+                idea = STL_worker_incentive_program_idea
+                days = 90
+            }
+        }
+
+        ai_will_do = {
+            factor = 1
+        }
+    }
+
     STL_prospect_random_resources = {
         icon = GFX_decision_steel
         state_target = yes

@@ -211,6 +211,8 @@ country_event = {
         EQS = {
             add_opinion_modifier = { target = STL modifier = EQC_strengthen_equestrian_ties }
         }
+        add_stability = -0.3
+        add_war_support = -.70
     }
 }
 

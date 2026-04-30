@@ -145,3 +145,19 @@ STL_airforce = {
 	air_range_factor = STL_airforce_air_range_factor
 	air_fuel_consumption_factor = STL_airforce_air_fuel_consumption_factor
 }
+
+# defensive democracy
+STL_fortress_democracy_modifier = {
+    enable = { always = yes }
+    icon = GFX_idea_generic_democratic_pressure
+
+    stability_factor = STL_fortress_democracy_stability
+    war_support_factor = STL_fortress_democracy_war_support
+    drift_defence_factor = STL_fortress_democracy_drift_defence
+    resistance_target = STL_fortress_democracy_resistance
+    army_defence_factor = STL_fortress_democracy_army_defence
+    max_dig_in_factor = STL_fortress_democracy_dig_in
+    planning_speed = STL_fortress_democracy_planning_speed
+    trade_opinion_factor = STL_fortress_democracy_trade_opinion
+}
+

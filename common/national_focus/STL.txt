@@ -14,47 +14,47 @@ focus_tree = {
     default = no
     continuous_focus_position = { x = 10 y = 10 }
 
-	shortcut = {
-		name = STL_political_communist
-		target = STL_neighbors_help
-		scroll_wheel_factor = 0.9
-	}
-
-	shortcut = {
-		name = STL_political_democratic
-		target = STL_twilight_teaching
-		scroll_wheel_factor = 0.9
-	}
+    shortcut = {
+        name = STL_political_communist
+        target = STL_neighbors_help
+        scroll_wheel_factor = 0.9
+    }
 
     shortcut = {
-		name = STL_political_neutrality
-		target = STL_assasination_of_feather_bangs
-		scroll_wheel_factor = 0.9
-	}
+        name = STL_political_democratic
+        target = STL_twilight_teaching
+        scroll_wheel_factor = 0.9
+    }
 
-	shortcut = {
-		name = STL_army_army
-		target = STL_army_effort
-		scroll_wheel_factor = 1
-	}
+    shortcut = {
+        name = STL_political_neutrality
+        target = STL_assasination_of_feather_bangs
+        scroll_wheel_factor = 0.9
+    }
 
-	shortcut = {
-		name = STL_navy_navy
-		target = STL_offshore_patrol
-		scroll_wheel_factor = 1.0
-	}
-	
-	shortcut = {
-		name = STL_air_air
-		target = STL_our_flying_aces
-		scroll_wheel_factor = 1.0
-	}
+    shortcut = {
+        name = STL_army_army
+        target = STL_army_effort
+        scroll_wheel_factor = 1
+    }
 
-	shortcut = {
-		name = STL_industry_stuff
-		target = STL_road_effort
-		scroll_wheel_factor = 1.0
-	}
+    shortcut = {
+        name = STL_navy_navy
+        target = STL_offshore_patrol
+        scroll_wheel_factor = 1.0
+    }
+
+    shortcut = {
+        name = STL_air_air
+        target = STL_our_flying_aces
+        scroll_wheel_factor = 1.0
+    }
+
+    shortcut = {
+        name = STL_industry_stuff
+        target = STL_road_effort
+        scroll_wheel_factor = 1.0
+    }
 
     focus = {
         id = STL_abolish_equality
@@ -2658,7 +2658,11 @@ focus_tree = {
         relative_position_id = STL_shining_example_of_democracy
 
         mutually_exclusive = { focus = STL_proactive_democracy }
-        completion_reward = { }
+        completion_reward = {
+            add_dynamic_modifier = {
+                modifier = STL_fortress_democracy_modifier
+            }
+        }
         search_filters = { FOCUS_FILTER_COMPLETED_BY_EVENT FOCUS_FILTER_POLITICAL }
     }
 
@@ -2717,6 +2721,191 @@ focus_tree = {
         mutually_exclusive = { focus = STL_assasination_of_feather_bangs }
         completion_reward = { }
         search_filters = { FOCUS_FILTER_COMPLETED_BY_EVENT FOCUS_FILTER_POLITICAL }
+    }
+
+    focus = {
+        id = STL_internal_security
+        icon = GFX_focus_generic_secret_service_agency
+        cost = 5
+        x = -3
+        y = 1
+        relative_position_id = STL_save_ourselves
+        prerequisite = { focus = STL_save_ourselves }
+
+        completion_reward = {
+            if = {
+                limit = {
+                    NOT = { has_intelligence_agency = yes }
+                }
+                create_intelligence_agency = {
+					name = "Townsville SSC"
+					icon = GFX_intelligence_agency_logo_AUS_evidenzbureau_democratic
+				}
+            }
+
+            custom_effect_tooltip = STL_effective_change_for_fortress_democracy_tt
+            add_to_variable = {
+                STL_fortress_democracy_stability = 0.05
+                tooltip = stability_factor_tt
+            }
+            add_to_variable = {
+                STL_fortress_democracy_resistance = -0.03
+                tooltip = resistance_target_tt
+            }
+            add_to_variable = {
+                STL_fortress_democracy_drift_defence = 0.10
+                tooltip = drift_defence_factor_tt
+            }
+        }
+
+        search_filters = { FOCUS_FILTER_STABILITY FOCUS_FILTER_POLITICAL }
+    }
+
+    focus = {
+        id = STL_national_unity_campaign
+        icon = GFX_goal_generic_propaganda
+        cost = 5
+        x = -1
+        y = 1
+        relative_position_id = STL_save_ourselves
+        prerequisite = { focus = STL_save_ourselves }
+
+        completion_reward = {
+            custom_effect_tooltip = STL_effective_change_for_fortress_democracy_tt
+            add_to_variable = {
+                STL_fortress_democracy_stability = 0.10
+                tooltip = stability_factor_tt
+            }
+            add_to_variable = {
+                STL_fortress_democracy_war_support = 0.05
+                tooltip = war_support_factor_tt
+            }
+            add_political_power = 50
+        }
+
+        search_filters = { FOCUS_FILTER_STABILITY FOCUS_FILTER_WAR_SUPPORT }
+    }
+
+    focus = {
+        id = STL_defensive_preparations
+        icon = GFX_goal_generic_fortify_city
+        cost = 5
+        x = 1
+        y = 1
+        relative_position_id = STL_save_ourselves
+        prerequisite = { focus = STL_save_ourselves }
+
+        completion_reward = {
+            custom_effect_tooltip = STL_effective_change_for_fortress_democracy_tt
+            add_to_variable = {
+                STL_fortress_democracy_army_defence = 0.10
+                tooltip = army_defence_factor_tt
+            }
+            add_to_variable = {
+                STL_fortress_democracy_dig_in = 0.10
+                tooltip = max_dig_in_factor_tt
+            }
+            random_owned_controlled_state = {
+                limit = {
+                    is_core_of = ROOT
+                }
+                add_building_construction = {
+                    type = bunker
+                    level = 2
+                    instant_build = yes
+                }
+            }
+        }
+
+        search_filters = { FOCUS_FILTER_ARMY_BONUS FOCUS_FILTER_INDUSTRY }
+    }
+
+    focus = {
+        id = STL_responsible_press_oversight
+        icon = GFX_goal_generic_propaganda
+        cost = 5
+        x = -2
+        y = 2
+        relative_position_id = STL_save_ourselves
+        prerequisite = { focus = STL_internal_security }
+        prerequisite = { focus = STL_national_unity_campaign }
+
+        completion_reward = {
+            custom_effect_tooltip = STL_effective_change_for_fortress_democracy_tt
+            add_to_variable = {
+                STL_fortress_democracy_stability = 0.05
+                tooltip = stability_factor_tt
+            }
+            add_to_variable = {
+                STL_fortress_democracy_drift_defence = 0.15
+                tooltip = drift_defence_factor_tt
+            }
+            add_to_variable = {
+                STL_fortress_democracy_trade_opinion = -0.05
+                tooltip = trade_opinion_factor_tt
+            }
+        }
+
+        search_filters = { FOCUS_FILTER_STABILITY FOCUS_FILTER_POLITICAL }
+    }
+
+    focus = {
+        id = STL_layered_defense_plan
+        icon = GFX_focus_generic_little_entente
+        cost = 5
+        x = 0
+        y = 2
+        relative_position_id = STL_save_ourselves
+        prerequisite = { focus = STL_national_unity_campaign }
+        prerequisite = { focus = STL_defensive_preparations }
+
+        completion_reward = {
+            custom_effect_tooltip = STL_effective_change_for_fortress_democracy_tt
+            add_to_variable = {
+                STL_fortress_democracy_army_defence = 0.05
+                tooltip = army_defence_factor_tt
+            }
+            add_to_variable = {
+                STL_fortress_democracy_planning_speed = 0.10
+                tooltip = planning_speed_tt
+            }
+            army_experience = 25
+        }
+
+        search_filters = { FOCUS_FILTER_ARMY_BONUS FOCUS_FILTER_ARMY_XP }
+    }
+
+    focus = {
+        id = STL_fortress_democracy
+        icon = GFX_focus_generic_self_management
+        cost = 10
+        x = -1
+        y = 3
+        relative_position_id = STL_save_ourselves
+        prerequisite = { focus = STL_responsible_press_oversight }
+        prerequisite = { focus = STL_layered_defense_plan }
+
+        completion_reward = {
+            custom_effect_tooltip = STL_effective_change_for_fortress_democracy_tt
+            add_to_variable = {
+                STL_fortress_democracy_stability = 0.10
+                tooltip = stability_factor_tt
+            }
+            add_to_variable = {
+                STL_fortress_democracy_war_support = 0.10
+                tooltip = war_support_factor_tt
+            }
+            add_to_variable = {
+                STL_fortress_democracy_army_defence = 0.05
+                tooltip = army_defence_factor_tt
+            }
+            add_to_variable = {
+                STL_fortress_democracy_trade_opinion = -0.10
+                tooltip = trade_opinion_factor_tt
+            }
+        }
+
+        search_filters = { FOCUS_FILTER_STABILITY FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_ARMY_BONUS }
     }
 
     focus = {
@@ -4203,7 +4392,7 @@ focus_tree = {
         search_filters = { FOCUS_FILTER_INDUSTRY }
 
         completion_reward = {
-            
+
         }
     }
 
@@ -4310,7 +4499,7 @@ focus_tree = {
         }
 
         available = {
-            has_tech = excavation2
+            has_tech = excavation3
         }
 
         available_if_capitulated = no
@@ -4463,6 +4652,11 @@ focus_tree = {
         ai_will_do = { factor = 80 }
         prerequisite = { focus =  STL_road_effort }
         prerequisite = { focus = STL_coal }
+
+        available = {
+            has_tech = excavation1
+        }
+
         x = 4
         y = 1
         relative_position_id = STL_road_effort
@@ -4697,6 +4891,10 @@ focus_tree = {
         relative_position_id = STL_expand_steelworks
         search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_RESEARCH }
 
+        available = {
+            has_tech = construction2
+        }
+
         cost = 5
 
         ai_will_do = {
@@ -4909,6 +5107,10 @@ focus_tree = {
         y = 1
         relative_position_id = STL_infra_2
         search_filters = { FOCUS_FILTER_POLITICAL }
+
+        available = {
+            has_tech = construction4
+        }
 
         cost = 5
 

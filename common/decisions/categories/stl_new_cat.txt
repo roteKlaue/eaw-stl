@@ -1,4 +1,4 @@
-STL_resource_prospecting = {
+STL_industrial = {
 	allowed = {
 		original_tag = STL
 	}

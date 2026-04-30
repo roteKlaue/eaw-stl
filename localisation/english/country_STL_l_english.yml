@@ -1183,3 +1183,29 @@ STL_vp_our_canterlot:0 "Equalopolis"
  starlight.50.t:0 "The True Path Revealed"
  starlight.50.d:0 "The illusion fades.\n\n[ROOT.GetLeader] steps forward—not as a servant of democracy, but as its successor. The chaos of debate, dissent, and weakness must end. In its place rises a unified state, guided by strength and purpose.\n\nHarmony will not be asked for.\nIt will be imposed."
  starlight.50.a:0 "A stronger future awaits."
+
+ STL_save_ourselves:0 "Save Ourselves"
+ STL_save_ourselves_desc:0 "The world beyond our borders grows ever more uncertain, and our young democracy is not yet strong enough to shape it. Rather than risk everything on bold ambitions, we will turn inward—strengthening our institutions, securing our borders, and ensuring that what we have built cannot be torn apart. Harmony must first survive here before it can exist anywhere else."
+
+ STL_fortress_democracy_modifier:0 "Fortress Democracy"
+ STL_fortress_democracy_modifier_desc:0 "Our democracy has turned inward to survive. Institutions are guarded, borders are hardened, and public life is kept carefully stable. It is still democracy—but one shaped by fear of collapse."
+
+ STL_effective_change_for_fortress_democracy_tt:0 "§Y$STL_fortress_democracy_modifier$§! — Effective Change:\n"
+
+ STL_internal_security:0 "Internal Security Measures"
+ STL_internal_security_desc:0 "Democracy cannot function while extremists and agitators pull at its foundations. New security measures will monitor threats before they become crises."
+
+ STL_national_unity_campaign:0 "National Unity Campaign"
+ STL_national_unity_campaign_desc:0 "Our young democracy needs more than elections to survive. Through civic campaigns and public outreach, we will teach everypony that stability is a shared duty."
+
+ STL_defensive_preparations:0 "Defensive Preparations"
+ STL_defensive_preparations_desc:0 "We cannot afford to rely on distant promises. Our defenses must be strong enough to make any attack on Townsville a costly mistake."
+
+ STL_responsible_press_oversight:0 "Responsible Press Oversight"
+ STL_responsible_press_oversight_desc:0 "A free press is valuable, but panic and sabotage can spread faster than truth. We shall guide public discourse without openly abandoning democratic principles."
+
+ STL_layered_defense_plan:0 "Layered Defense Plan"
+ STL_layered_defense_plan_desc:0 "No single line can protect the nation. Prepared positions, fallback routes, and coordinated planning will ensure that every inch of ground strengthens the next."
+
+ STL_fortress_democracy:0 "Fortress Democracy"
+ STL_fortress_democracy_desc:0 "Townsville has chosen survival over ambition. Our democracy may no longer be naïve or open-hearted, but it is disciplined, guarded, and ready to endure."
