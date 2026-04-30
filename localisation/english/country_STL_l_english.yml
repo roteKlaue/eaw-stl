@@ -27,7 +27,7 @@ STG_OUR_communism_DEF:0 "Our Stalliongrad"
 STG_OUR_communism_ADJ:0 "Equal Stalliongradian"
 STL_foreign_conscription:0 "Our Expats"
 STL_foreign_conscription_desc:0 "Many creatures live far from home, seeking opportunity, adventure, or simply trying to avoid griffon tax paperwork. We shall offer these expatriates a chance to serve in our forces. They gain purpose and fair rations; we gain an army reinforced by those who already know the hardships of life abroad. Equality welcomes all — especially those who can hold a rifle."
-STL_war_propoganda:0 "Our Propoganda"
+STL_war_propoganda:0 "Our Propaganda"
 STL_war_propoganda_desc:0 "The world grows harsher by the day, and our citizens must be reminded what we fight for. Through posters, speeches, and the occasional overly-dramatic parade, we shall strengthen morale and prepare everypony mentally for the trials ahead. After all, unity is easiest to achieve when everypony hears the same message."
 STL_foreigners:0 "Our Foreign Levies"
 STL_foreigners_desc:0 "Our nation has opened its doors to outsiders willing to fight for a better world. Though they lack local roots, their diverse experiences and perspectives strengthen our ranks. Some join out of ideology, some out of necessity, and a few because they misread the recruitment poster. Regardless, all are Equal once they don the uniform"
@@ -36,7 +36,7 @@ STL_military_youth_desc:0 "If Equality is to survive, the next generation must b
 STL_special_forces:0 "Our Special Boiz"
 STL_special_forces_desc:0 "A truly equal society must be defended by ponies capable of meeting any challenge. Through rigorous training and collective discipline, we shall form elite units that exemplify our ideals—stronger together, unstoppable as one."
 STL_shining_example_of_democracy:0 "A Shining Example of Equus Harmony"
-STL_shining_example_of_democracy_desc:0 ""
+STL_shining_example_of_democracy_desc:0 "Townsville has cast off the shadows of its past and now stands as proof that harmony can survive even in the harshest corners of Equus. Our democracy may be young, fragile, and occasionally chaotic, but it shines brightly enough for others to notice."
 STL_deport_hungarians:0 "Deport Griffons"
 
 STL_army_effort:0 "Our Military Effort"
@@ -180,7 +180,7 @@ STL_invite_starlight_back:0 "Invite Our True Ruler Back"
 STL_invite_starlight_back_desc:0 "The time has come to welcome our rightful ruler home. Our recent victory over Stalliongrad has proven both the strength of our ideals and the might of our armies, reminding the world that the true heart of communism beats here. With our triumph secured, we can finally petition Starlight to return and pursue her—*and our*—vision of a truly equal Equestria."
 
 STL_eqs_exped_forces:0 "Equestrian Expeditionary Forces"
-STL_eqs_exped_forces_desc:0 ""
+STL_eqs_exped_forces_desc:0 "Equestria cannot always defend harmony alone. By organizing expeditionary volunteers, we can send our own forces abroad to support friendly nations and prove that Townsville is no passive observer."
 
 STL_griffon_transition:0 "Griffon Transition"
 STL_griffon_transition_desc:0 ""
@@ -192,7 +192,7 @@ STL_our_town_institute:0 "Our Town Institute"
 STL_our_town_institute_desc:0 ""
 
 STL_call_to_war:0 "Call to War"
-STL_call_to_war_desc:0 ""
+STL_call_to_war_desc:0 "Harmony cannot remain protected by words alone. If Equestria calls, Townsville must answer, sending its soldiers to defend the ideals that helped shape our new path."
 
 STL_first_move:0 "Our First Move"
 STL_first_move_desc:0 ""
@@ -376,12 +376,15 @@ STL_accention_of_our_ruler_desc:0 "Starlight Glimmer has returned to guide Our E
 STL_accention_of_our_ruler_tt:0 "§PStarlight Glimmer shall ascend beyond mortality and become an Alicorn of Equality.§!"
 STL_social_welfare_expansion:0 "Equalist Social Welfare"
 STL_social_welfare_expansion_desc:0 "The ideals of equality demand that no creature be left behind. Our government has expanded welfare programs across the nation, ensuring that housing, food, and basic necessities are available to all. While such policies place strain on the treasury, they help bind society together under the promise of shared prosperity."
-STL_coal:0 "Our Coal"
-STL_coal_desc:0 ""
-STL_expand_steelworks:0 "Our Steelworks"
-STL_expand_steelworks_desc:0 ""
-STL_aluminium:0 "Our Aluminium"
-STL_aluminium_desc:0 ""
+
+STL_coal:0 "Expand Coal Extraction"
+STL_coal_desc:0 "Coal remains the backbone of industrial development. By expanding mining operations, we ensure a steady supply of energy for our growing economy."
+
+STL_expand_steelworks:0 "Expand Steelworks"
+STL_expand_steelworks_desc:0 "Steel is the foundation of both industry and warfare. Increasing our production capacity will strengthen every aspect of our nation."
+
+STL_aluminium:0 "Develop Aluminium Industry"
+STL_aluminium_desc:0 "Light metals are essential for modern warfare and industry alike. By investing in aluminium production, we prepare for technological advancement."
 
 starlight_equalism.1.a:0 "We stay the course. Equality must be absolute."
 starlight_equalism.1.b:0 "Double Diamond hesitates—he questions the path..."
@@ -861,7 +864,7 @@ STL_vp_our_canterlot:0 "Equalopolis"
  starlight.27.a:0 "Together, we build Our Equestria."
 
  starlight.31.t:0 "A New Direction"
- starlight.31.d:0 "With the recent election victory, [ROOT.GetLeader] has made it clear that [ROOT.GetName] will pursue a different course than the radical policies of the past. In his first major act as leader, he has proposed reopening diplomatic channels with [EQS.GetName], hoping to mend relations that were strained during the Equalist period.\n\nWhile some remain skeptical of reconciliation, many believe that cooperation between our nations could bring stability and prosperity to the region."
+ starlight.31.d:0 "With the recent election victory, [ROOT.GetLeader] has made it clear that [ROOT.GetName] will pursue a different course than the radical policies of the past. In his first major act as leader, he has proposed reopening diplomatic channels with [EQS.GetName], hoping to mend relations that were strained during the Equalist period.\n\nWhile many welcome the promise of cooperation and stability, not everypony is convinced. Hardliners warn that abandoning the old ways invites weakness, while others fear that this new democracy lacks the strength to endure the pressures ahead.\n\n...For now, optimism prevails—but beneath the surface, old divisions linger, and not everypony is willing to trust that this new system will hold."
  starlight.31.a:0 "Let us strengthen our ties with Equestria."
 
  STL_MADNESS_STATE:0 "The Equalist State"
@@ -985,6 +988,7 @@ STL_vp_our_canterlot:0 "Equalopolis"
  STL_resource_prospecting_cost_tt:0 "Costs §Y50 Political Power§!, or §Y25 Political Power§! after completing §YImproved Prospecting Methods§!."
  STL_resource_prospecting_available_tt:0 "Requires enough §YPolitical Power§! to begin prospecting."
  STL_resource_prospecting_focus_scaling_tt:0 "The possible §YResource Prospecting§! outcomes improve as we complete more industrial focuses."
+ STL_resource_prospecting_result_tt:0 "§gThe results of the survey will vary depending on luck and prior investments.§!"
 
  STL_resource_prospecting_improved_cost_tt:0 "Costs §Y75 Political Power§!, or §Y50 Political Power§! after completing §YImproved Prospecting Methods§!."
  STL_resource_prospecting_improved_available_tt:0 "Requires enough §YPolitical Power§! to begin an expanded prospecting operation."
@@ -998,3 +1002,184 @@ STL_vp_our_canterlot:0 "Equalopolis"
  STL_aluminium_prospecting_tt:0 "Adds §YAluminium§! and §YChromium§! to the possible prospecting results."
  STL_oils_prospecting_tt:0 "Adds §YOil§! to the possible prospecting results."
  STL_crystals_prospecting_tt:0 "Adds §YCrystals§! to the possible prospecting results."
+
+ STL_resource_prospecting:0 "Resource Prospecting"
+ STL_resource_prospecting_desc:0 "Our lands may hold untapped wealth beneath their surface. By committing civilian industry and administrative effort, we can survey territories and uncover valuable resources—though success is never guaranteed."
+
+ STL_prospect_random_resources:0 "Survey for Resources"
+ STL_prospect_random_resources_desc:0 "A team of engineers, surveyors, and optimistic volunteers will be dispatched to search for hidden deposits. With enough effort—and a bit of luck—we may uncover something useful."
+
+ STL_prospect_random_resources_improved:0 "Advanced Resource Survey"
+ STL_prospect_random_resources_improved_desc:0 "With improved infrastructure and better methods, our survey teams can conduct more thorough and effective searches, increasing both the quantity and quality of discovered resources."
+
+ STL_resource_prospecting_available_tt:0 "§YRequires§!: At least §Y3§! available Civilian Factories and sufficient Political Power."
+ STL_resource_prospecting:0 "Resource Prospecting"
+ STL_resource_prospecting_desc:0 "Our lands may hold untapped wealth beneath their surface. By committing civilian industry and administrative effort, we can survey territories and uncover valuable resources—though success is never guaranteed."
+
+ STL_prospect_random_resources:0 "Survey for Resources"
+ STL_prospect_random_resources_desc:0 "A team of engineers, surveyors, and optimistic volunteers will be dispatched to search for hidden deposits. With enough effort—and a bit of luck—we may uncover something useful."
+
+ STL_prospect_random_resources_improved:0 "Advanced Resource Survey"
+ STL_prospect_random_resources_improved_desc:0 "With improved infrastructure and better methods, our survey teams can conduct more thorough and effective searches, increasing both the quantity and quality of discovered resources."
+
+ STL_instability_desc:0 "The rapid expansion of Our Equestria has left the state strained and difficult to manage. Conflicting ideologies, administrative overload, and lingering unrest weaken our unity. Without careful governance, instability may spiral further."
+
+ STL_airforce:0 "Our Airforce"
+ STL_airforce_desc:0 "Though still in its infancy, our airforce represents the future of warfare. With proper investment, training, and production, we can turn fragile wings into a force that dominates the skies above Equus."
+
+ STL_navy_dynamic_modifier:0 "Our Navy"
+ STL_navy_dynamic_modifier_desc:0 "Once little more than an afterthought, our naval forces are slowly being reorganized. Range, coordination, and safety remain concerns, but with time, our fleet may yet become a tool of power projection."
+
+ STL_recruitment_rush_desc:0 "Through aggressive recruitment drives and shortened training cycles, new soldiers are rushed into service. While this rapidly expands our forces, it places strain on our economy and organizational capacity."
+ STL_autarky_desc:0 "By reducing reliance on foreign trade, we aim to become self-sufficient. This limits external influence but places greater pressure on domestic production."
+ STL_export_desc:0 "Opening our economy to global trade increases resource flow and industrial growth, though at the cost of internal control over production."
+
+ STL_can_increase_infiltration_in_state_tt:0 "§YInfiltration§! in this state can still be increased."
+
+ STL_is_infiltrated_by_ROOT_tt:0 "This state has already been infiltrated by us."
+
+ STL_economy_cd_over_tt:0 "The economic action cooldown has expired."
+
+ STL_build_houses:0 "Build Houses"
+ STL_build_houses_desc:0 "A growing nation needs roofs before it needs monuments. New housing programs will ease overcrowding, support families, and prepare our towns for future expansion."
+
+ STL_laborers:0 "Mobilize Laborers"
+ STL_laborers_desc:0 "Development requires more than plans on paper. By organizing skilled and unskilled workers alike, we can push construction forward and turn ambition into brick, steel, and concrete."
+
+ STL_workers_rights:0 "Workers' Rights"
+ STL_workers_rights_desc:0 "An equal society cannot ignore those who build it. Stronger protections, fairer wages, and safer workshops will strengthen loyalty while making our economy more sustainable."
+
+ STL_prioritize_economic_growth:0 "Prioritize Economic Growth"
+ STL_prioritize_economic_growth_desc:0 "The nation must grow before it can dream. By placing economic expansion above short-term comfort, we prepare the foundation for a stronger and more independent future."
+
+ STL_currency_reforms:0 "Currency Reforms"
+ STL_currency_reforms_desc:0 "A stable economy requires trusted money. Reforming our currency and financial practices will reduce uncertainty and make trade, taxation, and investment easier to manage."
+
+ STL_lower_taxes:0 "Lower Taxes"
+ STL_lower_taxes_desc:0 "Reducing the burden on citizens and workshops will encourage private activity, local trade, and renewed confidence in the economy. The treasury may feel the strain, but growth should repay the gamble."
+
+ STL_abolish_price_controls:0 "Abolish Price Controls"
+ STL_abolish_price_controls_desc:0 "Emergency controls once helped prevent collapse, but they now restrain recovery. Lifting them will allow production and trade to respond more freely to demand."
+
+ STL_mass_production:0 "Mass Production"
+ STL_mass_production_desc:0 "The workshop must give way to the assembly line. Standardized methods, repeated processes, and disciplined planning will allow our factories to produce at a truly modern scale."
+
+ STL_industrial_flourish:0 "Industrial Flourish"
+ STL_industrial_flourish_desc:0 "The first signs of recovery have become something greater. New factories, stronger supply chains, and renewed confidence now point toward a lasting industrial revival."
+
+ STL_flourishing_economy:0 "Flourishing Economy"
+ STL_flourishing_economy_desc:0 "What began as survival has become prosperity. Our economy now hums with activity, giving the nation the confidence and resources needed to pursue greater ambitions."
+
+ STL_expand_the_backery:0 "Expand the Bakery"
+ STL_expand_the_backery_desc:0 "Sugar Belle's bakery has become more than a place for sweets; it is a symbol of local enterprise, community, and normal life returning to Townsville. Expanding it into a proper chain will create jobs, spread comfort, and prove that prosperity can taste better than equality muffins."
+
+ the_backery_chain:0 "The Bakery Chain"
+ the_backery_chain_desc:0 "What began as one humble bakery has grown into a small but influential network of shops, suppliers, and cheerful propaganda pastries. It strengthens local business while giving citizens something sweet to believe in."
+
+ STL_increased_trade:0 "Increased Trade"
+ STL_increased_trade_desc:0 "Isolation has limited us for too long. By strengthening commercial ties with neighbours and partners abroad, we can turn local production into national wealth."
+
+ STL_export_goods:0 "Export Goods"
+
+ STL_export_goods_desc:0 "Our industries are ready to look beyond the home market. Exporting manufactured goods will bring in revenue, build influence, and prove that Townsville can compete abroad."
+
+ STL_autarky:0 "Autarky"
+
+ STL_export:0 "Export-Oriented Economy"
+ STL_export_desc:0 "Our prosperity lies in selling to the wider world. A strong export economy will enrich the state, deepen trade ties, and make our goods known far beyond Townsville."
+
+ STL_domestic_production:0 "Domestic Production"
+ STL_domestic_production_desc:0 "The more we can build at home, the less we must beg from abroad. Expanding domestic production will strengthen both our economy and our strategic independence."
+
+ STL_our_flying_aces:0 "Our Flying Aces"
+ STL_our_flying_aces_desc:0 "A modern air force needs heroes, instructors, and veterans who can teach others how to survive the skies. By celebrating our best pilots, we inspire the next generation of flyers."
+ STL_aeronautical_research_institute:0 "Aeronautical Research Institute"
+ STL_aeronautical_research_institute_desc:0 "Air power advances quickly, and yesterday's designs become tomorrow's wreckage. A dedicated institute will keep our engineers focused on the aircraft of the future."
+ STL_air_base_prepartion:0 "Air Base Preparation"
+ STL_air_base_prepartion_desc:0 "Planes are useless without runways, hangars, fuel, and maintenance crews. Preparing proper air bases will give our pilots the infrastructure they need to operate effectively."
+ STL_ground_measures:0 "Ground Measures"
+ STL_ground_measures_desc:0 "Enemy bombers cannot be fought in the sky alone. Anti-air guns, radar stations, and trained ground crews will protect our towns and factories from above."
+ STL_make_planes_cheaper:0 "Cheaper Aircraft Production"
+ STL_make_planes_cheaper_desc:0 "A brilliant aircraft design means little if we cannot build enough of it. Simplified parts and standardized production will let our factories deliver more planes with fewer resources."
+ STL_light_specialization:0 "Light Aircraft Specialization"
+ STL_light_specialization_desc:0 "Fighters and close-support aircraft will form the backbone of our air strategy. Fast, flexible, and affordable, light airframes suit a small nation with ambitious pilots."
+ STL_medium_specialization:0 "Medium Aircraft Specialization"
+ STL_medium_specialization_desc:0 "Medium airframes offer versatility, range, and striking power. By focusing on them, we can build a force capable of both battlefield support and deeper operations."
+ STL_heavy_specialization:0 "Heavy Aircraft Specialization"
+ STL_heavy_specialization_desc:0 "Heavy aircraft require great investment, but their range and payload can change entire campaigns. If we master them, no enemy industry will feel truly safe."
+ STL_dive_bombers:0 "Dive Bombers"
+ STL_dive_bombers_desc:0 "Precision can be more valuable than weight of bombs. Dive bombers will allow our pilots to strike enemy positions, columns, and ships with terrifying accuracy."
+ STL_tactical_bombers:0 "Tactical Bombers"
+ STL_tactical_bombers_desc:0 "A flexible bomber force can support the army, strike supply lines, and weaken enemy formations before our soldiers advance."
+ STL_uralbomber_program:0 "Long-Range Bomber Program"
+ STL_uralbomber_program_desc:0 "Distance should not protect our enemies. A long-range bomber program will give us the ability to strike far beyond the immediate front."
+ STL_air_long_range:0 "Long-Range Aviation"
+ STL_air_long_range_desc:0 "Expanded fuel capacity, better navigation, and improved engine reliability will allow our aircraft to operate across wider theatres."
+ STL_our_powerful_airfleet:0 "Our Powerful Airfleet"
+ STL_our_powerful_airfleet_desc:0 "From humble beginnings, our air arm is becoming a true force. With trained pilots, modern aircraft, and reliable bases, we can finally contest the skies."
+ STL_domestic_air_production:0 "Domestic Air Production"
+ STL_domestic_air_production_desc:0 "Foreign aircraft may fill gaps, but only domestic production can guarantee long-term strength. Our factories shall learn to build the machines that defend our skies."
+ STL_domestic_air_production_small:0 "Small Airframe Production"
+ STL_domestic_air_production_small_desc:0 "Small aircraft are affordable, adaptable, and vital to air superiority. Prioritizing their production will give us numbers where we need them most."
+ STL_domestic_air_production_medium:0 "Medium Airframe Production"
+ STL_domestic_air_production_medium_desc:0 "Medium aircraft balance range, payload, and cost. Developing production around them will give our air force useful flexibility."
+ STL_domestic_air_production_large:0 "Large Airframe Production"
+ STL_domestic_air_production_large_desc:0 "Large aircraft demand serious industry, but they open the door to strategic reach. With enough investment, our factories can master even these giants."
+ STL_airforce:0 "Our Air Force"
+ STL_airforce_desc:0 "Our young air force has grown from scattered ambition into an organized branch of the armed forces. It still lacks the legacy of greater powers, but discipline, training, and industry can close the gap."
+
+ STL_defensive_posturing:0 "Defensive Posture"
+ STL_defensive_posturing_desc:0 "Surrounded by potential enemies, the army has adopted a cautious posture. Training, deployment, and local planning now emphasize holding ground and delaying attacks."
+ STL_tmp_stability:0 "Temporary Stability"
+ STL_tmp_stability_desc:0 "Recent reforms and political calm have brought the country a short period of renewed confidence. Whether this stability lasts remains to be seen."
+ STL_illegal_regime:0 "Illegal Regime"
+ STL_illegal_regime_desc:0 "Many citizens and foreign observers reject the legitimacy of the current government. The state may still command force, but it struggles to command trust."
+
+ starlight.40.t:0 "The Future of Our Democracy"
+ starlight.40.d:0 "Democracy in Townsville is still young—fragile, uncertain, and untested. Feather Bangs now faces a defining question: should this new system be protected and nurtured carefully, or boldly expanded beyond our borders?\n\nSome argue that survival must come first—that stability, unity, and internal strength are all that matter. Others insist that harmony is not meant to be contained, and that we must take an active role in shaping the future of Equus.\n\nThe path we choose now will define not only our government, but the very soul of our nation."
+ starlight.40.a:0 "We must secure ourselves first."
+ starlight.40.b:0 "Harmony must be shared with the world."
+
+ starlight.44.t:0 "Fortifying the Dream"
+ starlight.44.d:0 "The decision has been made: democracy must survive before it can thrive. Resources are redirected inward, institutions strengthened, and defenses prepared.\n\nTownsville will not rush blindly into the world. Instead, it will become a bastion—proof that harmony can endure, even under pressure."
+ starlight.44.a:0 "Strength begins at home."
+
+ starlight.45.t:0 "A Nation Prepared"
+ starlight.45.d:0 "With reforms underway, the nation grows more stable. Citizens are reassured, the military reorganized for defense, and the government focuses on resilience over ambition.\n\nWe may not shape the world—but we will endure it."
+ starlight.45.a:0 "We will endure—no matter what comes."
+
+ starlight.46.t:0 "Safeguarding Harmony"
+ starlight.46.d:0 "Townsville has chosen its path: cautious, disciplined, and prepared. While others may chase grand visions, we will ensure that what we have built is never lost again.\n\nDemocracy here will not fall—it will endure."
+ starlight.46.a:0 "We protect what we have built."
+
+
+ starlight.41.t:0 "A Bold Experiment"
+ starlight.41.d:0 "Feather Bangs has chosen ambition. Townsville will not remain isolated—it will actively promote harmony, cooperation, and its democratic ideals beyond its borders.\n\nBut such a path is risky. Expanding influence invites resistance, both from within and without.\n\nCan this fragile system withstand the pressure?"
+ starlight.41.a:0 "We will guide this carefully."
+ starlight.41.b:0 "Push forward, no matter the cost."
+ starlight.41.c:0 "Perhaps... a stronger vision is needed."
+
+ starlight.47.t:0 "Measured Expansion"
+ starlight.47.d:0 "Rather than rushing forward recklessly, the government proceeds with caution. Diplomacy, internal reforms, and controlled outreach ensure stability remains intact.\n\nHarmony spreads—not as a force, but as an example."
+ starlight.47.a:0 "Step by step."
+
+ starlight.48.t:0 "A Model Nation"
+ starlight.48.d:0 "Townsville has achieved something rare: a stable, outward-looking democracy. Its institutions hold firm, its people remain united, and its influence grows steadily.\n\nNot through force, but through trust."
+ starlight.48.a:0 "Let us lead by example."
+
+
+ starlight.43.t:0 "A Nation Divided"
+ starlight.43.d:0 "The rapid expansion of democratic ambition has strained the nation. Political divisions deepen, opposition grows louder, and unrest begins to spread.\n\nFeather Bangs pushes forward—but the cracks are beginning to show."
+ starlight.43.a:0 "Hold the course—there is no turning back."
+
+ starlight.49.t:0 "The Assassination of Feather Bangs"
+ starlight.49.d:0 "It happened suddenly. Amid rising tensions and growing unrest, Feather Bangs was struck down—another victim of a nation that moved too fast for its own stability.\n\nThe dream of proactive democracy collapses into uncertainty. Without its leader, Townsville must now decide what comes next."
+ starlight.49.a:0 "The dream dies with him."
+
+ starlight.42.t:0 "A Different Vision"
+ starlight.42.d:0 "Behind the speeches of harmony and democracy, another idea has taken root. Strength. Unity. Control.\n\nWith the influence of more radical voices, Feather Bangs begins to reshape his message. Harmony, he argues, cannot survive without order—and order cannot exist without power."
+ starlight.42.a:0 "Harmony must be enforced."
+
+ starlight.50.t:0 "The True Path Revealed"
+ starlight.50.d:0 "The illusion fades.\n\n[ROOT.GetLeader] steps forward—not as a servant of democracy, but as its successor. The chaos of debate, dissent, and weakness must end. In its place rises a unified state, guided by strength and purpose.\n\nHarmony will not be asked for.\nIt will be imposed."
+ starlight.50.a:0 "A stronger future awaits."

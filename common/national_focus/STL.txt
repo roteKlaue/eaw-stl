@@ -14,6 +14,48 @@ focus_tree = {
     default = no
     continuous_focus_position = { x = 10 y = 10 }
 
+	shortcut = {
+		name = STL_political_communist
+		target = STL_neighbors_help
+		scroll_wheel_factor = 0.9
+	}
+
+	shortcut = {
+		name = STL_political_democratic
+		target = STL_twilight_teaching
+		scroll_wheel_factor = 0.9
+	}
+
+    shortcut = {
+		name = STL_political_neutrality
+		target = STL_assasination_of_feather_bangs
+		scroll_wheel_factor = 0.9
+	}
+
+	shortcut = {
+		name = STL_army_army
+		target = STL_army_effort
+		scroll_wheel_factor = 1
+	}
+
+	shortcut = {
+		name = STL_navy_navy
+		target = STL_offshore_patrol
+		scroll_wheel_factor = 1.0
+	}
+	
+	shortcut = {
+		name = STL_air_air
+		target = STL_our_flying_aces
+		scroll_wheel_factor = 1.0
+	}
+
+	shortcut = {
+		name = STL_industry_stuff
+		target = STL_road_effort
+		scroll_wheel_factor = 1.0
+	}
+
     focus = {
         id = STL_abolish_equality
         icon = GFX_focus_eqc_memories_of_our_town
@@ -2541,7 +2583,7 @@ focus_tree = {
         ai_will_do = {
             factor = 1
         }
-        x = 0
+        x = -1
         y = 1
         relative_position_id = STL_our_town_fortress
         completion_reward = {
@@ -2584,7 +2626,7 @@ focus_tree = {
         id = STL_shining_example_of_democracy
         icon = GFX_focus_generic_democratic_europe
         cost = 5
-        x = 2
+        x = 1
         y = 1
         prerequisite = {
             focus = STL_our_town_fortress

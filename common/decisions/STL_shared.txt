@@ -54,19 +54,19 @@ STL_resource_prospecting = {
         }
 
         available = {
-            num_of_civilian_factories_available_for_projects > 2
-            if = {
-                limit = {
-                    NOT = { has_completed_focus = STL_infra_2 }
+            custom_override_tooltip = {
+                num_of_civilian_factories_available_for_projects > 2
+                if = {
+                    limit = {
+                        NOT = { has_completed_focus = STL_infra_2 }
+                    }
+                    has_political_power > 49
                 }
-                has_political_power > 49
+                else = {
+                    has_political_power > 24
+                }
+                tooltip = STL_resource_prospecting_available_tt
             }
-            else = {
-                has_political_power > 24
-            }
-			custom_override_tooltip = {
-				tooltip = STL_resource_prospecting_available_tt
-			}
         }
 
         complete_effect = {
@@ -93,6 +93,7 @@ STL_resource_prospecting = {
         }
 
         remove_effect = {
+            custom_effect_tooltip = STL_resource_prospecting_result_tt
             FROM = {
                 random_list = {
                     3 = {
@@ -286,15 +287,18 @@ STL_resource_prospecting = {
         }
 
         available = {
-            num_of_civilian_factories_available_for_projects > 2
-            if = {
-                limit = {
-                    NOT = { has_completed_focus = STL_infra_2 }
+            custom_override_tooltip = {
+                num_of_civilian_factories_available_for_projects > 2
+                if = {
+                    limit = {
+                        NOT = { has_completed_focus = STL_infra_2 }
+                    }
+                    has_political_power > 69
                 }
-                has_political_power > 74
-            }
-            else = {
-                has_political_power > 49
+                else = {
+                    has_political_power > 34
+                }
+                tooltip = STL_resource_prospecting_available_tt
             }
         }
 
@@ -322,6 +326,7 @@ STL_resource_prospecting = {
         }
 
         remove_effect = {
+            custom_effect_tooltip = STL_resource_prospecting_result_tt
             FROM = {
                 random_list = {
                     3 = {
