@@ -206,6 +206,16 @@ ideas = {
                     build_cost_ic = -0.025
                     instant = yes
                 }
+
+                infantry_equipment = {
+                    build_cost_ic = -0.025
+                    instant = yes
+                }
+
+                support_equipment = {
+                    build_cost_ic = -0.025
+                    instant = yes
+                }
             }
         }
 
@@ -214,6 +224,11 @@ ideas = {
             picture = generic_infantry_equipment_manufacturer_2
             equipment_bonus = {
                 infantry_equipment = {
+                    build_cost_ic = -0.025
+                    instant = yes
+                }
+
+                support_equipment = {
                     build_cost_ic = -0.025
                     instant = yes
                 }
@@ -228,6 +243,47 @@ ideas = {
                     build_cost_ic = -0.025
                     instant = yes
                 }
+
+                infantry_equipment = {
+                    build_cost_ic = -0.025
+                    instant = yes
+                }
+
+                support_equipment = {
+                    build_cost_ic = -0.025
+                    instant = yes
+                }
+
+                artillery_equipment = {
+                    build_cost_ic = -0.025
+                    instant = yes
+                }
+            }
+        }
+
+        STL_streamline_truck_artillery_production_idea = {
+            removal_cost = -1
+            picture = FRA_motorized_focus
+            equipment_bonus = {
+                truck = {
+                    build_cost_ic = -0.025
+                    instant = yes
+                }
+
+                infantry_equipment = {
+                    build_cost_ic = -0.025
+                    instant = yes
+                }
+
+                support_equipment = {
+                    build_cost_ic = -0.025
+                    instant = yes
+                }
+
+                artillery_equipment = {
+                    build_cost_ic = -0.025
+                    instant = yes
+                }
             }
         }
 
@@ -239,7 +295,28 @@ ideas = {
                     build_cost_ic = -0.025
                     instant = yes
                 }
+
                 tank = {
+                    build_cost_ic = -0.025
+                    instant = yes
+                }
+
+                truck = {
+                    build_cost_ic = -0.025
+                    instant = yes
+                }
+
+                infantry_equipment = {
+                    build_cost_ic = -0.025
+                    instant = yes
+                }
+
+                support_equipment = {
+                    build_cost_ic = -0.025
+                    instant = yes
+                }
+
+                artillery_equipment = {
                     build_cost_ic = -0.025
                     instant = yes
                 }
@@ -443,5 +520,29 @@ ideas = {
                 political_power_gain = -0.15
             }
         }
+    }
+
+    industrial_concern = {
+        STL_backery = {
+			picture = BRA_banco_do_brasil
+
+			allowed = {
+				original_tag = STL
+            }
+
+			available = {
+				has_completed_focus = STL_architechtual_advancements
+			}
+
+			visible = {
+				has_completed_focus = STL_architechtual_advancements
+			}
+		
+			traits = { telephone_company } 
+
+			ai_will_do = {
+				base = 1
+			}
+		}
     }
 }

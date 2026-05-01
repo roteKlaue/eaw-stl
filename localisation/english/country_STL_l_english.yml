@@ -1209,3 +1209,13 @@ STL_vp_our_canterlot:0 "Equalopolis"
 
  STL_fortress_democracy:0 "Fortress Democracy"
  STL_fortress_democracy_desc:0 "Townsville has chosen survival over ambition. Our democracy may no longer be naïve or open-hearted, but it is disciplined, guarded, and ready to endure."
+
+ STL_industrial_flourish_tt:0 "Unlocks the §Y$STL_worker_incentive_program$§! Decisions, granting the §Y$STL_worker_incentive_program_idea$§! national spirit."
+
+ STL_worker_incentive_program:0 "Worker Incentive Programs"
+ STL_worker_incentive_program_desc:0 "Motivation is as vital to industry as steel and machinery. By offering incentives, rewards, and improved conditions, we encourage our workforce to push beyond expectations. Productivity rises as every worker sees tangible benefits in their effort—though such programs require constant political and economic investment to maintain."
+
+ STL_worker_incentive_program_idea:0 "Incentivized Workforce"
+ STL_worker_incentive_program_idea_desc:0 "Through targeted incentives and improved working conditions, the state has succeeded in motivating its labor force. Workers are more efficient and committed, driving industrial output higher. However, sustaining these benefits demands ongoing resources and careful management."
+
+ STL_conquest_of_STG_tt:0 "Unlocks §YInfiltration§! Decisions."
