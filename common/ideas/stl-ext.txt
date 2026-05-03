@@ -520,6 +520,74 @@ ideas = {
                 political_power_gain = -0.15
             }
         }
+
+        STL_northern_customs_union_spirit = {
+            picture = generic_trade
+            allowed = { original_tag = STL }
+            modifier = {
+                consumer_goods_factor = -0.03
+                production_speed_industrial_complex_factor = 0.05
+                trade_opinion_factor = 0.15
+            }
+        }
+
+        STL_northern_defense_agreements_spirit = {
+            picture = generic_army
+            allowed = { original_tag = STL }
+            modifier = {
+                army_org_factor = 0.03
+                planning_speed = 0.05
+                max_command_power_mult = 0.05
+            }
+        }
+
+        STL_northern_economic_integration_spirit = {
+            picture = generic_production_bonus
+            allowed = { original_tag = STL }
+            modifier = {
+                consumer_goods_factor = -0.05
+                production_speed_industrial_complex_factor = 0.08
+                production_speed_infrastructure_factor = 0.08
+            }
+        }
+
+        STL_joint_northern_command_spirit = {
+            picture = generic_army
+            allowed = { original_tag = STL }
+            modifier = {
+                army_org_factor = 0.05
+                division_training_time_factor = -0.05
+                land_doctrine_cost_factor = -0.05
+            }
+        }
+
+        STL_northern_concord_spirit = {
+            picture = generic_political_discourse
+            allowed = { original_tag = STL }
+            modifier = {
+                political_power_gain = 0.05
+                stability_factor = 0.05
+                subjects_autonomy_gain = -0.1
+            }
+        }
+
+        STL_northern_customs_union_member = {
+            picture = generic_trade
+            modifier = {
+                consumer_goods_factor = -0.02
+                production_speed_industrial_complex_factor = 0.03
+                trade_opinion_factor = 0.1
+            }
+        }
+
+        STL_northern_integrated_economy_member = {
+            picture = generic_production_bonus
+            modifier = {
+                consumer_goods_factor = -0.04
+                production_speed_industrial_complex_factor = 0.06
+                production_speed_infrastructure_factor = 0.05
+            }
+        }
     }
 
     industrial_concern = {

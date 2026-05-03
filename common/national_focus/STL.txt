@@ -2762,7 +2762,7 @@ focus_tree = {
         id = STL_proactive_democracy
         icon = GFX_goal_generic_propaganda
         cost = 5
-        x = 4
+        x = 8
         y = 1
 
         available = {
@@ -2936,6 +2936,10 @@ focus_tree = {
                 STL_fortress_democracy_trade_opinion = -0.05
                 tooltip = trade_opinion_factor_tt
             }
+            add_to_variable = {
+                STL_fortress_spy_slots = 1
+                tooltip = operative_slot_tt
+            }
         }
 
         search_filters = { FOCUS_FILTER_STABILITY FOCUS_FILTER_POLITICAL }
@@ -2998,6 +3002,412 @@ focus_tree = {
         }
 
         search_filters = { FOCUS_FILTER_STABILITY FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_ARMY_BONUS }
+    }
+
+    focus = {
+        id = STL_northern_relations
+        icon = GFX_goal_generic_improve_relations
+        cost = 5
+        x = 4
+        y = 1
+        relative_position_id = STL_save_ourselves
+        prerequisite = {
+            focus = STL_save_ourselves
+        }
+        completion_reward = {
+            custom_effect_tooltip = STL_northern_relations_tt
+
+            every_country = {
+                limit = {
+                    OR = {
+                        tag = GRF
+                        tag = GFF
+                        tag = PNG
+                        tag = PLB
+                        tag = YAK
+                        tag = JAK
+                    }
+                }
+
+                country_event = {
+                    id = starlight.51
+                    days = 1
+                }
+            }
+        }
+
+        search_filters = { FOCUS_FILTER_POLITICAL }
+    }
+
+    focus = {
+        id = STL_northern_cooperation
+        icon = GFX_focus_generic_approach_the_west
+        cost = 5
+
+        prerequisite = {
+            focus = STL_northern_relations
+            focus = STL_solid_leadership
+        }
+
+        x = -4
+        y = 1
+        relative_position_id = STL_solid_leadership
+
+        search_filters = { FOCUS_FILTER_POLITICAL }
+
+        completion_reward = {
+            add_political_power = 50
+            add_stability = 0.03
+
+            custom_effect_tooltip = STL_northern_cooperation_tt
+
+            hidden_effect = {
+                every_country = {
+                    limit = {
+                        OR = {
+                            tag = GRF
+                            tag = GFF
+                            tag = PNG
+                            tag = PLB
+                            tag = YAK
+                            tag = JAK
+                        }
+                        exists = yes
+                        NOT = { has_war_with = ROOT }
+                    }
+
+                    country_event = {
+                        id = stl_northern_cooperation.1
+                        days = 2
+                        random_days = 2
+                    }
+                }
+            }
+        }
+    }
+
+    focus = {
+        id = STL_northern_customs_union
+        icon = GFX_focus_GER_customs_union
+        cost = 5
+
+        prerequisite = { focus = STL_northern_cooperation }
+
+        x = 1
+        y = 1
+        relative_position_id = STL_northern_cooperation
+
+        search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_POLITICAL }
+
+        completion_reward = {
+            add_ideas = STL_northern_customs_union_spirit
+            set_country_flag = STL_northern_customs_union_unlocked
+
+            custom_effect_tooltip = STL_northern_customs_union_tt
+            custom_effect_tooltip = they_will_gain_tt
+            show_ideas_tooltip = STL_northern_customs_union_member
+
+            hidden_effect = {
+                every_country = {
+                    limit = {
+                        has_country_flag = STL_accepted_northern_overture
+                        NOT = { has_idea = STL_northern_customs_union_member }
+                    }
+
+                    add_ideas = STL_northern_customs_union_member
+                    add_to_variable = {
+                        var = STL_northern_integration_progress
+                        value = 1
+                    }
+                }
+            }
+        }
+    }
+
+    focus = {
+        id = STL_northern_defense_agreements
+        icon = GFX_goal_generic_defence
+        cost = 5
+
+        prerequisite = { focus = STL_northern_cooperation }
+
+        x = -1
+        y = 1
+        relative_position_id = STL_northern_cooperation
+
+        search_filters = { FOCUS_FILTER_ARMY_BONUS FOCUS_FILTER_POLITICAL }
+
+        completion_reward = {
+            add_ideas = STL_northern_defense_agreements_spirit
+            set_country_flag = STL_northern_defense_agreements_unlocked
+
+            custom_effect_tooltip = STL_northern_defense_agreements_tt
+
+            hidden_effect = {
+                every_country = {
+                    limit = {
+                        has_country_flag = STL_accepted_northern_overture
+                    }
+
+                    add_opinion_modifier = {
+                        target = ROOT
+                        modifier = made_friends
+                    }
+                }
+            }
+        }
+    }
+
+    focus = {
+        id = STL_northern_trade_missions
+        icon = GFX_goal_generic_positive_trade_relations
+        cost = 5
+
+        prerequisite = { focus = STL_northern_customs_union }
+
+        x = 0
+        y = 1
+        relative_position_id = STL_northern_customs_union
+
+        search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_POLITICAL }
+
+        completion_reward = {
+            set_country_flag = STL_northern_trade_missions_unlocked
+            add_political_power = 50
+
+            custom_effect_tooltip = STL_northern_trade_missions_tt
+
+            unlock_decision_tooltip = {
+                decision = STL_expand_trade_missions
+                show_effect_tooltip = no
+            }
+        }
+    }
+
+    focus = {
+        id = STL_formalize_the_northern_alliance
+        icon = GFX_focus_generic_diplomatic_treaty
+        cost = 7
+
+        prerequisite = { focus = STL_northern_defense_agreements }
+
+        x = 0
+        y = 1
+        relative_position_id = STL_northern_defense_agreements
+
+        available = {
+            is_subject = no
+            NOT = { is_in_faction = yes }
+        }
+
+        search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_ANNEXATION }
+
+        completion_reward = {
+            create_faction = STL_northern_alliance
+            set_country_flag = STL_northern_alliance_formed
+
+            custom_effect_tooltip = STL_formalize_the_northern_alliance_tt
+
+            hidden_effect = {
+                every_country = {
+                    limit = {
+                        has_country_flag = STL_accepted_northern_overture
+                        NOT = { is_in_faction = yes }
+                    }
+                    add_to_faction = STL
+                }
+            }
+        }
+    }
+
+    focus = {
+        id = STL_northern_economic_integration
+        icon = GFX_focus_GER_integration_of_puppet_economies
+        cost = 7
+
+        prerequisite = { focus = STL_northern_trade_missions }
+        prerequisite = { focus = STL_formalize_the_northern_alliance }
+
+        x = 2
+        y = 1
+        relative_position_id = STL_formalize_the_northern_alliance
+
+        available = {
+            is_subject = no
+            is_faction_leader = yes
+            any_other_country = {
+                is_in_faction_with = ROOT
+            }
+        }
+
+        search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_POLITICAL }
+
+        completion_reward = {
+            swap_ideas = {
+                remove_idea = STL_northern_customs_union_spirit
+                add_idea = STL_northern_economic_integration_spirit
+            }
+
+            set_country_flag = STL_northern_economic_integration_unlocked
+
+            custom_effect_tooltip = STL_northern_economic_integration_tt
+            custom_effect_tooltip = if_they_accept_tt
+            custom_effect_tooltip = they_will_gain_tt
+            show_ideas_tooltip = STL_northern_integrated_economy_member
+            custom_effect_tooltip = generic_skip_one_line_tt
+
+            hidden_effect = {
+                every_country = {
+                    limit = {
+                        has_country_flag = STL_accepted_northern_overture
+                        is_in_faction_with = ROOT
+                        has_idea = STL_northern_customs_union_member
+                        NOT = { has_country_flag = STL_country_rejected_northern_economic_integration }
+                    }
+
+                    set_country_flag = STL_has_sent_northern_economic_integration_invitation
+
+                    country_event = {
+                        id = stl_northern_cooperation.4
+                        hours = 6
+                        random_hours = 12
+                    }
+                }
+            }
+
+            unlock_decision_tooltip = {
+                decision = STL_fund_northern_development
+                show_effect_tooltip = no
+            }
+            unlock_decision_tooltip = {
+                decision = STL_expand_trade_missions
+                show_effect_tooltip = no
+            }
+        }
+    }
+
+    focus = {
+        id = STL_joint_northern_command
+        icon = GFX_goal_generic_allies_build_infantry
+        cost = 7
+
+        prerequisite = { focus = STL_formalize_the_northern_alliance }
+
+        x = 0
+        y = 1
+        relative_position_id = STL_formalize_the_northern_alliance
+
+        available = {
+            is_subject = no
+            is_faction_leader = yes
+            any_other_country = {
+                is_in_faction_with = ROOT
+            }
+        }
+
+        search_filters = { FOCUS_FILTER_ARMY_BONUS FOCUS_FILTER_POLITICAL }
+
+        completion_reward = {
+            add_ideas = STL_joint_northern_command_spirit
+            set_country_flag = STL_joint_northern_command_unlocked
+
+            custom_effect_tooltip = STL_joint_northern_command_tt
+
+            unlock_decision_tooltip = {
+                decision = STL_joint_military_exercises
+                show_effect_tooltip = no
+            }
+        }
+    }
+
+    focus = {
+        id = STL_northern_concord
+        icon = GFX_focus_generic_self_management
+        cost = 10
+
+        prerequisite = { focus = STL_northern_economic_integration }
+        prerequisite = { focus = STL_joint_northern_command }
+
+        x = 1
+        y = 2
+        relative_position_id = STL_formalize_the_northern_alliance
+
+        available = {
+            is_subject = no
+            is_faction_leader = yes
+            any_other_country = {
+                is_in_faction_with = ROOT
+            }
+        }
+
+        search_filters = { FOCUS_FILTER_POLITICAL }
+
+        completion_reward = {
+            swap_ideas = {
+                remove_idea = STL_northern_economic_integration_spirit
+                add_idea = STL_northern_concord_spirit
+            }
+
+            set_country_flag = STL_northern_concord_unlocked
+
+            custom_effect_tooltip = STL_northern_concord_tt
+
+            hidden_effect = {
+                every_country = {
+                    limit = {
+                        has_country_flag = STL_accepted_northern_overture
+                        is_in_faction_with = ROOT
+                        NOT = { has_country_flag = STL_fully_integrated_by_STL }
+                    }
+
+                    add_to_variable = {
+                        var = STL_northern_integration_progress
+                        value = 2
+                    }
+                }
+            }
+
+            unlock_decision_tooltip = {
+                decision = STL_prepare_northern_concord
+                show_effect_tooltip = no
+            }
+        }
+    }
+
+    focus = {
+        id = STL_integrate_the_north
+        icon = GFX_goal_generic_major_alliance
+        cost = 10
+
+        prerequisite = { focus = STL_northern_concord }
+
+        x = 0
+        y = 1
+        relative_position_id = STL_northern_concord
+
+        available = {
+            is_subject = no
+            is_faction_leader = yes
+            any_other_country = {
+                is_in_faction_with = ROOT
+            }
+        }
+
+        search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_ANNEXATION }
+
+        completion_reward = {
+            add_political_power = 100
+            set_country_flag = STL_integrate_the_north_unlocked
+
+            custom_effect_tooltip = STL_integrate_the_north_tt
+            custom_effect_tooltip = generic_skip_one_line_tt
+            custom_effect_tooltip = STL_integrate_the_north_decisions_tt
+
+            unlock_decision_tooltip = {
+                decision = STL_integrate_northern_partner
+                show_effect_tooltip = no
+            }
+        }
     }
 
     focus = {
@@ -5006,11 +5416,11 @@ focus_tree = {
                 bonus = 0.75
                 uses = 3
                 category = construction_tech
-            } 
+            }
 
             custom_effect_tooltip = generic_skip_one_line_tt
             custom_effect_tooltip = available_industrial_concern
-			show_ideas_tooltip = STL_backery
+            show_ideas_tooltip = STL_backery
         }
     }
 

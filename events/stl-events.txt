@@ -1,6 +1,7 @@
 add_namespace = starlight
 add_namespace = starlight_equalism
 add_namespace = starlight_news
+add_namespace = stl_northern_cooperation
 
 country_event = {
     id =   starlight.19
@@ -294,7 +295,7 @@ country_event = {
 
     option = {
         name = starlight.42.a
-        
+
         country_event = {
             id = starlight.50
             days = 20
@@ -453,6 +454,80 @@ country_event = {
 }
 
 country_event = {
+    id = starlight.51
+    title = starlight.51.t
+    desc = starlight.51.d
+    picture = GFX_event_our_town
+
+    is_triggered_only = yes
+
+    option = {
+        name = starlight.51.a
+
+        add_opinion_modifier = {
+            target = STL
+            modifier = made_friends
+        }
+
+        STL = {
+            add_opinion_modifier = {
+                target = ROOT
+                modifier = made_friends
+            }
+            country_event = starlight.52
+        }
+    }
+
+    option = {
+        name = starlight.51.b
+
+        add_opinion_modifier = {
+            target = STL
+            modifier = refused_friends
+        }
+
+        STL = {
+            add_opinion_modifier = {
+                target = ROOT
+                modifier = refused_friends
+            }
+
+            country_event = starlight.53
+        }
+    }
+}
+
+country_event = {
+    id = starlight.52
+    title = starlight.52.t
+    desc = starlight.52.d
+    picture = GFX_event_our_town
+
+    is_triggered_only = yes
+
+    option = {
+        name = starlight.52.a
+
+        add_political_power = 50
+    }
+}
+
+country_event = {
+    id = starlight.53
+    title = starlight.53.t
+    desc = starlight.53.d
+    picture = GFX_event_our_town
+
+    is_triggered_only = yes
+
+    option = {
+        name = starlight.53.a
+
+        add_political_power = 10
+    }
+}
+
+country_event = {
     id = starlight_equalism.1
     title = starlight_equalism.1.t
     desc = starlight_equalism.1.d
@@ -524,3 +599,371 @@ country_event = {
 #         }
 #     }
 # }
+
+country_event = {
+    id = stl_northern_cooperation.1
+    title = stl_northern_cooperation.1.t
+    desc = stl_northern_cooperation.1.desc
+    picture = GFX_report_event_generic_sign_treaty1
+
+    is_triggered_only = yes
+
+    option = {
+        name = stl_northern_cooperation.1.a
+
+        ai_chance = {
+            base = 10
+
+            modifier = {
+                factor = 2
+                has_opinion = {
+                    target = FROM
+                    value > 20
+                }
+            }
+
+            modifier = {
+                factor = 2
+                strength_ratio = {
+                    tag = FROM
+                    ratio < 0.75
+                }
+            }
+
+            modifier = {
+                factor = 0.25
+                has_war_with = FROM
+            }
+        }
+
+        set_country_flag = STL_accepted_northern_overture
+
+        add_opinion_modifier = {
+            target = FROM
+            modifier = made_friends
+        }
+
+        FROM = {
+            country_event = {
+                id = stl_northern_cooperation.7
+                hours = 5
+                random_hours = 5
+            }
+        }
+    }
+
+    option = {
+        name = stl_northern_cooperation.1.b
+
+        ai_chance = {
+            base = 2
+
+            modifier = {
+                factor = 5
+                strength_ratio = {
+                    tag = FROM
+                    ratio > 1
+                }
+            }
+        }
+
+        set_country_flag = STL_rejected_northern_overture
+
+        FROM = {
+            country_event = {
+                id = stl_northern_cooperation.8
+                hours = 5
+                random_hours = 5
+            }
+        }
+    }
+}
+
+# Partner has been prepared for concord.
+country_event = {
+    id = stl_northern_cooperation.2
+    title = stl_northern_cooperation.2.t
+    desc = stl_northern_cooperation.2.desc
+    picture = GFX_report_event_generic_sign_treaty2
+
+    is_triggered_only = yes
+
+    option = {
+        name = stl_northern_cooperation.2.a
+
+        add_stability = 0.03
+
+        add_to_variable = {
+            var = STL_northern_integration_progress
+            value = 1
+        }
+    }
+}
+
+# Partner receives final integration proposal.
+country_event = {
+    id = stl_northern_cooperation.3
+    title = stl_northern_cooperation.3.t
+    desc = stl_northern_cooperation.3.desc
+    picture = GFX_report_event_generic_sign_treaty2
+
+    is_triggered_only = yes
+
+    option = {
+        name = stl_northern_cooperation.3.a
+
+        ai_chance = {
+            base = 10
+
+            modifier = {
+                factor = 2
+                is_in_faction_with = FROM
+            }
+
+            modifier = {
+                factor = 2
+                has_idea = STL_northern_integrated_economy_member
+            }
+
+            modifier = {
+                factor = 2
+                check_variable = {
+                    var = STL_northern_integration_progress
+                    value > 6
+                }
+            }
+
+            modifier = {
+                factor = 0.5
+                strength_ratio = {
+                    tag = FROM
+                    ratio > 1
+                }
+            }
+        }
+
+        set_country_flag = STL_fully_integrated_by_STL
+
+        FROM = {
+            country_event = {
+                id = stl_northern_cooperation.5
+                days = 1
+            }
+        }
+    }
+
+    option = {
+        name = stl_northern_cooperation.3.b
+
+        ai_chance = {
+            base = 2
+
+            modifier = {
+                factor = 4
+                strength_ratio = {
+                    tag = FROM
+                    ratio > 1
+                }
+            }
+        }
+
+        set_country_flag = STL_rejected_final_integration
+
+        FROM = {
+            country_event = {
+                id = stl_northern_cooperation.6
+                days = 1
+            }
+        }
+    }
+}
+
+# Partner receives economic integration proposal.
+country_event = {
+    id = stl_northern_cooperation.4
+    title = stl_northern_cooperation.4.t
+    desc = stl_northern_cooperation.4.desc
+    picture = GFX_report_event_generic_sign_treaty2
+
+    is_triggered_only = yes
+
+    option = {
+        name = stl_northern_cooperation.4.a
+
+        ai_chance = {
+            base = 10
+
+            modifier = {
+                factor = 2
+                is_in_faction_with = FROM
+            }
+
+            modifier = {
+                factor = 2
+                has_opinion = {
+                    target = FROM
+                    value > 40
+                }
+            }
+
+            modifier = {
+                factor = 2
+                strength_ratio = {
+                    tag = FROM
+                    ratio < 0.75
+                }
+            }
+        }
+
+        swap_ideas = {
+            remove_idea = STL_northern_customs_union_member
+            add_idea = STL_northern_integrated_economy_member
+        }
+
+        add_to_variable = {
+            var = STL_northern_integration_progress
+            value = 2
+        }
+
+        hidden_effect = {
+            set_country_flag = STL_country_accepted_northern_economic_integration
+        }
+
+        FROM = {
+            country_event = {
+                id = stl_northern_cooperation.9
+                hours = 5
+                random_hours = 5
+            }
+        }
+    }
+
+    option = {
+        name = stl_northern_cooperation.4.b
+
+        ai_chance = {
+            base = 2
+
+            modifier = {
+                factor = 5
+                strength_ratio = {
+                    tag = FROM
+                    ratio > 1
+                }
+            }
+        }
+
+        hidden_effect = {
+            set_country_flag = STL_country_rejected_northern_economic_integration
+        }
+
+        FROM = {
+            country_event = {
+                id = stl_northern_cooperation.10
+                hours = 5
+                random_hours = 5
+            }
+        }
+    }
+}
+
+# STL receives acceptance of final integration.
+country_event = {
+    id = stl_northern_cooperation.5
+    title = stl_northern_cooperation.5.t
+    desc = stl_northern_cooperation.5.desc
+    picture = GFX_report_event_generic_sign_treaty2
+
+    is_triggered_only = yes
+
+    option = {
+        name = stl_northern_cooperation.5.a
+
+        effect_tooltip = {
+            annex_country = {
+                target = FROM
+                transfer_troops = yes
+            }
+        }
+
+        hidden_effect = {
+            annex_country = {
+                target = FROM
+                transfer_troops = yes
+            }
+        }
+    }
+}
+
+# STL receives rejection of final integration.
+country_event = {
+    id = stl_northern_cooperation.6
+    title = stl_northern_cooperation.6.t
+    desc = stl_northern_cooperation.6.desc
+    picture = GFX_report_event_generic_read_write
+
+    is_triggered_only = yes
+
+    option = {
+        name = stl_northern_cooperation.6.a
+        add_political_power = -25
+    }
+}
+
+# STL receives first-overture acceptance.
+country_event = {
+    id = stl_northern_cooperation.7
+    title = stl_northern_cooperation.7.t
+    desc = stl_northern_cooperation.7.desc
+    picture = GFX_report_event_generic_sign_treaty1
+
+    is_triggered_only = yes
+
+    option = {
+        name = stl_northern_cooperation.7.a
+        add_political_power = 15
+    }
+}
+
+# STL receives first-overture rejection.
+country_event = {
+    id = stl_northern_cooperation.8
+    title = stl_northern_cooperation.8.t
+    desc = stl_northern_cooperation.8.desc
+    picture = GFX_report_event_journalists_speech
+
+    is_triggered_only = yes
+
+    option = {
+        name = stl_northern_cooperation.8.a
+    }
+}
+
+# STL receives economic integration acceptance.
+country_event = {
+    id = stl_northern_cooperation.9
+    title = stl_northern_cooperation.9.t
+    desc = stl_northern_cooperation.9.desc
+    picture = GFX_report_event_generic_sign_treaty2
+
+    is_triggered_only = yes
+
+    option = {
+        name = stl_northern_cooperation.9.a
+        add_political_power = 25
+    }
+}
+
+# STL receives economic integration rejection.
+country_event = {
+    id = stl_northern_cooperation.10
+    title = stl_northern_cooperation.10.t
+    desc = stl_northern_cooperation.10.desc
+    picture = GFX_report_event_generic_read_write
+
+    is_triggered_only = yes
+
+    option = {
+        name = stl_northern_cooperation.10.a
+    }
+}

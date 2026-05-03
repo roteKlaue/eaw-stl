@@ -1,8 +1,16 @@
 STL_industrial = {
-	allowed = {
-		original_tag = STL
-	}
-	priority = {
-		base = 100
-	}
+    allowed = {
+        original_tag = STL
+    }
+    priority = {
+        base = 100
+    }
+}
+
+STL_northern_integration = {
+    icon = GFX_decision_category_diplomacy
+
+    allowed = {
+        original_tag = STL
+    }
 }

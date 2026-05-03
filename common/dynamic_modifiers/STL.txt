@@ -136,20 +136,20 @@ STL_airforce = {
     air_ace_generation_chance_factor = STL_airforce_air_ace_generation_chance_factor
     air_untrained_pilots_penalty_factor = STL_airforce_air_untrained_pilots_penalty_factor
     air_accidents_factor = STL_airforce_air_accidents_factor
-	air_manpower_requirement_factor = STL_airforce_air_manpower_requirement_factor
-	air_agility_factor = STL_airforce_air_agility_factor
-	air_ace_generation_chance_factor = STL_airforce_air_ace_generation_chance_factor
-	air_nav_efficiency = STL_airforce_air_nav_efficiency
-	air_cas_efficiency = STL_airforce_air_cas_efficiency
-	air_strategic_bomber_bombing_factor = STL_airforce_air_strategic_bomber_bombing_factor
-	air_range_factor = STL_airforce_air_range_factor
-	air_fuel_consumption_factor = STL_airforce_air_fuel_consumption_factor
+    air_manpower_requirement_factor = STL_airforce_air_manpower_requirement_factor
+    air_agility_factor = STL_airforce_air_agility_factor
+    air_ace_generation_chance_factor = STL_airforce_air_ace_generation_chance_factor
+    air_nav_efficiency = STL_airforce_air_nav_efficiency
+    air_cas_efficiency = STL_airforce_air_cas_efficiency
+    air_strategic_bomber_bombing_factor = STL_airforce_air_strategic_bomber_bombing_factor
+    air_range_factor = STL_airforce_air_range_factor
+    air_fuel_consumption_factor = STL_airforce_air_fuel_consumption_factor
 }
 
 # defensive democracy
 STL_fortress_democracy_modifier = {
     enable = { always = yes }
-    icon = GFX_idea_generic_democratic_pressure
+    icon = GFX_idea_generic_democratic_drift_bonus
 
     stability_factor = STL_fortress_democracy_stability
     war_support_factor = STL_fortress_democracy_war_support
@@ -159,5 +159,7 @@ STL_fortress_democracy_modifier = {
     max_dig_in_factor = STL_fortress_democracy_dig_in
     planning_speed = STL_fortress_democracy_planning_speed
     trade_opinion_factor = STL_fortress_democracy_trade_opinion
+    operative_slot = STL_fortress_spy_slots
+    new_operative_slot_bonus = STL_fortress_spy_slots
 }
 

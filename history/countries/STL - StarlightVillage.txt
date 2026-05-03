@@ -262,6 +262,7 @@ set_variable = { STL_fortress_democracy_army_defence = 0 }
 set_variable = { STL_fortress_democracy_dig_in = 0 }
 set_variable = { STL_fortress_democracy_planning_speed = 0 }
 set_variable = { STL_fortress_democracy_trade_opinion = 0 }
+set_variable = { STL_fortress_spy_slots = 0 }
 
 set_rule = {
     can_generate_female_aces = yes
