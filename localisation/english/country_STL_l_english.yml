@@ -122,18 +122,6 @@ STL_effective_change_for_army_tt:0 "§Y$STL_army_modifier$§! - Effective Change
 STL_army_modifier:0 "Our Army"
 STL_army_modifier_desc:0 "In a world of griffon raiders, communist steel, and Equestrian optimism, our armed forces stand as the quiet proof that Equality needs more than friendly smiles. Built from volunteers, expatriates, and the occasional pony who wandered into the recruitment tent by mistake, our army is held together by discipline, shared purpose, and a very strict schedule.\n\nEvery soldier trains not for glory, but for the safety of everypony beside them. No heroes, no elites—only comrades moving as one. Through careful planning, hard lessons, and a touch of stubborn Townsvillian grit, our army grows into a force capable of meeting any challenge the world dares to send our way."
 
-STL_streamline_artillery_production_idea:0 "Refined Artillery Production"
-STL_streamline_artillery_production_idea_desc:0 "Our workshops shall streamline the manufacture of artillery, ensuring every cannon and howitzer rolls off the assembly line with efficiency and precision. Fewer resources wasted, more guns ready for those who defend Equality."
-
-STL_streamline_infantry_equipment_production_idea:0 "Infantry Gear Optimization"
-STL_streamline_infantry_equipment_production_idea_desc:0 "From saddles to rifles, every piece of infantry equipment shall be produced faster and with less strain on our factories. The soldiers of Townsville deserve reliable tools to uphold our collective ideals."
-
-STL_streamline_truck_production_idea:0 "Motorized Supply Initiative"
-STL_streamline_truck_production_idea_desc:0 "Our newly optimized truck factories will keep the wheels of Equality turning. Supplies, troops, and support shall move swiftly, unhindered by outdated production methods."
-
-STL_streamline_tank_production_idea:0 "Armored Might Efficiency"
-STL_streamline_tank_production_idea_desc:0 "Tanks and armored cars shall emerge from our factories more efficiently than ever. Mechanized units will now form the backbone of our defensive and offensive efforts, embodying the strength of a united Townsville."
-
 STL_employment_efforts:0 "Mobilization of Labor"
 STL_employment_efforts_desc:0 "Our citizens shall be guided to contribute their full potential to the national effort."
 
@@ -203,9 +191,6 @@ STL_war_on_GRF_desc:0 ""
 STL_armor_effort:0 "Our Iron Resolve"
 STL_armor_effort_desc:0 "Steel is the only thing that can truly withstand the fires of modern war. We shall pivot our industrial research toward the development of armored fighting vehicles. These 'Iron Ponies' will provide the breakthrough power we need to ensure our borders remain uncrossed and our sovereignty remains intact."
 
-STL_armorizations:0 "Our Armored Vanguard"
-STL_armorizations_desc:0 "The ultimate expression of our industrial and military unity is the Armored Division. By integrating medium tanks with motorized support, we create a fist that can shatter any line. In these steel hulls, our soldiers are protected by the very industry they work so hard to build."
-
 STL_buff_armor:0 "Our Unstoppable Momentum"
 STL_buff_armor_desc:0 "Heavy plating and powerful engines are useless if not used with purpose. We will refine our tank designs to be faster, more efficient, and more lethal. When our armor moves, the ground shall shake, and our enemies will realize that the spirit of Equality is as hard as Krupp steel."
 
@@ -219,14 +204,8 @@ STL_increase_radicalism_desc:0 "With Double Diamond firmly in control, the movem
 STL_motorized_stronger:0 "Our Mobile Synergy"
 STL_motorized_stronger_desc:0 "A truck is more than just a transport; it is a tool of coordination. We will train our motorized and mechanized units to operate in perfect synchronization, reducing fuel waste and maximizing their impact on the frontline. Speed is the ultimate advantage when the world tries to hem us in."
 
-STL_motorized_improved_production:0 "Our Assembly Lines"
-STL_motorized_improved_production_desc:0 "Producing complex machinery like trucks requires a level of industrial harmony we have only just begun to master. By streamlining our automotive plants, we will ensure a steady stream of vehicles for our logistics and motorized divisions. No soldier should have to march when we can provide them with wheels."
-
 STL_army_strength:0 "Our Collective Might"
 STL_army_strength_desc:0 "Strength does not come from the heroism of a few, but from the unwavering discipline of the many. By studying advanced military doctrines and refining our command structure, we will transform our volunteer levies into a professional fighting force. When we strike, we strike with the weight of every pony in Townsville."
-
-STL_army_equipment:0 "Our Standardized Kits"
-STL_army_equipment_desc:0 "To truly move as one, we must be equipped as one. We shall optimize our production lines to ensure every soldier carries the same reliable gear. By eliminating logistical variety, we maximize efficiency, ensuring that every factory output directly strengthens the common soldier."
 
 STL_artillery:0 "Our Great Equalizers"
 STL_artillery_desc:0 "They say that on the battlefield, all ponies are equal—but they are even more equal when facing a barrage of high-explosive shells. By standardizing our artillery pieces and training dedicated crews, we ensure that no enemy fortification or formation is superior to our resolve. Large or small, the shell treats every target the same."
@@ -1332,3 +1311,50 @@ STL_vp_our_canterlot:0 "Equalopolis"
  stl_northern_cooperation.10.t:0 "[FROM.GetNameDefCap] Rejects Economic Integration"
  stl_northern_cooperation.10.desc:0 "[FROM.GetNameDefCap] has refused deeper economic integration. For now, they remain only loosely tied to our system."
  stl_northern_cooperation.10.a:0 "For now."
+
+ STL_radar_effort:0 "Watchful Skies"
+ STL_radar_effort_desc:0 "Modern air warfare is won before the first shot is fired. By expanding our radar network and improving detection methods, we can ensure that no enemy plane crosses our skies unnoticed. Equality may be blind to status, but it shall never be blind to incoming bombers."
+
+ STL_paratrooper:0 "Airborne Vanguard"
+ STL_paratrooper_desc:0 "Some battles cannot be won by marching from the front. By training dedicated paratrooper units, we can strike from above, seize vital positions, and prove that Townsville's soldiers can bring Equality even where roads cannot reach."
+
+ the_mother_of_equalism:0 "The Mother of Equalism"
+ the_mother_of_equalism_desc:0 "Starlight Glimmer is more than the founder of a movement; she is the mare who first gave Equality a name, a banner, and a purpose. Her presence strengthens the ideological foundations of the state, inspires the army, and gives the administration a symbol around which every loyal Equalist can rally."
+
+ STL_supreme_equalist_council_idea:0 "Supreme Equalist Council"
+ STL_supreme_equalist_council_idea_desc:0 "With Starlight absent, authority has passed to a council of loyal Equalists determined to preserve the movement at any cost. Their rule is rigid, suspicious, and often painfully slow, but it keeps the state from collapsing while the dream of Equality waits for its true leader to return."
+
+ STL_political_communist:0 "Equalist Path"
+ STL_political_democratic:0 "Harmonic Path"
+ STL_political_neutrality:0 "Authoritarian Path"
+ STL_army_army:0 "Army"
+ STL_navy_navy:0 "Navy"
+ STL_air_air:0 "Air Force"
+ STL_industry_stuff:0 "Industry"
+
+ STL_army_equipment:0 "Standardized Military Production"
+ STL_army_equipment_desc:0 "The armed forces can no longer rely on scattered workshops and improvised supply chains. By standardizing rifles, uniforms, tools, and basic support equipment, production becomes easier to manage and every soldier receives reliable gear built to the same pattern."
+
+ STL_artillery_production:0 "Expanded Military Production"
+ STL_artillery_production_desc:0 "With basic equipment lines stabilized, the next step is to bring artillery production into the same system. Guns, shells, carriages, and support gear will be produced under unified standards, allowing the army to expand its firepower without drowning in logistical confusion."
+
+ STL_motorized_improved_production:0 "Mechanized Military Production"
+ STL_motorized_improved_production_desc:0 "The modern battlefield demands mobility as much as firepower. By folding trucks and motorized supply equipment into the standardized production system, the army gains the ability to move faster, supply itself more reliably, and keep pace with the demands of modern war."
+
+ STL_armorizations:0 "Integrated Military Production"
+ STL_armorizations_desc:0 "The final stage of military standardization brings armor, vehicles, artillery, infantry equipment, and support gear into a single coordinated production network. Every factory now serves the same doctrine of efficiency, allowing the army to grow not as separate branches, but as one integrated force."
+
+ STL_streamline_infantry_equipment_production_idea:0 "Standardized Military Production"
+ STL_streamline_infantry_equipment_production_idea_desc:0 "Infantry equipment and support gear are now produced according to unified standards. Fewer variations, clearer designs, and better factory routines allow the state to equip its soldiers with greater consistency and less waste."
+
+ STL_streamline_artillery_production_idea:0 "Expanded Military Production"
+ STL_streamline_artillery_production_idea_desc:0 "Artillery has been added to the standardized production network. By coordinating infantry equipment, support gear, and field guns under one system, the army can expand its firepower without sacrificing industrial efficiency."
+
+ STL_streamline_truck_production_idea:0 "Mechanized Military Production"
+ STL_streamline_truck_production_idea_desc:0 "Motorized equipment has been brought into the broader military production program. Trucks, infantry gear, artillery, and support equipment now follow a more unified industrial plan, making the army easier to supply and faster to deploy."
+
+ STL_streamline_truck_artillery_production_idea:0 "Mechanized Military Production"
+ STL_streamline_truck_artillery_production_idea_desc:0 "Motorized and artillery production are now coordinated under a shared industrial framework. The result is a more flexible military supply system, capable of supporting both mobile formations and heavy firepower with fewer bottlenecks."
+
+ STL_streamline_tank_production_idea:0 "Integrated Military Production"
+ STL_streamline_tank_production_idea_desc:0 "Armor production has been fully integrated into the military industrial system. Tanks, armored cars, trucks, artillery, infantry weapons, and support equipment now move through a unified production network designed to sustain a modern combined-arms army."

@@ -490,4 +490,12 @@ STL_industrial = {
             }
         }
     }
+
+    STL_ = {
+        icon = GFX_RAJ_decision_investment_civs_icon
+
+        visible = {
+            has_completed_focus = STL_road_effort
+        }
+    }
 }

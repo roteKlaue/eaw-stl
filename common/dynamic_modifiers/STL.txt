@@ -138,7 +138,6 @@ STL_airforce = {
     air_accidents_factor = STL_airforce_air_accidents_factor
     air_manpower_requirement_factor = STL_airforce_air_manpower_requirement_factor
     air_agility_factor = STL_airforce_air_agility_factor
-    air_ace_generation_chance_factor = STL_airforce_air_ace_generation_chance_factor
     air_nav_efficiency = STL_airforce_air_nav_efficiency
     air_cas_efficiency = STL_airforce_air_cas_efficiency
     air_strategic_bomber_bombing_factor = STL_airforce_air_strategic_bomber_bombing_factor

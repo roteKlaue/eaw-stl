@@ -1882,8 +1882,8 @@ focus_tree = {
         cost = 5
         x = -2
         y = 1
-        relative_position_id = STL_army_effort
-        prerequisite = { focus = STL_army_effort }
+        relative_position_id = STL_army_strength
+        prerequisite = { focus = STL_army_strength }
 
         completion_reward = {
             add_equipment_to_stockpile = {
@@ -2297,12 +2297,17 @@ focus_tree = {
         icon = GFX_goal_generic_special_forces
         x = -2
         y = 1
-        relative_position_id = STL_army_strength
+        relative_position_id = STL_army_effort
         cost = 4
         available_if_capitulated = yes
-        prerequisite = { focus = STL_army_strength }
+        prerequisite = { focus = STL_army_effort }
         completion_reward = {
-            add_ideas = special_forces
+            custom_effect_tooltip = STL_effective_change_for_army_tt
+            add_to_variable = {
+                STL_military_special_forces_cap = 0.03
+                tooltip = special_forces_cap_tt
+            }
+            custom_effect_tooltip = generic_skip_one_line_tt
             add_tech_bonus = {
                 name = special_forces_bonus
                 bonus = 1.0
@@ -2314,6 +2319,7 @@ focus_tree = {
                 technology = tech_mountaineers
                 technology = tech_mountaineers2
             }
+            custom_effect_tooltip = generic_skip_one_line_tt
             army_experience = 20
         }
         search_filters = { FOCUS_FILTER_ARMY_BONUS FOCUS_FILTER_ARMY_XP }
@@ -2775,7 +2781,9 @@ focus_tree = {
         }
         relative_position_id = STL_shining_example_of_democracy
         mutually_exclusive = { focus = STL_save_ourselves }
-        completion_reward = { }
+        completion_reward = {
+            
+        }
         search_filters = { FOCUS_FILTER_COMPLETED_BY_EVENT FOCUS_FILTER_POLITICAL }
     }
 
@@ -3455,25 +3463,25 @@ focus_tree = {
         }
     }
 
-    focus = {
-        id = STL_our_town_institute
-        icon = GFX_focus_research2
-        cost = 5.00
-        prerequisite = {
-            focus = STL_research_facility
-        }
-        ai_will_do = {
-            factor = 1
-        }
-        x = 0
-        y = 1
-        relative_position_id = STL_research_facility
-        completion_reward = {
-            log = "[GetDateText]: [Root.GetName]: Focus STL_our_town_institute"
-            add_research_slot = 1
-        }
-        search_filters = { FOCUS_FILTER_RESEARCH }
-    }
+    # focus = {
+    #     id = STL_our_town_institute
+    #     icon = GFX_focus_research2
+    #     cost = 5.00
+    #     prerequisite = {
+    #         focus = STL_research_facility
+    #     }
+    #     ai_will_do = {
+    #         factor = 1
+    #     }
+    #     x = 0
+    #     y = 1
+    #     relative_position_id = STL_research_facility
+    #     completion_reward = {
+    #         log = "[GetDateText]: [Root.GetName]: Focus STL_our_town_institute"
+    #         add_research_slot = 1
+    #     }
+    #     search_filters = { FOCUS_FILTER_RESEARCH }
+    # }
 
     focus = {
         id = STL_call_to_war
@@ -3802,6 +3810,7 @@ focus_tree = {
                 days = 90
             }
 
+            custom_effect_tooltip = generic_skip_one_line_tt
             custom_effect_tooltip = STL_industrial_flourish_tt
         }
         search_filters = { FOCUS_FILTER_INDUSTRY }
@@ -5980,6 +5989,8 @@ focus_tree = {
                 tooltip = production_speed_air_base_factor_tt
             }
         }
+
+        search_filters = { FOCUS_FILTER_INDUSTRY }
     }
 
     focus = {
@@ -6024,6 +6035,110 @@ focus_tree = {
                 tooltip = airforce_intel_factor_tt
             }
         }
+
+        search_filters = { FOCUS_FILTER_INDUSTRY }
+    }
+
+    focus = {
+        id = STL_radar_effort
+        icon = GFX_goal_generic_radar
+        cost = 5
+
+        available = {
+            OR = {
+                has_country_flag = formed_stg_stl
+                is_in_faction_with = EQS
+            }
+            has_tech = improved_radio
+        }
+
+        x = 5
+        y = 1
+
+        relative_position_id = STL_our_flying_aces
+
+        prerequisite = {
+            focus = STL_our_flying_aces
+        }
+
+        completion_reward = {
+            add_tech_bonus = {
+                name = STL_radar_effort
+                bonus = 0.5
+                uses = 1
+                category = radar_tech
+            }
+
+            random_owned_controlled_state = {
+                limit = {
+                    is_core_of = ROOT
+                }
+
+                add_building_construction = {
+                    type = radar_station
+                    level = 2
+                    instant_build = yes
+                }
+            }
+
+            custom_effect_tooltip = generic_skip_one_line_tt
+            custom_effect_tooltip = STL_airforce_tt
+            add_to_variable = {
+                STL_airforce_production_speed_radar_station_factor = 0.10
+                tooltip = production_speed_radar_station_factor_tt
+            }
+        }
+
+        search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_INDUSTRY }
+    }
+
+    focus = {
+        id = STL_paratrooper
+        icon = GFX_focus_generic_paratrooper
+        cost = 5
+        x = 7
+        y = 1
+        relative_position_id = STL_our_flying_aces
+
+        available = {
+            OR = {
+                has_country_flag = formed_stg_stl
+                is_in_faction_with = EQS
+            }
+        }
+
+        prerequisite = {
+            focus = STL_our_flying_aces
+        }
+
+        completion_reward = {
+            add_tech_bonus = {
+				name = STL_paratrooper
+				bonus = 1
+				uses = 1
+				category = para_tech
+			}
+
+            IF = {
+				limit = { has_dlc = "Arms Against Tyranny" }
+
+				add_doctrine_cost_reduction = {
+					name = STL_paratrooper
+					cost_reduction = 0.3
+					uses = 2
+					category = cat_paratroopers_doctrine
+				}
+			}
+
+            custom_effect_tooltip = generic_skip_one_line_tt
+            custom_effect_tooltip = STL_effective_change_for_army_tt
+            add_to_variable = {
+                STL_military_special_forces_cap = 0.03
+                tooltip = special_forces_cap_tt
+            }
+        }
+
+        search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_ARMY_BONUS }
     }
 
     focus = {
@@ -6038,6 +6153,8 @@ focus_tree = {
         prerequisite = {
             focus = STL_ground_measures
             focus = STL_air_base_prepartion
+            focus = STL_radar_effort
+            focus = STL_paratrooper
         }
 
         completion_reward = {
@@ -6050,6 +6167,8 @@ focus_tree = {
                 tooltip = industrial_capacity_factory_tt
             }
         }
+
+        search_filters = { FOCUS_FILTER_INDUSTRY }
     }
 
     focus = {
@@ -6096,6 +6215,8 @@ focus_tree = {
                 tooltip = air_superiority_efficiency_tt
             }
         }
+
+        search_filters = { FOCUS_FILTER_INDUSTRY }
     }
 
     focus = {
@@ -6146,6 +6267,8 @@ focus_tree = {
                 tooltip = air_superiority_efficiency_tt
             }
         }
+
+        search_filters = { FOCUS_FILTER_INDUSTRY }
     }
 
     focus = {
@@ -6192,6 +6315,8 @@ focus_tree = {
                 tooltip = air_strategic_bomber_bombing_factor_tt
             }
         }
+
+        search_filters = { FOCUS_FILTER_INDUSTRY }
     }
 
     focus = {

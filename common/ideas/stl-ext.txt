@@ -591,6 +591,8 @@ ideas = {
     }
 
     industrial_concern = {
+        designer = yes
+
         STL_backery = {
 			picture = BRA_banco_do_brasil
 
