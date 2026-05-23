@@ -5,7 +5,6 @@ STL_northern_integration = {
 
         available = {
             has_country_flag = STL_northern_customs_union_unlocked
-            political_power > 39
         }
 
         cost = 40
@@ -43,7 +42,6 @@ STL_northern_integration = {
 
         available = {
             has_country_flag = STL_northern_trade_missions_unlocked
-            political_power > 34
         }
 
         cost = 35
@@ -113,7 +111,6 @@ STL_northern_integration = {
 
         available = {
             has_country_flag = STL_northern_concord_unlocked
-            political_power > 74
         }
 
         cost = 75
@@ -154,7 +151,6 @@ STL_northern_integration = {
 
         available = {
             has_country_flag = STL_integrate_the_north_unlocked
-            political_power > 99
         }
 
         cost = 100

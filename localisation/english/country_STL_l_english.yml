@@ -188,13 +188,13 @@ STL_first_move_desc:0 ""
 STL_war_on_GRF:0 "Our Liberation of the Colony"
 STL_war_on_GRF_desc:0 ""
 
-STL_armor_effort:0 "Our Iron Resolve"
+STL_armor_effort:0 "Our Iron Resolve Unit"
 STL_armor_effort_desc:0 "Steel is the only thing that can truly withstand the fires of modern war. We shall pivot our industrial research toward the development of armored fighting vehicles. These 'Iron Ponies' will provide the breakthrough power we need to ensure our borders remain uncrossed and our sovereignty remains intact."
 
 STL_buff_armor:0 "Our Unstoppable Momentum"
 STL_buff_armor_desc:0 "Heavy plating and powerful engines are useless if not used with purpose. We will refine our tank designs to be faster, more efficient, and more lethal. When our armor moves, the ground shall shake, and our enemies will realize that the spirit of Equality is as hard as Krupp steel."
 
-STL_army_moterization:0 "Our Rapid Response"
+STL_army_moterization:0 "Our Rapid Response Unit"
 STL_army_moterization_desc:0 "The vast distances between our settlements and the borders of our neighbors require a force that can move faster than a gallop. By embracing the combustion engine, we can deploy our infantry across the country at a moment’s notice. Equality must be defended everywhere, and it must be defended quickly."
 STL_MADNESS_STATE:0 "The Infinite Delirium"
 STL_MADNESS_STATE_ADJ:0 "Delirious"
@@ -248,8 +248,8 @@ STL_civil_unrest:0 "Civil Unrest"
 STL_civil_unrest_desc:0 "The nation teeters on the edge of chaos. Protests, strikes, and violent clashes erupt across towns and villages, overwhelming the authorities. The government struggles to maintain legitimacy, and the people's will to resist grows ever stronger. With political dysfunction at its peak, the state cannot muster the unity required for war—or even for coherent governance."
 STL_breeding:0 "Repopulation Initiative"
 STL_breeding_desc:0 "Determined to secure the future of the nation, the government has launched an aggressive repopulation program. Policies encouraging family growth and communal living are paired with generous support for foal-rearing. The resulting population boom strengthens both society and the army—but some whisper that the program's methods are unsettlingly intrusive."
-STL_decent_into_madness:0 "Our Descent Into Madness"
-STL_decent_into_madness_desc:0 "The dream of perfect equality has begun to twist into something far darker. Surrounded by loyalists and stripped of dissent, Double Diamond now marches toward a future shaped entirely by its own unchallenged vision. What began as an ideal has become an obsession—one that demands absolute control, no matter the cost."
+STL_descent_into_madness:0 "Our Descent Into Madness"
+STL_descent_into_madness_desc:0 "The dream of perfect equality has begun to twist into something far darker. Surrounded by loyalists and stripped of dissent, Double Diamond now marches toward a future shaped entirely by its own unchallenged vision. What began as an ideal has become an obsession—one that demands absolute control, no matter the cost."
 starlight_equalism.1.t:0 "The Descent Begins"
 starlight_equalism.1.d:0 "Double Diamond stands before the council once more, the Equalist banner behind him fluttering like a warning. Recent reforms have grown harsher—stricter oversight, harsher penalties for dissent, and a growing cult of personality around the ideals he once believed were pure.\n\nYet he does not waver. 'Equality must be protected,' he says, though there's a tremor behind the confidence. The state is changing, and with it, so is he. The question now is whether he will temper the movement... or be consumed by it."
 
@@ -1351,10 +1351,24 @@ STL_vp_our_canterlot:0 "Equalopolis"
  STL_streamline_artillery_production_idea_desc:0 "Artillery has been added to the standardized production network. By coordinating infantry equipment, support gear, and field guns under one system, the army can expand its firepower without sacrificing industrial efficiency."
 
  STL_streamline_truck_production_idea:0 "Mechanized Military Production"
- STL_streamline_truck_production_idea_desc:0 "Motorized equipment has been brought into the broader military production program. Trucks, infantry gear, artillery, and support equipment now follow a more unified industrial plan, making the army easier to supply and faster to deploy."
+ STL_streamline_truck_production_idea_desc:0 "Motorized equipment has been brought into the broader military production program. Trucks, infantry gear, and support equipment now follow a more unified industrial plan, making the army easier to supply and faster to deploy."
 
  STL_streamline_truck_artillery_production_idea:0 "Mechanized Military Production"
  STL_streamline_truck_artillery_production_idea_desc:0 "Motorized and artillery production are now coordinated under a shared industrial framework. The result is a more flexible military supply system, capable of supporting both mobile formations and heavy firepower with fewer bottlenecks."
 
  STL_streamline_tank_production_idea:0 "Integrated Military Production"
  STL_streamline_tank_production_idea_desc:0 "Armor production has been fully integrated into the military industrial system. Tanks, armored cars, trucks, artillery, infantry weapons, and support equipment now move through a unified production network designed to sustain a modern combined-arms army."
+
+ STL_sugar_belles_bakery_organization:0 "Sugar Belle's Bakery"
+
+ STL_mio_trait_emergency_ration_baking:0 "Emergency Ration Baking"
+ STL_mio_trait_sweetened_supply_lines:0 "Sweetened Supply Lines"
+ STL_mio_trait_equal_portion_packaging:0 "Equal Portion Packaging"
+ STL_army_effort_cost_tt:0 "Taking focuses down the §YPolitical§! paths will reduce the time this focus takes down to a minimum of 35 days."
+ STL_industrial_flourish_cost_tt:0 "Taking focuses down the §YPolitical§! paths will reduce the time this focus takes down to a minimum of 35 days."
+ stl_not_completed_exped_tt:0 "If §Y$STL_eqs_exped_forces$§! has not been completed:"
+ generic_not_completed_focus_tt:0 "If §Y$FOCUS$§! has not been completed:"
+
+ STL_we_need_men:0 "We need pony's."
+ fighter_sortie_efficiency_tt: " $MODIFIER_CARRIER_FIGHTER_SORTIE_EFFICIENCY_FACTOR$: $RIGHT|+=%1$"
+ navy_carrier_air_agility_factor_tt: " $MODIFIER_NAVAL_CARRIER_AIR_AGILITY_FACTOR$: $RIGHT|+=%1$"

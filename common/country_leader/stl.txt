@@ -23,7 +23,7 @@ leader_traits = {
         war_support_factor = 0.10
         weekly_manpower = 250
         army_attack_factor = 0.05
-        division_defense_factor = 0.05
+        army_defense_factor = 0.025
         justify_war_goal_time = -0.15
 
         ai_will_do = {

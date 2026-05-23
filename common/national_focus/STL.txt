@@ -65,6 +65,32 @@ focus_tree = {
         ai_will_do = {
             factor = 5
         }
+
+        offset = {
+            x = -5
+            y = 0
+            trigger = {
+                has_game_rule = {
+                    rule = obsolete_focus_branches_visibility
+                    option = HIDE
+                }
+                has_completed_focus = STL_twilight_teaching
+            }
+        }
+
+        offset = {
+            x = -3
+            y = 0
+            trigger = {
+                has_game_rule = {
+                    rule = obsolete_focus_branches_visibility
+                    option = HIDE
+                }
+
+                has_completed_focus = STL_neighbors_help
+            }
+        }
+
         completion_reward = {
             log = "[GetDateText]: [Root.GetName]: Focus STL_abolish_equality"
             country_event = {
@@ -115,6 +141,15 @@ focus_tree = {
                 }
             }
         }
+
+        offset = {
+            x = -2
+            y = 0
+            trigger = {
+                has_completed_focus = STL_neighbors_help
+            }
+        }
+
         search_filters = { FOCUS_FILTER_INDUSTRY }
     }
 
@@ -165,7 +200,36 @@ focus_tree = {
             country_event = {
                 id = starlight.4 days = 1
             }
+
+            hidden_effect = {
+                if = {
+                    limit = {
+                        has_game_rule = {
+                            rule = obsolete_focus_branches_visibility
+                            option = HIDE
+                        }
+                    }
+                    mark_focus_tree_layout_dirty = yes
+                }
+            }
         }
+
+        offset = {
+            x = 3
+            y = 0
+            trigger = {
+                has_game_rule = {
+                    rule = obsolete_focus_branches_visibility
+                    option = HIDE
+                }
+
+                OR = {
+                    has_completed_focus = STL_twilight_teaching
+                    has_completed_focus = STL_neighbors_help
+                }
+            }
+        }
+
         search_filters = { FOCUS_FILTER_POLITICAL }
     }
 
@@ -180,10 +244,21 @@ focus_tree = {
             }
         }
 
+        allow_branch = {
+            NOT = {
+                AND = {
+                    has_game_rule = {
+                        rule = obsolete_focus_branches_visibility
+                        option = HIDE
+                    }
+                    has_completed_focus = STL_twilight_teaching
+                }
+            }
+        }
+
         prerequisite = {
             focus = STL_neighbors_help
         }
-
         ai_will_do = {
             factor = 5
         }
@@ -235,10 +310,21 @@ focus_tree = {
             }
         }
 
+        allow_branch = {
+            NOT = {
+                AND = {
+                    has_game_rule = {
+                        rule = obsolete_focus_branches_visibility
+                        option = HIDE
+                    }
+                    has_completed_focus = STL_twilight_teaching
+                }
+            }
+        }
+
         prerequisite = {
             focus = STL_neighbors_help
         }
-
         ai_will_do = {
             factor = 1
         }
@@ -269,9 +355,20 @@ focus_tree = {
                 exists = no
             }
         }
-
         ai_will_do = {
             factor = 1
+        }
+
+        allow_branch = {
+            NOT = {
+                AND = {
+                    has_game_rule = {
+                        rule = obsolete_focus_branches_visibility
+                        option = HIDE
+                    }
+                    has_completed_focus = STL_twilight_teaching
+                }
+            }
         }
 
         x = -7
@@ -283,18 +380,36 @@ focus_tree = {
             country_event = {
                 id = starlight.7 days = 1
             }
+
+            custom_effect_tooltip = generic_skip_one_line_tt
+            reduce_focus_completion_cost = {
+                focus = STL_army_effort
+                cost = 70
+            }
         }
     }
 
     focus = {
         id = STL_army_recruiting
-        icon = GFX_focus_SOV_builder_of_the_red_army
+        icon = GFX_focus_YUG_pan_slavic_congress
         cost = 5
         x = -5
         y = 1
         relative_position_id = STL_neighbors_help
         prerequisite = {
             focus = STL_neighbors_help
+        }
+
+        allow_branch = {
+            NOT = {
+                AND = {
+                    has_game_rule = {
+                        rule = obsolete_focus_branches_visibility
+                        option = HIDE
+                    }
+                    has_completed_focus = STL_twilight_teaching
+                }
+            }
         }
 
         completion_reward = {
@@ -376,7 +491,7 @@ focus_tree = {
 
     focus = {
         id = STL_equipment_from_copper_coins
-        icon = GFX_focus_PRC_equipment_from_copper_coins
+        icon = GFX_goal_HOL_military_union
 
         prerequisite = { focus = STL_army_recruiting }
         x = 0
@@ -388,7 +503,6 @@ focus_tree = {
         ai_will_do = {
             factor = 1
         }
-
         completion_reward = {
             add_timed_idea = {
                 idea = STL_equipment_from_copper_coins
@@ -396,6 +510,12 @@ focus_tree = {
             }
             custom_effect_tooltip = generic_skip_one_line_tt
             custom_effect_tooltip = STL_equipment_from_copper_coins_tt
+
+            custom_effect_tooltip = generic_skip_one_line_tt
+            reduce_focus_completion_cost = {
+                focus = STL_army_effort
+                cost = 35
+            }
         }
     }
 
@@ -416,6 +536,12 @@ focus_tree = {
             log = "[GetDateText]: [Root.GetName]: Focus STL_new_army"
             country_event = {
                 id = starlight.10 days = 1
+            }
+
+            custom_effect_tooltip = generic_skip_one_line_tt
+            reduce_focus_completion_cost = {
+                focus = STL_army_effort
+                cost = 35
             }
         }
     }
@@ -461,7 +587,6 @@ focus_tree = {
                 exists = no
             }
         }
-
         ai_will_do = {
             factor = 0
             modifier = {
@@ -676,6 +801,7 @@ focus_tree = {
         prerequisite = {
             focus = STL_double_diamond_supreme
         }
+
         icon = GFX_SOV_demand_eastern_poland_ccp_2d_sov_compatibility
         cost = 10
         x = -3
@@ -691,7 +817,7 @@ focus_tree = {
     }
 
     focus = {
-        id = STL_decent_into_madness
+        id = STL_descent_into_madness
         icon = GFX_focus_GER_establish_protectorates_in_america
         prerequisite = {
             focus = STL_double_diamond_supreme
@@ -777,8 +903,46 @@ focus_tree = {
             show_ideas_tooltip = starlight_glimmer_ac
             custom_effect_tooltip = generic_skip_one_line_tt
             show_unit_leaders_tooltip = STL_starlight_glimmer
+            custom_effect_tooltip = generic_skip_one_line_tt
+            reduce_focus_completion_cost = {
+                focus = STL_industrial_flourish
+                cost = 35
+            }
         }
         search_filters = { FOCUS_FILTER_POLITICAL_CHARACTER FOCUS_FILTER_MILITARY_CHARACTER }
+    }
+
+    focus = {
+        id = STL_welfare
+        icon = GFX_focus_generic_welfare
+        cost = 10
+        prerequisite = {
+            focus = STL_invite_starlight_back
+            focus = STL_double_diamond_supreme
+        }
+        relative_position_id = STL_invite_starlight_back
+        x = -1
+        y = 1
+        completion_reward = {
+            add_ideas = STL_social_welfare_expansion
+            if = {
+                limit = {
+                    has_completed_focus = STL_double_diamond_supreme
+                }
+
+                custom_effect_tooltip = generic_skip_one_line_tt
+                reduce_focus_completion_cost = {
+                    focus = STL_restore_normality
+                    cost = 35
+                }
+                custom_effect_tooltip = generic_skip_one_line_tt
+                reduce_focus_completion_cost = {
+                    focus = STL_purge_the_dissidents
+                    cost = 35
+                }
+            }
+        }
+        search_filters = { FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_STABILITY FOCUS_FILTER_MANPOWER }
     }
 
     focus = {
@@ -910,13 +1074,20 @@ focus_tree = {
                 STL_industrial_consumer_goods_factor = -0.10
                 tooltip = consumer_goods_factor_tt
             }
+
+            custom_effect_tooltip = generic_skip_one_line_tt
+            reduce_focus_completion_cost = {
+                focus = STL_industrial_flourish
+                cost = 35
+            }
         }
         search_filters = { FOCUS_FILTER_INDUSTRY }
     }
 
     focus = {
         id = STL_purge_the_dissidents
-        icon = GFX_SOV_coup_detat_ccp_2d_sov_compatibility
+        icon = GFX_goal_step_on_skull
+        overlay = GFX_focus_fast_overlay_generic_clock
         cost = 30
         x = 0
         y = 1
@@ -925,6 +1096,8 @@ focus_tree = {
         }
         available = {
             has_dynamic_modifier = STL_instability
+            has_war = no
+            has_stability > 0.20
         }
         relative_position_id = STL_starlight_as_a_figure_head
         completion_reward = {
@@ -937,12 +1110,15 @@ focus_tree = {
 
     focus = {
         id = STL_restore_normality
-        icon = GFX_SOV_war_heroes_ccp_2d_sov_compatibility
+        icon = GFX_goal_split_helmet
+        overlay = GFX_focus_fast_overlay_generic_clock
         cost = 20
         x = 2
         y = 2
         available = {
             has_idea = STL_civil_unrest
+            has_war = no
+            has_stability > 0.45
         }
         prerequisite = {
             focus = STL_purge_the_dissidents
@@ -951,9 +1127,10 @@ focus_tree = {
             focus = STL_revive_institute
         }
         prerequisite = {
-            focus = STL_decent_into_madness
+            focus = STL_descent_into_madness
         }
         relative_position_id = STL_purge_the_dissidents
+        cancel_if_invalid = no
         completion_reward = {
             remove_ideas = STL_civil_unrest
             add_timed_idea = {
@@ -1026,6 +1203,20 @@ focus_tree = {
         cost = 5
         x = 1
         y = 1
+
+        allow_branch = {
+            NOT = { has_country_flag = STL_going_commi_shared_power }
+            NOT = {
+                AND = {
+                    has_game_rule = {
+                        rule = obsolete_focus_branches_visibility
+                        option = HIDE
+                    }
+                    has_completed_focus = STL_twilight_teaching
+                }
+            }
+        }
+
         available = {
             custom_trigger_tooltip = {
                 tooltip = formed_our_eqs_stl
@@ -1052,11 +1243,25 @@ focus_tree = {
 
     focus = {
         id = STL_accention_of_our_ruler
-        icon = GFX_goal_celestia_raising_the_sun
+        icon = GFX_goal_stg_celestia_sun
         cost = 7.2
         x = 0
         y = 2
         relative_position_id = STL_invite_starlight_back
+
+        allow_branch = {
+            NOT = { has_country_flag = STL_going_commi_shared_power }
+            NOT = {
+                AND = {
+                    has_game_rule = {
+                        rule = obsolete_focus_branches_visibility
+                        option = HIDE
+                    }
+                    has_completed_focus = STL_twilight_teaching
+                }
+            }
+        }
+
         available = {
             has_country_leader = { character =  STL_starlight_glimmer }
             custom_trigger_tooltip = {
@@ -1269,23 +1474,6 @@ focus_tree = {
                 tooltip = resistance_target_tt
             }
         }
-    }
-
-    focus = {
-        id = STL_welfare
-        icon = GFX_focus_generic_welfare
-        cost = 10
-        prerequisite = {
-            focus = STL_invite_starlight_back
-            focus = STL_double_diamond_supreme
-        }
-        relative_position_id = STL_invite_starlight_back
-        x = -1
-        y = 1
-        completion_reward = {
-            add_ideas = STL_social_welfare_expansion
-        }
-        search_filters = { FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_STABILITY FOCUS_FILTER_MANPOWER }
     }
 
     focus = {
@@ -1654,6 +1842,20 @@ focus_tree = {
         prerequisite = {
             focus = STL_invite_starlight_back
         }
+
+        allow_branch = {
+            NOT = { has_country_flag = STL_going_commi_shared_power }
+            NOT = {
+                AND = {
+                    has_game_rule = {
+                        rule = obsolete_focus_branches_visibility
+                        option = HIDE
+                    }
+                    has_completed_focus = STL_twilight_teaching
+                }
+            }
+        }
+
         available = {
             has_country_leader = { character =  STL_starlight_glimmer }
         }
@@ -1665,6 +1867,12 @@ focus_tree = {
             swap_ideas = {
                 remove_idea = STL_equality_past
                 add_idea = STL_equality_reastablished
+            }
+
+            custom_effect_tooltip = generic_skip_one_line_tt
+            reduce_focus_completion_cost = {
+                focus = STL_industrial_flourish
+                cost = 35
             }
         }
         search_filters = { FOCUS_FILTER_ARMY_BONUS FOCUS_FILTER_MANPOWER }
@@ -1737,6 +1945,39 @@ focus_tree = {
         completion_reward = {
             log = "[GetDateText]: [Root.GetName]: Focus STL_garden"
             add_ideas = STL_garden_spirit
+
+            if = {
+                limit = {
+                    has_completed_focus = STL_double_diamond_supreme
+                }
+                custom_effect_tooltip = generic_skip_one_line_tt
+                reduce_focus_completion_cost = {
+                    focus = STL_restore_normality
+                    cost = 35
+                }
+                custom_effect_tooltip = generic_skip_one_line_tt
+                reduce_focus_completion_cost = {
+                    focus = STL_purge_the_dissidents
+                    cost = 35
+                }
+            }
+
+            hidden_effect = {
+                if = {
+                    limit = {
+                        NOT = { has_completed_focus = STL_double_diamond_supreme }
+                    }
+                    reduce_focus_completion_cost = {
+                        focus = STL_restore_normality
+                        cost = 35
+                    }
+                    custom_effect_tooltip = generic_skip_one_line_tt
+                    reduce_focus_completion_cost = {
+                        focus = STL_purge_the_dissidents
+                        cost = 35
+                    }
+                }
+            }
         }
         search_filters = { FOCUS_FILTER_ARMY_BONUS FOCUS_FILTER_MANPOWER FOCUS_FILTER_STABILITY }
     }
@@ -1756,7 +1997,31 @@ focus_tree = {
                 remove_idea = STL_garden_spirit
                 add_idea = STL_breeding
             }
+
+            if = {
+                limit = {
+                    has_completed_focus = STL_double_diamond_supreme
+                }
+                reduce_focus_completion_cost = {
+                    focus = STL_purge_the_dissidents
+                    cost = 35
+                }
+                custom_effect_tooltip = generic_skip_one_line_tt
+            }
+
             custom_effect_tooltip = STL_breeding_program_tt
+
+            hidden_effect = {
+                if = {
+                    limit = {
+                        NOT = { has_completed_focus = STL_double_diamond_supreme }
+                    }
+                    reduce_focus_completion_cost = {
+                        focus = STL_purge_the_dissidents
+                        cost = 35
+                    }
+                }
+            }
         }
         search_filters = { FOCUS_FILTER_ARMY_BONUS FOCUS_FILTER_MANPOWER FOCUS_FILTER_STABILITY }
     }
@@ -1775,6 +2040,23 @@ focus_tree = {
         ai_will_do = {
             factor = 1
         }
+
+        offset = {
+            x = -3
+            y = 0
+            trigger = {
+                has_game_rule = {
+                    rule = obsolete_focus_branches_visibility
+                    option = HIDE
+                }
+
+                OR = {
+                    has_completed_focus = STL_twilight_teaching
+                    has_completed_focus = STL_neighbors_help
+                }
+            }
+        }
+
         x = 5
         y = 1
         relative_position_id = STL_elections
@@ -1783,6 +2065,18 @@ focus_tree = {
             country_event = {
                 id = starlight.31
             }
+
+            hidden_effect = {
+                if = {
+                    limit = {
+                        has_game_rule = {
+                            rule = obsolete_focus_branches_visibility
+                            option = HIDE
+                        }
+                    }
+                    mark_focus_tree_layout_dirty = yes
+                }
+            }
         }
     }
 
@@ -1790,16 +2084,44 @@ focus_tree = {
         id = STL_railroad_way
         icon = GFX_goal_generic_construct_infrastructure
         cost = 5.00
+
         prerequisite = {
             focus = STL_neighbors_help
             focus = STL_twilight_teaching
         }
+
         available = {
             57 = {
                 is_owned_and_controlled_by = ROOT
                 is_fully_controlled_by = ROOT
             }
         }
+
+        offset = {
+            x = 1
+            y = 0
+            trigger = {
+                has_game_rule = {
+                    rule = obsolete_focus_branches_visibility
+                    option = HIDE
+                }
+
+                has_completed_focus = STL_neighbors_help
+            }
+        }
+
+        offset = {
+            x = -2
+            y = 0
+            trigger = {
+                has_game_rule = {
+                    rule = obsolete_focus_branches_visibility
+                    option = HIDE
+                }
+                has_completed_focus = STL_twilight_teaching
+            }
+        }
+
         ai_will_do = {
             factor = 1
         }
@@ -1816,16 +2138,23 @@ focus_tree = {
                 }
                 set_state_category = city
             }
+
+            custom_effect_tooltip = generic_skip_one_line_tt
+            reduce_focus_completion_cost = {
+                focus = STL_industrial_flourish
+                cost = 35
+            }
         }
         search_filters = { FOCUS_FILTER_INDUSTRY }
     }
 
     focus = {
         id = STL_army_effort
-        icon = GFX_goal_generic_allies_build_infantry
-        x = 8
+        icon = GFX_goal_generic_pony_soldier
+        overlay = GFX_focus_fast_overlay_generic_clock
+        x = 9
         y = 0
-        cost = 5
+        cost = 25
         relative_position_id = STL_one_factory
         ai_will_do = { factor = 1 }
         available_if_capitulated = yes
@@ -1861,8 +2190,10 @@ focus_tree = {
                     instant_build = yes
                 }
             }
+            custom_effect_tooltip = generic_skip_one_line_tt
             army_experience = 50
             add_manpower = 20000
+            custom_effect_tooltip = generic_skip_one_line_tt
             add_doctrine_cost_reduction = {
                 name = land_doc_bonus
                 cost_reduction = 0.5
@@ -1870,15 +2201,19 @@ focus_tree = {
                 category = land_doctrine
             }
 
+            custom_effect_tooltip = generic_skip_one_line_tt
             add_dynamic_modifier = {
                 modifier = STL_army_modifier
             }
+
+            custom_effect_tooltip = generic_skip_one_line_tt
+            custom_effect_tooltip = STL_army_effort_cost_tt
         }
     }
 
     focus = {
         id = STL_artillery
-        icon = GFX_goal_generic_army_artillery2
+        icon = GFX_goal_national_artillery
         cost = 5
         x = -2
         y = 1
@@ -1920,7 +2255,7 @@ focus_tree = {
 
     focus = {
         id = STL_army_strength
-        icon = GFX_focus_generic_advanced_military_studies
+        icon = GFX_goal_JER_reward_the_ponies
         cost = 5
         x = 0
         y = 1
@@ -1932,7 +2267,6 @@ focus_tree = {
                 amount = 1000
                 producer = ROOT
             }
-
             custom_effect_tooltip = STL_effective_change_for_army_tt
             add_to_variable = {
                 STL_military_supply_consumption_factor = -0.07
@@ -1956,7 +2290,7 @@ focus_tree = {
 
     focus = {
         id = STL_army_equipment
-        icon = GFX_focus_chi_army_reform
+        icon = GFX_goal_generic_bits_gun
         cost = 5
         x = 5
         y = 1
@@ -2071,7 +2405,7 @@ focus_tree = {
 
     focus = {
         id = STL_motorized_stronger
-        icon = GFX_goal_generic_army_motorized
+        icon = GFX_focus_generic_truck
         cost = 5
         x = -1
         y = 1
@@ -2103,7 +2437,7 @@ focus_tree = {
 
     focus = {
         id = STL_motorized_improved_production
-        icon = GFX_focus_generic_truck
+        icon = GFX_goal_Automobile_Production
         cost = 5
         x = 1
         y = 1
@@ -2166,7 +2500,7 @@ focus_tree = {
 
     focus = {
         id = STL_artillery_production
-        icon = GFX_goal_generic_army_artillery
+        icon = GFX_goal_generic_army_artillery2
         cost = 5
         x = -1
         y = 1
@@ -2232,7 +2566,7 @@ focus_tree = {
     focus = {
         id = STL_war_propoganda
         icon = GFX_goal_generic_propaganda
-        x = -4
+        x = -2
         y = 1
         cost = 5
         relative_position_id = STL_army_effort
@@ -2248,7 +2582,7 @@ focus_tree = {
 
     focus = {
         id = STL_military_youth
-        icon = GFX_goal_generic_more_territorial_claims
+        icon = GFX_goal_conscription_pony
         x = 2
         y = 1
         cost = 5
@@ -2273,7 +2607,7 @@ focus_tree = {
 
     focus = {
         id = STL_foreign_conscription
-        icon = GFX_focus_RAJ_indian_gentlemen_offcers
+        icon = GFX_goal_riv_army
         x = 0
         y = 1
         cost = 8
@@ -2293,14 +2627,89 @@ focus_tree = {
     }
 
     focus = {
+        id = STL_expand_planning_courses
+        icon = GFX_goal_military_mission_pony
+        cost = 8
+        relative_position_id = STL_army_effort
+        x = -6
+        y = 1
+
+        mutually_exclusive = {
+            focus = STL_expand_attack_courses
+        }
+
+        prerequisite = {
+            focus = STL_army_effort
+        }
+
+        ai_will_do = {
+            factor = 4
+        }
+
+        available = {
+            has_army_manpower = { size > 249999 }
+        }
+
+        cancel_if_invalid = no
+        continue_if_invalid = yes
+        completion_reward = {
+            army_experience = 50
+            add_ideas = RCT_expand_officer_academy_idea
+            every_army_leader = {
+                add_planning = 1
+            }
+        }
+        search_filters = { FOCUS_FILTER_ARMY_BONUS }
+    }
+
+    focus = {
+        id = STL_expand_attack_courses
+        icon = GFX_focus_military_derpy
+        cost = 8
+        relative_position_id = STL_army_effort
+        x = -4
+        y = 1
+
+        mutually_exclusive = {
+            focus = STL_expand_planning_courses
+        }
+
+        prerequisite = {
+            focus = STL_army_effort
+        }
+
+        ai_will_do = {
+            factor = 4
+        }
+
+        available = {
+            has_army_manpower = { size > 249999 }
+        }
+
+        cancel_if_invalid = no
+        continue_if_invalid = yes
+        completion_reward = {
+            army_experience = 50
+            add_ideas = RCT_expand_officer_academy_idea
+            every_army_leader = {
+                add_attack = 1
+            }
+        }
+        search_filters = { FOCUS_FILTER_ARMY_BONUS }
+    }
+
+    focus = {
         id = STL_special_forces
         icon = GFX_goal_generic_special_forces
-        x = -2
-        y = 1
+        x = -5
+        y = 2
         relative_position_id = STL_army_effort
         cost = 4
         available_if_capitulated = yes
-        prerequisite = { focus = STL_army_effort }
+        prerequisite = {
+            focus = STL_expand_planning_courses
+            focus = STL_expand_attack_courses
+        }
         completion_reward = {
             custom_effect_tooltip = STL_effective_change_for_army_tt
             add_to_variable = {
@@ -2345,13 +2754,19 @@ focus_tree = {
         completion_reward = {
             log = "[GetDateText]: [Root.GetName]: Focus STL_research_facility"
             add_research_slot = 1
+
+            custom_effect_tooltip = generic_skip_one_line_tt
+            reduce_focus_completion_cost = {
+                focus = STL_industrial_flourish
+                cost = 35
+            }
         }
         search_filters = { FOCUS_FILTER_RESEARCH }
     }
 
     focus = {
         id = STL_armor_effort
-        icon = GFX_focus_NOR_rikstanken
+        icon = GFX_focus_generic_tank_assault
         cost = 5
         x = 1
         y = 1
@@ -2414,7 +2829,7 @@ focus_tree = {
 
     focus = {
         id = STL_armorizations
-        icon = GFX_focus_generic_tank_assault
+        icon = GFX_focus_generic_tank_production
         cost = 5
         x = -1
         y = 1
@@ -2509,6 +2924,19 @@ focus_tree = {
         ai_will_do = {
             factor = 1
         }
+
+        allow_branch = {
+            NOT = {
+                AND = {
+                    has_game_rule = {
+                        rule = obsolete_focus_branches_visibility
+                        option = HIDE
+                    }
+                    has_completed_focus = STL_neighbors_help
+                }
+            }
+        }
+
         x = 0
         y = 1
         relative_position_id = STL_twilight_teaching
@@ -2581,6 +3009,7 @@ focus_tree = {
                 OR = {
                     has_completed_focus = STL_assasination_of_feather_bangs
                     has_country_flag = going_fascist
+                    has_completed_focus = STL_neighbors_help
                 }
             }
         }
@@ -2675,17 +3104,33 @@ focus_tree = {
         id = STL_eqs_exped_forces
         icon = GFX_focus_generic_paratrooper
         cost = 5
+
+        available = {
+            NOT = {
+                has_completed_focus = STL_save_ourselves
+            }
+        }
+
         prerequisite = {
             focus = STL_our_town_fortress
         }
+
         ai_will_do = {
             factor = 1
         }
+
         x = -1
         y = 1
+
         relative_position_id = STL_our_town_fortress
         completion_reward = {
             add_ideas = STL_volunteers
+
+            custom_effect_tooltip = generic_skip_one_line_tt
+            reduce_focus_completion_cost = {
+                focus = STL_army_effort
+                cost = 35
+            }
         }
         search_filters = { FOCUS_FILTER_ARMY_BONUS }
     }
@@ -2700,6 +3145,19 @@ focus_tree = {
         ai_will_do = {
             factor = 1
         }
+
+        allow_branch = {
+            NOT = {
+                AND = {
+                    has_game_rule = {
+                        rule = obsolete_focus_branches_visibility
+                        option = HIDE
+                    }
+                    has_completed_focus = STL_neighbors_help
+                }
+            }
+        }
+
         relative_position_id = STL_twilight_teaching
         y = 1
         x = 2
@@ -2735,6 +3193,7 @@ focus_tree = {
             country_event = {
                 id = starlight.40
             }
+            add_political_power = 20
         }
         search_filters = { FOCUS_FILTER_POLITICAL }
     }
@@ -2749,7 +3208,18 @@ focus_tree = {
         available = {
             always = no
         }
-        allow_branch = { NOT = { has_country_flag = going_fascist } }
+        allow_branch = {
+            NOT = { has_country_flag = going_fascist }
+            NOT = {
+                AND = {
+                    has_game_rule = {
+                        rule = obsolete_focus_branches_visibility
+                        option = HIDE
+                    }
+                    has_completed_focus = STL_neighbors_help
+                }
+            }
+        }
         prerequisite = {
             focus = STL_shining_example_of_democracy
         }
@@ -2760,6 +3230,35 @@ focus_tree = {
             add_dynamic_modifier = {
                 modifier = STL_fortress_democracy_modifier
             }
+
+            custom_effect_tooltip = generic_skip_one_line_tt
+            reduce_focus_completion_cost = {
+                focus = STL_autarky
+                cost = 35
+            }
+            reduce_focus_completion_cost = {
+                focus = STL_export_goods
+                cost = -35
+            }
+
+            if = {
+                limit = {
+                    has_idea = STL_volunteers
+                }
+                remove_ideas = STL_volunteers
+            }
+
+            if = {
+                limit = {
+                    NOT = { has_completed_focus = STL_eqs_exped_forces }
+                }
+                custom_effect_tooltip = generic_skip_one_line_tt
+                custom_effect_tooltip = stl_not_completed_exped_tt
+                reduce_focus_completion_cost = {
+                    focus = STL_army_effort
+                    cost = 35
+                }
+            }
         }
         search_filters = { FOCUS_FILTER_COMPLETED_BY_EVENT FOCUS_FILTER_POLITICAL }
     }
@@ -2768,13 +3267,24 @@ focus_tree = {
         id = STL_proactive_democracy
         icon = GFX_goal_generic_propaganda
         cost = 5
-        x = 8
+        x = 12
         y = 1
 
         available = {
             always = no
         }
-        allow_branch = { NOT = { has_country_flag = going_fascist } }
+        allow_branch = {
+            NOT = { has_country_flag = going_fascist }
+            NOT = {
+                AND = {
+                    has_game_rule = {
+                        rule = obsolete_focus_branches_visibility
+                        option = HIDE
+                    }
+                    has_completed_focus = STL_neighbors_help
+                }
+            }
+        }
 
         prerequisite = {
             focus = STL_shining_example_of_democracy
@@ -2782,7 +3292,7 @@ focus_tree = {
         relative_position_id = STL_shining_example_of_democracy
         mutually_exclusive = { focus = STL_save_ourselves }
         completion_reward = {
-            
+
         }
         search_filters = { FOCUS_FILTER_COMPLETED_BY_EVENT FOCUS_FILTER_POLITICAL }
     }
@@ -2827,7 +3337,7 @@ focus_tree = {
         id = STL_internal_security
         icon = GFX_focus_generic_secret_service_agency
         cost = 5
-        x = -3
+        x = 1
         y = 1
         relative_position_id = STL_save_ourselves
         prerequisite = { focus = STL_save_ourselves }
@@ -2863,7 +3373,7 @@ focus_tree = {
 
     focus = {
         id = STL_national_unity_campaign
-        icon = GFX_goal_generic_propaganda
+        icon = GFX_goal_continuous_def_against_influence
         cost = 5
         x = -1
         y = 1
@@ -2890,7 +3400,7 @@ focus_tree = {
         id = STL_defensive_preparations
         icon = GFX_goal_generic_fortify_city
         cost = 5
-        x = 1
+        x = -3
         y = 1
         relative_position_id = STL_save_ourselves
         prerequisite = { focus = STL_save_ourselves }
@@ -2898,13 +3408,14 @@ focus_tree = {
         completion_reward = {
             custom_effect_tooltip = STL_effective_change_for_fortress_democracy_tt
             add_to_variable = {
-                STL_fortress_democracy_army_defence = 0.10
+                STL_fortress_democracy_army_defence = 0.05
                 tooltip = army_defence_factor_tt
             }
             add_to_variable = {
                 STL_fortress_democracy_dig_in = 0.10
                 tooltip = max_dig_in_factor_tt
             }
+            custom_effect_tooltip = generic_skip_one_line_tt
             random_owned_controlled_state = {
                 limit = {
                     is_core_of = ROOT
@@ -2915,6 +3426,11 @@ focus_tree = {
                     instant_build = yes
                 }
             }
+            custom_effect_tooltip = generic_skip_one_line_tt
+            reduce_focus_completion_cost = {
+                focus = STL_army_effort
+                cost = 35
+            }
         }
 
         search_filters = { FOCUS_FILTER_ARMY_BONUS FOCUS_FILTER_INDUSTRY }
@@ -2924,7 +3440,7 @@ focus_tree = {
         id = STL_responsible_press_oversight
         icon = GFX_goal_generic_propaganda
         cost = 5
-        x = -2
+        x = 0
         y = 2
         relative_position_id = STL_save_ourselves
         prerequisite = { focus = STL_internal_security }
@@ -2957,7 +3473,7 @@ focus_tree = {
         id = STL_layered_defense_plan
         icon = GFX_focus_generic_little_entente
         cost = 5
-        x = 0
+        x = -2
         y = 2
         relative_position_id = STL_save_ourselves
         prerequisite = { focus = STL_national_unity_campaign }
@@ -2971,17 +3487,39 @@ focus_tree = {
             }
             add_to_variable = {
                 STL_fortress_democracy_planning_speed = 0.10
-                tooltip = planning_speed_tt
+                tooltip = planning_speed_factor_tt
             }
             army_experience = 25
+            custom_effect_tooltip = generic_skip_one_line_tt
+            reduce_focus_completion_cost = {
+                focus = STL_army_effort
+                cost = 35
+            }
         }
 
         search_filters = { FOCUS_FILTER_ARMY_BONUS FOCUS_FILTER_ARMY_XP }
     }
 
     focus = {
+        id = STL_we_need_men
+        icon = GFX_goal_generic_pony_volunteer
+        cost = 5
+        x = -1
+        y = 1
+        relative_position_id = STL_defensive_preparations
+        prerequisite = {
+            focus = STL_defensive_preparations
+        }
+        completion_reward = {
+            add_manpower = 15000
+            add_stability = -0.1
+            add_war_support = -0.05
+        }
+    }
+
+    focus = {
         id = STL_fortress_democracy
-        icon = GFX_focus_generic_self_management
+        icon = GFX_goal_generic_government_deals
         cost = 10
         x = -1
         y = 3
@@ -3016,7 +3554,7 @@ focus_tree = {
         id = STL_northern_relations
         icon = GFX_goal_generic_improve_relations
         cost = 5
-        x = 4
+        x = 6
         y = 1
         relative_position_id = STL_save_ourselves
         prerequisite = {
@@ -3057,7 +3595,7 @@ focus_tree = {
             focus = STL_solid_leadership
         }
 
-        x = -4
+        x = -6
         y = 1
         relative_position_id = STL_solid_leadership
 
@@ -3229,169 +3767,16 @@ focus_tree = {
     }
 
     focus = {
-        id = STL_northern_economic_integration
-        icon = GFX_focus_GER_integration_of_puppet_economies
-        cost = 7
-
-        prerequisite = { focus = STL_northern_trade_missions }
-        prerequisite = { focus = STL_formalize_the_northern_alliance }
-
-        x = 2
-        y = 1
-        relative_position_id = STL_formalize_the_northern_alliance
-
-        available = {
-            is_subject = no
-            is_faction_leader = yes
-            any_other_country = {
-                is_in_faction_with = ROOT
-            }
-        }
-
-        search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_POLITICAL }
-
-        completion_reward = {
-            swap_ideas = {
-                remove_idea = STL_northern_customs_union_spirit
-                add_idea = STL_northern_economic_integration_spirit
-            }
-
-            set_country_flag = STL_northern_economic_integration_unlocked
-
-            custom_effect_tooltip = STL_northern_economic_integration_tt
-            custom_effect_tooltip = if_they_accept_tt
-            custom_effect_tooltip = they_will_gain_tt
-            show_ideas_tooltip = STL_northern_integrated_economy_member
-            custom_effect_tooltip = generic_skip_one_line_tt
-
-            hidden_effect = {
-                every_country = {
-                    limit = {
-                        has_country_flag = STL_accepted_northern_overture
-                        is_in_faction_with = ROOT
-                        has_idea = STL_northern_customs_union_member
-                        NOT = { has_country_flag = STL_country_rejected_northern_economic_integration }
-                    }
-
-                    set_country_flag = STL_has_sent_northern_economic_integration_invitation
-
-                    country_event = {
-                        id = stl_northern_cooperation.4
-                        hours = 6
-                        random_hours = 12
-                    }
-                }
-            }
-
-            unlock_decision_tooltip = {
-                decision = STL_fund_northern_development
-                show_effect_tooltip = no
-            }
-            unlock_decision_tooltip = {
-                decision = STL_expand_trade_missions
-                show_effect_tooltip = no
-            }
-        }
-    }
-
-    focus = {
-        id = STL_joint_northern_command
-        icon = GFX_goal_generic_allies_build_infantry
-        cost = 7
-
-        prerequisite = { focus = STL_formalize_the_northern_alliance }
-
-        x = 0
-        y = 1
-        relative_position_id = STL_formalize_the_northern_alliance
-
-        available = {
-            is_subject = no
-            is_faction_leader = yes
-            any_other_country = {
-                is_in_faction_with = ROOT
-            }
-        }
-
-        search_filters = { FOCUS_FILTER_ARMY_BONUS FOCUS_FILTER_POLITICAL }
-
-        completion_reward = {
-            add_ideas = STL_joint_northern_command_spirit
-            set_country_flag = STL_joint_northern_command_unlocked
-
-            custom_effect_tooltip = STL_joint_northern_command_tt
-
-            unlock_decision_tooltip = {
-                decision = STL_joint_military_exercises
-                show_effect_tooltip = no
-            }
-        }
-    }
-
-    focus = {
-        id = STL_northern_concord
-        icon = GFX_focus_generic_self_management
-        cost = 10
-
-        prerequisite = { focus = STL_northern_economic_integration }
-        prerequisite = { focus = STL_joint_northern_command }
-
-        x = 1
-        y = 2
-        relative_position_id = STL_formalize_the_northern_alliance
-
-        available = {
-            is_subject = no
-            is_faction_leader = yes
-            any_other_country = {
-                is_in_faction_with = ROOT
-            }
-        }
-
-        search_filters = { FOCUS_FILTER_POLITICAL }
-
-        completion_reward = {
-            swap_ideas = {
-                remove_idea = STL_northern_economic_integration_spirit
-                add_idea = STL_northern_concord_spirit
-            }
-
-            set_country_flag = STL_northern_concord_unlocked
-
-            custom_effect_tooltip = STL_northern_concord_tt
-
-            hidden_effect = {
-                every_country = {
-                    limit = {
-                        has_country_flag = STL_accepted_northern_overture
-                        is_in_faction_with = ROOT
-                        NOT = { has_country_flag = STL_fully_integrated_by_STL }
-                    }
-
-                    add_to_variable = {
-                        var = STL_northern_integration_progress
-                        value = 2
-                    }
-                }
-            }
-
-            unlock_decision_tooltip = {
-                decision = STL_prepare_northern_concord
-                show_effect_tooltip = no
-            }
-        }
-    }
-
-    focus = {
         id = STL_integrate_the_north
         icon = GFX_goal_generic_major_alliance
         cost = 10
 
-        prerequisite = { focus = STL_northern_concord }
+        prerequisite = { focus = STL_northern_trade_missions }
+        prerequisite = { focus = STL_formalize_the_northern_alliance }
 
-        x = 0
+        x = -1
         y = 1
-        relative_position_id = STL_northern_concord
+        relative_position_id = STL_northern_trade_missions
 
         available = {
             is_subject = no
@@ -3477,7 +3862,7 @@ focus_tree = {
     #     y = 1
     #     relative_position_id = STL_research_facility
     #     completion_reward = {
-    #         log = "[GetDateText]: [Root.GetName]: Focus STL_our_town_institute"
+    #        log = "[GetDateText]: [Root.GetName]: Focus STL_our_town_institute"
     #         add_research_slot = 1
     #     }
     #     search_filters = { FOCUS_FILTER_RESEARCH }
@@ -3497,7 +3882,6 @@ focus_tree = {
         available = {
             has_government = democratic
         }
-
         completion_reward = {
             EQS = {
                 country_event = starlight.17
@@ -3793,7 +4177,8 @@ focus_tree = {
     focus = {
         id = STL_industrial_flourish
         icon = GFX_SOV_move_industry_to_the_urals_ccp_2d_sov_compatibility
-        cost = 5
+        overlay = GFX_focus_fast_overlay_generic_clock
+        cost = 25
 
         available = {
             NOT = { has_idea = STL_city_state }
@@ -3812,6 +4197,9 @@ focus_tree = {
 
             custom_effect_tooltip = generic_skip_one_line_tt
             custom_effect_tooltip = STL_industrial_flourish_tt
+
+            custom_effect_tooltip = generic_skip_one_line_tt
+            custom_effect_tooltip = STL_industrial_flourish_cost_tt
         }
         search_filters = { FOCUS_FILTER_INDUSTRY }
     }
@@ -3824,7 +4212,7 @@ focus_tree = {
             focus = STL_industrial_flourish
         }
 
-        x = 26
+        x = 28
         y = 1
         relative_position_id = STL_industrial_flourish
 
@@ -4195,7 +4583,6 @@ focus_tree = {
         }
 
         search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_STABILITY }
-
         completion_reward = {
             add_ideas = civilian_economy
 
@@ -4221,7 +4608,7 @@ focus_tree = {
 
     focus = {
         id = STL_currency_reforms
-        icon = GFX_focus_generic_currency_reforms
+        icon = GFX_goal_endless_money
         prerequisite = { focus = STL_prioritize_economic_growth }
         x = 0
         y = 1
@@ -4261,7 +4648,7 @@ focus_tree = {
 
     focus = {
         id = STL_lower_taxes
-        icon = GFX_focus_mex_privatisation
+        icon = GFX_goal_griffon_money_growth
         prerequisite = { focus = STL_currency_reforms }
         x = -1
         y = 1
@@ -4273,7 +4660,6 @@ focus_tree = {
         completion_reward = {
             add_stability = 0.05
             add_popularity = { ideology = ROOT popularity = 0.05 }
-
             random_core_state = {
                 limit = {
                     is_fully_controlled_by = ROOT
@@ -4491,9 +4877,11 @@ focus_tree = {
             focus = STL_abolish_price_controls
         }
         available = {
-            custom_trigger_tooltip = {
-                tooltip = formed_our_eqs_stl
-                has_country_flag = STL_has_formed_our_eqs
+            OR = {
+                custom_trigger_tooltip = {
+                    tooltip = formed_our_eqs_stl
+                    has_country_flag = STL_has_formed_our_eqs
+                }
             }
         }
         cost = 5
@@ -4521,10 +4909,11 @@ focus_tree = {
     focus = {
         id = STL_autarky
         icon = GFX_focus_generic_self_management
+        overlay = GFX_focus_fast_overlay_generic_clock
         x = 4
         y = 1
         relative_position_id = STL_flourishing_economy
-        cost = 8
+        cost = 10
         prerequisite = { focus = STL_flourishing_economy }
         prerequisite = { focus = STL_oils }
         prerequisite = { focus = STL_dam_bales }
@@ -4558,7 +4947,7 @@ focus_tree = {
 
     focus = {
         id = STL_mass_production
-        icon = GFX_focus_generic_military_industry
+        icon = GFX_focus_generic_mass_production
         prerequisite = { focus = STL_flourishing_economy }
 
         x = 0
@@ -4609,10 +4998,11 @@ focus_tree = {
     focus = {
         id = STL_export_goods
         icon = GFX_goal_generic_positive_trade_relations
+        overlay = GFX_focus_fast_overlay_generic_clock
         x = 6
         y = 1
         relative_position_id = STL_flourishing_economy
-        cost = 8
+        cost = 10
         prerequisite = { focus = STL_flourishing_economy }
         prerequisite = { focus = STL_oils }
         prerequisite = { focus = STL_dam_bales }
@@ -4638,7 +5028,7 @@ focus_tree = {
         icon = GFX_idea_STL_starlight_glimmer-888107
         cost = 1.5
         x = 16
-        y = 22
+        y = 16
 
         available = {
             custom_trigger_tooltip = {
@@ -4647,7 +5037,6 @@ focus_tree = {
             }
             NOT = { CRY = { exists = yes } }
         }
-
         allow_branch = {
             has_country_flag = STL_has_formed_our_eqs
         }
@@ -4904,7 +5293,6 @@ focus_tree = {
 
         relative_position_id = STL_prioritize_economic_growth
         cost = 5
-
         search_filters = { FOCUS_FILTER_INDUSTRY }
 
         completion_reward = {
@@ -4994,7 +5382,7 @@ focus_tree = {
             }
 
             custom_effect_tooltip = generic_skip_one_line_tt
-            custom_effect_tooltip = STL_aluminium_prospecting_tt
+            custom_effect_tooltip = STL_expand_steelworks_prospecting_tt
         }
     }
 
@@ -5035,7 +5423,7 @@ focus_tree = {
             }
 
             custom_effect_tooltip = generic_skip_one_line_tt
-            custom_effect_tooltip = STL_expand_steelworks_prospecting_tt
+            custom_effect_tooltip = STL_aluminium_prospecting_tt
         }
     }
 
@@ -5053,7 +5441,6 @@ focus_tree = {
         ai_will_do = {
             factor = 1
         }
-
         completion_reward = {
             IF = {
                 limit = {
@@ -5412,7 +5799,6 @@ focus_tree = {
         }
 
         cost = 5
-
         ai_will_do = {
             factor = 1
         }
@@ -5633,7 +6019,6 @@ focus_tree = {
         }
 
         cost = 5
-
         ai_will_do = {
             factor = 1
         }
@@ -5670,7 +6055,6 @@ focus_tree = {
 
         relative_position_id = STL_industrial_flourish
         search_filters = { FOCUS_FILTER_AIR_XP }
-
         completion_reward = {
             add_dynamic_modifier = {
                 modifier = STL_airforce
@@ -5894,7 +6278,6 @@ focus_tree = {
             focus = STL_tactical_bombers
             focus = STL_uralbomber_program
         }
-
         prerequisite = {
             focus = STL_aluminium
         }
@@ -5926,7 +6309,6 @@ focus_tree = {
             focus = STL_tactical_bombers
             focus = STL_uralbomber_program
         }
-
         completion_reward = {
             add_tech_bonus = {
                 name = STL_innovative_airforce_bonus
@@ -6106,29 +6488,28 @@ focus_tree = {
                 is_in_faction_with = EQS
             }
         }
-
         prerequisite = {
             focus = STL_our_flying_aces
         }
 
         completion_reward = {
             add_tech_bonus = {
-				name = STL_paratrooper
-				bonus = 1
-				uses = 1
-				category = para_tech
-			}
+                name = STL_paratrooper
+                bonus = 1
+                uses = 1
+                category = para_tech
+            }
 
             IF = {
-				limit = { has_dlc = "Arms Against Tyranny" }
+                limit = { has_dlc = "Arms Against Tyranny" }
 
-				add_doctrine_cost_reduction = {
-					name = STL_paratrooper
-					cost_reduction = 0.3
-					uses = 2
-					category = cat_paratroopers_doctrine
-				}
-			}
+                add_doctrine_cost_reduction = {
+                    name = STL_paratrooper
+                    cost_reduction = 0.3
+                    uses = 2
+                    category = cat_paratroopers_doctrine
+                }
+            }
 
             custom_effect_tooltip = generic_skip_one_line_tt
             custom_effect_tooltip = STL_effective_change_for_army_tt
@@ -6146,7 +6527,7 @@ focus_tree = {
         icon = GFX_focus_generic_aircraft_production
         cost = 5
 
-        x = 1
+        x = 2
         y = 1
         relative_position_id = STL_air_base_prepartion
 
@@ -6185,7 +6566,6 @@ focus_tree = {
         search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_INDUSTRY }
 
         cost = 10
-
         ai_will_do = {
             factor = 1
         }
@@ -6233,7 +6613,6 @@ focus_tree = {
         search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_INDUSTRY }
 
         cost = 10
-
         ai_will_do = {
             factor = 1
         }
@@ -6285,7 +6664,6 @@ focus_tree = {
         search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_INDUSTRY }
 
         cost = 10
-
         ai_will_do = {
             factor = 1
         }
@@ -6324,7 +6702,7 @@ focus_tree = {
         icon = GFX_focus_NORDIC_mon_airforce
         cost = 5
 
-        x = 3
+        x = 4
         y = 1
         relative_position_id = STL_air_long_range
 
@@ -6373,8 +6751,20 @@ focus_tree = {
             focus = STL_domestic_production
         }
         relative_position_id = STL_fuel_and_supply
-        completion_reward = { }
+        completion_reward = {
+            custom_effect_tooltip = STL_airforce_tt
+            add_to_variable = {
+                STL_airforce_sortie_efficiency = 0.05
+                tooltip = sortie_efficiency_tt
+            }
+            add_to_variable = {
+                STL_airforce_fighter_sortie_efficiency = 0.05
+                tooltip = fighter_sortie_efficiency_tt
+            }
+            add_to_variable = {
+                STL_airforce_navy_carrier_air_agility_factor = 0.05
+                tooltip = navy_carrier_air_agility_factor_tt
+            }
+        }
     }
 }
-
-

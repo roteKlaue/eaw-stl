@@ -253,6 +253,9 @@ set_variable = { STL_airforce_air_cas_efficiency = 0 }
 set_variable = { STL_airforce_air_strategic_bomber_bombing_factor = 0 }
 set_variable = { STL_airforce_air_range_factor = 0 }
 set_variable = { STL_airforce_air_fuel_consumption_factor = 0 }
+set_variable = { STL_airforce_fighter_sortie_efficiency = 0 }
+set_variable = { STL_airforce_sortie_efficiency = 0 }
+set_variable = { STL_airforce_navy_carrier_air_agility_factor = 0 }
 
 set_variable = { STL_fortress_democracy_stability = 0.05 }
 set_variable = { STL_fortress_democracy_war_support = 0.05 }

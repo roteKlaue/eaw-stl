@@ -57,6 +57,7 @@ country_event = { # The requested return of Starlight Glimmer
         }
 
         hidden_effect = {
+            retire_character = EQS_starlight_glimmer
             STL = {
                 country_event = {
                     id = starlight.22

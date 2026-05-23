@@ -143,12 +143,15 @@ STL_airforce = {
     air_strategic_bomber_bombing_factor = STL_airforce_air_strategic_bomber_bombing_factor
     air_range_factor = STL_airforce_air_range_factor
     air_fuel_consumption_factor = STL_airforce_air_fuel_consumption_factor
+    fighter_sortie_efficiency = STL_airforce_fighter_sortie_efficiency # 0.05
+    sortie_efficiency = STL_airforce_sortie_efficiency # 0.05
+    navy_carrier_air_agility_factor = STL_airforce_navy_carrier_air_agility_factor # 0.05
 }
 
 # defensive democracy
 STL_fortress_democracy_modifier = {
     enable = { always = yes }
-    icon = GFX_idea_generic_democratic_drift_bonus
+    icon = GFX_idea_SWI_swiss_neutrality
 
     stability_factor = STL_fortress_democracy_stability
     war_support_factor = STL_fortress_democracy_war_support
@@ -160,5 +163,17 @@ STL_fortress_democracy_modifier = {
     trade_opinion_factor = STL_fortress_democracy_trade_opinion
     operative_slot = STL_fortress_spy_slots
     new_operative_slot_bonus = STL_fortress_spy_slots
+    lend_lease_tension = 1
+    send_volunteers_tension = 1
+    join_faction_tension = 1
+    generate_wargoal_tension = 1
+    guarantee_tension = 1
+    guarantee_cost = 1
+    opinion_gain_monthly_factor = -0.2
+    enemy_justify_war_goal_time = 2.5
+    embargo_threshold_factor = 2.5
+    ai_badass_factor = 0.01    # Will receive 1% of the threat from others
+    democratic_drift = 0.03
+    ai_get_ally_desire_factor = -150
 }
 

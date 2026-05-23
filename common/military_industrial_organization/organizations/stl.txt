@@ -1,0 +1,133 @@
+STL_sugar_belles_bakery_organization = {
+    name = STL_sugar_belles_bakery_organization
+    include = generic_support_equipment_organization
+    icon = GFX_idea_STL_sugar_belles_bakery
+
+    allowed = {
+        original_tag = STL
+    }
+
+    equipment_type = { support_equipment }
+    research_categories = { support_tech }
+
+    add_trait = {
+        token = STL_mio_trait_emergency_ration_baking
+        name = STL_mio_trait_emergency_ration_baking
+        icon = GFX_generic_mio_department_icon_support_materials
+        special_trait_background = yes
+
+        position = { x = 9 y = 0 }
+
+        available = {
+            FROM = { has_completed_focus = STL_expand_the_backery }
+        }
+
+        limit_to_equipment_type = { support_equipment }
+
+        production_bonus = {
+            production_resource_need_factor = -0.10
+            production_cost_factor = -0.03
+        }
+
+        ai_will_do = { base = 2 }
+    }
+
+    add_trait = {
+        token = STL_mio_trait_sweetened_supply_lines
+        name = STL_mio_trait_sweetened_supply_lines
+        icon = GFX_generic_mio_department_icon_support_production
+        special_trait_background = yes
+
+        position = { x = 9 y = 1 }
+
+        available = {
+            FROM = { has_completed_focus = STL_new_industry }
+        }
+
+        limit_to_equipment_type = { support_equipment }
+
+        production_bonus = {
+            production_efficiency_gain_factor = 0.05
+            production_capacity_factor = 0.03
+        }
+
+        ai_will_do = { base = 2 }
+    }
+
+    add_trait = {
+        token = STL_mio_trait_innovative_safety_features
+        name = GER_mio_trait_innovative_safety_features
+        icon = GFX_generic_mio_department_icon_facilities
+        special_trait_background = yes
+
+        position = { x=1 y=1 }
+        relative_position_id = generic_mio_trait_private_scientists_program
+
+        all_parents = { generic_mio_trait_private_scientists_program }
+
+        ai_will_do = {
+            base = 2
+        }
+
+        organization_modifier = {
+            military_industrial_organization_research_bonus = 0.05
+            military_industrial_organization_design_team_assign_cost = -0.05
+            military_industrial_organization_industrial_manufacturer_assign_cost = -0.05
+        }
+    }
+
+    add_trait = {
+        token = STL_mio_trait_policiary_equipment
+        name =  GER_mio_trait_policiary_equipment
+        icon = GFX_generic_mio_department_icon_support_equipment
+        special_trait_background = yes
+
+        position = { x=0 y=1 }
+        relative_position_id = generic_mio_trait_private_tenders
+
+        all_parents = { generic_mio_trait_private_tenders }
+
+        ai_will_do = {
+            base = 2
+        }
+
+        limit_to_equipment_type = { support_equipment }
+
+        organization_modifier = {
+            military_industrial_organization_funds_gain = 0.05
+        }
+
+        equipment_bonus = {
+            build_cost_ic = -0.05
+        }
+    }
+
+    add_trait = {
+        token = STL_mio_trait_equal_portion_packaging
+        name = STL_mio_trait_equal_portion_packaging
+        icon = GFX_generic_mio_trait_icon_reliability
+        special_trait_background = yes
+
+        position = { x = 9 y = 2 }
+
+        available = {
+            FROM = {
+                has_completed_focus = STL_mass_production
+                has_completed_focus = STL_new_industry
+            }
+        }
+
+        limit_to_equipment_type = { support_equipment }
+
+        equipment_bonus = {
+            reliability = 0.05
+        }
+
+        production_bonus = {
+            production_efficiency_cap_factor = 0.05
+        }
+
+        ai_will_do = { base = 2 }
+    }
+}
+
