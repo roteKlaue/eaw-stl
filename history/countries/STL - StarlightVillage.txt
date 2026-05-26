@@ -164,14 +164,19 @@ add_dynamic_modifier = {
     modifier = STL_recovering_economy_modifier
 }
 
-set_variable = { STL_defunct_navy_convoy_efficiency = -0.50 }
-set_variable = { STL_defunct_navy_naval_detection = -0.90 }
-set_variable = { STL_defunct_navy_max_range = -0.50 }
+set_variable = { STL_defunct_navy_convoy_efficiency = -0.20 }
+set_variable = { STL_defunct_navy_naval_detection = -0.10 }
+set_variable = { STL_defunct_navy_max_range = 0.00 }
 set_variable = { STL_defunct_navy_spotting_chance = -0.00 }
-set_variable = { STL_defunct_navy_navy_coordination = -0.70 }
-set_variable = { STL_defunct_navy_accidents_chance = 0.70 }
-set_variable = { STL_defunct_navy_fuel_factor = 0.9 }
+set_variable = { STL_defunct_navy_navy_coordination = -0.10 }
+set_variable = { STL_defunct_navy_accidents_chance = 0.10 }
+set_variable = { STL_defunct_navy_fuel_factor = 0.0 }
 set_variable = { STL_defunct_navy_exp = 0.0 }
+set_variable = { STL_defunct_navy_naval_doctrine_cost_factor = 0 }
+set_variable = { STL_defunct_navy_industrial_capacity_dockyard = 0 }
+set_variable = { STL_defunct_navy_production_speed_dockyard_factor = 0 }
+set_variable = { STL_defunct_navy_production_speed_naval_base_factor = 0 }
+set_variable = { STL_defunct_navy_navy_intel_factor = 0 }
 
 set_variable = { STL_industrial_consumer_goods_factor = 0.6 }
 set_variable = { STL_industrial_civilian_intel_to_others = -25 }

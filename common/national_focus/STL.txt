@@ -150,6 +150,14 @@ focus_tree = {
             }
         }
 
+        offset = {
+            x = -2
+            y = 0
+            trigger = {
+                has_completed_focus = STL_twilight_teaching
+            }
+        }
+
         search_filters = { FOCUS_FILTER_INDUSTRY }
     }
 
@@ -812,6 +820,10 @@ focus_tree = {
                 remove_idea = STL_equality_past
                 add_idea = STL_embraced_past
             }
+            reduce_focus_completion_cost = {
+                focus = STL_industrial_flourish
+                cost = 35
+            }
         }
         search_filters = { FOCUS_FILTER_WAR_SUPPORT }
     }
@@ -903,11 +915,6 @@ focus_tree = {
             show_ideas_tooltip = starlight_glimmer_ac
             custom_effect_tooltip = generic_skip_one_line_tt
             show_unit_leaders_tooltip = STL_starlight_glimmer
-            custom_effect_tooltip = generic_skip_one_line_tt
-            reduce_focus_completion_cost = {
-                focus = STL_industrial_flourish
-                cost = 35
-            }
         }
         search_filters = { FOCUS_FILTER_POLITICAL_CHARACTER FOCUS_FILTER_MILITARY_CHARACTER }
     }
@@ -1068,6 +1075,19 @@ focus_tree = {
                     level = 1
                     instant_build = yes
                 }
+            }
+
+            if = {
+                limit = {
+                    has_dynamic_modifier = { modifier = STL_wirtschaftswunder_modifier }
+                }
+                custom_effect_tooltip = STL_effective_change_for_economy_boom_tt
+            }
+            if = {
+                limit = {
+                    NOT = { has_dynamic_modifier = { modifier = STL_wirtschaftswunder_modifier } }
+                }
+                custom_effect_tooltip = STL_effective_change_for_economy_recovery_tt
             }
 
             add_to_variable = {
@@ -1630,6 +1650,19 @@ focus_tree = {
                 }
             }
 
+            if = {
+                limit = {
+                    has_dynamic_modifier = { modifier = STL_wirtschaftswunder_modifier }
+                }
+                custom_effect_tooltip = STL_effective_change_for_economy_boom_tt
+            }
+            if = {
+                limit = {
+                    NOT = { has_dynamic_modifier = { modifier = STL_wirtschaftswunder_modifier } }
+                }
+                custom_effect_tooltip = STL_effective_change_for_economy_recovery_tt
+            }
+
             add_to_variable = {
                 STL_industrial_consumer_goods_factor = -0.25
                 tooltip = consumer_goods_factor_tt
@@ -1826,6 +1859,19 @@ focus_tree = {
                     level = 1
                     instant_build = yes
                 }
+            }
+
+            if = {
+                limit = {
+                    has_dynamic_modifier = { modifier = STL_wirtschaftswunder_modifier }
+                }
+                custom_effect_tooltip = STL_effective_change_for_economy_boom_tt
+            }
+            if = {
+                limit = {
+                    NOT = { has_dynamic_modifier = { modifier = STL_wirtschaftswunder_modifier } }
+                }
+                custom_effect_tooltip = STL_effective_change_for_economy_recovery_tt
             }
 
             add_to_variable = {
@@ -2212,7 +2258,7 @@ focus_tree = {
     }
 
     focus = {
-        id = STL_artillery
+        id = STL_artillery_power
         icon = GFX_goal_national_artillery
         cost = 5
         x = -2
@@ -2690,7 +2736,7 @@ focus_tree = {
         continue_if_invalid = yes
         completion_reward = {
             army_experience = 50
-            add_ideas = RCT_expand_officer_academy_idea
+            add_ideas = STL_expand_officer_academy_idea
             every_army_leader = {
                 add_attack = 1
             }
@@ -2988,6 +3034,12 @@ focus_tree = {
         }
         completion_reward = {
             add_ideas = STL_defensive_posturing
+
+            custom_effect_tooltip = generic_skip_one_line_tt
+            reduce_focus_completion_cost = {
+                focus = STL_army_effort
+                cost = 35
+            }
         }
         search_filters = { FOCUS_FILTER_ARMY_BONUS }
     }
@@ -3390,6 +3442,8 @@ focus_tree = {
                 STL_fortress_democracy_war_support = 0.05
                 tooltip = war_support_factor_tt
             }
+
+            custom_effect_tooltip = generic_skip_one_line_tt
             add_political_power = 50
         }
 
@@ -3431,6 +3485,8 @@ focus_tree = {
                 focus = STL_army_effort
                 cost = 35
             }
+            custom_effect_tooltip = STL_civil_defense_decisions_tt
+            set_country_flag = STL_defensive_civil_defense_unlocked
         }
 
         search_filters = { FOCUS_FILTER_ARMY_BONUS FOCUS_FILTER_INDUSTRY }
@@ -3489,7 +3545,10 @@ focus_tree = {
                 STL_fortress_democracy_planning_speed = 0.10
                 tooltip = planning_speed_factor_tt
             }
+
+            custom_effect_tooltip = generic_skip_one_line_tt
             army_experience = 25
+
             custom_effect_tooltip = generic_skip_one_line_tt
             reduce_focus_completion_cost = {
                 focus = STL_army_effort
@@ -3511,9 +3570,34 @@ focus_tree = {
             focus = STL_defensive_preparations
         }
         completion_reward = {
-            add_manpower = 15000
+            add_manpower = 25000
             add_stability = -0.1
             add_war_support = -0.05
+
+            custom_effect_tooltip = generic_skip_one_line_tt
+            custom_effect_tooltip = STL_seduce_ponys_for_to_join_us_decision_tt
+
+            hidden_effect = {
+                clear_array = STL.STL_pony_race_states
+
+                every_country = {
+                    limit = {
+                        AND = {
+                            has_idea = pony_race
+                            NOT = { tag = ROOT }
+                            NOT = { tag = ZZZ }
+                            country_exists = THIS
+                        }
+                    }
+
+                    capital_scope = {
+                        add_to_array = {
+                            array = STL.STL_pony_race_states
+                            value = THIS
+                        }
+                    }
+                }
+            }
         }
     }
 
@@ -3548,6 +3632,54 @@ focus_tree = {
         }
 
         search_filters = { FOCUS_FILTER_STABILITY FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_ARMY_BONUS }
+    }
+
+    focus = {
+        id = STL_economic_independence
+        icon = GFX_focus_AFG_a_modern_economy
+        cost = 5
+        x = 3
+        y = 1
+        relative_position_id = STL_save_ourselves
+
+        prerequisite = {
+            focus = STL_save_ourselves
+        }
+
+        completion_reward = {
+            add_offsite_building = {
+                type = industrial_complex
+                level = 2
+            }
+            add_offsite_building = {
+                type = arms_factory
+                level = 2
+            }
+            custom_effect_tooltip = generic_skip_one_line_tt
+            if = {
+                limit = {
+                    has_dynamic_modifier = { modifier = STL_wirtschaftswunder_modifier }
+                }
+                custom_effect_tooltip = STL_effective_change_for_economy_boom_tt
+            }
+            if = {
+                limit = {
+                    NOT = { has_dynamic_modifier = { modifier = STL_wirtschaftswunder_modifier } }
+                }
+                custom_effect_tooltip = STL_effective_change_for_economy_recovery_tt
+            }
+
+            add_to_variable = {
+                STL_industrial_consumer_goods_factor = -0.25
+                tooltip = consumer_goods_factor_tt
+            }
+
+            custom_effect_tooltip = generic_skip_one_line_tt
+            reduce_focus_completion_cost = {
+                focus = STL_industrial_flourish
+                cost = 35
+            }
+        }
     }
 
     focus = {
@@ -3881,6 +4013,9 @@ focus_tree = {
 
         available = {
             has_government = democratic
+            NOT = {
+                has_completed_focus = STL_save_ourselves
+            }
         }
         completion_reward = {
             EQS = {
@@ -3924,7 +4059,7 @@ focus_tree = {
 
     focus = {
         id = STL_second_factory
-        icon = GFX_focus_generic_industry_1
+        icon = GFX_focus_generic_industry_2
         cost = 3.00
         prerequisite = {
             focus = STL_one_factory
@@ -3947,7 +4082,7 @@ focus_tree = {
 
     focus = {
         id = STL_third_factory
-        icon = GFX_focus_generic_industry_2
+        icon = GFX_goal_generic_construct_civ_factory
         cost = 4.00
         prerequisite = {
             focus = STL_second_factory
@@ -4043,7 +4178,7 @@ focus_tree = {
 
     focus = {
         id = STL_fourth_factory
-        icon = GFX_focus_generic_industry_2
+        icon = GFX_goal_factory_complex
         cost = 4.00
         prerequisite = {
             focus = STL_third_factory
@@ -4207,16 +4342,10 @@ focus_tree = {
     focus = {
         id = STL_offshore_patrol
         icon = GFX_goal_generic_navy_cruiser
-
-        prerequisite = {
-            focus = STL_industrial_flourish
-        }
-
-        x = 28
+        cost = 5
+        x = 29
         y = 1
-        relative_position_id = STL_industrial_flourish
-
-        cost = 10
+        prerequisite = { focus = STL_industrial_flourish }
 
         available = {
             any_owned_state = {
@@ -4225,17 +4354,15 @@ focus_tree = {
             STL_economy_cd_over = yes
         }
 
-        bypass = {
-        }
+        relative_position_id = STL_industrial_flourish
+        search_filters = { FOCUS_FILTER_NAVY_XP FOCUS_FILTER_NAVY }
 
         ai_will_do = {
             base = 1
-
             modifier = {
                 factor = 2
                 date > 1937.1.1
             }
-
             modifier = {
                 factor = 2
                 date > 1939.1.1
@@ -4259,176 +4386,294 @@ focus_tree = {
                 }
             }
         }
-        search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_NAVY_XP FOCUS_FILTER_NAVY }
     }
 
-    # Convoy Efficiency Path
     focus = {
-        id = STL_convoy_protection
-        icon = GFX_goal_generic_navy_battleship
+        id = STL_naval_research_institute
+        icon = GFX_HIP_gund
         prerequisite = { focus = STL_offshore_patrol }
-        x = 2
+        x = 5
         y = 1
-        cost = 2
         relative_position_id = STL_offshore_patrol
+        cost = 5
+
+        search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_RESEARCH FOCUS_FILTER_NAVY }
+
         completion_reward = {
-            random_owned_controlled_state = {
-                limit = {
-                    is_coastal = yes
-                    free_building_slots = {
-                        building = dockyard
-                        size > 0
-                    }
-                }
+            random_core_state = {
+                limit = { is_fully_controlled_by = ROOT }
+                add_extra_state_shared_building_slots = 1
                 add_building_construction = {
                     type = dockyard
                     level = 1
                     instant_build = yes
                 }
             }
+
+            custom_effect_tooltip = generic_skip_one_line_tt
+
+            add_tech_bonus = {
+                name = STL_naval_research_institute
+                bonus = 0.25
+                uses = 2
+                category = naval_equipment
+            }
+
+            add_breakthrough_progress = {
+                specialization = specialization_naval
+                value = 0.35
+            }
+
+            custom_effect_tooltip = generic_skip_one_line_tt
             custom_effect_tooltip = STL_effective_change_for_navy_tt
             add_to_variable = {
-                STL_defunct_navy_convoy_efficiency = 0.35
-                tooltip = convoy_escort_efficiency_tt
-            }
-            add_to_variable = {
-                STL_defunct_navy_exp = 0.05
-                tooltip = experience_gain_navy_tt
+                STL_defunct_navy_naval_doctrine_cost_factor = -0.05
+                tooltip = naval_doctrine_cost_factor_tt
             }
         }
-        search_filters = { FOCUS_FILTER_NAVY_XP FOCUS_FILTER_NAVY }
     }
 
     focus = {
-        id = STL_advanced_convoy_tactics
+        id = STL_convoy_doctrine
         icon = GFX_goal_generic_navy_submarine
-        prerequisite = { focus = STL_convoy_protection }
-        x = 1
+        prerequisite = { focus = STL_naval_research_institute }
+        mutually_exclusive = { focus = STL_surface_fleet_doctrine focus = STL_submarine_program }
+        x = -2
         y = 1
-        cost = 2
-        relative_position_id = STL_convoy_protection
-        completion_reward = {
-            random_owned_controlled_state = {
-                limit = {
-                    is_coastal = yes
-                    free_building_slots = {
-                        building = dockyard
-                        size > 0
-                    }
-                }
-                add_building_construction = {
-                    type = dockyard
-                    level = 1
-                    instant_build = yes
-                }
+        relative_position_id = STL_naval_research_institute
+        cost = 5
+
+        available = {
+            OR = {
+                has_country_flag = formed_stg_stl
+                is_in_faction_with = EQS
             }
+        }
+
+        search_filters = { FOCUS_FILTER_MILITARY_CHARACTER FOCUS_FILTER_RESEARCH FOCUS_FILTER_NAVY }
+
+        completion_reward = {
+            add_doctrine_cost_reduction = {
+                name = STL_convoy_doctrine
+                cost_reduction = 0.25
+                uses = 1
+                category = convoy_defense_tree
+            }
+
+            add_tech_bonus = {
+                name = STL_convoy_doctrine
+                bonus = 0.5
+                uses = 1
+                category = dd_tech
+            }
+
+            custom_effect_tooltip = generic_skip_one_line_tt
             custom_effect_tooltip = STL_effective_change_for_navy_tt
             add_to_variable = {
-                STL_defunct_navy_convoy_efficiency = 0.30
+                STL_defunct_navy_convoy_efficiency = 0.10
                 tooltip = convoy_escort_efficiency_tt
             }
             add_to_variable = {
-                STL_defunct_navy_exp = 0.05
-                tooltip = experience_gain_navy_tt
-            }
-        }
-        search_filters = { FOCUS_FILTER_NAVY_XP FOCUS_FILTER_NAVY }
-    }
-
-    # Naval Combat Path
-    focus = {
-        id = STL_naval_training
-        icon = GFX_SOV_naval_infantry_ccp_2d_sov_compatibility
-        prerequisite = { focus = STL_offshore_patrol }
-        relative_position_id = STL_offshore_patrol
-        x = -1
-        y = 2
-        cost = 2
-        completion_reward = {
-            random_owned_controlled_state = {
-                limit = {
-                    is_coastal = yes
-                    free_building_slots = {
-                        building = dockyard
-                        size > 0
-                    }
-                }
-                add_building_construction = {
-                    type = dockyard
-                    level = 1
-                    instant_build = yes
-                }
-            }
-            custom_effect_tooltip = STL_effective_change_for_navy_tt
-            add_to_variable = {
-                STL_defunct_navy_naval_detection = 0.50
+                STL_defunct_navy_naval_detection = 0.05
                 tooltip = naval_detection_tt
             }
-            add_to_variable = {
-                STL_defunct_navy_max_range = 0.60
-                tooltip = navy_max_range_factor_tt
-            }
-            add_to_variable = {
-                STL_defunct_navy_exp = 0.25
-                tooltip = experience_gain_navy_tt
-            }
         }
-        search_filters = { FOCUS_FILTER_NAVY_XP FOCUS_FILTER_NAVY }
     }
 
     focus = {
-        id = STL_air_base_prepartionleet_coordination
-        icon = GFX_focus_BRA_navy
-        prerequisite = { focus = STL_naval_training }
+        id = STL_surface_fleet_doctrine
+        icon = GFX_goal_generic_navy_battleship
+        prerequisite = { focus = STL_naval_research_institute }
+        mutually_exclusive = { focus = STL_convoy_doctrine focus = STL_submarine_program }
         x = 0
         y = 1
-        relative_position_id = STL_naval_training
-        cost = 2
-        completion_reward = {
-            random_owned_controlled_state = {
-                limit = {
-                    is_coastal = yes
-                    free_building_slots = {
-                        building = dockyard
-                        size > 0
-                    }
-                }
-                add_building_construction = {
-                    type = dockyard
-                    level = 1
-                    instant_build = yes
-                }
+        relative_position_id = STL_naval_research_institute
+        cost = 5
+
+        available = {
+            OR = {
+                has_country_flag = formed_stg_stl
+                is_in_faction_with = EQS
             }
+        }
+
+        search_filters = { FOCUS_FILTER_MILITARY_CHARACTER FOCUS_FILTER_RESEARCH FOCUS_FILTER_NAVY }
+
+        completion_reward = {
+            add_doctrine_cost_reduction = {
+                name = STL_surface_fleet_doctrine
+                cost_reduction = 0.25
+                uses = 1
+                category = fleet_in_being_tree
+            }
+
+            add_tech_bonus = {
+                name = STL_surface_fleet_doctrine
+                bonus = 0.5
+                uses = 1
+                category = cl_tech
+            }
+
+            custom_effect_tooltip = generic_skip_one_line_tt
             custom_effect_tooltip = STL_effective_change_for_navy_tt
             add_to_variable = {
-                STL_defunct_navy_navy_coordination = 0.65
+                STL_defunct_navy_navy_coordination = 0.05
                 tooltip = naval_coordination_tt
             }
             add_to_variable = {
-                STL_defunct_navy_exp = 0.25
-                tooltip = experience_gain_navy_tt
+                STL_defunct_navy_spotting_chance = 0.05
+                tooltip = spotting_chance_tt
+            }
+            add_to_variable = {
+                STL_defunct_navy_max_range = 0.05
+                tooltip = navy_max_range_factor_tt
             }
         }
-        search_filters = { FOCUS_FILTER_NAVY_XP FOCUS_FILTER_NAVY }
     }
 
-    # Logistics / Fuel / Accidents Path
     focus = {
-        id = STL_naval_safety
-        icon = GFX_focus_generic_navy_battleship2
-        prerequisite = { focus = STL_offshore_patrol }
-        x = -2
+        id = STL_submarine_program
+        icon = GFX_goal_generic_navy_submarine
+        prerequisite = { focus = STL_naval_research_institute }
+        mutually_exclusive = { focus = STL_convoy_doctrine focus = STL_surface_fleet_doctrine }
+        x = 2
+        y = 1
+        relative_position_id = STL_naval_research_institute
+        cost = 5
+
+        available = {
+            OR = {
+                has_country_flag = formed_stg_stl
+                is_in_faction_with = EQS
+            }
+        }
+
+        search_filters = { FOCUS_FILTER_MILITARY_CHARACTER FOCUS_FILTER_RESEARCH FOCUS_FILTER_NAVY }
+
+        completion_reward = {
+            add_doctrine_cost_reduction = {
+                name = STL_submarine_program
+                cost_reduction = 0.25
+                uses = 1
+                category = trade_interdiction_tree
+            }
+
+            add_tech_bonus = {
+                name = STL_submarine_program
+                bonus = 0.5
+                uses = 1
+                category = ss_tech
+            }
+
+            custom_effect_tooltip = generic_skip_one_line_tt
+            custom_effect_tooltip = STL_effective_change_for_navy_tt
+            add_to_variable = {
+                STL_defunct_navy_naval_detection = 0.15
+                tooltip = naval_detection_tt
+            }
+            add_to_variable = {
+                STL_defunct_navy_max_range = 0.10
+                tooltip = navy_max_range_factor_tt
+            }
+            add_to_variable = {
+                STL_defunct_navy_fuel_factor = 0.05
+                tooltip = navy_fuel_consumption_factor_tt
+            }
+        }
+    }
+
+    focus = {
+        id = STL_cheaper_shipbuilding
+        icon = GFX_goal_continuous_naval_production
+        cost = 5
+        x = 4
+        y = 1
+        relative_position_id = STL_convoy_doctrine
+        prerequisite = {
+            focus = STL_convoy_doctrine
+            focus = STL_surface_fleet_doctrine
+            focus = STL_submarine_program
+        }
+
+        completion_reward = {
+            custom_effect_tooltip = STL_effective_change_for_navy_tt
+            add_to_variable = {
+                STL_defunct_navy_industrial_capacity_dockyard = 0.05
+                tooltip = industrial_capacity_dockyard_tt
+            }
+            add_to_variable = {
+                STL_defunct_navy_fuel_factor = -0.05
+                tooltip = navy_fuel_consumption_factor_tt
+            }
+        }
+
+        search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_NAVY }
+    }
+
+    focus = {
+        id = STL_blue_water_navy
+        icon = GFX_goal_generic_navy_doctrines_tactics
+        cost = 5
+        x = 2
+        y = 1
+        relative_position_id = STL_convoy_doctrine
+        prerequisite = {
+            focus = STL_convoy_doctrine
+            focus = STL_surface_fleet_doctrine
+            focus = STL_submarine_program
+        }
+
+        completion_reward = {
+            add_tech_bonus = {
+                name = STL_innovative_navy_bonus
+                bonus = 0.5
+                uses = 2
+                category = naval_equipment
+            }
+
+            custom_effect_tooltip = STL_effective_change_for_navy_tt
+            add_to_variable = {
+                STL_defunct_navy_max_range = 0.05
+                tooltip = navy_max_range_factor_tt
+            }
+        }
+
+        search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_NAVY }
+    }
+
+    focus = {
+        id = STL_dockyard_expansion
+        icon = GFX_goal_generic_construct_naval_dockyard
+        cost = 5
+        x = -3
         y = 1
         relative_position_id = STL_offshore_patrol
-        cost = 2
+        prerequisite = { focus = STL_offshore_patrol }
+
+        available = {
+            OR = {
+                has_country_flag = formed_stg_stl
+                is_in_faction_with = EQS
+            }
+        }
+
         completion_reward = {
             random_owned_controlled_state = {
                 limit = {
                     is_coastal = yes
-                    free_building_slots = {
-                        building = dockyard
-                        size > 0
-                    }
+                    is_core_of = ROOT
+                }
+                add_building_construction = {
+                    type = dockyard
+                    level = 2
+                    instant_build = yes
+                }
+            }
+
+            random_owned_controlled_state = {
+                limit = {
+                    is_coastal = yes
+                    is_core_of = ROOT
                 }
                 add_building_construction = {
                     type = dockyard
@@ -4436,137 +4681,374 @@ focus_tree = {
                     instant_build = yes
                 }
             }
+
+            custom_effect_tooltip = generic_skip_one_line_tt
             custom_effect_tooltip = STL_effective_change_for_navy_tt
             add_to_variable = {
-                STL_defunct_navy_accidents_chance = -0.40
-                tooltip = naval_accidents_chance_tt
+                STL_defunct_navy_production_speed_dockyard_factor = 0.10
+                tooltip = production_speed_dockyard_factor_tt
             }
+        }
+
+        search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_NAVY }
+    }
+
+    focus = {
+        id = STL_coastal_fortifications
+        icon = GFX_focus_generic_coastal_fort
+        cost = 5
+        x = -5
+        y = 1
+        relative_position_id = STL_offshore_patrol
+        prerequisite = { focus = STL_offshore_patrol }
+
+        available = {
+            OR = {
+                has_country_flag = formed_stg_stl
+                is_in_faction_with = EQS
+            }
+        }
+
+        completion_reward = {
+            random_owned_controlled_state = {
+                limit = {
+                    is_coastal = yes
+                    is_core_of = ROOT
+                }
+                add_building_construction = {
+                    type = naval_base
+                    level = 2
+                    instant_build = yes
+                }
+            }
+
+            custom_effect_tooltip = generic_skip_one_line_tt
+            custom_effect_tooltip = STL_effective_change_for_navy_tt
+            add_to_variable = {
+                STL_defunct_navy_production_speed_naval_base_factor = 0.10
+                tooltip = production_speed_naval_base_factor_tt
+            }
+            add_to_variable = {
+                STL_defunct_navy_navy_intel_factor = 0.05
+                tooltip = navy_intel_factor_tt
+            }
+        }
+
+        search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_NAVY }
+    }
+
+    focus = {
+        id = STL_naval_radar_effort
+        icon = GFX_goal_generic_radio_equipment
+        cost = 5
+        x = -1
+        y = 1
+        relative_position_id = STL_offshore_patrol
+        prerequisite = { focus = STL_offshore_patrol }
+
+        available = {
+            OR = {
+                has_country_flag = formed_stg_stl
+                is_in_faction_with = EQS
+            }
+            has_tech = improved_radio
+        }
+
+        completion_reward = {
+            add_tech_bonus = {
+                name = STL_naval_radar_effort
+                bonus = 0.5
+                uses = 1
+                category = radar_tech
+            }
+
+            random_owned_controlled_state = {
+                limit = {
+                    is_coastal = yes
+                    is_core_of = ROOT
+                }
+                add_building_construction = {
+                    type = radar_station
+                    level = 2
+                    instant_build = yes
+                }
+            }
+
+            custom_effect_tooltip = generic_skip_one_line_tt
+            custom_effect_tooltip = STL_effective_change_for_navy_tt
+            add_to_variable = {
+                STL_defunct_navy_naval_detection = 0.10
+                tooltip = naval_detection_tt
+            }
+        }
+
+        search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_INDUSTRY FOCUS_FILTER_NAVY }
+    }
+
+    focus = {
+        id = STL_marine_corps
+        icon = GFX_goal_generic_amphibious_assault
+        cost = 5
+        x = 1
+        y = 1
+        relative_position_id = STL_offshore_patrol
+        prerequisite = { focus = STL_offshore_patrol }
+
+        available = {
+            OR = {
+                has_country_flag = formed_stg_stl
+                is_in_faction_with = EQS
+            }
+        }
+
+        completion_reward = {
+            add_tech_bonus = {
+                name = STL_marine_corps
+                bonus = 1
+                uses = 1
+                category = marine_tech
+            }
+
+            IF = {
+                limit = { has_dlc = "Arms Against Tyranny" }
+                add_doctrine_cost_reduction = {
+                    name = STL_marine_corps
+                    cost_reduction = 0.3
+                    uses = 2
+                    category = cat_marines_doctrine
+                }
+            }
+
+            custom_effect_tooltip = generic_skip_one_line_tt
+            custom_effect_tooltip = STL_effective_change_for_navy_tt
+            add_to_variable = {
+                STL_defunct_navy_exp = 0.05
+                tooltip = experience_gain_navy_tt
+            }
+            custom_effect_tooltip = generic_skip_one_line_tt
+            custom_effect_tooltip = STL_effective_change_for_army_tt
+            add_to_variable = {
+                STL_military_special_forces_cap = 0.03
+                tooltip = special_forces_cap_tt
+            }
+        }
+
+        search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_ARMY_BONUS FOCUS_FILTER_NAVY }
+    }
+
+    focus = {
+        id = STL_naval_supply_reform
+        icon = GFX_focus_generic_navy_battleship2
+        cost = 5
+        x = 0
+        y = 1
+        relative_position_id = STL_coastal_fortifications
+        prerequisite = { focus = STL_coastal_fortifications }
+
+        completion_reward = {
+            custom_effect_tooltip = STL_effective_change_for_navy_tt
             add_to_variable = {
                 STL_defunct_navy_fuel_factor = -0.15
                 tooltip = navy_fuel_consumption_factor_tt
             }
-        }
-        search_filters = { FOCUS_FILTER_NAVY }
-    }
-
-    focus = {
-        id = STL_fuel_and_supply
-        icon = GFX_SOV_pc_of_the_ussr_navy_ccp_2d_sov_compatibility
-        prerequisite = { focus = STL_naval_safety }
-        relative_position_id = STL_naval_safety
-        x = -1
-        y = 1
-        cost = 2
-        completion_reward = {
-            random_owned_controlled_state = {
-                limit = {
-                    is_coastal = yes
-                    free_building_slots = {
-                        building = dockyard
-                        size > 0
-                    }
-                }
-                add_building_construction = {
-                    type = dockyard
-                    level = 1
-                    instant_build = yes
-                }
-            }
-            custom_effect_tooltip = STL_effective_change_for_navy_tt
             add_to_variable = {
-                STL_defunct_navy_fuel_factor = -0.35
-                tooltip = navy_fuel_consumption_factor_tt
-            }
-            add_to_variable = {
-                STL_defunct_navy_accidents_chance = -0.60
+                STL_defunct_navy_accidents_chance = -0.10
                 tooltip = naval_accidents_chance_tt
             }
             add_to_variable = {
-                STL_defunct_navy_exp = 0.15
+                STL_defunct_navy_exp = 0.05
                 tooltip = experience_gain_navy_tt
             }
         }
+
         search_filters = { FOCUS_FILTER_NAVY_XP FOCUS_FILTER_NAVY }
     }
 
     focus = {
-        id = STL_detection
-        icon = GFX_SOV_pc_of_the_ussr_navy_ccp_2d_sov_compatibility
-        prerequisite = { focus = STL_offshore_patrol }
-        x = 1
-        y = 2
-        cost = 2
-        relative_position_id = STL_offshore_patrol
+        id = STL_domestic_naval_production
+        icon = GFX_goal_generic_naval_industry
+        cost = 5
+        x = 2
+        y = 1
+        relative_position_id = STL_dockyard_expansion
+        prerequisite = {
+            focus = STL_coastal_fortifications
+            focus = STL_dockyard_expansion
+            focus = STL_naval_radar_effort
+            focus = STL_marine_corps
+        }
+
         completion_reward = {
-            random_owned_controlled_state = {
-                limit = {
-                    is_coastal = yes
-                    free_building_slots = {
-                        building = dockyard
-                        size > 0
-                    }
-                }
-                add_building_construction = {
-                    type = dockyard
-                    level = 1
-                    instant_build = yes
-                }
-            }
+            add_ideas = STL_domestic_naval_production
+
+            custom_effect_tooltip = generic_skip_one_line_tt
             custom_effect_tooltip = STL_effective_change_for_navy_tt
             add_to_variable = {
-                STL_defunct_navy_fuel_factor = -0.35
-                tooltip = navy_fuel_consumption_factor_tt
-            }
-            add_to_variable = {
-                STL_defunct_navy_naval_detection = 0.60
-                tooltip = naval_detection_tt
-            }
-            add_to_variable = {
-                STL_defunct_navy_exp = 0.15
-                tooltip = experience_gain_navy_tt
+                STL_defunct_navy_industrial_capacity_dockyard = 0.03
+                tooltip = industrial_capacity_dockyard_tt
             }
         }
-        search_filters = { FOCUS_FILTER_NAVY_XP FOCUS_FILTER_NAVY }
+
+        search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_NAVY }
     }
 
     focus = {
-        id = STL_detection_extended
-        icon = GFX_SOV_pc_of_the_ussr_navy_ccp_2d_sov_compatibility
-        prerequisite = { focus = STL_detection }
+        id = STL_destroyer_specialization
+        icon = GFX_goal_generic_navy_anti_submarine
+        prerequisite = { focus = STL_domestic_naval_production }
+        mutually_exclusive = { focus = STL_cruiser_specialization focus = STL_capital_ship_specialization }
+        x = -2
+        y = 1
+        relative_position_id = STL_domestic_naval_production
+        cost = 10
+
+        search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_INDUSTRY FOCUS_FILTER_NAVY }
+
+        completion_reward = {
+            swap_ideas = {
+                remove_idea = STL_domestic_naval_production
+                add_idea = STL_domestic_naval_production_escort
+            }
+
+            add_tech_bonus = {
+                name = STL_destroyer_specialization_bonus
+                bonus = 0.5
+                uses = 2
+                category = dd_tech
+            }
+            navy_experience = 40
+
+            custom_effect_tooltip = generic_skip_one_line_tt
+            custom_effect_tooltip = STL_effective_change_for_navy_tt
+            add_to_variable = {
+                STL_defunct_navy_convoy_efficiency = 0.05
+                tooltip = convoy_escort_efficiency_tt
+            }
+            add_to_variable = {
+                STL_defunct_navy_naval_detection = 0.05
+                tooltip = naval_detection_tt
+            }
+        }
+    }
+
+    focus = {
+        id = STL_cruiser_specialization
+        icon = GFX_goal_generic_navy_cruiser
+        prerequisite = { focus = STL_domestic_naval_production }
+        mutually_exclusive = { focus = STL_destroyer_specialization focus = STL_capital_ship_specialization }
         x = 0
         y = 1
-        cost = 2
-        relative_position_id = STL_detection
+        relative_position_id = STL_domestic_naval_production
+        cost = 10
+
+        search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_INDUSTRY FOCUS_FILTER_NAVY }
+
         completion_reward = {
-            random_owned_controlled_state = {
-                limit = {
-                    is_coastal = yes
-                    free_building_slots = {
-                        building = dockyard
-                        size > 0
-                    }
-                }
-                add_building_construction = {
-                    type = dockyard
-                    level = 1
-                    instant_build = yes
-                }
+            swap_ideas = {
+                remove_idea = STL_domestic_naval_production
+                add_idea = STL_domestic_naval_production_cruiser
             }
+
+            add_tech_bonus = {
+                name = STL_cruiser_specialization_bonus
+                bonus = 0.5
+                uses = 2
+                category = ca_tech
+            }
+            navy_experience = 40
+
+            custom_effect_tooltip = generic_skip_one_line_tt
             custom_effect_tooltip = STL_effective_change_for_navy_tt
             add_to_variable = {
-                STL_defunct_navy_fuel_factor = -0.35
-                tooltip = navy_fuel_consumption_factor_tt
-            }
-            add_to_variable = {
-                STL_defunct_navy_naval_detection = 0.60
-                tooltip = naval_detection_tt
-            }
-            add_to_variable = {
-                STL_defunct_navy_navy_coordination = 0.15
+                STL_defunct_navy_navy_coordination = 0.03
                 tooltip = naval_coordination_tt
             }
+            add_to_variable = {
+                STL_defunct_navy_max_range = 0.03
+                tooltip = navy_max_range_factor_tt
+            }
+            add_to_variable = {
+                STL_defunct_navy_spotting_chance = 0.03
+                tooltip = spotting_chance_tt
+            }
         }
-        search_filters = { FOCUS_FILTER_NAVY }
+    }
+
+    focus = {
+        id = STL_capital_ship_specialization
+        icon = GFX_focus_generic_navy_battleship2
+        prerequisite = { focus = STL_domestic_naval_production }
+        mutually_exclusive = { focus = STL_destroyer_specialization focus = STL_cruiser_specialization }
+        x = 2
+        y = 1
+        relative_position_id = STL_domestic_naval_production
+        cost = 10
+
+        search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_INDUSTRY FOCUS_FILTER_NAVY }
+
+        completion_reward = {
+            swap_ideas = {
+                remove_idea = STL_domestic_naval_production
+                add_idea = STL_domestic_naval_production_capital
+            }
+
+            add_tech_bonus = {
+                name = STL_capital_ship_specialization_bonus
+                bonus = 0.5
+                uses = 2
+                category = bb_tech
+            }
+            navy_experience = 40
+
+            custom_effect_tooltip = generic_skip_one_line_tt
+            custom_effect_tooltip = STL_effective_change_for_navy_tt
+            add_to_variable = {
+                STL_defunct_navy_max_range = 0.07
+                tooltip = navy_max_range_factor_tt
+            }
+            add_to_variable = {
+                STL_defunct_navy_spotting_chance = 0.05
+                tooltip = spotting_chance_tt
+            }
+        }
+    }
+
+    focus = {
+        id = STL_grand_fleet
+        icon = GFX_focus_NORDIC_mon_navy
+        cost = 5
+        overlay = GFX_focus_fast_overlay_america
+        x = -3
+        y = 1
+        relative_position_id = STL_blue_water_navy
+        prerequisite = { focus = STL_blue_water_navy }
+        prerequisite = {
+            focus = STL_destroyer_specialization
+            focus = STL_cruiser_specialization
+            focus = STL_capital_ship_specialization
+        }
+
+        completion_reward = {
+            custom_effect_tooltip = STL_effective_change_for_navy_tt
+            add_to_variable = {
+                STL_defunct_navy_navy_coordination = 0.10
+                tooltip = naval_coordination_tt
+            }
+            add_to_variable = {
+                STL_defunct_navy_max_range = 0.05
+                tooltip = navy_max_range_factor_tt
+            }
+            add_to_variable = {
+                STL_defunct_navy_exp = 0.10
+                tooltip = experience_gain_navy_tt
+            }
+            add_to_variable = {
+                STL_defunct_navy_accidents_chance = -0.05
+                tooltip = naval_accidents_chance_tt
+            }
+        }
+
+        search_filters = { FOCUS_FILTER_NAVY_XP FOCUS_FILTER_NAVY }
     }
 
     focus = {
@@ -4673,7 +5155,18 @@ focus_tree = {
                 }
             }
 
-            custom_effect_tooltip = STL_effective_change_for_economy_recovery_tt
+            if = {
+                limit = {
+                    has_dynamic_modifier = { modifier = STL_wirtschaftswunder_modifier }
+                }
+                custom_effect_tooltip = STL_effective_change_for_economy_boom_tt
+            }
+            if = {
+                limit = {
+                    NOT = { has_dynamic_modifier = { modifier = STL_wirtschaftswunder_modifier } }
+                }
+                custom_effect_tooltip = STL_effective_change_for_economy_recovery_tt
+            }
             add_to_variable = {
                 STL_industrial_consumer_goods_factor = -0.15
                 tooltip = consumer_goods_factor_tt
@@ -4688,7 +5181,7 @@ focus_tree = {
 
     focus = {
         id = STL_abolish_price_controls
-        icon = GFX_focus_BRA_repeale_national_security_law
+        icon = GFX_focus_ARG_anti_corruption_policies
         prerequisite = { focus = STL_lower_taxes }
         x = -1
         y = 1
@@ -4710,7 +5203,18 @@ focus_tree = {
                 }
             }
 
-            custom_effect_tooltip = STL_effective_change_for_economy_recovery_tt
+            if = {
+                limit = {
+                    has_dynamic_modifier = { modifier = STL_wirtschaftswunder_modifier }
+                }
+                custom_effect_tooltip = STL_effective_change_for_economy_boom_tt
+            }
+            if = {
+                limit = {
+                    NOT = { has_dynamic_modifier = { modifier = STL_wirtschaftswunder_modifier } }
+                }
+                custom_effect_tooltip = STL_effective_change_for_economy_recovery_tt
+            }
             add_to_variable = {
                 STL_industrial_production_factory_start_efficiency_factor = 0.05
                 tooltip = production_factory_start_efficiency_factor_tt
@@ -4739,7 +5243,18 @@ focus_tree = {
         search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY }
 
         completion_reward = {
-            custom_effect_tooltip = STL_effective_change_for_economy_recovery_tt
+            if = {
+                limit = {
+                    has_dynamic_modifier = { modifier = STL_wirtschaftswunder_modifier }
+                }
+                custom_effect_tooltip = STL_effective_change_for_economy_boom_tt
+            }
+            if = {
+                limit = {
+                    NOT = { has_dynamic_modifier = { modifier = STL_wirtschaftswunder_modifier } }
+                }
+                custom_effect_tooltip = STL_effective_change_for_economy_recovery_tt
+            }
             add_to_variable = {
                 STL_industrial_resource_trade_cost_bonus_per_factory = 1
                 tooltip = resource_trade_cost_bonus_per_factory_tt
@@ -4779,7 +5294,18 @@ focus_tree = {
             57 = { set_state_category = large_city }
             153 = { set_state_category = large_city }
 
-            custom_effect_tooltip = STL_effective_change_for_economy_recovery_tt
+            if = {
+                limit = {
+                    has_dynamic_modifier = { modifier = STL_wirtschaftswunder_modifier }
+                }
+                custom_effect_tooltip = STL_effective_change_for_economy_boom_tt
+            }
+            if = {
+                limit = {
+                    NOT = { has_dynamic_modifier = { modifier = STL_wirtschaftswunder_modifier } }
+                }
+                custom_effect_tooltip = STL_effective_change_for_economy_recovery_tt
+            }
             add_to_variable = {
                 STL_industrial_production_speed_buildings_factor = 0.05
                 tooltip = production_speed_buildings_factor_tt
@@ -4802,7 +5328,18 @@ focus_tree = {
         completion_reward = {
             add_popularity = { ideology = ROOT popularity = 0.05 }
 
-            custom_effect_tooltip = STL_effective_change_for_economy_recovery_tt
+            if = {
+                limit = {
+                    has_dynamic_modifier = { modifier = STL_wirtschaftswunder_modifier }
+                }
+                custom_effect_tooltip = STL_effective_change_for_economy_boom_tt
+            }
+            if = {
+                limit = {
+                    NOT = { has_dynamic_modifier = { modifier = STL_wirtschaftswunder_modifier } }
+                }
+                custom_effect_tooltip = STL_effective_change_for_economy_recovery_tt
+            }
             add_to_variable = { STL_industrial_production_factory_max_efficiency_factor = 0.05 tooltip = production_factory_max_efficiency_factor_tt }
             add_to_variable = { STL_industrial_production_factory_efficiency_gain_factor = 0.05 tooltip = production_factory_efficiency_gain_factor_tt }
             add_to_variable = { STL_industrial_production_factory_start_efficiency_factor = 0.05 tooltip = production_factory_start_efficiency_factor_tt }
@@ -4816,7 +5353,7 @@ focus_tree = {
 
     focus = {
         id = STL_expand_the_backery
-        icon = GFX_focus_generic_modernize_industry
+        icon = GFX_goal_industrial_pony
         prerequisite = { focus = STL_build_houses }
         prerequisite = { focus = STL_lower_taxes }
         x = 1
@@ -4850,7 +5387,18 @@ focus_tree = {
             }
 
             custom_effect_tooltip = generic_skip_one_line_tt
-            custom_effect_tooltip = STL_effective_change_for_economy_recovery_tt
+            if = {
+                limit = {
+                    has_dynamic_modifier = { modifier = STL_wirtschaftswunder_modifier }
+                }
+                custom_effect_tooltip = STL_effective_change_for_economy_boom_tt
+            }
+            if = {
+                limit = {
+                    NOT = { has_dynamic_modifier = { modifier = STL_wirtschaftswunder_modifier } }
+                }
+                custom_effect_tooltip = STL_effective_change_for_economy_recovery_tt
+            }
             add_to_variable = {
                 STL_industrial_production_factory_max_efficiency_factor = 0.05
                 tooltip = production_factory_max_efficiency_factor_tt
@@ -4867,6 +5415,7 @@ focus_tree = {
     focus = {
         id = STL_flourishing_economy
         icon = GFX_focus_GER_autarky_achieved
+        overlay = GFX_focus_fast_overlay_america
         prerequisite = {
             focus = STL_workers_rights
         }
@@ -4928,7 +5477,7 @@ focus_tree = {
 
     focus = {
         id = STL_laborers
-        icon = GFX_SOV_the_trade_union_as_labor_organizer_ccp_2d_sov_compatibility
+        icon = GFX_goal_pony_labour
         cost = 5
         x = -2
         y = 1
@@ -4949,6 +5498,7 @@ focus_tree = {
         id = STL_mass_production
         icon = GFX_focus_generic_mass_production
         prerequisite = { focus = STL_flourishing_economy }
+        overlay = GFX_focus_fast_overlay_america
 
         x = 0
         y = 1
@@ -4983,7 +5533,19 @@ focus_tree = {
 
             custom_effect_tooltip = generic_skip_one_line_tt
 
-            custom_effect_tooltip = STL_effective_change_for_economy_boom_tt
+            if = {
+                limit = {
+                    has_dynamic_modifier = { modifier = STL_wirtschaftswunder_modifier }
+                }
+                custom_effect_tooltip = STL_effective_change_for_economy_boom_tt
+            }
+            if = {
+                limit = {
+                    NOT = { has_dynamic_modifier = { modifier = STL_wirtschaftswunder_modifier } }
+                }
+                custom_effect_tooltip = STL_effective_change_for_economy_recovery_tt
+            }
+
             add_to_variable = {
                 STL_industrial_production_lack_of_resource_penalty_factor = -0.1
                 tooltip = production_lack_of_resource_penalty_factor_tt
@@ -6007,7 +6569,8 @@ focus_tree = {
 
     focus = { # INDUSTRY
         id = STL_new_industry
-        icon = GFX_focus_AUS_bbo_focus
+        icon = GFX_focus_JAP_ministry_of_commerce_and_industry
+        overlay = GFX_focus_fast_overlay_america
         prerequisite = { focus = STL_infra_3 focus = STL_infra_1 focus = STL_infra_2 }
         x = 0
         y = 1
@@ -6701,6 +7264,7 @@ focus_tree = {
         id = STL_our_powerful_airfleet
         icon = GFX_focus_NORDIC_mon_airforce
         cost = 5
+        overlay = GFX_focus_fast_overlay_america
 
         x = 4
         y = 1
@@ -6745,12 +7309,12 @@ focus_tree = {
         x = -2
         y = 1
         prerequisite = {
-            focus = STL_fuel_and_supply
+            focus = STL_naval_supply_reform
         }
         prerequisite = {
             focus = STL_domestic_production
         }
-        relative_position_id = STL_fuel_and_supply
+        relative_position_id = STL_naval_supply_reform
         completion_reward = {
             custom_effect_tooltip = STL_airforce_tt
             add_to_variable = {

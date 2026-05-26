@@ -10,6 +10,11 @@ STL_navy_dynamic_modifier = {
     naval_accidents_chance = STL_defunct_navy_accidents_chance
     navy_fuel_consumption_factor = STL_defunct_navy_fuel_factor
     experience_gain_navy = STL_defunct_navy_exp
+    naval_doctrine_cost_factor = STL_defunct_navy_naval_doctrine_cost_factor
+    industrial_capacity_dockyard = STL_defunct_navy_industrial_capacity_dockyard
+    production_speed_dockyard_factor = STL_defunct_navy_production_speed_dockyard_factor
+    production_speed_naval_base_factor = STL_defunct_navy_production_speed_naval_base_factor
+    navy_intel_factor = STL_defunct_navy_navy_intel_factor
 }
 
 STL_recovering_economy_modifier = {

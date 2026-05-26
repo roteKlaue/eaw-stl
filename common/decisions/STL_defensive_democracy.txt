@@ -1,0 +1,105 @@
+STL_defensive_democracy_democracy = {
+    STL_recruit_people = {
+        icon = GFX_decision_eng_blackshirt_march
+        cost = 50
+
+        state_target = yes
+        target_array = STL.STL_pony_race_states
+        on_map_mode = map_and_decisions_view
+
+        target_trigger = {
+            FROM.owner = {
+                has_idea = pony_race
+            }
+        }
+
+        visible = {
+            FROM.owner = {
+                NOT = { tag = ROOT }
+            }
+        }
+
+        available = {
+            FROM.owner = {
+                has_manpower > 10000
+            }
+        }
+
+        complete_effect = {
+            add_manpower = 10000
+            add_stability = -0.05
+            add_war_support = -0.025
+
+            FROM.owner = {
+                add_manpower = -10000
+                add_stability = 0.05
+                add_war_support = 0.025
+            }
+        }
+    }
+
+    STL_blackout_drills = {
+        icon = GFX_RAJ_decision_investment_defenses_icon
+        cost = 35
+        days_remove = 45
+        fire_only_once = no
+
+        visible = {
+            has_country_flag = STL_defensive_civil_defense_unlocked
+        }
+        available = {
+            has_war = yes
+        }
+
+        complete_effect = {
+            add_timed_idea = {
+                idea = STL_blackout_drills_idea
+                days = 120
+            }
+        }
+    }
+
+    STL_rail_evacuation_plan = {
+        icon = GFX_decision_generic_train
+        cost = 40
+        days_remove = 60
+        fire_only_once = no
+
+        visible = {
+            has_country_flag = STL_defensive_civil_defense_unlocked
+        }
+        available = {
+            has_war = yes
+        }
+
+        complete_effect = {
+            add_timed_idea = {
+                idea = STL_rail_evacuation_plan_idea
+                days = 150
+            }
+            add_political_power = -15
+        }
+    }
+
+    STL_local_stockpiles = {
+        icon = GFX_decision_generic_construct_military
+        cost = 50
+        days_remove = 70
+        fire_only_once = no
+
+        visible = {
+            has_country_flag = STL_defensive_civil_defense_unlocked
+        }
+        available = {
+            has_war = yes
+            num_of_civilian_factories_available_for_projects > 2
+        }
+
+        complete_effect = {
+            add_timed_idea = {
+                idea = STL_local_stockpiles_idea
+                days = 180
+            }
+        }
+    }
+}
