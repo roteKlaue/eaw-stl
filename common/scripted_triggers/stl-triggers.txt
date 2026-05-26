@@ -23,3 +23,11 @@ STL_economy_cd_over = {
 		}
 	}
 }
+
+STL_economy_check_1 = {
+	OR = {
+		has_country_flag = formed_stg_stl
+		is_in_faction_with = EQS
+		has_completed_focus = STL_economic_independence
+	}
+}

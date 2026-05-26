@@ -1057,7 +1057,8 @@ STL_vp_our_canterlot:0 "Equalopolis"
  the_backery_chain_desc:0 "What began as one humble bakery has grown into a small but influential network of shops, suppliers, and cheerful propaganda pastries. It strengthens local business while giving citizens something sweet to believe in."
 
  STL_increased_trade:0 "Increased Trade"
- STL_increased_trade_desc:0 "Isolation has limited us for too long. By strengthening commercial ties with neighbours and partners abroad, we can turn local production into national wealth."
+ STL_increased_trade_desc:0 "Isolation has limited us for too long. New roads, cheaper imports, and freer commerce will tie our workshops to markets beyond Townsville and lay the groundwork for a true export economy."
+ STL_increased_trade_tt:0 "Required to take §Y$STL_export_goods$§!. Not required for §Y$STL_autarky$§!."
 
  STL_export_goods:0 "Export Goods"
 
@@ -1496,4 +1497,19 @@ STL_local_stockpiles_idea_desc:0 "Distributed wartime reserves reduce attrition 
  STL_innovative_airforce_bonus:0 "Innovative Air Force"
  STL_naval_air_cooperation:0 "Naval-Air Cooperation"
  STL_naval_air_cooperation_desc:0 "Carriers and escort fleets must fight as a single weapon. Closer cooperation between naval aviation and the fleet will improve sortie efficiency and give our pilots the edge they need over hostile seas."
+ STL_tech_is_our_focus:0 "Technology Is Our Focus"
+ STL_tech_is_our_focus_desc:0 "A small nation cannot outnumber its enemies, but it can outthink them. By concentrating our limited resources into research facilities, experimentation, and practical innovation, we shall ensure that every breakthrough counts."
+
+ STL_mega_gun:0 "Our Mega Gun"
+ STL_mega_gun_desc:0 "If our enemies believe geography alone will protect them, we shall prove otherwise. A weapon of impossible scale will turn distance into a suggestion and fortresses into memories."
+
+ STL_stronghold:0 "Our Stronghold"
+ STL_stronghold_desc:0 "Survival demands more than courage. By preparing a hardened defensive network across our most vital positions, we can make any invasion of [STL.GetName] a costly mistake."
+
+ STL_mountain_metropolis:0 "Mountain Metropolis"
+ STL_mountain_metropolis_desc:0 "Our mountain home shall no longer be a remote settlement clinging to survival. With careful planning, fortifications, industry, and modern defenses, it will become a true metropolis carved into the heights."
+
+ STL_technological_briliance:0 "Technological Brilliance"
+ STL_technological_briliance_desc:0 "Our brightest minds have too often been scattered, underfunded, or forced to improvise with whatever tools they could find. With proper support, their brilliance can become the foundation of our future."
+
 

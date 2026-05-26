@@ -22,7 +22,7 @@ focus_tree = {
 
     shortcut = {
         name = STL_political_democratic
-        target = STL_twilight_teaching
+        target = STL_shining_example_of_democracy
         scroll_wheel_factor = 0.9
     }
 
@@ -52,7 +52,7 @@ focus_tree = {
 
     shortcut = {
         name = STL_industry_stuff
-        target = STL_road_effort
+        target = STL_industrial_flourish
         scroll_wheel_factor = 1.0
     }
 
@@ -2494,20 +2494,17 @@ focus_tree = {
         completion_reward = {
             if = {
                 limit = {
-                    has_idea = STL_streamline_infantry_equipment_production_idea
-                }
-                swap_ideas = {
-                    remove_idea = STL_streamline_infantry_equipment_production_idea
-                    add_idea = STL_streamline_truck_production_idea
-                }
-            }
-            if = {
-                limit = {
                     has_idea = STL_streamline_artillery_production_idea
                 }
                 swap_ideas = {
                     remove_idea = STL_streamline_artillery_production_idea
                     add_idea = STL_streamline_truck_artillery_production_idea
+                }
+            }
+            else = {
+                swap_ideas = {
+                    remove_idea = STL_streamline_infantry_equipment_production_idea
+                    add_idea = STL_streamline_truck_production_idea
                 }
             }
             random_owned_controlled_state = {
@@ -2559,20 +2556,17 @@ focus_tree = {
         completion_reward = {
             if = {
                 limit = {
-                    has_idea = STL_streamline_infantry_equipment_production_idea
-                }
-                swap_ideas = {
-                    remove_idea = STL_streamline_infantry_equipment_production_idea
-                    add_idea = STL_streamline_artillery_production_idea
-                }
-            }
-            if = {
-                limit = {
                     has_idea = STL_streamline_truck_production_idea
                 }
                 swap_ideas = {
                     remove_idea = STL_streamline_truck_production_idea
                     add_idea = STL_streamline_truck_artillery_production_idea
+                }
+            }
+            else = {
+                swap_ideas = {
+                    remove_idea = STL_streamline_infantry_equipment_production_idea
+                    add_idea = STL_streamline_artillery_production_idea
                 }
             }
             random_owned_controlled_state = {
@@ -3683,6 +3677,24 @@ focus_tree = {
     }
 
     focus = {
+        id = STL_technological_briliance
+        icon = GFX_focus_research2
+        cost = 5
+        prerequisite = {
+            focus = STL_economic_independence
+        }
+        prerequisite = {
+            focus = STL_internal_security
+        }
+        x = 0
+        y = 1
+        relative_position_id = STL_economic_independence
+        completion_reward = {
+            add_research_slot = 1
+        }
+    }
+
+    focus = {
         id = STL_northern_relations
         icon = GFX_goal_generic_improve_relations
         cost = 5
@@ -4342,8 +4354,8 @@ focus_tree = {
     focus = {
         id = STL_offshore_patrol
         icon = GFX_goal_generic_navy_cruiser
-        cost = 5
-        x = 29
+        cost = 10
+        x = 28
         y = 1
         prerequisite = { focus = STL_industrial_flourish }
 
@@ -4444,10 +4456,7 @@ focus_tree = {
         cost = 5
 
         available = {
-            OR = {
-                has_country_flag = formed_stg_stl
-                is_in_faction_with = EQS
-            }
+            STL_economy_check_1 = yes
         }
 
         search_filters = { FOCUS_FILTER_MILITARY_CHARACTER FOCUS_FILTER_RESEARCH FOCUS_FILTER_NAVY }
@@ -4491,10 +4500,7 @@ focus_tree = {
         cost = 5
 
         available = {
-            OR = {
-                has_country_flag = formed_stg_stl
-                is_in_faction_with = EQS
-            }
+            STL_economy_check_1 = yes
         }
 
         search_filters = { FOCUS_FILTER_MILITARY_CHARACTER FOCUS_FILTER_RESEARCH FOCUS_FILTER_NAVY }
@@ -4542,10 +4548,7 @@ focus_tree = {
         cost = 5
 
         available = {
-            OR = {
-                has_country_flag = formed_stg_stl
-                is_in_faction_with = EQS
-            }
+            STL_economy_check_1 = yes
         }
 
         search_filters = { FOCUS_FILTER_MILITARY_CHARACTER FOCUS_FILTER_RESEARCH FOCUS_FILTER_NAVY }
@@ -4651,10 +4654,7 @@ focus_tree = {
         prerequisite = { focus = STL_offshore_patrol }
 
         available = {
-            OR = {
-                has_country_flag = formed_stg_stl
-                is_in_faction_with = EQS
-            }
+            STL_economy_check_1 = yes
         }
 
         completion_reward = {
@@ -4703,10 +4703,7 @@ focus_tree = {
         prerequisite = { focus = STL_offshore_patrol }
 
         available = {
-            OR = {
-                has_country_flag = formed_stg_stl
-                is_in_faction_with = EQS
-            }
+            STL_economy_check_1 = yes
         }
 
         completion_reward = {
@@ -4747,10 +4744,7 @@ focus_tree = {
         prerequisite = { focus = STL_offshore_patrol }
 
         available = {
-            OR = {
-                has_country_flag = formed_stg_stl
-                is_in_faction_with = EQS
-            }
+            STL_economy_check_1 = yes
             has_tech = improved_radio
         }
 
@@ -4795,10 +4789,7 @@ focus_tree = {
         prerequisite = { focus = STL_offshore_patrol }
 
         available = {
-            OR = {
-                has_country_flag = formed_stg_stl
-                is_in_faction_with = EQS
-            }
+            STL_economy_check_1 = yes
         }
 
         completion_reward = {
@@ -5057,7 +5048,7 @@ focus_tree = {
         x = -8
         y = 1
         relative_position_id = STL_industrial_flourish
-        cost = 5
+        cost = 10
         prerequisite = { focus = STL_industrial_flourish }
 
         available = {
@@ -5098,10 +5089,7 @@ focus_tree = {
         relative_position_id = STL_prioritize_economic_growth
 
         available = {
-            OR = {
-                has_country_flag = formed_stg_stl
-                is_in_faction_with = EQS
-            }
+            STL_economy_check_1 = yes
         }
 
         search_filters = { FOCUS_FILTER_INDUSTRY }
@@ -5243,6 +5231,24 @@ focus_tree = {
         search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY }
 
         completion_reward = {
+            random_core_state = {
+                limit = { is_fully_controlled_by = ROOT }
+                add_building_construction = {
+                    type = infrastructure
+                    level = 1
+                    instant_build = yes
+                }
+            }
+
+            random_core_state = {
+                limit = { is_fully_controlled_by = ROOT }
+                add_building_construction = {
+                    type = infrastructure
+                    level = 1
+                    instant_build = yes
+                }
+            }
+
             if = {
                 limit = {
                     has_dynamic_modifier = { modifier = STL_wirtschaftswunder_modifier }
@@ -5258,6 +5264,14 @@ focus_tree = {
             add_to_variable = {
                 STL_industrial_resource_trade_cost_bonus_per_factory = 1
                 tooltip = resource_trade_cost_bonus_per_factory_tt
+            }
+            add_to_variable = {
+                STL_industrial_trade_laws_cost_factor = -0.25
+                tooltip = trade_laws_cost_factor_tt
+            }
+            add_to_variable = {
+                STL_recovering_economy_modifier_local_resources_factor = 0.05
+                tooltip = local_resources_factor_tt
             }
         }
     }
@@ -5361,7 +5375,7 @@ focus_tree = {
         cost = 10
 
         relative_position_id = STL_lower_taxes
-        search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_INDUSTRY FOCUS_FILTER_POLITICAL_CHARACTER }
+        search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_POLITICAL_CHARACTER }
 
         completion_reward = {
             random_core_state = {
@@ -5407,8 +5421,6 @@ focus_tree = {
                 STL_industrial_production_factory_efficiency_gain_factor = 0.05
                 tooltip = production_factory_efficiency_gain_factor_tt
             }
-
-            add_research_slot = 1
         }
     }
 
@@ -5425,14 +5437,7 @@ focus_tree = {
         prerequisite = {
             focus = STL_abolish_price_controls
         }
-        available = {
-            OR = {
-                custom_trigger_tooltip = {
-                    tooltip = formed_our_eqs_stl
-                    has_country_flag = STL_has_formed_our_eqs
-                }
-            }
-        }
+        available = {}
         cost = 5
         x = -2
         y = 1
@@ -5465,7 +5470,7 @@ focus_tree = {
         cost = 10
         prerequisite = { focus = STL_flourishing_economy }
         prerequisite = { focus = STL_oils }
-        prerequisite = { focus = STL_dam_bales }
+        prerequisite = { focus = STL_mountain_metropolis }
         mutually_exclusive = { focus = STL_export_goods }
         ai_will_do = {
             factor = 1
@@ -5567,7 +5572,7 @@ focus_tree = {
         cost = 10
         prerequisite = { focus = STL_flourishing_economy }
         prerequisite = { focus = STL_oils }
-        prerequisite = { focus = STL_dam_bales }
+        prerequisite = { focus = STL_mountain_metropolis }
         mutually_exclusive = { focus = STL_autarky }
         ai_will_do = {
             factor = 1
@@ -5842,8 +5847,8 @@ focus_tree = {
     }
 
     focus = {
-        id = STL_road_effort
-        icon = GFX_focus_generic_road_investment
+        id = STL_tech_is_our_focus
+        icon = GFX_goal_technological_supremacy
 
         prerequisite = {
             focus = STL_prioritize_economic_growth
@@ -5854,11 +5859,35 @@ focus_tree = {
         y = 1
 
         relative_position_id = STL_prioritize_economic_growth
-        cost = 5
-        search_filters = { FOCUS_FILTER_INDUSTRY }
+        cost = 10
+        search_filters = { FOCUS_FILTER_RESEARCH }
 
         completion_reward = {
+            random_owned_controlled_state = {
+                limit = {
+                    is_fully_controlled_by = ROOT
+                    free_building_slots = {
+                        building = land_facility
+                        size > 0
+                        include_locked = yes
+                    }
+                }
 
+                add_building_construction = {
+                    type = land_facility
+                    level = 1
+                    instant_build = yes
+                }
+            }
+
+            custom_effect_tooltip = generic_skip_one_line_tt
+            add_political_power = 100
+            add_research_slot = 1
+
+            add_breakthrough_progress = {
+                specialization = specialization_land
+                value = 0.25
+            }
         }
     }
 
@@ -5880,10 +5909,7 @@ focus_tree = {
         }
 
         available = {
-            OR = {
-                has_country_flag = formed_stg_stl
-                is_in_faction_with = EQS
-            }
+            STL_economy_check_1 = yes
         }
 
         completion_reward = {
@@ -6115,7 +6141,7 @@ focus_tree = {
         icon = GFX_goal_generic_crystals
         cost = 8.00
         ai_will_do = { factor = 80 }
-        prerequisite = { focus =  STL_road_effort }
+        prerequisite = { focus =  STL_tech_is_our_focus }
         prerequisite = { focus = STL_coal }
 
         available = {
@@ -6124,7 +6150,7 @@ focus_tree = {
 
         x = 4
         y = 1
-        relative_position_id = STL_road_effort
+        relative_position_id = STL_tech_is_our_focus
         completion_reward = {
             log = "[GetDateText]: [Root.GetName]: Focus STL_crytals"
             random_core_state = {
@@ -6142,21 +6168,71 @@ focus_tree = {
     }
 
     focus = {
-        id = STL_dam_our_town
-        icon = GFX_focus_IRQ_construct_the_kut_barrage
+        id = STL_mega_gun
+        icon = GFX_focus_PER_construct_air_defenses
         cost = 5
         x = -1
         y = 1
-        relative_position_id = STL_road_effort
-        prerequisite = { focus = STL_road_effort }
+        relative_position_id = STL_tech_is_our_focus
+        prerequisite = { focus = STL_tech_is_our_focus }
 
+        mutually_exclusive = {
+            focus = STL_stronghold
+        }
+
+        completion_reward = {
+            IF = {
+                limit = {
+                    NOT = { is_special_project_completed = sp:sp_land_multi_charge_large_caliber_gun }
+                }
+                complete_special_project = sp:sp_land_multi_charge_large_caliber_gun
+            }
+        }
+
+        search_filters = { FOCUS_FILTER_INDUSTRY }
+    }
+
+    focus = {
+        id = STL_stronghold
+        icon = GFX_focus_FIN_coastal_defense
+        cost = 5
+        x = 1
+        y = 1
+
+        mutually_exclusive = {
+            focus = STL_mega_gun
+        }
+
+        relative_position_id = STL_tech_is_our_focus
+        prerequisite = { focus = STL_tech_is_our_focus }
+        completion_reward = {
+            IF = {
+                limit = {
+                    NOT = { is_special_project_completed = sp:sp_land_stronghold_network }
+                }
+                complete_special_project = sp:sp_land_stronghold_network
+            }
+        }
+        search_filters = { FOCUS_FILTER_INDUSTRY }
+    }
+
+    focus = {
+        id = STL_dam_our_town
+        icon = GFX_focus_IRQ_construct_the_kut_barrage
+        cost = 5
+        x = 1
+        y = 1
         available = {
             57 =  {
                 is_owned_and_controlled_by = ROOT
                 is_fully_controlled_by = ROOT
             }
         }
-
+        relative_position_id = STL_mega_gun
+        prerequisite = {
+            focus = STL_stronghold
+            focus = STL_mega_gun
+        }
         completion_reward = {
             if = {
                 limit = {
@@ -6193,121 +6269,80 @@ focus_tree = {
                 INDENT = "    "
             }
         }
-
         search_filters = { FOCUS_FILTER_INDUSTRY }
     }
 
     focus = {
-        id = STL_dam_home_town
-        icon = GFX_focus_BEL_dam_the_consequences
+        id = STL_mountain_metropolis
+        icon = GFX_focus_generic_mountain_fortification
         cost = 5
-        x = 1
+        x = 0
         y = 1
-
-        available = {
-            235 =  {
-                is_owned_and_controlled_by = ROOT
-                is_fully_controlled_by = ROOT
-            }
-        }
-
-        relative_position_id = STL_road_effort
-        prerequisite = { focus = STL_road_effort }
-        completion_reward = {
-            if = {
-                limit = {
-                    235 = {
-                        free_building_slots = {
-                            building = industrial_complex
-                            size > 0
-                            include_locked = yes
-                        }
-                    }
-                }
-                235 = {
-                    add_extra_state_shared_building_slots = 2
-                    add_building_construction = {
-                        type = industrial_complex
-                        level = 2
-                        instant_build = yes
-                    }
-                }
-            }
-            custom_effect_tooltip = generic_skip_one_line_tt
-            235 = {
-                add_building_construction = {
-                    type = dam
-                    level = 1
-                    instant_build = yes
-                    province = {
-                        id = 3584
-                    }
-                }
-            }
-            custom_effect_tooltip = {
-                localization_key = building_state_modifier|dam
-                INDENT = "    "
-            }
-        }
-        search_filters = { FOCUS_FILTER_INDUSTRY }
-    }
-
-    focus = {
-        id = STL_dam_bales
-        icon = GFX_focus_generic_hydroelectric_energy
-        cost = 5
-        x = 1
-        y = 1
-        available = {
-            74 =  {
-                is_owned_and_controlled_by = ROOT
-                is_fully_controlled_by = ROOT
-            }
-        }
+        prerequisite = { focus = STL_dam_our_town }
         relative_position_id = STL_dam_our_town
-        prerequisite = {
-            focus = STL_dam_our_town
+
+        available = {
+            has_completed_focus = STL_build_houses
         }
-        prerequisite = {
-            focus = STL_dam_home_town
-        }
+
         completion_reward = {
-            if = {
-                limit = {
-                    74 = {
-                        free_building_slots = {
-                            building = industrial_complex
-                            size > 0
-                            include_locked = yes
-                        }
-                    }
-                }
-                74 = {
-                    add_extra_state_shared_building_slots = 2
-                    add_building_construction = {
-                        type = industrial_complex
-                        level = 2
-                        instant_build = yes
-                    }
-                }
-            }
-            custom_effect_tooltip = generic_skip_one_line_tt
-            74 = {
+            57 = {
+                add_extra_state_shared_building_slots = 2
+
                 add_building_construction = {
-                    type = dam
+                    type = industrial_complex
                     level = 1
                     instant_build = yes
-                    province = {
-                        id = 3584
-                    }
                 }
+
+                add_building_construction = {
+                    type = bunker
+                    level = 2
+                    instant_build = yes
+                }
+
+                add_building_construction = {
+                    type = anti_air_building
+                    level = 2
+                    instant_build = yes
+                }
+
+                add_building_construction = {
+                    type = radar_station
+                    level = 1
+                    instant_build = yes
+                }
+
+                set_state_category = metropolis
             }
-            custom_effect_tooltip = {
-                localization_key = building_state_modifier|dam
-                INDENT = "    "
+
+            custom_effect_tooltip = generic_skip_one_line_tt
+            add_stability = 0.05
+            add_war_support = 0.05
+
+            custom_effect_tooltip = generic_skip_one_line_tt
+            if = {
+                limit = {
+                    has_dynamic_modifier = { modifier = STL_wirtschaftswunder_modifier }
+                }
+                custom_effect_tooltip = STL_effective_change_for_economy_boom_tt
+            }
+            if = {
+                limit = {
+                    NOT = { has_dynamic_modifier = { modifier = STL_wirtschaftswunder_modifier } }
+                }
+                custom_effect_tooltip = STL_effective_change_for_economy_recovery_tt
+            }
+            add_to_variable = {
+                STL_industrial_production_speed_buildings_factor = 0.05
+                tooltip = production_speed_buildings_factor_tt
             }
         }
-        search_filters = { FOCUS_FILTER_INDUSTRY }
+
+        search_filters = {
+            FOCUS_FILTER_INDUSTRY
+            FOCUS_FILTER_STABILITY
+        }
     }
 
     focus = { # INDUSTRY
@@ -6607,8 +6642,8 @@ focus_tree = {
     focus = {
         id = STL_our_flying_aces
         icon = GFX_focus_generic_multi_role_aircraft
-        cost = 5
-        x = 14
+        cost = 10
+        x = 13
         y = 1
         prerequisite = { focus = STL_industrial_flourish }
 
@@ -6685,10 +6720,7 @@ focus_tree = {
         cost = 5
 
         available = {
-            OR = {
-                has_country_flag = formed_stg_stl
-                is_in_faction_with = EQS
-            }
+            STL_economy_check_1 = yes
         }
 
         search_filters = { FOCUS_FILTER_MILITARY_CHARACTER FOCUS_FILTER_RESEARCH FOCUS_FILTER_INDUSTRY }
@@ -6734,10 +6766,7 @@ focus_tree = {
         cost = 5
 
         available = {
-            OR = {
-                has_country_flag = formed_stg_stl
-                is_in_faction_with = EQS
-            }
+            STL_economy_check_1 = yes
         }
 
         search_filters = { FOCUS_FILTER_MILITARY_CHARACTER FOCUS_FILTER_RESEARCH FOCUS_FILTER_INDUSTRY }
@@ -6787,10 +6816,7 @@ focus_tree = {
         cost = 5
 
         available = {
-            OR = {
-                has_country_flag = formed_stg_stl
-                is_in_faction_with = EQS
-            }
+            STL_economy_check_1 = yes
         }
 
         search_filters = { FOCUS_FILTER_MILITARY_CHARACTER FOCUS_FILTER_RESEARCH FOCUS_FILTER_INDUSTRY }
@@ -6894,10 +6920,7 @@ focus_tree = {
         cost = 5
 
         available = {
-            OR = {
-                has_country_flag = formed_stg_stl
-                is_in_faction_with = EQS
-            }
+            STL_economy_check_1 = yes
         }
 
         x = 1
@@ -6944,10 +6967,7 @@ focus_tree = {
         cost = 5
 
         available = {
-            OR = {
-                has_country_flag = formed_stg_stl
-                is_in_faction_with = EQS
-            }
+            STL_economy_check_1 = yes
         }
 
         x = 3
@@ -6990,10 +7010,7 @@ focus_tree = {
         cost = 5
 
         available = {
-            OR = {
-                has_country_flag = formed_stg_stl
-                is_in_faction_with = EQS
-            }
+            STL_economy_check_1 = yes
             has_tech = improved_radio
         }
 
@@ -7046,10 +7063,7 @@ focus_tree = {
         relative_position_id = STL_our_flying_aces
 
         available = {
-            OR = {
-                has_country_flag = formed_stg_stl
-                is_in_faction_with = EQS
-            }
+            STL_economy_check_1 = yes
         }
         prerequisite = {
             focus = STL_our_flying_aces
