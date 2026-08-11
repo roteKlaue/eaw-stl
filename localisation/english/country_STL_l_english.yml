@@ -32,11 +32,11 @@ STL_war_propoganda_desc:0 "The world grows harsher by the day, and our citizens 
 STL_foreigners:0 "Our Foreign Levies"
 STL_foreigners_desc:0 "Our nation has opened its doors to outsiders willing to fight for a better world. Though they lack local roots, their diverse experiences and perspectives strengthen our ranks. Some join out of ideology, some out of necessity, and a few because they misread the recruitment poster. Regardless, all are Equal once they don the uniform"
 STL_military_youth:0 "Our Youth Corps"
-STL_military_youth_desc:0 "If Equality is to survive, the next generation must be ready to defend it. Youth groups across Townsville will now receive formal training, learning discipline, teamwork, and an appropriate level of shouting patriotic slogans. Some ponies call it ‘indoctrination’. We prefer the term ‘early empowerment’."
+STL_military_youth_desc:0 "If Equality is to survive, the next generation must be ready to defend it. Youth groups across [57.GetName] will now receive formal training, learning discipline, teamwork, and an appropriate level of shouting patriotic slogans. Some ponies call it ‘indoctrination’. We prefer the term ‘early empowerment’."
 STL_special_forces:0 "Our Special Boiz"
 STL_special_forces_desc:0 "A truly equal society must be defended by ponies capable of meeting any challenge. Through rigorous training and collective discipline, we shall form elite units that exemplify our ideals—stronger together, unstoppable as one."
 STL_shining_example_of_democracy:0 "A Shining Example of Equus Harmony"
-STL_shining_example_of_democracy_desc:0 "Townsville has cast off the shadows of its past and now stands as proof that harmony can survive even in the harshest corners of Equus. Our democracy may be young, fragile, and occasionally chaotic, but it shines brightly enough for others to notice."
+STL_shining_example_of_democracy_desc:0 "[57.GetName] has cast off the shadows of its past and now stands as proof that harmony can survive even in the harshest corners of Equus. Our democracy may be young, fragile, and occasionally chaotic, but it shines brightly enough for others to notice."
 STL_deport_hungarians:0 "Deport Griffons"
 STL_deport_hungarians_desc:0 "Griffon communities that resist our new order cannot be allowed to undermine the state. A firm policy of removal will clear the path for a more loyal and homogeneous society."
 
@@ -97,10 +97,10 @@ STL_abolish_equality:0 "Our Rebirth"
 STL_abolish_equality_desc:0 "Our previous effort as a cutie mark free society was a disaster. It is time to recognise it once and for all and begin to rebuild. "
 
 STL_infinite_courage:0 "Infinite Courage"
-STL_infinite_courage_desc:0 "Crushed but unbroken, the ponies of Townsville now fight with a desperation that no invader can truly comprehend. Having endured occupation, loss, and humiliation, the population has rallied with fierce determination—filling the ranks faster than they can be trained.\nThis stubborn resolve fuels every defender. Each street becomes a fortress, each citizen a potential soldier. Their courage is endless, their resolve unyielding… even as exhaustion and instability grow behind the front lines."
+STL_infinite_courage_desc:0 "Crushed but unbroken, the ponies of [57.GetName] now fight with a desperation that no invader can truly comprehend. Having endured occupation, loss, and humiliation, the population has rallied with fierce determination—filling the ranks faster than they can be trained.\nThis stubborn resolve fuels every defender. Each street becomes a fortress, each citizen a potential soldier. Their courage is endless, their resolve unyielding… even as exhaustion and instability grow behind the front lines."
 
 STL_surrenders:0 "Hearts That Do Not Break"
-STL_surrenders_desc:0 "Even in defeat, the ponies of Townsville hold onto the light within their hearts. Occupation may shatter buildings and borders, but it cannot erase kindness, loyalty, or the quiet bravery of ordinary ponies helping one another through hardship."
+STL_surrenders_desc:0 "Even in defeat, the ponies of [57.GetName] hold onto the light within their hearts. Occupation may shatter buildings and borders, but it cannot erase kindness, loyalty, or the quiet bravery of ordinary ponies helping one another through hardship."
 
 STL_society_reform:0 "Our Future"
 STL_society_reform_desc:0 "Starlight Glimmer left her mark on every aspect of Our Town even as she took every mark from us. We must consider and debate our future, and how it shall be organised, everypony equal, everypony's voice heard. We shall not lose our way again."
@@ -151,7 +151,7 @@ STL_research_facility:0 "Our Research Facility"
 STL_research_facility_desc:0 "Staying up to date with a state as small as ours poses a challenge. Fortunately, a lot of research is just a matter of applying existing public knowledge, reverse engineering other equipment, and shameless patent theft."
 
 STL_twilight_teaching:0 "The Teachings of Twilight Sparkle"
-STL_twilight_teaching_desc:0 "Twilight Sparkle, Equestrian Princess of Friendship resides in Ponyville, and the travels of Sugar Belle and Feather Bangs have seen them returning with some of her publications. With the blessing of Feather Bang as leader, ponies have begun to study her works and consider how it could be implemented. Feather Bang's first act has been to rename Our Town to the more friendly, Ponyville inspiredm Townsville."
+STL_twilight_teaching_desc:0 "Twilight Sparkle, Equestrian Princess of Friendship resides in Ponyville, and the travels of Sugar Belle and Feather Bangs have seen them returning with some of her publications. With the blessing of Feather Bang as leader, ponies have begun to study her works and consider how it could be implemented. Feather Bang's first act has been to rename Our Town to the more friendly, Ponyville inspiredm [57.GetName]."
 
 STL_railroad_way:0 "Our Transit System"
 STL_railroad_way_desc:0 "Whilst we have no need to build large rail systems, a small effort to integrate with other Equestrian rail lines and local systems of tramways and buses will help accommodate our swelling population. Military logistics will be particularly easy, as our soldiers should be able to take a bus from their house to the front line every morning."
@@ -162,14 +162,14 @@ STL_conquest_of_STG_desc:0 "Some of our cabinet have grown concerned, as Double 
 STL_equestrian_airbridge:0 "Equestrian Airbridge"
 STL_equestrian_airbridge_desc:0 "A burgeoning friendship with Equestria faces a serious challenge. We are surrounded by two powerful, potentially hostile states. Establishing a secure air route with Equestria is essential."
 
-STL_our_town_fortress:0 "The Fortress of Townsville"
+STL_our_town_fortress:0 "The Fortress of [57.GetName]"
 STL_our_town_fortress_desc:0 "Friendship is all well and good, but Equestrian delegates have yet to offer any good suggestions on how friendship can be used against communist tanks and heavily armoured griffon knights. More practically, they can smuggle us large shipments of concrete, barbed wire and heavy machine guns to fortify with. How? Apparently, a cat is involved..."
 
 STL_invite_starlight_back:0 "Invite Our True Ruler Back"
 STL_invite_starlight_back_desc:0 "The time has come to welcome our rightful ruler home. Our recent victory over Stalliongrad has proven both the strength of our ideals and the might of our armies, reminding the world that the true heart of communism beats here. With our triumph secured, we can finally petition Starlight to return and pursue her—*and our*—vision of a truly equal Equestria."
 
 STL_eqs_exped_forces:0 "Equestrian Expeditionary Forces"
-STL_eqs_exped_forces_desc:0 "Equestria cannot always defend harmony alone. By organizing expeditionary volunteers, we can send our own forces abroad to support friendly nations and prove that Townsville is no passive observer."
+STL_eqs_exped_forces_desc:0 "Equestria cannot always defend harmony alone. By organizing expeditionary volunteers, we can send our own forces abroad to support friendly nations and prove that [57.GetName] is no passive observer."
 
 STL_griffon_transition:0 "Griffon Transition"
 STL_griffon_transition_desc:0 "Our relationship with the griffon north is changing. By easing tensions and preparing for a more cooperative future, we lay the groundwork for territories and industries that may one day serve our state directly."
@@ -181,10 +181,10 @@ STL_our_town_institute:0 "Our Town Institute"
 STL_our_town_institute_desc:0 "A dedicated research institute will centralize our brightest minds and accelerate technological progress. Knowledge, like equality, must be cultivated deliberately if it is to flourish."
 
 STL_call_to_war:0 "Call to War"
-STL_call_to_war_desc:0 "Harmony cannot remain protected by words alone. If Equestria calls, Townsville must answer, sending its soldiers to defend the ideals that helped shape our new path."
+STL_call_to_war_desc:0 "Harmony cannot remain protected by words alone. If Equestria calls, [57.GetName] must answer, sending its soldiers to defend the ideals that helped shape our new path."
 
 STL_first_move:0 "Our First Move"
-STL_first_move_desc:0 "The time for hesitation is over. Our first decisive action abroad will show that Townsville is willing to act when harmony and security demand it."
+STL_first_move_desc:0 "The time for hesitation is over. Our first decisive action abroad will show that [57.GetName] is willing to act when harmony and security demand it."
 
 STL_war_on_GRF:0 "Our Liberation of the Colony"
 STL_war_on_GRF_desc:0 "They laughed at our demands. They called our claims absurd. Yet every day it becomes clearer and clearer: the north belongs to us. Our mountains. Our coasts. Our people. If Nova Griffonia will not surrender our lands willingly, then we shall reclaim them ourselves."
@@ -206,7 +206,7 @@ STL_motorized_stronger:0 "Our Mobile Synergy"
 STL_motorized_stronger_desc:0 "A truck is more than just a transport; it is a tool of coordination. We will train our motorized and mechanized units to operate in perfect synchronization, reducing fuel waste and maximizing their impact on the frontline. Speed is the ultimate advantage when the world tries to hem us in."
 
 STL_army_strength:0 "Our Collective Might"
-STL_army_strength_desc:0 "Strength does not come from the heroism of a few, but from the unwavering discipline of the many. By studying advanced military doctrines and refining our command structure, we will transform our volunteer levies into a professional fighting force. When we strike, we strike with the weight of every pony in Townsville."
+STL_army_strength_desc:0 "Strength does not come from the heroism of a few, but from the unwavering discipline of the many. By studying advanced military doctrines and refining our command structure, we will transform our volunteer levies into a professional fighting force. When we strike, we strike with the weight of every pony in [57.GetName]."
 
 STL_artillery_power:0 "Our Great Equalizers"
 STL_artillery_power_desc:0 "They say that on the battlefield, all ponies are equal—but they are even more equal when facing a barrage of high-explosive shells. By standardizing our artillery pieces and training dedicated crews, we ensure that no enemy fortification or formation is superior to our resolve. Large or small, the shell treats every target the same."
@@ -282,7 +282,7 @@ STL_reastablish_normality:0 "Re-establish Our Normality"
 STL_reastablish_normality_desc:0 "With old friends gathered and the worst turmoil behind us, it is finally possible to calm the streets and steady the state. What emerges may not be the old Our Town, but it can at least be a livable one."
 STL_industrial_integration_of_eqs:0 "Industrial Integration of Our Equestria"
 STL_industrial_integration_of_eqs_desc:0 "The conquest of Equestria is only the first step; its workshops, railways, and factories must now be tied into a single economic system. Once reorganized under our direction, this vast industrial base will serve Equality alone."
-STL_revive_institute:0 "Revive the Institute"
+STL_revive_institute:0 "Revive the Institutes"
 STL_revive_institute_desc:0 "The academies and research circles of old Equestria still possess great knowledge, even if they were shaped by a different order. By reviving and redirecting them, we can turn scholarship into another tool of national renewal."
 STL_integrate_griffon_lands:0 "Integrate Our Griffon Lands"
 STL_integrate_griffon_lands_desc:0 "Occupied griffon territories cannot remain mere conquests forever. Through administration, settlement, and ideological pressure, we shall bind these lands to our state until they become part of our common future."
@@ -298,8 +298,8 @@ STL_oiler:0 "Our Fuel Reserves"
 STL_oiler_desc:0 "A modern army and economy cannot function without reliable fuel supplies. Whether through silos, refining, or stockpiling, we must prepare for the demands of mechanized industry."
 STL_crytals:0 "Our Crystals"
 STL_crytals_desc:0 "Crystals are a valuable resource, whether for trade, industry, or magical research. Developing new crystal deposits would strengthen both our economy and our strategic position."
-STL_dam_our_town:0 "Dam Our Town"
-STL_dam_our_town_desc:0 "Harnessing the waters near Our Town would provide both development and prestige. A dam here could support local industry while standing as a monument to our modernization."
+STL_dam_our_town:0 "Dam [57.GetName]"
+STL_dam_our_town_desc:0 "Harnessing the waters near [57.GetName] would provide both development and prestige. A dam here could support local industry while standing as a monument to our modernization."
 STL_dam_home_town:0 "Dam Caramel Marks"
 STL_dam_home_town_desc:0 "The riverlands around Starlight Glimmers Home offer another opportunity for power and development. If properly harnessed, they could support new growth in this important region."
 STL_dam_bales:0 "Dam Bales"
@@ -1051,23 +1051,23 @@ STL_vp_our_canterlot:0 "Equalopolis"
  STL_flourishing_economy_desc:0 "What began as survival has become prosperity. Our economy now hums with activity, giving the nation the confidence and resources needed to pursue greater ambitions."
 
  STL_expand_the_backery:0 "Expand the Bakery"
- STL_expand_the_backery_desc:0 "Sugar Belle's bakery has become more than a place for sweets; it is a symbol of local enterprise, community, and normal life returning to Townsville. Expanding it into a proper chain will create jobs, spread comfort, and prove that prosperity can taste better than equality muffins."
+ STL_expand_the_backery_desc:0 "Sugar Belle's bakery has become more than a place for sweets; it is a symbol of local enterprise, community, and normal life returning to [57.GetName]. Expanding it into a proper chain will create jobs, spread comfort, and prove that prosperity can taste better than equality muffins."
 
  the_backery_chain:0 "The Bakery Chain"
  the_backery_chain_desc:0 "What began as one humble bakery has grown into a small but influential network of shops, suppliers, and cheerful propaganda pastries. It strengthens local business while giving citizens something sweet to believe in."
 
  STL_increased_trade:0 "Increased Trade"
- STL_increased_trade_desc:0 "Isolation has limited us for too long. New roads, cheaper imports, and freer commerce will tie our workshops to markets beyond Townsville and lay the groundwork for a true export economy."
+ STL_increased_trade_desc:0 "Isolation has limited us for too long. New roads, cheaper imports, and freer commerce will tie our workshops to markets beyond [57.GetName] and lay the groundwork for a true export economy."
  STL_increased_trade_tt:0 "Required to take §Y$STL_export_goods$§!. Not required for §Y$STL_autarky$§!."
 
  STL_export_goods:0 "Export Goods"
 
- STL_export_goods_desc:0 "Our industries are ready to look beyond the home market. Exporting manufactured goods will bring in revenue, build influence, and prove that Townsville can compete abroad."
+ STL_export_goods_desc:0 "Our industries are ready to look beyond the home market. Exporting manufactured goods will bring in revenue, build influence, and prove that [57.GetName] can compete abroad."
 
  STL_autarky:0 "Autarky"
 
  STL_export:0 "Export-Oriented Economy"
- STL_export_desc:0 "Our prosperity lies in selling to the wider world. A strong export economy will enrich the state, deepen trade ties, and make our goods known far beyond Townsville."
+ STL_export_desc:0 "Our prosperity lies in selling to the wider world. A strong export economy will enrich the state, deepen trade ties, and make our goods known far beyond [57.GetName]."
 
  STL_domestic_production:0 "Domestic Production"
  STL_domestic_production_desc:0 "The more we can build at home, the less we must beg from abroad. Expanding domestic production will strengthen both our economy and our strategic independence."
@@ -1117,12 +1117,12 @@ STL_vp_our_canterlot:0 "Equalopolis"
  STL_illegal_regime_desc:0 "Many citizens and foreign observers reject the legitimacy of the current government. The state may still command force, but it struggles to command trust."
 
  starlight.40.t:0 "The Future of Our Democracy"
- starlight.40.d:0 "Democracy in Townsville is still young—fragile, uncertain, and untested. Feather Bangs now faces a defining question: should this new system be protected and nurtured carefully, or boldly expanded beyond our borders?\n\nSome argue that survival must come first—that stability, unity, and internal strength are all that matter. Others insist that harmony is not meant to be contained, and that we must take an active role in shaping the future of Equus.\n\nThe path we choose now will define not only our government, but the very soul of our nation."
+ starlight.40.d:0 "Democracy in [57.GetName] is still young—fragile, uncertain, and untested. Feather Bangs now faces a defining question: should this new system be protected and nurtured carefully, or boldly expanded beyond our borders?\n\nSome argue that survival must come first—that stability, unity, and internal strength are all that matter. Others insist that harmony is not meant to be contained, and that we must take an active role in shaping the future of Equus.\n\nThe path we choose now will define not only our government, but the very soul of our nation."
  starlight.40.a:0 "We must secure ourselves first."
  starlight.40.b:0 "Harmony must be shared with the world."
 
  starlight.44.t:0 "Fortifying the Dream"
- starlight.44.d:0 "The decision has been made: democracy must survive before it can thrive. Resources are redirected inward, institutions strengthened, and defenses prepared.\n\nTownsville will not rush blindly into the world. Instead, it will become a bastion—proof that harmony can endure, even under pressure."
+ starlight.44.d:0 "The decision has been made: democracy must survive before it can thrive. Resources are redirected inward, institutions strengthened, and defenses prepared.\n\n[57.GetName] will not rush blindly into the world. Instead, it will become a bastion—proof that harmony can endure, even under pressure."
  starlight.44.a:0 "Strength begins at home."
 
  starlight.45.t:0 "A Nation Prepared"
@@ -1130,12 +1130,12 @@ STL_vp_our_canterlot:0 "Equalopolis"
  starlight.45.a:0 "We will endure—no matter what comes."
 
  starlight.46.t:0 "Safeguarding Harmony"
- starlight.46.d:0 "Townsville has chosen its path: cautious, disciplined, and prepared. While others may chase grand visions, we will ensure that what we have built is never lost again.\n\nDemocracy here will not fall—it will endure."
+ starlight.46.d:0 "[57.GetName] has chosen its path: cautious, disciplined, and prepared. While others may chase grand visions, we will ensure that what we have built is never lost again.\n\nDemocracy here will not fall—it will endure."
  starlight.46.a:0 "We protect what we have built."
 
 
  starlight.41.t:0 "A Bold Experiment"
- starlight.41.d:0 "Feather Bangs has chosen ambition. Townsville will not remain isolated—it will actively promote harmony, cooperation, and its democratic ideals beyond its borders.\n\nBut such a path is risky. Expanding influence invites resistance, both from within and without.\n\nCan this fragile system withstand the pressure?"
+ starlight.41.d:0 "Feather Bangs has chosen ambition. [57.GetName] will not remain isolated—it will actively promote harmony, cooperation, and its democratic ideals beyond its borders.\n\nBut such a path is risky. Expanding influence invites resistance, both from within and without.\n\nCan this fragile system withstand the pressure?"
  starlight.41.a:0 "We will guide this carefully."
  starlight.41.b:0 "Push forward, no matter the cost."
  starlight.41.c:0 "Perhaps... a stronger vision is needed."
@@ -1145,7 +1145,7 @@ STL_vp_our_canterlot:0 "Equalopolis"
  starlight.47.a:0 "Step by step."
 
  starlight.48.t:0 "A Model Nation"
- starlight.48.d:0 "Townsville has achieved something rare: a stable, outward-looking democracy. Its institutions hold firm, its people remain united, and its influence grows steadily.\n\nNot through force, but through trust."
+ starlight.48.d:0 "[57.GetName] has achieved something rare: a stable, outward-looking democracy. Its institutions hold firm, its people remain united, and its influence grows steadily.\n\nNot through force, but through trust."
  starlight.48.a:0 "Let us lead by example."
 
 
@@ -1154,7 +1154,7 @@ STL_vp_our_canterlot:0 "Equalopolis"
  starlight.43.a:0 "Hold the course—there is no turning back."
 
  starlight.49.t:0 "The Assassination of Feather Bangs"
- starlight.49.d:0 "It happened suddenly. Amid rising tensions and growing unrest, Feather Bangs was struck down—another victim of a nation that moved too fast for its own stability.\n\nThe dream of proactive democracy collapses into uncertainty. Without its leader, Townsville must now decide what comes next."
+ starlight.49.d:0 "It happened suddenly. Amid rising tensions and growing unrest, Feather Bangs was struck down—another victim of a nation that moved too fast for its own stability.\n\nThe dream of proactive democracy collapses into uncertainty. Without its leader, [57.GetName] must now decide what comes next."
  starlight.49.a:0 "The dream dies with him."
 
  starlight.42.t:0 "A Different Vision"
@@ -1180,7 +1180,7 @@ STL_vp_our_canterlot:0 "Equalopolis"
  STL_national_unity_campaign_desc:0 "Our young democracy needs more than elections to survive. Through civic campaigns and public outreach, we will teach everypony that stability is a shared duty."
 
  STL_defensive_preparations:0 "Defensive Preparations"
- STL_defensive_preparations_desc:0 "We cannot afford to rely on distant promises. Our defenses must be strong enough to make any attack on Townsville a costly mistake."
+ STL_defensive_preparations_desc:0 "We cannot afford to rely on distant promises. Our defenses must be strong enough to make any attack on [57.GetName] a costly mistake."
 
  STL_responsible_press_oversight:0 "Responsible Press Oversight"
  STL_responsible_press_oversight_desc:0 "A free press is valuable, but panic and sabotage can spread faster than truth. We shall guide public discourse without openly abandoning democratic principles."
@@ -1189,7 +1189,7 @@ STL_vp_our_canterlot:0 "Equalopolis"
  STL_layered_defense_plan_desc:0 "No single line can protect the nation. Prepared positions, fallback routes, and coordinated planning will ensure that every inch of ground strengthens the next."
 
  STL_fortress_democracy:0 "Fortress Democracy"
- STL_fortress_democracy_desc:0 "Townsville has chosen survival over ambition. Our democracy may no longer be naïve or open-hearted, but it is disciplined, guarded, and ready to endure."
+ STL_fortress_democracy_desc:0 "[57.GetName] has chosen survival over ambition. Our democracy may no longer be naïve or open-hearted, but it is disciplined, guarded, and ready to endure."
 
  STL_industrial_flourish_tt:0 "Unlocks the §Y$STL_worker_incentive_program$§! Decisions, granting the §Y$STL_worker_incentive_program_idea$§! national spirit."
 
@@ -1202,22 +1202,22 @@ STL_vp_our_canterlot:0 "Equalopolis"
  STL_conquest_of_STG_tt:0 "Unlocks §YInfiltration§! Decisions."
 
  STL_northern_relations:0 "Open the Northern Door"
- STL_northern_relations_desc:0 "Townsville cannot survive by staring only south. Beyond our northern frontier lie griffons, yaks, penguins, bears and other powers whose friendship may prove just as valuable as Equestrian goodwill. We shall send formal delegations northward, offering cooperation, trade, and mutual recognition in the hope that our young democracy will not stand alone."
+ STL_northern_relations_desc:0 "[57.GetName] cannot survive by staring only south. Beyond our northern frontier lie griffons, yaks, penguins, bears and other powers whose friendship may prove just as valuable as Equestrian goodwill. We shall send formal delegations northward, offering cooperation, trade, and mutual recognition in the hope that our young democracy will not stand alone."
 
  starlight.51.t:0 "A Delegation from [STL.GetName]"
- starlight.51.d:0 "A diplomatic delegation from [STL.GetNameDef] has arrived, carrying warm words and carefully prepared proposals. Their young democracy seeks recognition, safer borders, and a place among the nations of the north.\n\nThe offer is modest: improved relations, possible trade, and a promise that Townsville wishes to be seen not as a strange relic of Equalism, but as a responsible neighbour. Accepting could open a useful channel with a small but strategically placed state. Refusing, however, would keep us free of their uncertain politics."
+ starlight.51.d:0 "A diplomatic delegation from [STL.GetNameDef] has arrived, carrying warm words and carefully prepared proposals. Their young democracy seeks recognition, safer borders, and a place among the nations of the north.\n\nThe offer is modest: improved relations, possible trade, and a promise that [57.GetName] wishes to be seen not as a strange relic of Equalism, but as a responsible neighbour. Accepting could open a useful channel with a small but strategically placed state. Refusing, however, would keep us free of their uncertain politics."
  starlight.51.a:0 "A neighbour reaching out should not be ignored."
- starlight.51.b:0 "We have no need for Townsville's friendship."
+ starlight.51.b:0 "We have no need for [57.GetName]'s friendship."
 
  starlight.52.t:0 "[FROM.GetName] Accepts Our Overture"
- starlight.52.d:0 "Good news has arrived from [FROM.GetNameDef]. Our delegation was received with courtesy, and their government has agreed to pursue warmer relations with us.\n\nFor a nation as small and exposed as ours, even a single friendly voice in the north is a victory. The ponies of Townsville may breathe a little easier knowing that our democracy is not being dismissed as an isolated experiment."
+ starlight.52.d:0 "Good news has arrived from [FROM.GetNameDef]. Our delegation was received with courtesy, and their government has agreed to pursue warmer relations with us.\n\nFor a nation as small and exposed as ours, even a single friendly voice in the north is a victory. The ponies of [57.GetName] may breathe a little easier knowing that our democracy is not being dismissed as an isolated experiment."
  starlight.52.a:0 "A small step toward security."
 
  starlight.53.t:0 "[FROM.GetName] Rejects Our Overture"
- starlight.53.d:0 "Our delegation has returned from [FROM.GetNameDef] with little to show for its efforts. Their government declined our proposal for closer relations, offering only polite words where friendship had been requested.\n\nThe disappointment is real, but not disastrous. If Townsville is to survive, it must learn that harmony cannot always be expected from others. Sometimes, our safety must be built with our own hooves."
+ starlight.53.d:0 "Our delegation [57.GetName] returned from [FROM.GetNameDef] with little to show for its efforts. Their government declined our proposal for closer relations, offering only polite words where friendship had been requested.\n\nThe disappointment is real, but not disastrous. If [57.GetName] is to survive, it must learn that harmony cannot always be expected from others. Sometimes, our safety must be built with our own hooves."
  starlight.53.a:0 "Then we shall stand without them."
 
- STL_northern_relations_tt:0 "§YNorthern nations§! will be approached with an offer of friendship.\nTheir response may improve or harm relations with §Y[ROOT.GetName]§!."
+ STL_northern_relations_tt:0 "§YNorthern nations§! will be approached with an offer of friendship.\nTheir response may improve or harm relations with us."
 
  STL_northern_cooperation:0 "Northern Cooperation"
  STL_northern_cooperation_desc:0 "The northern states are divided, vulnerable, and uncertain of their place in the new order. We shall offer cooperation before conflict, influence before domination, and unity before conquest."
@@ -1318,7 +1318,7 @@ STL_vp_our_canterlot:0 "Equalopolis"
  STL_radar_effort_desc:0 "Modern air warfare is won before the first shot is fired. By expanding our radar network and improving detection methods, we can ensure that no enemy plane crosses our skies unnoticed. Equality may be blind to status, but it shall never be blind to incoming bombers."
 
  STL_paratrooper:0 "Airborne Vanguard"
- STL_paratrooper_desc:0 "Some battles cannot be won by marching from the front. By training dedicated paratrooper units, we can strike from above, seize vital positions, and prove that Townsville's soldiers can bring Equality even where roads cannot reach."
+ STL_paratrooper_desc:0 "Some battles cannot be won by marching from the front. By training dedicated paratrooper units, we can strike from above, seize vital positions, and prove that [57.GetName]'s soldiers can bring Equality even where roads cannot reach."
 
  the_mother_of_equalism:0 "The Mother of Equalism"
  the_mother_of_equalism_desc:0 "Starlight Glimmer is more than the founder of a movement; she is the mare who first gave Equality a name, a banner, and a purpose. Her presence strengthens the ideological foundations of the state, inspires the army, and gives the administration a symbol around which every loyal Equalist can rally."
@@ -1404,17 +1404,17 @@ STL_local_stockpiles_idea_desc:0 "Distributed wartime reserves reduce attrition 
  STL_expand_attack_courses_desc:0 "A defensive nation cannot survive on caution alone. Specialized attack courses will forge officers who know how to break enemy lines and seize the initiative when war comes."
 
  STL_assasination_of_feather_bangs:0 "The Assassination of Feather Bangs"
- STL_assasination_of_feather_bangs_desc:0 "The dream of proactive democracy dies in violence. Feather Bangs is struck down amid unrest, and Townsville must now choose whether harmony can survive without him."
+ STL_assasination_of_feather_bangs_desc:0 "The dream of proactive democracy dies in violence. Feather Bangs is struck down amid unrest, and [57.GetName] must now choose whether harmony can survive without him."
  STL_solid_leadership:0 "Solidified Leadership"
- STL_solid_leadership_desc:0 "Through crisis and compromise, a stronger hand has taken the reins. Leadership is no longer debated—it is accepted, and the nation moves forward under a single, unwavering direction."
+ STL_solid_leadership_desc:0 "Through crisis and compromise, a stronger hand has taken the reins. Leadership is no longer debated, it is accepted, and the nation moves forward under a single, unwavering direction."
 
  STL_economic_independence:0 "Economic Independence"
- STL_economic_independence_desc:0 "We cannot rely on distant trade or foreign industry to keep our democracy alive. New factories and arms workshops, built beyond our borders yet tied to our economy, will ensure Townsville can stand on its own hooves."
+ STL_economic_independence_desc:0 "We cannot rely on distant trade or foreign industry to keep our democracy alive. New factories and arms workshops, built beyond our borders yet tied to our economy, will ensure [57.GetName] can stand on its own hooves."
  STL_road_effort:0 "Road Investment"
  STL_road_effort_desc:0 "Industry and defense alike depend on reliable transport. By investing in roads and regional infrastructure, we connect our settlements and prepare the countryside for further development."
 
  STL_offshore_patrol:0 "Offshore Patrol"
- STL_offshore_patrol_desc:0 "Townsville's coastline cannot remain undefended. Dockyards and patrol craft will give us a navy worthy of the name, however modest its beginnings may be."
+ STL_offshore_patrol_desc:0 "[57.GetName]'s coastline cannot remain undefended. Dockyards and patrol craft will give us a navy worthy of the name, however modest its beginnings may be."
  STL_naval_research_institute:0 "Naval Research Institute"
  STL_naval_research_institute_desc:0 "A modern fleet requires engineers, theorists, and dockyard planners working together. A dedicated naval research institute will guide doctrine and equipment development for the years ahead."
  STL_convoy_doctrine:0 "Convoy Doctrine"
@@ -1426,7 +1426,7 @@ STL_local_stockpiles_idea_desc:0 "Distributed wartime reserves reduce attrition 
  STL_cheaper_shipbuilding:0 "Cheaper Shipbuilding"
  STL_cheaper_shipbuilding_desc:0 "Steel and streamlined dockyard practices can stretch every industrial hoof further. Domestic shipbuilding must become cheaper if our fleet is to grow quickly enough to matter."
  STL_blue_water_navy:0 "Blue Water Ambitions"
- STL_blue_water_navy_desc:0 "Coastal defense alone will not secure our future. Longer-ranged hulls, better logistics, and modern equipment will let our navy operate beyond Townsville's shores."
+ STL_blue_water_navy_desc:0 "Coastal defense alone will not secure our future. Longer-ranged hulls, better logistics, and modern equipment will let our navy operate beyond [57.GetName]'s shores."
  STL_dockyard_expansion:0 "Dockyard Expansion"
  STL_dockyard_expansion_desc:0 "Ships cannot be built without berths, cranes, and skilled labor. Expanding our dockyards is the foundation of every other naval ambition."
  STL_coastal_fortifications:0 "Coastal Fortifications"
@@ -1512,4 +1512,14 @@ STL_local_stockpiles_idea_desc:0 "Distributed wartime reserves reduce attrition 
  STL_technological_briliance:0 "Technological Brilliance"
  STL_technological_briliance_desc:0 "Our brightest minds have too often been scattered, underfunded, or forced to improvise with whatever tools they could find. With proper support, their brilliance can become the foundation of our future."
 
+ STL_logistical_corpes:0 "Develop Logistical Intuition"
+ STL_logistical_corpes_desc:0 ""
+ STL_magicaly_gifted:0 "Support the Magically Gifted"
+ STL_magicaly_gifted_desc:0 ""
+
+ unlocks_decision_with_spirit_tt: "Unlocks the §Y$temp_decision_loc$§! Decisions, granting the §Y$temp_spirit_loc$§! national spirit."
+ STL_has_control_over_staliongrad_tt:0 "If we control §Y[153.GetName]§! upon completion, it will also be upgraded to a §YLarge City§!."
+
+ STL_cult_of_personality:0 "Cult of Personality"
+ STL_cult_of_personality_desc:0 "Our democracy has survived because everypony stood together when it mattered most. Yet institutions alone cannot inspire a nation in times of uncertainty. By presenting [ROOT.GetLeader] as the living symbol of unity and harmonic resolve, we can give the people somepony to rally behind. Our ideals shall remain harmonic, even if one pony comes to embody them above all others."
 

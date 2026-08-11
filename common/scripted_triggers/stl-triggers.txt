@@ -19,7 +19,7 @@ STL_economy_cd_over = {
 	NOT = {
 		has_country_flag = {
 			flag = STL_economy_cd_flag
-			days < 180
+			days < 240
 		}
 	}
 }

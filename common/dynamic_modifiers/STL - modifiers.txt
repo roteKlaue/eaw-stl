@@ -161,7 +161,6 @@ STL_fortress_democracy_modifier = {
     stability_factor = STL_fortress_democracy_stability
     war_support_factor = STL_fortress_democracy_war_support
     drift_defence_factor = STL_fortress_democracy_drift_defence
-    resistance_target = STL_fortress_democracy_resistance
     army_defence_factor = STL_fortress_democracy_army_defence
     max_dig_in_factor = STL_fortress_democracy_dig_in
     planning_speed = STL_fortress_democracy_planning_speed
