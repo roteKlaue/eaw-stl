@@ -13,6 +13,10 @@ STL_northern_integration = {
     allowed = {
         original_tag = STL
     }
+
+    visible = {
+        has_completed_focus = STL_northern_cooperation
+    }
 }
 
 STL_defensive_democracy_democracy = {

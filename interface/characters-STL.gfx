@@ -11,4 +11,8 @@ spriteTypes = {
         name = "GFX_starlight_glimmer__small"
         texturefile = "gfx/characters/starlight_glimmer/starlight_glimmer__advisor.dds"
     }
+    SpriteType = {
+		name = "GFX_empress_starlight"
+		texturefile = "gfx/characters/starlight_glimmer/portrait_empress_starlight.dds"
+	}
 }

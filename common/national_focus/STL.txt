@@ -712,6 +712,15 @@ focus_tree = {
             }
         }
 
+        offset = {
+            trigger = {
+                NOT = {
+                    has_completed_focus = STL_invite_starlight_back
+                }
+            }
+            x = -2
+        }
+
         bypass = {
             EQS = { exists = no }
         }
@@ -827,6 +836,20 @@ focus_tree = {
             focus = STL_double_diamond_supreme
         }
 
+        allow_branch = {
+            has_completed_focus = STL_double_diamond_supreme
+            NOT = { has_country_flag = STL_going_commi_shared_power }
+            NOT = {
+                AND = {
+                    has_game_rule = {
+                        rule = obsolete_focus_branches_visibility
+                        option = HIDE
+                    }
+                    has_completed_focus = STL_twilight_teaching
+                }
+            }
+        }
+
         icon = GFX_SOV_demand_eastern_poland_ccp_2d_sov_compatibility
         cost = 10
         x = -3
@@ -848,13 +871,29 @@ focus_tree = {
     focus = {
         id = STL_descent_into_madness
         icon = GFX_focus_GER_establish_protectorates_in_america
+
         prerequisite = {
             focus = STL_double_diamond_supreme
         }
+
         available = {
             custom_trigger_tooltip = {
                 tooltip = formed_our_eqs_stl
                 has_country_flag = STL_has_formed_our_eqs
+            }
+        }
+
+        allow_branch = {
+            has_completed_focus = STL_double_diamond_supreme
+            NOT = { has_country_flag = STL_going_commi_shared_power }
+            NOT = {
+                AND = {
+                    has_game_rule = {
+                        rule = obsolete_focus_branches_visibility
+                        option = HIDE
+                    }
+                    has_completed_focus = STL_twilight_teaching
+                }
             }
         }
 
@@ -944,6 +983,24 @@ focus_tree = {
             focus = STL_invite_starlight_back
             focus = STL_double_diamond_supreme
         }
+
+        allow_branch = {
+            OR = {
+                has_completed_focus = STL_invite_starlight_back
+                has_completed_focus = STL_double_diamond_supreme
+            }
+            NOT = { has_country_flag = STL_going_commi_shared_power }
+            NOT = {
+                AND = {
+                    has_game_rule = {
+                        rule = obsolete_focus_branches_visibility
+                        option = HIDE
+                    }
+                    has_completed_focus = STL_twilight_teaching
+                }
+            }
+        }
+
         relative_position_id = STL_invite_starlight_back
         x = -1
         y = 1
@@ -976,6 +1033,23 @@ focus_tree = {
         prerequisite = {
             focus = STL_invite_starlight_back
             focus = STL_double_diamond_supreme
+        }
+
+        allow_branch = {
+            OR = {
+                has_completed_focus = STL_invite_starlight_back
+                has_completed_focus = STL_double_diamond_supreme
+            }
+            NOT = { has_country_flag = STL_going_commi_shared_power }
+            NOT = {
+                AND = {
+                    has_game_rule = {
+                        rule = obsolete_focus_branches_visibility
+                        option = HIDE
+                    }
+                    has_completed_focus = STL_twilight_teaching
+                }
+            }
         }
 
         bypass = {
@@ -1196,6 +1270,23 @@ focus_tree = {
             }
         }
 
+        allow_branch = {
+            OR = {
+                has_completed_focus = STL_invite_starlight_back
+                has_completed_focus = STL_double_diamond_supreme
+            }
+            NOT = { has_country_flag = STL_going_commi_shared_power }
+            NOT = {
+                AND = {
+                    has_game_rule = {
+                        rule = obsolete_focus_branches_visibility
+                        option = HIDE
+                    }
+                    has_completed_focus = STL_twilight_teaching
+                }
+            }
+        }
+
         will_lead_to_war_with = EQS
         completion_reward = {
             if = {
@@ -1238,12 +1329,13 @@ focus_tree = {
 
     focus = {
         id = STL_our_beloved_ruler
-        icon = GFX_pipe-starlight
+        icon = GFX_STL_commi_starlight
         cost = 5
         x = 1
         y = 1
 
         allow_branch = {
+            has_completed_focus = STL_invite_starlight_back
             NOT = { has_country_flag = STL_going_commi_shared_power }
             NOT = {
                 AND = {
@@ -1289,6 +1381,7 @@ focus_tree = {
         relative_position_id = STL_invite_starlight_back
 
         allow_branch = {
+            has_completed_focus = STL_invite_starlight_back
             NOT = { has_country_flag = STL_going_commi_shared_power }
             NOT = {
                 AND = {
@@ -1314,6 +1407,17 @@ focus_tree = {
         completion_reward = {
             add_country_leader_trait = the_equal_alicorn
             custom_effect_tooltip = STL_accention_of_our_ruler_tt
+
+            hidden_effect = {
+                STL_starlight_glimmer = {
+					# set_character_name = {
+					# 	name = ITA_benito_mussolini_roman_emperor
+					# }
+					set_portraits = {
+						civilian = { large = GFX_empress_starlight }
+					}
+				}
+            }
         }
         search_filters = { FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_STABILITY FOCUS_FILTER_MANPOWER }
     }
@@ -1909,6 +2013,7 @@ focus_tree = {
         }
 
         allow_branch = {
+            has_completed_focus = STL_invite_starlight_back
             NOT = { has_country_flag = STL_going_commi_shared_power }
             NOT = {
                 AND = {
@@ -3380,7 +3485,7 @@ focus_tree = {
         id = STL_assasination_of_feather_bangs
         icon = GFX_focus_IRQ_attempted_assasination_of_sidqi
         cost = 5
-        x = 5
+        x = 6
         y = 1
         available = {
             always = no
@@ -3627,6 +3732,10 @@ focus_tree = {
                 }
             }
         }
+
+        search_filters = {
+            FOCUS_FILTER_MANPOWER
+        }
     }
 
     focus = {
@@ -3727,6 +3836,10 @@ focus_tree = {
                 cost = 35
             }
         }
+
+        search_filters = {
+            FOCUS_FILTER_INDUSTRY
+        }
     }
 
     focus = {
@@ -3744,6 +3857,9 @@ focus_tree = {
         relative_position_id = STL_economic_independence
         completion_reward = {
             add_research_slot = 1
+        }
+        search_filters = {
+            FOCUS_FILTER_RESEARCH
         }
     }
 
@@ -3773,6 +3889,8 @@ focus_tree = {
                         tag = YAK
                         tag = JAK
                     }
+                    is_subject = no
+                    NOT = { has_war_with = ROOT }
                 }
 
                 country_event = {
@@ -3798,9 +3916,9 @@ focus_tree = {
             focus = STL_solid_leadership
         }
 
-        x = -6
+        x = 0
         y = 1
-        relative_position_id = STL_solid_leadership
+        relative_position_id = STL_northern_relations
 
         search_filters = { FOCUS_FILTER_POLITICAL }
 
@@ -3822,9 +3940,14 @@ focus_tree = {
                             tag = JAK
                         }
                         exists = yes
+                        is_subject = no
                         NOT = { has_war_with = ROOT }
                     }
 
+                    set_country_flag = {
+                        flag = STL_northern_overture_pending
+                        days = 30
+                    }
                     country_event = {
                         id = stl_northern_cooperation.1
                         days = 2
@@ -3851,10 +3974,15 @@ focus_tree = {
         completion_reward = {
             add_ideas = STL_northern_customs_union_spirit
             set_country_flag = STL_northern_customs_union_unlocked
+            country_event = { id = stl_northern_cooperation.12 days = 1 }
 
             custom_effect_tooltip = STL_northern_customs_union_tt
             custom_effect_tooltip = they_will_gain_tt
             show_ideas_tooltip = STL_northern_customs_union_member
+            unlock_decision_tooltip = {
+                decision = STL_fund_northern_development
+                show_effect_tooltip = no
+            }
 
             hidden_effect = {
                 every_country = {
@@ -3889,6 +4017,7 @@ focus_tree = {
         completion_reward = {
             add_ideas = STL_northern_defense_agreements_spirit
             set_country_flag = STL_northern_defense_agreements_unlocked
+            country_event = { id = stl_northern_cooperation.13 days = 1 }
 
             custom_effect_tooltip = STL_northern_defense_agreements_tt
 
@@ -3923,6 +4052,7 @@ focus_tree = {
         completion_reward = {
             set_country_flag = STL_northern_trade_missions_unlocked
             add_political_power = 50
+            country_event = { id = stl_northern_cooperation.14 days = 1 }
 
             custom_effect_tooltip = STL_northern_trade_missions_tt
 
@@ -3947,6 +4077,12 @@ focus_tree = {
         available = {
             is_subject = no
             NOT = { is_in_faction = yes }
+            any_other_country = {
+                has_country_flag = STL_accepted_northern_overture
+                is_subject = no
+                NOT = { is_in_faction = yes }
+                NOT = { has_war_with = ROOT }
+            }
         }
 
         search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_ANNEXATION }
@@ -3954,6 +4090,7 @@ focus_tree = {
         completion_reward = {
             create_faction = STL_northern_alliance
             set_country_flag = STL_northern_alliance_formed
+            country_event = { id = stl_northern_cooperation.15 days = 1 }
 
             custom_effect_tooltip = STL_formalize_the_northern_alliance_tt
 
@@ -3962,8 +4099,152 @@ focus_tree = {
                     limit = {
                         has_country_flag = STL_accepted_northern_overture
                         NOT = { is_in_faction = yes }
+                        is_subject = no
+                        NOT = { has_war_with = ROOT }
                     }
                     add_to_faction = STL
+                }
+            }
+        }
+    }
+
+    focus = {
+        id = STL_northern_economic_integration
+        icon = GFX_focus_GER_integrated_economies
+        cost = 5
+
+        prerequisite = { focus = STL_northern_trade_missions }
+        prerequisite = { focus = STL_formalize_the_northern_alliance }
+
+        x = 0
+        y = 1
+        relative_position_id = STL_northern_trade_missions
+
+        available = {
+            is_faction_leader = yes
+            any_other_country = {
+                has_country_flag = STL_accepted_northern_overture
+                is_in_faction_with = ROOT
+            }
+        }
+
+        search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_POLITICAL }
+
+        completion_reward = {
+            add_ideas = STL_northern_economic_integration_spirit
+            set_country_flag = STL_northern_economic_integration_unlocked
+            country_event = { id = stl_northern_cooperation.16 days = 1 }
+
+            custom_effect_tooltip = STL_northern_economic_integration_tt
+            unlock_decision_tooltip = {
+                decision = STL_propose_northern_economic_integration
+                show_effect_tooltip = no
+            }
+
+            hidden_effect = {
+                every_country = {
+                    limit = {
+                        has_country_flag = STL_accepted_northern_overture
+                        is_in_faction_with = ROOT
+                        has_idea = STL_northern_customs_union_member
+                        NOT = { has_idea = STL_northern_integrated_economy_member }
+                        NOT = { has_country_flag = STL_northern_economic_offer_pending }
+                        NOT = { has_war_with = ROOT }
+                    }
+
+                    set_country_flag = {
+                        flag = STL_northern_economic_offer_pending
+                        days = 30
+                    }
+                    country_event = {
+                        id = stl_northern_cooperation.4
+                        days = 1
+                        random_days = 2
+                    }
+                }
+            }
+        }
+    }
+
+    focus = {
+        id = STL_joint_northern_command
+        icon = GFX_goal_generic_allies_build_infantry
+        cost = 5
+
+        prerequisite = { focus = STL_formalize_the_northern_alliance }
+
+        x = 0
+        y = 1
+        relative_position_id = STL_formalize_the_northern_alliance
+
+        available = {
+            is_faction_leader = yes
+            any_other_country = {
+                has_country_flag = STL_accepted_northern_overture
+                is_in_faction_with = ROOT
+            }
+        }
+
+        search_filters = { FOCUS_FILTER_ARMY_BONUS FOCUS_FILTER_POLITICAL }
+
+        completion_reward = {
+            add_ideas = STL_joint_northern_command_spirit
+            add_army_experience = 10
+            set_country_flag = STL_joint_northern_command_unlocked
+            country_event = { id = stl_northern_cooperation.17 days = 1 }
+
+            custom_effect_tooltip = STL_joint_northern_command_tt
+            unlock_decision_tooltip = {
+                decision = STL_joint_military_exercises
+                show_effect_tooltip = no
+            }
+        }
+    }
+
+    focus = {
+        id = STL_northern_concord
+        icon = GFX_focus_generic_self_management
+        cost = 7
+
+        prerequisite = { focus = STL_northern_economic_integration }
+        prerequisite = { focus = STL_joint_northern_command }
+
+        x = -1
+        y = 1
+        relative_position_id = STL_northern_economic_integration
+
+        available = {
+            is_faction_leader = yes
+            any_other_country = {
+                has_country_flag = STL_accepted_northern_overture
+                is_in_faction_with = ROOT
+            }
+        }
+
+        search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_ANNEXATION }
+
+        completion_reward = {
+            add_ideas = STL_northern_concord_spirit
+            set_country_flag = STL_northern_concord_unlocked
+            country_event = { id = stl_northern_cooperation.18 days = 1 }
+
+            custom_effect_tooltip = STL_northern_concord_tt
+            unlock_decision_tooltip = {
+                decision = STL_prepare_northern_concord
+                show_effect_tooltip = no
+            }
+
+            hidden_effect = {
+                every_country = {
+                    limit = {
+                        has_country_flag = STL_accepted_northern_overture
+                        is_in_faction_with = ROOT
+                    }
+
+                    add_to_variable = {
+                        var = STL_northern_integration_progress
+                        value = 1
+                    }
                 }
             }
         }
@@ -3974,18 +4255,18 @@ focus_tree = {
         icon = GFX_goal_generic_major_alliance
         cost = 10
 
-        prerequisite = { focus = STL_northern_trade_missions }
-        prerequisite = { focus = STL_formalize_the_northern_alliance }
+        prerequisite = { focus = STL_northern_concord }
 
-        x = -1
+        x = 0
         y = 1
-        relative_position_id = STL_northern_trade_missions
+        relative_position_id = STL_northern_concord
 
         available = {
             is_subject = no
             is_faction_leader = yes
             any_other_country = {
                 is_in_faction_with = ROOT
+                has_country_flag = STL_accepted_northern_overture
             }
         }
 
@@ -5932,12 +6213,21 @@ focus_tree = {
                     type = steel
                     amount = 12
                 }
-                add_extra_state_shared_building_slots = 1
+            }
+
+            random_controlled_state = {
+                limit = {
+                    free_building_slots = {
+                        building = infrastructure
+                        size > 1
+                    }
+                }
                 add_building_construction = {
-                    type = industrial_complex
-                    level = 1
+                    type = infrastructure
+                    level = 2
                     instant_build = yes
                 }
+                add_extra_state_shared_building_slots = 1
             }
             set_country_flag = STL_economy_cd_flag
         }
@@ -6036,6 +6326,11 @@ focus_tree = {
                 uses = 2
                 category = magical_tech
             }
+
+            add_breakthrough_progress = {
+                specialization = specialization_magical
+                value = 0.35
+            }
         }
         relative_position_id = STL_stronghold
         search_filters = { FOCUS_FILTER_RESEARCH }
@@ -6069,12 +6364,21 @@ focus_tree = {
                     type = coal
                     amount = 15
                 }
-                add_extra_state_shared_building_slots = 1
+            }
+
+            random_controlled_state = {
+                limit = {
+                    free_building_slots = {
+                        building = infrastructure
+                        size > 1
+                    }
+                }
                 add_building_construction = {
-                    type = industrial_complex
-                    level = 1
+                    type = infrastructure
+                    level = 2
                     instant_build = yes
                 }
+                add_extra_state_shared_building_slots = 1
             }
 
             custom_effect_tooltip = generic_skip_one_line_tt
@@ -6172,7 +6476,7 @@ focus_tree = {
         x = -3
         y = 1
         relative_position_id = STL_expand_steelworks
-        search_filters = { FOCUS_FILTER_INDUSTRY }
+        search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_RESEARCH }
 
         cost = 10
 
@@ -6229,7 +6533,7 @@ focus_tree = {
         y = 1
         relative_position_id = STL_expand_steelworks
 
-        search_filters = { FOCUS_FILTER_INDUSTRY }
+        search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_RESEARCH }
 
         cost = 5
 
@@ -6340,7 +6644,7 @@ focus_tree = {
             }
         }
 
-        search_filters = { FOCUS_FILTER_INDUSTRY }
+        search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_RESEARCH }
     }
 
     focus = {
@@ -6364,7 +6668,7 @@ focus_tree = {
                 complete_special_project = sp:sp_land_stronghold_network
             }
         }
-        search_filters = { FOCUS_FILTER_INDUSTRY }
+        search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_RESEARCH }
     }
 
     focus = {
@@ -6392,9 +6696,14 @@ focus_tree = {
             add_tech_bonus = {
                 name = STL_logistical_corpes
                 bonus = 1.0
-                uses = 2
+                uses = 3
                 category = logistics_tech
                 category = signal_company_tech
+            }
+
+            add_breakthrough_progress = {
+                specialization = specialization_land
+                value = 0.35
             }
         }
         search_filters = { FOCUS_FILTER_RESEARCH }
@@ -7097,6 +7406,10 @@ focus_tree = {
                 tooltip = air_range_factor_tt
             }
         }
+
+        search_filters = {
+            FOCUS_FILTER_RESEARCH
+        }
     }
 
     focus = {
@@ -7540,5 +7853,21 @@ focus_tree = {
                 tooltip = navy_carrier_air_agility_factor_tt
             }
         }
+    }
+
+    focus = {
+        id = STL_coming_soon_tm
+        icon = GFX_goal_continuous_naval_production
+        cost = 0
+        x = 3
+        y = 1
+        relative_position_id = STL_solid_leadership
+
+        prerequisite = {
+            focus = STL_solid_leadership
+            focus = STL_assasination_of_feather_bangs
+        }
+
+        completion_reward = { }
     }
 }

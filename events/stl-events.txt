@@ -612,6 +612,8 @@ country_event = {
     option = {
         name = stl_northern_cooperation.1.a
 
+        clr_country_flag = STL_northern_overture_pending
+
         ai_chance = {
             base = 10
 
@@ -644,6 +646,38 @@ country_event = {
             modifier = made_friends
         }
 
+        if = {
+            limit = {
+                FROM = { has_completed_focus = STL_northern_customs_union }
+                NOT = { has_idea = STL_northern_customs_union_member }
+            }
+            add_ideas = STL_northern_customs_union_member
+            add_to_variable = {
+                var = STL_northern_integration_progress
+                value = 1
+            }
+        }
+
+        if = {
+            limit = {
+                FROM = { has_country_flag = STL_northern_alliance_formed }
+                is_subject = no
+                NOT = { is_in_faction = yes }
+                NOT = { has_war_with = FROM }
+            }
+            add_to_faction = STL
+        }
+
+        # Pingland and the Polar Bear Communities bring their own concerns to the talks.
+        if = {
+            limit = { tag = PNG }
+            country_event = { id = stl_northern_cooperation.20 days = 2 }
+        }
+        if = {
+            limit = { tag = PLB }
+            country_event = { id = stl_northern_cooperation.21 days = 2 }
+        }
+
         FROM = {
             country_event = {
                 id = stl_northern_cooperation.7
@@ -655,6 +689,8 @@ country_event = {
 
     option = {
         name = stl_northern_cooperation.1.b
+
+        clr_country_flag = STL_northern_overture_pending
 
         ai_chance = {
             base = 2
@@ -713,6 +749,8 @@ country_event = {
     option = {
         name = stl_northern_cooperation.3.a
 
+        clr_country_flag = STL_rejected_final_integration
+
         ai_chance = {
             base = 10
 
@@ -740,6 +778,22 @@ country_event = {
                     tag = FROM
                     ratio > 1
                 }
+            }
+
+            modifier = {
+                factor = 1.5
+                FROM = { has_country_flag = STL_northern_autonomy_charter }
+            }
+
+            modifier = {
+                factor = 0.6
+                FROM = { has_country_flag = STL_northern_directorate }
+            }
+
+            modifier = {
+                factor = 0.5
+                has_country_flag = STL_northern_local_autonomy_requested
+                FROM = { has_country_flag = STL_northern_directorate }
             }
         }
 
@@ -790,6 +844,9 @@ country_event = {
 
     option = {
         name = stl_northern_cooperation.4.a
+
+        clr_country_flag = STL_northern_economic_offer_pending
+        clr_country_flag = STL_country_rejected_northern_economic_integration
 
         ai_chance = {
             base = 10
@@ -842,6 +899,8 @@ country_event = {
     option = {
         name = stl_northern_cooperation.4.b
 
+        clr_country_flag = STL_northern_economic_offer_pending
+
         ai_chance = {
             base = 2
 
@@ -892,6 +951,8 @@ country_event = {
                 target = FROM
                 transfer_troops = yes
             }
+
+            country_event = { id = stl_northern_cooperation.19 days = 1 }
         }
     }
 }
@@ -923,6 +984,12 @@ country_event = {
     option = {
         name = stl_northern_cooperation.7.a
         add_political_power = 15
+
+        if = {
+            limit = { NOT = { has_country_flag = STL_northern_delegation_received } }
+            set_country_flag = STL_northern_delegation_received
+            country_event = { id = stl_northern_cooperation.11 days = 2 }
+        }
     }
 }
 
@@ -966,5 +1033,297 @@ country_event = {
 
     option = {
         name = stl_northern_cooperation.10.a
+    }
+}
+
+# One town council hears the first welcome returned from the north.
+country_event = {
+    id = stl_northern_cooperation.11
+    title = stl_northern_cooperation.11.t
+    desc = stl_northern_cooperation.11.desc
+    picture = GFX_event_our_town
+
+    is_triggered_only = yes
+    fire_only_once = yes
+
+    option = {
+        name = stl_northern_cooperation.11.a
+        add_stability = 0.03
+    }
+
+    option = {
+        name = stl_northern_cooperation.11.b
+        add_political_power = 20
+    }
+}
+
+# Shared customs require a choice between investment and caution.
+country_event = {
+    id = stl_northern_cooperation.12
+    title = stl_northern_cooperation.12.t
+    desc = stl_northern_cooperation.12.desc
+    picture = GFX_report_event_generic_read_write
+
+    is_triggered_only = yes
+    fire_only_once = yes
+
+    option = {
+        name = stl_northern_cooperation.12.a
+        add_political_power = -20
+        every_country = {
+            limit = {
+                has_country_flag = STL_accepted_northern_overture
+                has_idea = STL_northern_customs_union_member
+            }
+            add_to_variable = {
+                var = STL_northern_integration_progress
+                value = 1
+            }
+        }
+    }
+
+    option = {
+        name = stl_northern_cooperation.12.b
+        add_stability = 0.02
+    }
+}
+
+# The first joint patrols test whether the defense agreements can work in practice.
+country_event = {
+    id = stl_northern_cooperation.13
+    title = stl_northern_cooperation.13.t
+    desc = stl_northern_cooperation.13.desc
+    picture = GFX_report_event_generic_sign_treaty2
+
+    is_triggered_only = yes
+    fire_only_once = yes
+
+    option = {
+        name = stl_northern_cooperation.13.a
+        add_army_experience = 5
+        every_country = {
+            limit = { has_country_flag = STL_accepted_northern_overture }
+            add_army_experience = 5
+        }
+    }
+
+    option = {
+        name = stl_northern_cooperation.13.b
+        add_stability = 0.02
+        add_command_power = 10
+    }
+}
+
+# Merchants from different northern societies meet in Our Town.
+country_event = {
+    id = stl_northern_cooperation.14
+    title = stl_northern_cooperation.14.t
+    desc = stl_northern_cooperation.14.desc
+    picture = GFX_report_event_generic_read_write
+
+    is_triggered_only = yes
+    fire_only_once = yes
+
+    option = {
+        name = stl_northern_cooperation.14.a
+        add_political_power = -15
+        every_country = {
+            limit = {
+                has_country_flag = STL_accepted_northern_overture
+                has_idea = STL_northern_customs_union_member
+            }
+            add_to_variable = {
+                var = STL_northern_integration_progress
+                value = 1
+            }
+        }
+    }
+
+    option = {
+        name = stl_northern_cooperation.14.b
+        add_political_power = 20
+    }
+}
+
+# The alliance charter determines how much sovereignty its members retain.
+country_event = {
+    id = stl_northern_cooperation.15
+    title = stl_northern_cooperation.15.t
+    desc = stl_northern_cooperation.15.desc
+    picture = GFX_report_event_generic_sign_treaty1
+
+    is_triggered_only = yes
+    fire_only_once = yes
+
+    option = {
+        name = stl_northern_cooperation.15.a
+        ai_chance = { base = 3 }
+        set_country_flag = STL_northern_autonomy_charter
+        add_stability = 0.03
+    }
+
+    option = {
+        name = stl_northern_cooperation.15.b
+        ai_chance = { base = 1 }
+        set_country_flag = STL_northern_directorate
+        add_political_power = 30
+    }
+}
+
+# Integration brings the member economies into contact with different local practices.
+country_event = {
+    id = stl_northern_cooperation.16
+    title = stl_northern_cooperation.16.t
+    desc = stl_northern_cooperation.16.desc
+    picture = GFX_report_event_generic_read_write
+
+    is_triggered_only = yes
+    fire_only_once = yes
+
+    option = {
+        name = stl_northern_cooperation.16.a
+        add_stability = 0.02
+        every_country = {
+            limit = {
+                has_country_flag = STL_accepted_northern_overture
+                is_in_faction_with = ROOT
+            }
+            add_opinion_modifier = {
+                target = ROOT
+                modifier = made_friends
+            }
+        }
+    }
+
+    option = {
+        name = stl_northern_cooperation.16.b
+        add_political_power = 20
+        add_stability = -0.01
+    }
+}
+
+# A joint command needs officers who can work across several military traditions.
+country_event = {
+    id = stl_northern_cooperation.17
+    title = stl_northern_cooperation.17.t
+    desc = stl_northern_cooperation.17.desc
+    picture = GFX_report_event_generic_sign_treaty2
+
+    is_triggered_only = yes
+    fire_only_once = yes
+
+    option = {
+        name = stl_northern_cooperation.17.a
+        add_army_experience = 10
+        add_political_power = -10
+    }
+
+    option = {
+        name = stl_northern_cooperation.17.b
+        add_army_experience = 5
+        add_stability = 0.02
+    }
+}
+
+# Northern delegates debate local councils against a central concord office.
+country_event = {
+    id = stl_northern_cooperation.18
+    title = stl_northern_cooperation.18.t
+    desc = stl_northern_cooperation.18.desc
+    picture = GFX_report_event_generic_sign_treaty1
+
+    is_triggered_only = yes
+    fire_only_once = yes
+
+    option = {
+        name = stl_northern_cooperation.18.a
+        add_political_power = -20
+        every_country = {
+            limit = {
+                has_country_flag = STL_accepted_northern_overture
+                is_in_faction_with = ROOT
+            }
+            add_to_variable = {
+                var = STL_northern_integration_progress
+                value = 1
+            }
+        }
+    }
+
+    option = {
+        name = stl_northern_cooperation.18.b
+        add_political_power = 25
+    }
+}
+
+# The first accepted union puts the concord's promises to a practical test.
+country_event = {
+    id = stl_northern_cooperation.19
+    title = stl_northern_cooperation.19.t
+    desc = stl_northern_cooperation.19.desc
+    picture = GFX_event_our_town
+
+    is_triggered_only = yes
+    fire_only_once = yes
+
+    option = {
+        name = stl_northern_cooperation.19.a
+        add_stability = 0.03
+        add_political_power = -25
+    }
+
+    option = {
+        name = stl_northern_cooperation.19.b
+        add_political_power = 25
+        add_stability = -0.02
+    }
+}
+
+# Pingland's delegates weigh their independence against closer cooperation.
+country_event = {
+    id = stl_northern_cooperation.20
+    title = stl_northern_cooperation.20.t
+    desc = stl_northern_cooperation.20.desc
+    picture = GFX_report_event_generic_sign_treaty1
+
+    is_triggered_only = yes
+    fire_only_once = yes
+
+    option = {
+        name = stl_northern_cooperation.20.a
+        ai_chance = { base = 4 }
+        set_country_flag = STL_northern_local_autonomy_requested
+        add_stability = 0.02
+    }
+
+    option = {
+        name = stl_northern_cooperation.20.b
+        ai_chance = { base = 1 }
+        add_political_power = 20
+    }
+}
+
+# Polar Bear clan elders debate the rifle debt and outside military advice.
+country_event = {
+    id = stl_northern_cooperation.21
+    title = stl_northern_cooperation.21.t
+    desc = stl_northern_cooperation.21.desc
+    picture = GFX_report_event_generic_read_write
+
+    is_triggered_only = yes
+    fire_only_once = yes
+
+    option = {
+        name = stl_northern_cooperation.21.a
+        ai_chance = { base = 2 }
+        add_army_experience = 5
+        add_political_power = -10
+    }
+
+    option = {
+        name = stl_northern_cooperation.21.b
+        ai_chance = { base = 1 }
+        set_country_flag = STL_northern_local_autonomy_requested
+        add_stability = 0.02
     }
 }

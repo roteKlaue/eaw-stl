@@ -1,1 +1,7 @@
-﻿
+﻿l_german:
+ STL_northern_alliance:0 "Nördliches Bündnis"
+ STL_northern_concord_prepared:0 "Nördliches Konkordat vorbereitet"
+ STL_renew_northern_overture:0 "Nordstaaten erneut einladen"
+ STL_renew_northern_overture_desc:0 "Einen unabhängigen nördlichen Nachbarn einladen, der unser Kooperationsangebot noch nicht angenommen hat. Ein abgelehntes Angebot kann nach 120 Tagen erneuert werden; seine Regierung kann annehmen oder ablehnen."
+ STL_propose_northern_economic_integration:0 "Wirtschaftliche Integration vorschlagen"
+ STL_propose_northern_economic_integration_desc:0 "Einem kooperierenden nördlichen Bündnispartner gemeinsame Investitionen und Planungsstandards anbieten. Seine Regierung kann annehmen oder ablehnen."

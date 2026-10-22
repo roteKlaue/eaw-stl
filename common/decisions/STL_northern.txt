@@ -1,7 +1,62 @@
 
 STL_northern_integration = {
+    STL_renew_northern_overture = {
+        icon = GFX_goal_generic_improve_relations
+
+        visible = {
+            has_completed_focus = STL_northern_cooperation
+        }
+
+        available = {
+            has_completed_focus = STL_northern_cooperation
+        }
+
+        cost = 30
+        fire_only_once = no
+
+        target_trigger = {
+            FROM = {
+                OR = {
+                    tag = GRF
+                    tag = GFF
+                    tag = PNG
+                    tag = PLB
+                    tag = YAK
+                    tag = JAK
+                }
+                NOT = { has_country_flag = STL_accepted_northern_overture }
+                NOT = { has_country_flag = STL_northern_overture_pending }
+                NOT = { has_country_flag = STL_northern_overture_cooldown }
+                is_subject = no
+                NOT = { has_war_with = ROOT }
+            }
+        }
+
+        complete_effect = {
+            FROM = {
+                clr_country_flag = STL_rejected_northern_overture
+                set_country_flag = {
+                    flag = STL_northern_overture_pending
+                    days = 30
+                }
+                set_country_flag = {
+                    flag = STL_northern_overture_cooldown
+                    days = 120
+                }
+                country_event = {
+                    id = stl_northern_cooperation.1
+                    days = 1
+                }
+            }
+        }
+    }
+
     STL_fund_northern_development = {
         icon = GFX_decision_generic_construct_civilian
+
+        visible = {
+            has_country_flag = STL_northern_customs_union_unlocked
+        }
 
         available = {
             has_country_flag = STL_northern_customs_union_unlocked
@@ -11,12 +66,11 @@ STL_northern_integration = {
         days_remove = 45
         fire_only_once = no
 
-        target_array = countries
-
         target_trigger = {
             FROM = {
                 has_country_flag = STL_accepted_northern_overture
                 NOT = { has_country_flag = STL_fully_integrated_by_STL }
+                NOT = { has_war_with = ROOT }
             }
         }
 
@@ -40,6 +94,10 @@ STL_northern_integration = {
     STL_expand_trade_missions = {
         icon = GFX_goal_generic_positive_trade_relations
 
+        visible = {
+            has_country_flag = STL_northern_trade_missions_unlocked
+        }
+
         available = {
             has_country_flag = STL_northern_trade_missions_unlocked
         }
@@ -48,12 +106,11 @@ STL_northern_integration = {
         days_remove = 30
         fire_only_once = no
 
-        target_array = countries
-
         target_trigger = {
             FROM = {
                 has_country_flag = STL_accepted_northern_overture
                 NOT = { has_country_flag = STL_fully_integrated_by_STL }
+                NOT = { has_war_with = ROOT }
             }
         }
 
@@ -69,8 +126,54 @@ STL_northern_integration = {
         }
     }
 
+    STL_propose_northern_economic_integration = {
+        icon = GFX_focus_GER_integrated_economies
+
+        visible = {
+            has_country_flag = STL_northern_economic_integration_unlocked
+        }
+
+        available = {
+            has_country_flag = STL_northern_economic_integration_unlocked
+            is_faction_leader = yes
+        }
+
+        cost = 50
+        days_remove = 90
+        fire_only_once = no
+
+        target_trigger = {
+            FROM = {
+                has_country_flag = STL_accepted_northern_overture
+                NOT = { has_country_flag = STL_fully_integrated_by_STL }
+                is_in_faction_with = ROOT
+                has_idea = STL_northern_customs_union_member
+                NOT = { has_idea = STL_northern_integrated_economy_member }
+                NOT = { has_country_flag = STL_northern_economic_offer_pending }
+                NOT = { has_war_with = ROOT }
+            }
+        }
+
+        complete_effect = {
+            FROM = {
+                set_country_flag = {
+                    flag = STL_northern_economic_offer_pending
+                    days = 30
+                }
+                country_event = {
+                    id = stl_northern_cooperation.4
+                    days = 1
+                }
+            }
+        }
+    }
+
     STL_joint_military_exercises = {
         icon = GFX_goal_generic_allies_build_infantry
+
+        visible = {
+            has_country_flag = STL_joint_northern_command_unlocked
+        }
 
         available = {
             has_country_flag = STL_joint_northern_command_unlocked
@@ -81,13 +184,12 @@ STL_northern_integration = {
         days_remove = 35
         fire_only_once = no
 
-        target_array = countries
-
         target_trigger = {
             FROM = {
                 has_country_flag = STL_accepted_northern_overture
                 NOT = { has_country_flag = STL_fully_integrated_by_STL }
                 is_in_faction_with = ROOT
+                NOT = { has_war_with = ROOT }
             }
         }
 
@@ -109,21 +211,26 @@ STL_northern_integration = {
     STL_prepare_northern_concord = {
         icon = GFX_focus_generic_self_management
 
+        visible = {
+            has_country_flag = STL_northern_concord_unlocked
+        }
+
         available = {
             has_country_flag = STL_northern_concord_unlocked
+            is_faction_leader = yes
         }
 
         cost = 75
         days_remove = 60
         fire_only_once = no
 
-        target_array = countries
-
         target_trigger = {
             FROM = {
                 has_country_flag = STL_accepted_northern_overture
                 NOT = { has_country_flag = STL_fully_integrated_by_STL }
+                NOT = { has_country_flag = STL_northern_concord_prepared }
                 is_in_faction_with = ROOT
+                NOT = { has_war_with = ROOT }
                 check_variable = {
                     var = STL_northern_integration_progress
                     value > 2
@@ -133,6 +240,8 @@ STL_northern_integration = {
 
         complete_effect = {
             FROM = {
+                set_country_flag = STL_northern_concord_prepared
+
                 add_to_variable = {
                     var = STL_northern_integration_progress
                     value = 2
@@ -149,21 +258,26 @@ STL_northern_integration = {
     STL_integrate_northern_partner = {
         icon = GFX_goal_generic_major_alliance
 
+        visible = {
+            has_country_flag = STL_integrate_the_north_unlocked
+        }
+
         available = {
             has_country_flag = STL_integrate_the_north_unlocked
+            is_faction_leader = yes
         }
 
         cost = 100
         days_remove = 90
         fire_only_once = no
 
-        target_array = countries
-
         target_trigger = {
             FROM = {
                 has_country_flag = STL_accepted_northern_overture
                 NOT = { has_country_flag = STL_fully_integrated_by_STL }
+                has_country_flag = STL_northern_concord_prepared
                 is_in_faction_with = ROOT
+                NOT = { has_war_with = ROOT }
                 check_variable = {
                     var = STL_northern_integration_progress
                     value > 4
