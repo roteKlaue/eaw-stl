@@ -1,0 +1,1862 @@
+add_namespace = stl_feather
+
+# Ambient loop: at irregular intervals the interface says something. Stops if the regime falls or Feather goes quiet.
+# Each one-off event is tracked with a flag so the pool never rolls something that has already fired.
+country_event = {
+    id = stl_feather.1
+    hidden = yes
+    is_triggered_only = yes
+
+    immediate = {
+        if = {
+            limit = {
+                has_government = fascism
+                NOT = { has_country_flag = STL_tooltips_silent }
+            }
+            random_list = {
+                seed = random
+                # The state starts to notice.
+                15 = {
+                    modifier = { factor = 0 has_country_flag = STL_heard_20 }
+                    set_country_flag = STL_heard_20
+                    country_event = stl_feather.20
+                }
+                15 = {
+                    modifier = { factor = 0 has_country_flag = STL_heard_21 }
+                    set_country_flag = STL_heard_21
+                    country_event = stl_feather.21
+                }
+                20 = {
+                    modifier = { factor = 0 has_country_flag = STL_heard_22 }
+                    modifier = { factor = 0 NOT = { num_of_available_civilian_factories > 2 } }
+                    set_country_flag = STL_heard_22
+                    country_event = stl_feather.22
+                }
+                15 = {
+                    modifier = { factor = 0 has_country_flag = STL_heard_23 }
+                    set_country_flag = STL_heard_23
+                    country_event = stl_feather.23
+                }
+                15 = {
+                    modifier = { factor = 0 has_country_flag = STL_heard_24 }
+                    set_country_flag = STL_heard_24
+                    country_event = stl_feather.24
+                }
+                15 = {
+                    modifier = { factor = 0 has_country_flag = STL_heard_25 }
+                    set_country_flag = STL_heard_25
+                    country_event = stl_feather.25
+                }
+                20 = {
+                    modifier = { factor = 0 has_country_flag = STL_heard_26 }
+                    modifier = { factor = 0 NOT = { has_completed_focus = STL_consult_the_spreadsheet } }
+                    set_country_flag = STL_heard_26
+                    country_event = stl_feather.26
+                }
+                20 = {
+                    modifier = { factor = 0 has_country_flag = STL_heard_27 }
+                    modifier = { factor = 0 NOT = { has_completed_focus = STL_save_scum_the_frontline } }
+                    set_country_flag = STL_heard_27
+                    country_event = stl_feather.27
+                }
+                15 = {
+                    modifier = { factor = 0 has_country_flag = STL_heard_100 }
+                    set_country_flag = STL_heard_100
+                    country_event = stl_feather.100
+                }
+                15 = {
+                    modifier = { factor = 0 has_country_flag = STL_heard_101 }
+                    set_country_flag = STL_heard_101
+                    country_event = stl_feather.101
+                }
+                15 = {
+                    modifier = { factor = 0 has_country_flag = STL_heard_102 }
+                    set_country_flag = STL_heard_102
+                    country_event = stl_feather.102
+                }
+                15 = {
+                    modifier = { factor = 0 has_country_flag = STL_heard_103 }
+                    set_country_flag = STL_heard_103
+                    country_event = stl_feather.103
+                }
+                15 = {
+                    modifier = { factor = 0 has_country_flag = STL_heard_104 }
+                    modifier = { factor = 0 NOT = { has_political_power > 150 } }
+                    set_country_flag = STL_heard_104
+                    country_event = stl_feather.104
+                }
+                15 = {
+                    modifier = { factor = 0 has_country_flag = STL_heard_105 }
+                    set_country_flag = STL_heard_105
+                    country_event = stl_feather.105
+                }
+                15 = {
+                    modifier = { factor = 0 has_country_flag = STL_heard_106 }
+                    set_country_flag = STL_heard_106
+                    country_event = stl_feather.106
+                }
+                15 = {
+                    modifier = { factor = 0 has_country_flag = STL_heard_107 }
+                    set_country_flag = STL_heard_107
+                    country_event = stl_feather.107
+                }
+                15 = {
+                    modifier = { factor = 0 has_country_flag = STL_heard_108 }
+                    set_country_flag = STL_heard_108
+                    country_event = stl_feather.108
+                }
+                15 = {
+                    modifier = { factor = 0 has_country_flag = STL_heard_109 }
+                    set_country_flag = STL_heard_109
+                    country_event = stl_feather.109
+                }
+                15 = {
+                    modifier = { factor = 0 has_country_flag = STL_heard_110 }
+                    set_country_flag = STL_heard_110
+                    country_event = stl_feather.110
+                }
+                15 = {
+                    modifier = { factor = 0 has_country_flag = STL_heard_111 }
+                    set_country_flag = STL_heard_111
+                    country_event = stl_feather.111
+                }
+                15 = {
+                    modifier = { factor = 0 has_country_flag = STL_heard_112 }
+                    set_country_flag = STL_heard_112
+                    country_event = stl_feather.112
+                }
+                15 = {
+                    modifier = { factor = 0 has_country_flag = STL_heard_113 }
+                    set_country_flag = STL_heard_113
+                    country_event = stl_feather.113
+                }
+                15 = {
+                    modifier = { factor = 0 has_country_flag = STL_heard_114 }
+                    set_country_flag = STL_heard_114
+                    country_event = stl_feather.114
+                }
+                # The cabinet can see it too.
+                15 = {
+                    modifier = { factor = 0 has_country_flag = STL_heard_120 }
+                    modifier = { factor = 0 NOT = { has_country_flag = STL_cabinet_sees_it } }
+                    set_country_flag = STL_heard_120
+                    country_event = stl_feather.120
+                }
+                15 = {
+                    modifier = { factor = 0 has_country_flag = STL_heard_121 }
+                    modifier = { factor = 0 NOT = { has_country_flag = STL_cabinet_sees_it } }
+                    set_country_flag = STL_heard_121
+                    country_event = stl_feather.121
+                }
+                15 = {
+                    modifier = { factor = 0 has_country_flag = STL_heard_122 }
+                    modifier = { factor = 0 NOT = { has_country_flag = STL_cabinet_sees_it } }
+                    set_country_flag = STL_heard_122
+                    country_event = stl_feather.122
+                }
+                15 = {
+                    modifier = { factor = 0 has_country_flag = STL_heard_123 }
+                    modifier = { factor = 0 NOT = { has_country_flag = STL_cabinet_sees_it } }
+                    set_country_flag = STL_heard_123
+                    country_event = stl_feather.123
+                }
+                15 = {
+                    modifier = { factor = 0 has_country_flag = STL_heard_124 }
+                    modifier = { factor = 0 NOT = { has_country_flag = STL_cabinet_sees_it } }
+                    set_country_flag = STL_heard_124
+                    country_event = stl_feather.124
+                }
+                15 = {
+                    modifier = { factor = 0 has_country_flag = STL_heard_126 }
+                    modifier = { factor = 0 NOT = { has_country_flag = STL_cabinet_sees_it } }
+                    set_country_flag = STL_heard_126
+                    country_event = stl_feather.126
+                }
+                15 = {
+                    modifier = { factor = 0 has_country_flag = STL_heard_127 }
+                    modifier = { factor = 0 NOT = { has_country_flag = STL_cabinet_sees_it } }
+                    set_country_flag = STL_heard_127
+                    country_event = stl_feather.127
+                }
+                15 = {
+                    modifier = { factor = 0 has_country_flag = STL_heard_128 }
+                    modifier = { factor = 0 NOT = { has_country_flag = STL_cabinet_sees_it } }
+                    set_country_flag = STL_heard_128
+                    country_event = stl_feather.128
+                }
+                15 = {
+                    modifier = { factor = 0 has_country_flag = STL_heard_129 }
+                    modifier = { factor = 0 NOT = { has_country_flag = STL_cabinet_sees_it } }
+                    set_country_flag = STL_heard_129
+                    country_event = stl_feather.129
+                }
+                15 = {
+                    modifier = { factor = 0 has_country_flag = STL_heard_130 }
+                    modifier = { factor = 0 NOT = { has_country_flag = STL_cabinet_sees_it } }
+                    set_country_flag = STL_heard_130
+                    country_event = stl_feather.130
+                }
+                15 = {
+                    modifier = { factor = 0 has_country_flag = STL_heard_131 }
+                    modifier = { factor = 0 NOT = { has_country_flag = STL_cabinet_sees_it } }
+                    set_country_flag = STL_heard_131
+                    country_event = stl_feather.131
+                }
+                15 = {
+                    modifier = { factor = 0 has_country_flag = STL_heard_132 }
+                    modifier = { factor = 0 NOT = { has_country_flag = STL_cabinet_sees_it } }
+                    set_country_flag = STL_heard_132
+                    country_event = stl_feather.132
+                }
+                # He has turned around. These are for you, and they get likelier the louder the Signal is.
+                15 = {
+                    modifier = { factor = 0 has_country_flag = STL_heard_140 }
+                    modifier = { factor = 0 NOT = { has_country_flag = STL_he_turned_around } }
+                    modifier = { factor = 2 check_variable = { STL_signal > 8 } }
+                    set_country_flag = STL_heard_140
+                    country_event = stl_feather.140
+                }
+                15 = {
+                    modifier = { factor = 0 has_country_flag = STL_heard_141 }
+                    modifier = { factor = 0 NOT = { has_country_flag = STL_he_turned_around } }
+                    modifier = { factor = 2 check_variable = { STL_signal > 8 } }
+                    set_country_flag = STL_heard_141
+                    country_event = stl_feather.141
+                }
+                15 = {
+                    modifier = { factor = 0 has_country_flag = STL_heard_142 }
+                    modifier = { factor = 0 NOT = { has_country_flag = STL_he_turned_around } }
+                    modifier = { factor = 2 check_variable = { STL_signal > 8 } }
+                    set_country_flag = STL_heard_142
+                    country_event = stl_feather.142
+                }
+                15 = {
+                    modifier = { factor = 0 has_country_flag = STL_heard_144 }
+                    modifier = { factor = 0 NOT = { has_country_flag = STL_he_turned_around } }
+                    modifier = { factor = 2 check_variable = { STL_signal > 8 } }
+                    set_country_flag = STL_heard_144
+                    country_event = stl_feather.144
+                }
+                25 = {
+                    modifier = { factor = 0 has_country_flag = STL_heard_145 }
+                    modifier = { factor = 0 NOT = { has_country_flag = STL_he_turned_around } }
+                    modifier = { factor = 0 NOT = { has_completed_focus = STL_form_number_one } }
+                    modifier = { factor = 2 check_variable = { STL_signal > 8 } }
+                    set_country_flag = STL_heard_145
+                    country_event = stl_feather.145
+                }
+                # Repeatable, so the pool can never run dry.
+                40 = {
+                    STL_signal_drift = yes
+                    country_event = stl_feather.190
+                }
+                10 = { country_event = stl_feather.191 }
+                5 = {
+                    modifier = { factor = 0 NOT = { has_country_flag = STL_heard_27 } }
+                    country_event = stl_feather.192
+                }
+                5 = { country_event = stl_feather.193 }
+            }
+            STL_signal_schedule_next = yes
+        }
+    }
+}
+
+# Signal thresholds
+country_event = {
+    id = stl_feather.10
+    title = stl_feather.10.t
+    desc = stl_feather.10.d
+    picture = GFX_report_event_generic_read_write
+
+    is_triggered_only = yes
+    fire_only_once = yes
+
+    option = {
+        name = stl_feather.10.a
+    }
+}
+
+country_event = {
+    id = stl_feather.11
+    title = stl_feather.11.t
+    desc = stl_feather.11.d
+    picture = GFX_event_our_town
+
+    is_triggered_only = yes
+    fire_only_once = yes
+
+    option = {
+        name = stl_feather.11.a
+        add_political_power = 50
+        STL_signal_up = yes
+    }
+
+    option = {
+        name = stl_feather.11.b
+        add_stability = 0.02
+        custom_effect_tooltip = STL_one_hungarian_deported_tt
+        hidden_effect = {
+            STL_add_deported_hungarian = yes
+        }
+    }
+}
+
+country_event = {
+    id = stl_feather.12
+    title = stl_feather.12.t
+    desc = stl_feather.12.d
+    picture = GFX_event_our_town
+
+    is_triggered_only = yes
+    fire_only_once = yes
+
+    option = {
+        name = stl_feather.12.a
+        add_stability = 0.05
+    }
+
+    option = {
+        name = stl_feather.12.b
+        add_war_support = 0.05
+    }
+}
+
+# The Restore Democracy trap
+country_event = {
+    id = stl_feather.13
+    title = stl_feather.13.t
+    desc = stl_feather.13.d
+    picture = GFX_report_event_generic_read_write
+
+    is_triggered_only = yes
+    fire_only_once = yes
+
+    option = {
+        name = stl_feather.13.a
+        add_stability = 0.05
+        add_popularity = {
+            ideology = fascism
+            popularity = 0.05
+        }
+        STL_signal_up = yes
+        hidden_effect = {
+            set_country_flag = STL_sanity_denied
+            mark_focus_tree_layout_dirty = yes
+        }
+    }
+
+    option = {
+        name = stl_feather.13.b
+        add_political_power = 50
+        STL_signal_up = yes
+        hidden_effect = {
+            set_country_flag = STL_sanity_denied
+            mark_focus_tree_layout_dirty = yes
+        }
+    }
+}
+
+# The console accepts one line
+country_event = {
+    id = stl_feather.14
+    title = stl_feather.14.t
+    desc = stl_feather.14.d
+    picture = GFX_report_event_generic_read_write
+
+    is_triggered_only = yes
+    fire_only_once = yes
+
+    option = {
+        name = stl_feather.14.a
+        add_timed_idea = {
+            idea = STL_console_instant_construction
+            days = 180
+        }
+    }
+
+    option = {
+        name = stl_feather.14.b
+        add_timed_idea = {
+            idea = STL_console_fog_of_war
+            days = 180
+        }
+    }
+
+    option = {
+        name = stl_feather.14.c
+        add_political_power = 75
+        STL_signal_up = yes
+    }
+}
+
+# Ambient pool
+country_event = {
+    id = stl_feather.20
+    title = stl_feather.20.t
+    desc = stl_feather.20.d
+    picture = GFX_event_our_town
+
+    is_triggered_only = yes
+    fire_only_once = yes
+
+    option = {
+        name = stl_feather.20.a
+        add_political_power = 10
+    }
+}
+
+country_event = {
+    id = stl_feather.21
+    title = stl_feather.21.t
+    desc = stl_feather.21.d
+    picture = GFX_event_our_town
+
+    is_triggered_only = yes
+    fire_only_once = yes
+
+    option = {
+        name = stl_feather.21.a
+        army_experience = 5
+    }
+}
+
+country_event = {
+    id = stl_feather.22
+    title = stl_feather.22.t
+    desc = stl_feather.22.d
+    picture = GFX_report_event_generic_factory
+
+    is_triggered_only = yes
+    fire_only_once = yes
+
+    option = {
+        name = stl_feather.22.a
+        add_stability = -0.01
+    }
+}
+
+country_event = {
+    id = stl_feather.23
+    title = stl_feather.23.t
+    desc = stl_feather.23.d
+    picture = GFX_event_our_town
+
+    is_triggered_only = yes
+    fire_only_once = yes
+
+    option = {
+        name = stl_feather.23.a
+        add_political_power = 15
+    }
+}
+
+country_event = {
+    id = stl_feather.24
+    title = stl_feather.24.t
+    desc = stl_feather.24.d
+    picture = GFX_report_event_generic_read_write
+
+    is_triggered_only = yes
+    fire_only_once = yes
+
+    option = {
+        name = stl_feather.24.a
+        add_war_support = 0.02
+    }
+}
+
+country_event = {
+    id = stl_feather.25
+    title = stl_feather.25.t
+    desc = stl_feather.25.d
+    picture = GFX_event_our_town
+
+    is_triggered_only = yes
+    fire_only_once = yes
+
+    option = {
+        name = stl_feather.25.a
+        add_stability = 0.01
+    }
+}
+
+country_event = {
+    id = stl_feather.26
+    title = stl_feather.26.t
+    desc = stl_feather.26.d
+    picture = GFX_report_event_generic_read_write
+
+    is_triggered_only = yes
+    fire_only_once = yes
+
+    option = {
+        name = stl_feather.26.a
+        add_political_power = 20
+    }
+}
+
+country_event = {
+    id = stl_feather.27
+    title = stl_feather.27.t
+    desc = stl_feather.27.d
+    picture = GFX_event_our_town
+
+    is_triggered_only = yes
+    fire_only_once = yes
+
+    option = {
+        name = stl_feather.27.a
+        army_experience = 5
+    }
+}
+
+# Results of the Deport Another Hungarian decision. Repeatable on purpose.
+country_event = {
+    id = stl_feather.30
+    title = stl_feather.30.t
+    desc = stl_feather.30.d
+    picture = GFX_report_event_generic_read_write
+
+    is_triggered_only = yes
+
+    option = {
+        name = stl_feather.30.a
+        add_political_power = 15
+    }
+}
+
+country_event = {
+    id = stl_feather.31
+    title = stl_feather.31.t
+    desc = stl_feather.31.d
+    picture = GFX_report_event_generic_read_write
+
+    is_triggered_only = yes
+
+    option = {
+        name = stl_feather.31.a
+        add_manpower = -200
+        add_war_support = 0.01
+    }
+}
+
+country_event = {
+    id = stl_feather.32
+    title = stl_feather.32.t
+    desc = stl_feather.32.d
+    picture = GFX_report_event_generic_read_write
+
+    is_triggered_only = yes
+
+    option = {
+        name = stl_feather.32.a
+        army_experience = 5
+        add_stability = -0.01
+    }
+}
+
+country_event = {
+    id = stl_feather.33
+    title = stl_feather.33.t
+    desc = stl_feather.33.d
+    picture = GFX_report_event_generic_read_write
+
+    is_triggered_only = yes
+
+    option = {
+        name = stl_feather.33.a
+        STL_signal_up = yes
+    }
+}
+
+country_event = {
+    id = stl_feather.34
+    title = stl_feather.34.t
+    desc = stl_feather.34.d
+    picture = GFX_report_event_generic_read_write
+
+    is_triggered_only = yes
+    fire_only_once = yes
+
+    option = {
+        name = stl_feather.34.a
+        add_political_power = 25
+    }
+}
+
+country_event = {
+    id = stl_feather.35
+    title = stl_feather.35.t
+    desc = stl_feather.35.d
+    picture = GFX_event_our_town
+
+    is_triggered_only = yes
+    fire_only_once = yes
+
+    option = {
+        name = stl_feather.35.a
+        custom_effect_tooltip = STL_deportees_return_tt
+        hidden_effect = {
+            division_template = {
+                name = "The Deportees"
+                priority = 1
+                regiments = {
+                    infantry = { x = 0 y = 0 }
+                    infantry = { x = 0 y = 1 }
+                    infantry = { x = 0 y = 2 }
+                    infantry = { x = 1 y = 0 }
+                    infantry = { x = 1 y = 1 }
+                    infantry = { x = 1 y = 2 }
+                }
+            }
+            capital_scope = {
+                create_unit = {
+                    division = "division_template = \"The Deportees\" start_experience_factor = 0.5 start_equipment_factor = 0.8"
+                    owner = ROOT
+                    count = 3
+                }
+            }
+        }
+    }
+}
+
+# Replies from the Forum Prophet
+country_event = {
+    id = stl_feather.40
+    title = stl_feather.40.t
+    desc = stl_feather.40.d
+    picture = GFX_report_event_generic_read_write
+
+    is_triggered_only = yes
+
+    option = {
+        name = stl_feather.40.a
+        add_timed_idea = {
+            idea = STL_prophet_support_companies
+            days = 120
+        }
+        STL_signal_up = yes
+    }
+
+    option = {
+        name = stl_feather.40.b
+        add_political_power = 10
+    }
+}
+
+country_event = {
+    id = stl_feather.41
+    title = stl_feather.41.t
+    desc = stl_feather.41.d
+    picture = GFX_report_event_generic_read_write
+
+    is_triggered_only = yes
+
+    option = {
+        name = stl_feather.41.a
+        add_timed_idea = {
+            idea = STL_prophet_no_planes
+            days = 120
+        }
+        STL_signal_up = yes
+    }
+
+    option = {
+        name = stl_feather.41.b
+        add_political_power = 10
+    }
+}
+
+country_event = {
+    id = stl_feather.42
+    title = stl_feather.42.t
+    desc = stl_feather.42.d
+    picture = GFX_report_event_generic_read_write
+
+    is_triggered_only = yes
+
+    option = {
+        name = stl_feather.42.a
+        add_timed_idea = {
+            idea = STL_prophet_morale_meta
+            days = 120
+        }
+        STL_signal_up = yes
+    }
+
+    option = {
+        name = stl_feather.42.b
+        add_political_power = 10
+    }
+}
+
+# The reveal and the ending
+country_event = {
+    id = stl_feather.50
+    title = stl_feather.50.t
+    desc = stl_feather.50.d
+    picture = GFX_report_event_generic_read_write
+
+    is_triggered_only = yes
+    fire_only_once = yes
+
+    option = {
+        name = stl_feather.50.a
+        add_political_power = 50
+    }
+}
+
+country_event = {
+    id = stl_feather.51
+    title = stl_feather.51.t
+    desc = stl_feather.51.d
+    picture = GFX_event_our_town
+
+    is_triggered_only = yes
+    fire_only_once = yes
+
+    option = {
+        name = stl_feather.51.a
+        country_event = stl_feather.52
+    }
+}
+
+country_event = {
+    id = stl_feather.52
+    title = stl_feather.52.t
+    desc = stl_feather.52.d
+    picture = GFX_event_our_town
+
+    is_triggered_only = yes
+    fire_only_once = yes
+
+    option = {
+        name = stl_feather.52.a
+        country_event = stl_feather.53
+    }
+}
+
+country_event = {
+    id = stl_feather.53
+    title = stl_feather.53.t
+    desc = stl_feather.53.d
+    picture = GFX_event_our_town
+
+    is_triggered_only = yes
+    fire_only_once = yes
+
+    option = {
+        name = stl_feather.53.a
+        country_event = stl_feather.54
+    }
+}
+
+country_event = {
+    id = stl_feather.54
+    title = stl_feather.54.t
+    desc = {
+        text = stl_feather.54.d_ironman
+        trigger = { is_ironman = yes }
+    }
+    desc = {
+        text = stl_feather.54.d_normal
+        trigger = { is_ironman = no }
+    }
+    picture = GFX_event_our_town
+
+    is_triggered_only = yes
+    fire_only_once = yes
+
+    option = {
+        name = stl_feather.54.a
+        add_ideas = STL_fascist_ironman
+        add_political_power = 100
+        remove_dynamic_modifier = {
+            modifier = STL_the_signal
+        }
+        custom_effect_tooltip = STL_tooltips_silent_tt
+        hidden_effect = {
+            set_country_flag = STL_tooltips_silent
+            country_event = {
+                id = stl_feather.56
+                days = 7
+            }
+            country_event = {
+                id = stl_feather.55
+                days = 30
+            }
+        }
+    }
+
+    option = {
+        name = stl_feather.54.b
+        add_ideas = STL_fascist_still_reloading
+        add_political_power = 100
+        hidden_effect = {
+            country_event = {
+                id = stl_feather.56
+                days = 7
+            }
+            country_event = {
+                id = stl_feather.55
+                days = 30
+            }
+        }
+    }
+}
+
+country_event = {
+    id = stl_feather.55
+    title = stl_feather.55.t
+    desc = stl_feather.55.d
+    picture = GFX_event_our_town
+
+    is_triggered_only = yes
+    fire_only_once = yes
+
+    option = {
+        name = stl_feather.55.a
+        add_stability = 0.02
+    }
+}
+
+# The Signal runs past 12 and wraps around. Repeatable on purpose.
+country_event = {
+    id = stl_feather.15
+    title = stl_feather.15.t
+    desc = stl_feather.15.d
+    picture = GFX_event_our_town
+
+    is_triggered_only = yes
+
+    option = {
+        name = stl_feather.15.a
+        add_timed_idea = {
+            idea = STL_signal_overflow
+            days = 45
+        }
+    }
+}
+
+# The Signal hits zero after having been heard.
+country_event = {
+    id = stl_feather.16
+    title = stl_feather.16.t
+    desc = stl_feather.16.d
+    picture = GFX_event_forest_depression
+
+    is_triggered_only = yes
+    fire_only_once = yes
+
+    option = {
+        name = stl_feather.16.a
+        add_stability = 0.05
+        add_war_support = -0.02
+    }
+}
+
+# The cores are granted by the focus itself. This is the Department handing over the result.
+country_event = {
+    id = stl_feather.56
+    title = stl_feather.56.t
+    desc = stl_feather.56.d
+    picture = GFX_report_event_generic_read_write
+
+    is_triggered_only = yes
+    fire_only_once = yes
+
+    option = {
+        name = stl_feather.56.a
+    }
+}
+
+# Ask It What It Wants. The player gets to answer, by moving the cursor.
+country_event = {
+    id = stl_feather.60
+    title = stl_feather.60.t
+    desc = stl_feather.60.d
+    picture = GFX_event_our_town
+
+    is_triggered_only = yes
+    fire_only_once = yes
+
+    option = {
+        name = stl_feather.60.a
+        custom_effect_tooltip = stl_feather.60.a_tt
+        hidden_effect = {
+            set_variable = { STL_signal_mood = 2 }
+            STL_signal_refresh = yes
+        }
+    }
+
+    option = {
+        name = stl_feather.60.b
+        custom_effect_tooltip = stl_feather.60.b_tt
+        hidden_effect = {
+            set_variable = { STL_signal_mood = 3 }
+            STL_signal_refresh = yes
+        }
+    }
+
+    option = {
+        name = stl_feather.60.c
+        custom_effect_tooltip = stl_feather.60.c_tt
+        hidden_effect = {
+            set_variable = { STL_signal_mood = 6 }
+            STL_signal_refresh = yes
+        }
+    }
+
+    option = {
+        name = stl_feather.60.e
+        custom_effect_tooltip = stl_feather.60.e_tt
+        hidden_effect = {
+            set_variable = { STL_signal_mood = 7 }
+            STL_signal_refresh = yes
+        }
+    }
+}
+
+# Sort Column Q
+country_event = {
+    id = stl_feather.61
+    title = stl_feather.61.t
+    desc = stl_feather.61.d
+    picture = GFX_report_event_generic_read_write
+
+    is_triggered_only = yes
+    fire_only_once = yes
+
+    option = {
+        name = stl_feather.61.a
+        add_timed_idea = {
+            idea = STL_sorted_ascending
+            days = 180
+        }
+    }
+}
+
+country_event = {
+    id = stl_feather.62
+    title = stl_feather.62.t
+    desc = stl_feather.62.d
+    picture = GFX_report_event_generic_read_write
+
+    is_triggered_only = yes
+    fire_only_once = yes
+
+    option = {
+        name = stl_feather.62.a
+        add_political_power = 100
+        add_stability = -0.05
+    }
+}
+
+country_event = {
+    id = stl_feather.63
+    title = stl_feather.63.t
+    desc = stl_feather.63.d
+    picture = GFX_report_event_generic_read_write
+
+    is_triggered_only = yes
+    fire_only_once = yes
+
+    option = {
+        name = stl_feather.63.a
+        add_political_power = 25
+        STL_signal_up = yes
+    }
+}
+
+# The tab called 'dont'
+country_event = {
+    id = stl_feather.64
+    title = stl_feather.64.t
+    desc = stl_feather.64.d
+    picture = GFX_report_event_generic_read_write
+
+    is_triggered_only = yes
+    fire_only_once = yes
+
+    option = {
+        name = stl_feather.64.a
+    }
+}
+
+# > tag
+country_event = {
+    id = stl_feather.65
+    title = stl_feather.65.t
+    desc = stl_feather.65.d
+    picture = GFX_event_gothic_interior
+
+    is_triggered_only = yes
+    fire_only_once = yes
+
+    option = {
+        name = stl_feather.65.a
+        add_timed_idea = {
+            idea = STL_console_tag
+            days = 180
+        }
+    }
+}
+
+# Why Did You Pick Us?
+country_event = {
+    id = stl_feather.66
+    title = stl_feather.66.t
+    desc = stl_feather.66.d
+    picture = GFX_event_gothic_interior
+
+    is_triggered_only = yes
+    fire_only_once = yes
+
+    option = {
+        name = stl_feather.66.a
+        add_stability = 0.05
+        add_war_support = 0.02
+    }
+
+    option = {
+        name = stl_feather.66.b
+        add_political_power = 100
+        add_stability = -0.02
+    }
+
+    option = {
+        name = stl_feather.66.c
+        add_war_support = 0.05
+        STL_signal_up = yes
+    }
+}
+
+# Ask Nicely. It listens about two times in three.
+country_event = {
+    id = stl_feather.67
+    title = stl_feather.67.t
+    desc = stl_feather.67.d
+    picture = GFX_event_our_town
+
+    is_triggered_only = yes
+
+    option = {
+        name = stl_feather.67.a
+        custom_effect_tooltip = stl_feather.67_tt
+        hidden_effect = {
+            random_list = {
+                seed = random
+                65 = {
+                    set_variable = { STL_signal_mood = 1 }
+                    STL_signal_refresh = yes
+                }
+                35 = { STL_signal_reroll = yes }
+            }
+            country_event = stl_feather.190
+        }
+    }
+
+    option = {
+        name = stl_feather.67.b
+        custom_effect_tooltip = stl_feather.67_tt
+        hidden_effect = {
+            random_list = {
+                seed = random
+                65 = {
+                    set_variable = { STL_signal_mood = 6 }
+                    STL_signal_refresh = yes
+                }
+                35 = { STL_signal_reroll = yes }
+            }
+            country_event = stl_feather.190
+        }
+    }
+
+    option = {
+        name = stl_feather.67.c
+        custom_effect_tooltip = stl_feather.67_tt
+        hidden_effect = {
+            random_list = {
+                seed = random
+                65 = {
+                    set_variable = { STL_signal_mood = 3 }
+                    STL_signal_refresh = yes
+                }
+                35 = { STL_signal_reroll = yes }
+            }
+            country_event = stl_feather.190
+        }
+    }
+
+    option = {
+        name = stl_feather.67.e
+        custom_effect_tooltip = stl_feather.67_tt
+        hidden_effect = {
+            random_list = {
+                seed = random
+                65 = {
+                    set_variable = { STL_signal_mood = 7 }
+                    STL_signal_refresh = yes
+                }
+                35 = { STL_signal_reroll = yes }
+            }
+            country_event = stl_feather.190
+        }
+    }
+}
+
+# Replies to Say Something to the Air. Repeatable on purpose.
+country_event = {
+    id = stl_feather.70
+    title = stl_feather.70.t
+    desc = stl_feather.70.d
+    picture = GFX_event_our_town
+
+    is_triggered_only = yes
+
+    option = {
+        name = stl_feather.70.a
+        add_political_power = 25
+    }
+}
+
+country_event = {
+    id = stl_feather.71
+    title = stl_feather.71.t
+    desc = stl_feather.71.d
+    picture = GFX_event_our_town
+
+    is_triggered_only = yes
+
+    option = {
+        name = stl_feather.71.a
+        add_stability = -0.01
+    }
+}
+
+country_event = {
+    id = stl_feather.72
+    title = stl_feather.72.t
+    desc = stl_feather.72.d
+    picture = GFX_event_our_town
+
+    is_triggered_only = yes
+
+    option = {
+        name = stl_feather.72.a
+        add_war_support = 0.02
+        army_experience = 5
+    }
+}
+
+country_event = {
+    id = stl_feather.73
+    title = stl_feather.73.t
+    desc = stl_feather.73.d
+    picture = GFX_event_our_town
+
+    is_triggered_only = yes
+
+    option = {
+        name = stl_feather.73.a
+        STL_signal_up = yes
+    }
+
+    option = {
+        name = stl_feather.73.b
+        STL_signal_down = yes
+    }
+}
+
+country_event = {
+    id = stl_feather.74
+    title = stl_feather.74.t
+    desc = stl_feather.74.d
+    picture = GFX_event_our_town
+
+    is_triggered_only = yes
+
+    option = {
+        name = stl_feather.74.a
+        custom_effect_tooltip = STL_reception_changes_tt
+        hidden_effect = {
+            STL_signal_reroll = yes
+        }
+    }
+}
+
+country_event = {
+    id = stl_feather.75
+    title = stl_feather.75.t
+    desc = stl_feather.75.d
+    picture = GFX_event_our_town
+
+    is_triggered_only = yes
+
+    option = {
+        name = stl_feather.75.a
+        add_war_support = 0.03
+        add_stability = -0.01
+    }
+}
+
+# Ambient, first tier: the state starts to notice. Once each; stl_feather.1 tracks which have been heard.
+country_event = {
+    id = stl_feather.100
+    title = stl_feather.100.t
+    desc = stl_feather.100.d
+    picture = GFX_event_our_town
+
+    is_triggered_only = yes
+
+    option = {
+        name = stl_feather.100.a
+        army_experience = 5
+    }
+}
+
+country_event = {
+    id = stl_feather.101
+    title = stl_feather.101.t
+    desc = stl_feather.101.d
+    picture = GFX_report_event_generic_read_write
+
+    is_triggered_only = yes
+
+    option = {
+        name = stl_feather.101.a
+        army_experience = 5
+    }
+
+    option = {
+        name = stl_feather.101.b
+        add_political_power = -10
+        army_experience = 10
+    }
+}
+
+country_event = {
+    id = stl_feather.102
+    title = stl_feather.102.t
+    desc = stl_feather.102.d
+    picture = GFX_event_pony_soldiers_sunset
+
+    is_triggered_only = yes
+
+    option = {
+        name = stl_feather.102.a
+        add_war_support = -0.01
+        add_political_power = 10
+    }
+
+    option = {
+        name = stl_feather.102.b
+        add_manpower = -100
+        army_experience = 10
+    }
+}
+
+country_event = {
+    id = stl_feather.103
+    title = stl_feather.103.t
+    desc = stl_feather.103.d
+    picture = GFX_report_event_generic_read_write
+
+    is_triggered_only = yes
+
+    option = {
+        name = stl_feather.103.a
+        add_stability = 0.01
+    }
+}
+
+country_event = {
+    id = stl_feather.104
+    title = stl_feather.104.t
+    desc = stl_feather.104.d
+    picture = GFX_report_event_generic_read_write
+
+    is_triggered_only = yes
+
+    option = {
+        name = stl_feather.104.a
+        add_political_power = -50
+        add_stability = 0.03
+    }
+
+    option = {
+        name = stl_feather.104.b
+        add_political_power = 10
+        add_stability = -0.01
+    }
+}
+
+country_event = {
+    id = stl_feather.105
+    title = stl_feather.105.t
+    desc = stl_feather.105.d
+    picture = GFX_report_event_generic_read_write
+
+    is_triggered_only = yes
+
+    option = {
+        name = stl_feather.105.a
+        navy_experience = 5
+    }
+}
+
+country_event = {
+    id = stl_feather.106
+    title = stl_feather.106.t
+    desc = stl_feather.106.d
+    picture = GFX_event_our_town
+
+    is_triggered_only = yes
+
+    option = {
+        name = stl_feather.106.a
+        add_war_support = 0.01
+    }
+
+    option = {
+        name = stl_feather.106.b
+        add_political_power = 10
+        custom_effect_tooltip = STL_one_hungarian_deported_tt
+        hidden_effect = {
+            STL_add_deported_hungarian = yes
+        }
+    }
+}
+
+country_event = {
+    id = stl_feather.107
+    title = stl_feather.107.t
+    desc = stl_feather.107.d
+    picture = GFX_report_event_generic_read_write
+
+    is_triggered_only = yes
+
+    option = {
+        name = stl_feather.107.a
+        custom_effect_tooltip = STL_reception_changes_tt
+        hidden_effect = {
+            STL_signal_reroll = yes
+        }
+    }
+}
+
+country_event = {
+    id = stl_feather.108
+    title = stl_feather.108.t
+    desc = stl_feather.108.d
+    picture = GFX_report_event_generic_read_write
+
+    is_triggered_only = yes
+
+    option = {
+        name = stl_feather.108.a
+        add_political_power = 10
+    }
+
+    option = {
+        name = stl_feather.108.b
+        add_stability = 0.01
+    }
+}
+
+country_event = {
+    id = stl_feather.109
+    title = stl_feather.109.t
+    desc = stl_feather.109.d
+    picture = GFX_report_event_generic_read_write
+
+    is_triggered_only = yes
+
+    option = {
+        name = stl_feather.109.a
+        add_political_power = 10
+        custom_effect_tooltip = STL_one_hungarian_deported_tt
+        hidden_effect = {
+            STL_add_deported_hungarian = yes
+        }
+    }
+
+    option = {
+        name = stl_feather.109.b
+        add_stability = 0.01
+    }
+}
+
+country_event = {
+    id = stl_feather.110
+    title = stl_feather.110.t
+    desc = stl_feather.110.d
+    picture = GFX_event_our_town
+
+    is_triggered_only = yes
+
+    option = {
+        name = stl_feather.110.a
+        add_political_power = 5
+    }
+}
+
+country_event = {
+    id = stl_feather.111
+    title = stl_feather.111.t
+    desc = stl_feather.111.d
+    picture = GFX_report_event_generic_read_write
+
+    is_triggered_only = yes
+
+    option = {
+        name = stl_feather.111.a
+        add_war_support = 0.01
+    }
+}
+
+country_event = {
+    id = stl_feather.112
+    title = stl_feather.112.t
+    desc = stl_feather.112.d
+    picture = GFX_event_pony_soldiers_sunset
+
+    is_triggered_only = yes
+
+    option = {
+        name = stl_feather.112.a
+        army_experience = 5
+    }
+}
+
+country_event = {
+    id = stl_feather.113
+    title = stl_feather.113.t
+    desc = stl_feather.113.d
+    picture = GFX_report_event_generic_read_write
+
+    is_triggered_only = yes
+
+    option = {
+        name = stl_feather.113.a
+        add_war_support = 0.01
+    }
+}
+
+country_event = {
+    id = stl_feather.114
+    title = stl_feather.114.t
+    desc = stl_feather.114.d
+    picture = GFX_event_our_town
+
+    is_triggered_only = yes
+
+    option = {
+        name = stl_feather.114.a
+        add_stability = 0.01
+    }
+}
+
+# Ambient, second tier: unlocked once the cabinet can see it too.
+# stl_feather.120 has an option whose text is deliberately its own localisation key.
+country_event = {
+    id = stl_feather.120
+    title = stl_feather.120.t
+    desc = stl_feather.120.d
+    picture = GFX_event_our_town
+
+    is_triggered_only = yes
+
+    option = {
+        name = stl_feather.120.a
+        add_stability = -0.01
+        add_political_power = 15
+    }
+}
+
+country_event = {
+    id = stl_feather.121
+    title = stl_feather.121.t
+    desc = stl_feather.121.d
+    picture = GFX_event_our_town
+
+    is_triggered_only = yes
+
+    option = {
+        name = stl_feather.121.a
+        add_political_power = 10
+    }
+}
+
+country_event = {
+    id = stl_feather.122
+    title = stl_feather.122.t
+    desc = stl_feather.122.d
+    picture = GFX_report_event_generic_read_write
+
+    is_triggered_only = yes
+
+    option = {
+        name = stl_feather.122.a
+        add_political_power = 5
+    }
+}
+
+country_event = {
+    id = stl_feather.123
+    title = stl_feather.123.t
+    desc = stl_feather.123.d
+    picture = GFX_event_pony_soldiers_sunset
+
+    is_triggered_only = yes
+
+    option = {
+        name = stl_feather.123.a
+        army_experience = 5
+    }
+}
+
+country_event = {
+    id = stl_feather.124
+    title = stl_feather.124.t
+    desc = stl_feather.124.d
+    picture = GFX_event_forest_depression
+
+    is_triggered_only = yes
+
+    option = {
+        name = stl_feather.124.a
+        add_stability = -0.01
+    }
+}
+
+country_event = {
+    id = stl_feather.126
+    title = stl_feather.126.t
+    desc = stl_feather.126.d
+    picture = GFX_event_gothic_interior
+
+    is_triggered_only = yes
+
+    immediate = {
+        hidden_effect = {
+            set_variable = { STL_signal_mood = 7 }
+            STL_signal_refresh = yes
+        }
+    }
+
+    option = {
+        name = stl_feather.126.a
+        add_stability = 0.01
+    }
+}
+
+country_event = {
+    id = stl_feather.127
+    title = stl_feather.127.t
+    desc = stl_feather.127.d
+    picture = GFX_report_event_generic_read_write
+
+    is_triggered_only = yes
+
+    option = {
+        name = stl_feather.127.a
+        add_political_power = 10
+    }
+
+    option = {
+        name = stl_feather.127.b
+        add_stability = 0.01
+    }
+}
+
+# Quotes the comment at the top of the Feather path in common/national_focus/STL.txt, and does what it says.
+country_event = {
+    id = stl_feather.128
+    title = stl_feather.128.t
+    desc = stl_feather.128.d
+    picture = GFX_report_event_generic_read_write
+
+    is_triggered_only = yes
+
+    option = {
+        name = stl_feather.128.a
+        custom_effect_tooltip = stl_feather.128_tt
+        hidden_effect = {
+            random_list = {
+                seed = random
+                50 = { add_political_power = 50 }
+                50 = { add_political_power = -50 }
+            }
+        }
+    }
+}
+
+country_event = {
+    id = stl_feather.129
+    title = stl_feather.129.t
+    desc = stl_feather.129.d
+    picture = GFX_report_event_generic_read_write
+
+    is_triggered_only = yes
+
+    option = {
+        name = stl_feather.129.a
+        add_political_power = 10
+    }
+}
+
+country_event = {
+    id = stl_feather.130
+    title = stl_feather.130.t
+    desc = stl_feather.130.d
+    picture = GFX_event_our_town
+
+    is_triggered_only = yes
+
+    option = {
+        name = stl_feather.130.a
+        army_experience = 5
+    }
+}
+
+country_event = {
+    id = stl_feather.131
+    title = stl_feather.131.t
+    desc = stl_feather.131.d
+    picture = GFX_report_event_generic_read_write
+
+    is_triggered_only = yes
+
+    option = {
+        name = stl_feather.131.a
+        army_experience = 5
+    }
+}
+
+country_event = {
+    id = stl_feather.132
+    title = stl_feather.132.t
+    desc = stl_feather.132.d
+    picture = GFX_event_gothic_interior
+
+    is_triggered_only = yes
+
+    option = {
+        name = stl_feather.132.a
+        add_stability = -0.01
+        add_political_power = 10
+    }
+}
+
+# Ambient, third tier: after he turned around, Feather talks to the player directly.
+country_event = {
+    id = stl_feather.140
+    title = stl_feather.140.t
+    desc = stl_feather.140.d
+    picture = GFX_event_gothic_interior
+
+    is_triggered_only = yes
+
+    option = {
+        name = stl_feather.140.a
+        army_experience = 5
+    }
+
+    option = {
+        name = stl_feather.140.b
+        add_stability = 0.02
+    }
+}
+
+country_event = {
+    id = stl_feather.141
+    title = stl_feather.141.t
+    desc = stl_feather.141.d
+    picture = GFX_event_our_town
+
+    is_triggered_only = yes
+
+    option = {
+        name = stl_feather.141.a
+        add_political_power = 25
+    }
+
+    option = {
+        name = stl_feather.141.b
+        add_stability = 0.03
+    }
+}
+
+country_event = {
+    id = stl_feather.142
+    title = stl_feather.142.t
+    desc = stl_feather.142.d
+    picture = GFX_event_gothic_interior
+
+    is_triggered_only = yes
+
+    option = {
+        name = stl_feather.142.a
+        add_stability = -0.02
+        hidden_effect = {
+            country_event = stl_feather.143
+        }
+    }
+
+    option = {
+        name = stl_feather.142.b
+        add_stability = 0.02
+    }
+}
+
+country_event = {
+    id = stl_feather.143
+    title = stl_feather.143.t
+    desc = stl_feather.143.d
+    picture = GFX_event_gothic_interior
+
+    is_triggered_only = yes
+
+    option = {
+        name = stl_feather.143.a
+        add_war_support = 0.02
+        STL_signal_up = yes
+    }
+}
+
+country_event = {
+    id = stl_feather.144
+    title = stl_feather.144.t
+    desc = stl_feather.144.d
+    picture = GFX_event_gothic_interior
+
+    is_triggered_only = yes
+
+    option = {
+        name = stl_feather.144.a
+        add_war_support = 0.01
+    }
+}
+
+# Only after Form No. 1. Clicking the bubble is the one thing on this path Feather begs you not to do.
+country_event = {
+    id = stl_feather.145
+    title = stl_feather.145.t
+    desc = stl_feather.145.d
+    picture = GFX_event_gothic_interior
+
+    is_triggered_only = yes
+
+    option = {
+        name = stl_feather.145.a
+        hidden_effect = {
+            country_event = stl_feather.146
+        }
+    }
+
+    option = {
+        name = stl_feather.145.b
+        add_stability = 0.03
+    }
+}
+
+country_event = {
+    id = stl_feather.146
+    title = stl_feather.146.t
+    desc = stl_feather.146.d
+    picture = GFX_event_gothic_interior
+
+    is_triggered_only = yes
+
+    option = {
+        name = stl_feather.146.a
+        add_stability = -0.05
+        add_war_support = 0.10
+    }
+}
+
+# Fallbacks that can repeat, so the Voice never runs out of things to say.
+# stl_feather.190 reports whatever the Signal is doing now; the caller changes it first.
+country_event = {
+    id = stl_feather.190
+    title = stl_feather.190.t
+    desc = stl_feather.190.d
+    picture = GFX_report_event_generic_read_write
+
+    is_triggered_only = yes
+
+    option = {
+        name = stl_feather.190.a
+    }
+}
+
+country_event = {
+    id = stl_feather.191
+    title = stl_feather.191.t
+    desc = {
+        text = stl_feather.191.d_1
+        trigger = { check_variable = { STL_report_variant = 1 } }
+    }
+    desc = {
+        text = stl_feather.191.d_2
+        trigger = { check_variable = { STL_report_variant = 2 } }
+    }
+    desc = {
+        text = stl_feather.191.d_3
+        trigger = { check_variable = { STL_report_variant = 3 } }
+    }
+    picture = GFX_event_our_town
+
+    is_triggered_only = yes
+
+    immediate = {
+        hidden_effect = {
+            random_list = {
+                seed = random
+                50 = { add_to_variable = { STL_daily_report = 41 } }
+                30 = { add_to_variable = { STL_daily_report = 113 } }
+                20 = { add_to_variable = { STL_daily_report = 7 } }
+            }
+            random_list = {
+                seed = random
+                34 = { set_variable = { STL_report_variant = 1 } }
+                33 = { set_variable = { STL_report_variant = 2 } }
+                33 = { set_variable = { STL_report_variant = 3 } }
+            }
+        }
+    }
+
+    option = {
+        name = stl_feather.191.a
+        add_political_power = 5
+    }
+}
+
+country_event = {
+    id = stl_feather.192
+    title = stl_feather.192.t
+    desc = stl_feather.192.d
+    picture = GFX_event_our_town
+
+    is_triggered_only = yes
+
+    option = {
+        name = stl_feather.192.a
+    }
+}
+
+country_event = {
+    id = stl_feather.193
+    title = stl_feather.193.t
+    desc = stl_feather.193.d
+    picture = GFX_event_our_town
+
+    is_triggered_only = yes
+
+    option = {
+        name = stl_feather.193.a
+        add_political_power = -5
+    }
+}

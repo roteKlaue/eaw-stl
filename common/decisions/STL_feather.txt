@@ -1,0 +1,219 @@
+STL_hungarian_question = {
+    STL_deport_another_hungarian = {
+        icon = GFX_decision_generic_political_discourse
+        cost = 25
+        days_remove = 30
+        fire_only_once = no
+
+        complete_effect = {
+            custom_effect_tooltip = STL_deport_another_hungarian_tt
+            hidden_effect = {
+                STL_add_deported_hungarian = yes
+                random_list = {
+                    30 = { country_event = stl_feather.30 }
+                    30 = { country_event = stl_feather.31 }
+                    20 = { country_event = stl_feather.32 }
+                    20 = { country_event = stl_feather.33 }
+                }
+            }
+        }
+
+        ai_will_do = {
+            factor = 0
+        }
+    }
+
+    STL_ask_what_a_hungarian_is = {
+        icon = GFX_decision_generic_political_discourse
+        cost = 0
+
+        visible = {
+            NOT = { has_completed_focus = STL_form_number_one }
+        }
+        available = {
+            custom_trigger_tooltip = {
+                tooltip = STL_ask_what_a_hungarian_is_tt
+                always = no
+            }
+        }
+
+        ai_will_do = {
+            factor = 0
+        }
+    }
+
+    STL_ask_the_forum_prophet = {
+        icon = GFX_decision_generic_political_discourse
+        cost = 15
+        days_remove = 60
+        fire_only_once = no
+
+        complete_effect = {
+            custom_effect_tooltip = STL_ask_the_forum_prophet_tt
+            hidden_effect = {
+                random_list = {
+                    34 = { country_event = stl_feather.40 }
+                    33 = { country_event = stl_feather.41 }
+                    33 = { country_event = stl_feather.42 }
+                }
+            }
+        }
+
+        ai_will_do = {
+            factor = 0
+        }
+    }
+
+    STL_build_just_one_more = {
+        icon = GFX_decision_generic_fundraising
+        cost = 50
+        days_remove = 60
+        fire_only_once = no
+
+        visible = {
+            has_completed_focus = STL_just_one_more_factory
+        }
+        available = {
+            57 = { is_owned_and_controlled_by = ROOT }
+            has_stability > 0.15
+        }
+
+        complete_effect = {
+            57 = {
+                add_extra_state_shared_building_slots = 1
+                add_building_construction = {
+                    type = industrial_complex
+                    level = 1
+                    instant_build = yes
+                }
+            }
+            add_stability = -0.02
+            custom_effect_tooltip = STL_build_just_one_more_tt
+        }
+
+        ai_will_do = {
+            factor = 0
+        }
+    }
+}
+
+STL_reception_sheet = {
+    STL_turn_the_coat_hanger = {
+        icon = GFX_decision_generic_electricity
+        cost = 10
+        days_remove = 30
+        fire_only_once = no
+
+        complete_effect = {
+            custom_effect_tooltip = STL_turn_the_coat_hanger_tt
+            hidden_effect = {
+                STL_signal_reroll = yes
+                country_event = stl_feather.190
+            }
+        }
+
+        ai_will_do = {
+            factor = 0
+        }
+    }
+
+    STL_ask_it_to_stop = {
+        icon = GFX_decision_generic_political_address
+        cost = 35
+        days_remove = 90
+        fire_only_once = no
+
+        complete_effect = {
+            add_stability = 0.03
+            STL_signal_down = yes
+        }
+
+        ai_will_do = {
+            factor = 0
+        }
+    }
+
+    STL_say_something_to_the_air = {
+        icon = GFX_decision_generic_political_discourse
+        cost = 20
+        days_remove = 60
+        fire_only_once = no
+
+        visible = {
+            has_completed_focus = STL_say_something_back
+        }
+
+        complete_effect = {
+            custom_effect_tooltip = STL_say_something_to_the_air_tt
+            hidden_effect = {
+                random_list = {
+                    seed = random
+                    20 = { country_event = stl_feather.70 }
+                    20 = { country_event = stl_feather.71 }
+                    20 = { country_event = stl_feather.72 }
+                    15 = { country_event = stl_feather.73 }
+                    15 = { country_event = stl_feather.74 }
+                    10 = { country_event = stl_feather.75 }
+                }
+            }
+        }
+
+        ai_will_do = {
+            factor = 0
+        }
+    }
+
+    STL_ask_nicely = {
+        icon = GFX_decision_generic_brainwash
+        cost = 30
+        days_remove = 60
+        fire_only_once = no
+
+        visible = {
+            has_completed_focus = STL_it_is_listening
+        }
+
+        complete_effect = {
+            hidden_effect = {
+                country_event = stl_feather.67
+            }
+        }
+
+        ai_will_do = {
+            factor = 0
+        }
+    }
+}
+
+STL_map_painting_category = {
+    STL_color_in_neighbor = {
+        icon = GFX_decision_generic_form_nation
+        cost = 50
+        fire_only_once = no
+        days_re_enable = 60
+
+        target_array = neighbors
+        targets_dynamic = yes
+        target_non_existing = no
+
+        target_trigger = {
+            NOT = { has_wargoal_against = FROM }
+            FROM = {
+                NOT = { is_in_faction_with = ROOT }
+                NOT = { has_war_with = ROOT }
+                NOT = { is_subject_of = ROOT }
+            }
+        }
+
+        complete_effect = {
+            create_wargoal = {
+                type = annex_everything
+                target = FROM
+            }
+        }
+
+        ai_will_do = {
+            factor = 0
+        }
+    }
+}

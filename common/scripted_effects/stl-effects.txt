@@ -47,3 +47,416 @@ STL_infiltration_succesful_show_uprising_effect = {
 		custom_effect_tooltip = STL_infiltrate_uprising_effect_4
 	}
 }
+
+# The Signal: Feather's contact with the interface. It never moves the same way twice: every shift changes the level
+# by a random amount and rolls a new mood, and the mood decides which stats the Signal touches and how hard.
+# Moods: 1 Clear Reception, 2 Hungry, 3 More Arrows, 4 Watching, 5 Buffering, 6 Patch Notes, 7 Away, 8 Feedback, 9 Static.
+
+# Expects STL_signal_loudness. Returns 0.4 to 1.6 times the loudness in STL_signal_strength.
+STL_signal_roll_strength = {
+	set_temp_variable = { STL_signal_strength = random }
+	multiply_temp_variable = { STL_signal_strength = 1.2 }
+	add_to_temp_variable = { STL_signal_strength = 0.4 }
+	multiply_temp_variable = { STL_signal_strength = STL_signal_loudness }
+}
+
+# Expects STL_signal_loudness. Returns -0.5 to 0.5 times the loudness in STL_signal_strength.
+STL_signal_roll_static = {
+	set_temp_variable = { STL_signal_strength = random }
+	add_to_temp_variable = { STL_signal_strength = -0.5 }
+	multiply_temp_variable = { STL_signal_strength = STL_signal_loudness }
+}
+
+# Rebuilds STL_the_signal from the current level and mood. Every channel gets its own roll.
+STL_signal_refresh = {
+	set_temp_variable = { STL_signal_loudness = STL_signal }
+	multiply_temp_variable = { STL_signal_loudness = 0.05 }
+	add_to_temp_variable = { STL_signal_loudness = 0.4 }
+
+	set_variable = { STL_signal_political_power = 0 }
+	set_variable = { STL_signal_stability = 0 }
+	set_variable = { STL_signal_war_support = 0 }
+	set_variable = { STL_signal_decryption = 0 }
+	set_variable = { STL_signal_research = 0 }
+	set_variable = { STL_signal_construction = 0 }
+	set_variable = { STL_signal_industry = 0 }
+	set_variable = { STL_signal_consumer_goods = 0 }
+	set_variable = { STL_signal_attack = 0 }
+	set_variable = { STL_signal_defence = 0 }
+	set_variable = { STL_signal_planning = 0 }
+	set_variable = { STL_signal_experience = 0 }
+
+	if = {
+		limit = { check_variable = { STL_signal_mood = 1 } }
+		STL_signal_roll_strength = yes
+		set_variable = { STL_signal_political_power = STL_signal_strength }
+		multiply_variable = { STL_signal_political_power = 0.40 }
+		STL_signal_roll_strength = yes
+		set_variable = { STL_signal_decryption = STL_signal_strength }
+		multiply_variable = { STL_signal_decryption = 0.15 }
+		STL_signal_roll_strength = yes
+		set_variable = { STL_signal_planning = STL_signal_strength }
+		multiply_variable = { STL_signal_planning = 0.15 }
+	}
+	else_if = {
+		limit = { check_variable = { STL_signal_mood = 2 } }
+		STL_signal_roll_strength = yes
+		set_variable = { STL_signal_construction = STL_signal_strength }
+		multiply_variable = { STL_signal_construction = 0.15 }
+		STL_signal_roll_strength = yes
+		set_variable = { STL_signal_consumer_goods = STL_signal_strength }
+		multiply_variable = { STL_signal_consumer_goods = 0.05 }
+		STL_signal_roll_strength = yes
+		set_variable = { STL_signal_stability = STL_signal_strength }
+		multiply_variable = { STL_signal_stability = -0.06 }
+	}
+	else_if = {
+		limit = { check_variable = { STL_signal_mood = 3 } }
+		STL_signal_roll_strength = yes
+		set_variable = { STL_signal_attack = STL_signal_strength }
+		multiply_variable = { STL_signal_attack = 0.10 }
+		STL_signal_roll_strength = yes
+		set_variable = { STL_signal_war_support = STL_signal_strength }
+		multiply_variable = { STL_signal_war_support = 0.10 }
+		STL_signal_roll_strength = yes
+		set_variable = { STL_signal_stability = STL_signal_strength }
+		multiply_variable = { STL_signal_stability = -0.06 }
+		STL_signal_roll_strength = yes
+		set_variable = { STL_signal_political_power = STL_signal_strength }
+		multiply_variable = { STL_signal_political_power = -0.20 }
+	}
+	else_if = {
+		limit = { check_variable = { STL_signal_mood = 4 } }
+		STL_signal_roll_strength = yes
+		set_variable = { STL_signal_decryption = STL_signal_strength }
+		multiply_variable = { STL_signal_decryption = 0.20 }
+		STL_signal_roll_strength = yes
+		set_variable = { STL_signal_defence = STL_signal_strength }
+		multiply_variable = { STL_signal_defence = 0.10 }
+		STL_signal_roll_strength = yes
+		set_variable = { STL_signal_war_support = STL_signal_strength }
+		multiply_variable = { STL_signal_war_support = -0.06 }
+	}
+	else_if = {
+		limit = { check_variable = { STL_signal_mood = 5 } }
+		STL_signal_roll_strength = yes
+		set_variable = { STL_signal_research = STL_signal_strength }
+		multiply_variable = { STL_signal_research = -0.08 }
+		STL_signal_roll_strength = yes
+		set_variable = { STL_signal_construction = STL_signal_strength }
+		multiply_variable = { STL_signal_construction = -0.10 }
+		STL_signal_roll_strength = yes
+		set_variable = { STL_signal_stability = STL_signal_strength }
+		multiply_variable = { STL_signal_stability = 0.08 }
+	}
+	else_if = {
+		limit = { check_variable = { STL_signal_mood = 6 } }
+		STL_signal_roll_strength = yes
+		set_variable = { STL_signal_research = STL_signal_strength }
+		multiply_variable = { STL_signal_research = 0.08 }
+		STL_signal_roll_strength = yes
+		set_variable = { STL_signal_industry = STL_signal_strength }
+		multiply_variable = { STL_signal_industry = 0.06 }
+		STL_signal_roll_strength = yes
+		set_variable = { STL_signal_experience = STL_signal_strength }
+		multiply_variable = { STL_signal_experience = 0.10 }
+	}
+	else_if = {
+		limit = { check_variable = { STL_signal_mood = 7 } }
+		STL_signal_roll_strength = yes
+		set_variable = { STL_signal_stability = STL_signal_strength }
+		multiply_variable = { STL_signal_stability = 0.10 }
+		STL_signal_roll_strength = yes
+		set_variable = { STL_signal_political_power = STL_signal_strength }
+		multiply_variable = { STL_signal_political_power = -0.30 }
+		STL_signal_roll_strength = yes
+		set_variable = { STL_signal_planning = STL_signal_strength }
+		multiply_variable = { STL_signal_planning = -0.10 }
+	}
+	else_if = {
+		limit = { check_variable = { STL_signal_mood = 8 } }
+		STL_signal_roll_strength = yes
+		set_variable = { STL_signal_political_power = STL_signal_strength }
+		multiply_variable = { STL_signal_political_power = 0.60 }
+		STL_signal_roll_strength = yes
+		set_variable = { STL_signal_war_support = STL_signal_strength }
+		multiply_variable = { STL_signal_war_support = 0.06 }
+		STL_signal_roll_strength = yes
+		set_variable = { STL_signal_stability = STL_signal_strength }
+		multiply_variable = { STL_signal_stability = -0.10 }
+		STL_signal_roll_strength = yes
+		set_variable = { STL_signal_consumer_goods = STL_signal_strength }
+		multiply_variable = { STL_signal_consumer_goods = 0.04 }
+	}
+	else = {
+		STL_signal_roll_static = yes
+		set_variable = { STL_signal_political_power = STL_signal_strength }
+		STL_signal_roll_static = yes
+		set_variable = { STL_signal_stability = STL_signal_strength }
+		multiply_variable = { STL_signal_stability = 0.16 }
+		STL_signal_roll_static = yes
+		set_variable = { STL_signal_research = STL_signal_strength }
+		multiply_variable = { STL_signal_research = 0.12 }
+		STL_signal_roll_static = yes
+		set_variable = { STL_signal_attack = STL_signal_strength }
+		multiply_variable = { STL_signal_attack = 0.12 }
+		STL_signal_roll_static = yes
+		set_variable = { STL_signal_construction = STL_signal_strength }
+		multiply_variable = { STL_signal_construction = 0.16 }
+	}
+
+	force_update_dynamic_modifier = yes
+	# While It Isn't Looking only exists during the Away mood.
+	mark_focus_tree_layout_dirty = yes
+}
+
+# Rolls a new mood, never the one it is already in. The louder the Signal, the worse its manners.
+STL_signal_reroll = {
+	random_list = {
+		seed = random
+		20 = {
+			modifier = { factor = 0 check_variable = { STL_signal_mood = 1 } }
+			set_variable = { STL_signal_mood = 1 }
+		}
+		15 = {
+			modifier = { factor = 0 check_variable = { STL_signal_mood = 2 } }
+			set_variable = { STL_signal_mood = 2 }
+		}
+		10 = {
+			modifier = { factor = 0 check_variable = { STL_signal_mood = 3 } }
+			modifier = { factor = 2 check_variable = { STL_signal > 6 } }
+			set_variable = { STL_signal_mood = 3 }
+		}
+		15 = {
+			modifier = { factor = 0 check_variable = { STL_signal_mood = 4 } }
+			set_variable = { STL_signal_mood = 4 }
+		}
+		20 = {
+			modifier = { factor = 0 check_variable = { STL_signal_mood = 5 } }
+			modifier = { factor = 0.5 check_variable = { STL_signal > 6 } }
+			set_variable = { STL_signal_mood = 5 }
+		}
+		15 = {
+			modifier = { factor = 0 check_variable = { STL_signal_mood = 6 } }
+			set_variable = { STL_signal_mood = 6 }
+		}
+		15 = {
+			modifier = { factor = 0 check_variable = { STL_signal_mood = 7 } }
+			modifier = { factor = 0.5 check_variable = { STL_signal > 8 } }
+			set_variable = { STL_signal_mood = 7 }
+		}
+		5 = {
+			modifier = { factor = 0 check_variable = { STL_signal_mood = 8 } }
+			modifier = { factor = 4 check_variable = { STL_signal > 8 } }
+			set_variable = { STL_signal_mood = 8 }
+		}
+		10 = {
+			modifier = { factor = 0 check_variable = { STL_signal_mood = 9 } }
+			set_variable = { STL_signal_mood = 9 }
+		}
+	}
+	STL_signal_refresh = yes
+}
+
+# Call after changing STL_signal: handles the wraparound, the silence and the threshold events, then rerolls.
+STL_signal_settle = {
+	if = {
+		limit = { check_variable = { STL_signal > 12 } }
+		random_list = {
+			seed = random
+			25 = { set_variable = { STL_signal = 1 } }
+			25 = { set_variable = { STL_signal = 2 } }
+			25 = { set_variable = { STL_signal = 3 } }
+			25 = { set_variable = { STL_signal = 4 } }
+		}
+		country_event = {
+			id = stl_feather.15
+			days = 1
+		}
+	}
+	clamp_variable = {
+		var = STL_signal
+		min = 0
+		max = 12
+	}
+
+	if = {
+		limit = {
+			check_variable = { STL_signal < 1 }
+			has_country_flag = STL_phantom_focus_revealed
+			NOT = { has_country_flag = STL_signal_went_quiet }
+		}
+		set_country_flag = STL_signal_went_quiet
+		country_event = {
+			id = stl_feather.16
+			days = 2
+		}
+	}
+	if = {
+		limit = {
+			check_variable = { STL_signal > 2 }
+			NOT = { has_country_flag = STL_phantom_focus_revealed }
+		}
+		set_country_flag = STL_phantom_focus_revealed
+		mark_focus_tree_layout_dirty = yes
+		country_event = {
+			id = stl_feather.10
+			days = 3
+		}
+	}
+	if = {
+		limit = {
+			check_variable = { STL_signal > 5 }
+			NOT = { has_country_flag = STL_cabinet_sees_it }
+		}
+		set_country_flag = STL_cabinet_sees_it
+		country_event = {
+			id = stl_feather.11
+			days = 5
+		}
+	}
+	if = {
+		limit = {
+			check_variable = { STL_signal > 8 }
+			NOT = { has_country_flag = STL_he_turned_around }
+		}
+		set_country_flag = STL_he_turned_around
+		country_event = {
+			id = stl_feather.12
+			days = 7
+		}
+	}
+
+	STL_signal_reroll = yes
+}
+
+STL_signal_start = {
+	add_dynamic_modifier = {
+		modifier = STL_the_signal
+	}
+	hidden_effect = {
+		set_variable = { STL_signal = 0 }
+		set_variable = { STL_signal_mood = 9 }
+		set_variable = { STL_hungarians_deported = 0 }
+		set_variable = { STL_daily_report = 1204 }
+		STL_signal_refresh = yes
+		country_event = {
+			id = stl_feather.1
+			days = 20
+			random_days = 30
+		}
+	}
+}
+
+# Usually up. Not always, and never by a predictable amount.
+STL_signal_up = {
+	custom_effect_tooltip = STL_signal_up_tt
+	hidden_effect = {
+		# After the Ironman ending the tooltips stay silent, whatever else still calls this.
+		if = {
+			limit = { NOT = { has_country_flag = STL_tooltips_silent } }
+			random_list = {
+				seed = random
+				10 = { add_to_variable = { STL_signal = -2 } }
+				15 = { add_to_variable = { STL_signal = -1 } }
+				10 = { }
+				30 = { add_to_variable = { STL_signal = 1 } }
+				20 = { add_to_variable = { STL_signal = 2 } }
+				15 = { add_to_variable = { STL_signal = 3 } }
+			}
+			STL_signal_settle = yes
+		}
+	}
+}
+
+# Usually down. It has not agreed to this.
+STL_signal_down = {
+	custom_effect_tooltip = STL_signal_down_tt
+	hidden_effect = {
+		if = {
+			limit = { NOT = { has_country_flag = STL_tooltips_silent } }
+			random_list = {
+				seed = random
+				40 = { add_to_variable = { STL_signal = -1 } }
+				30 = { add_to_variable = { STL_signal = -2 } }
+				15 = { add_to_variable = { STL_signal = -3 } }
+				15 = { add_to_variable = { STL_signal = 1 } }
+			}
+			STL_signal_settle = yes
+		}
+	}
+}
+
+# The Signal wandering on its own between focuses.
+STL_signal_drift = {
+	random_list = {
+		seed = random
+		30 = { add_to_variable = { STL_signal = -1 } }
+		40 = { }
+		30 = { add_to_variable = { STL_signal = 1 } }
+	}
+	STL_signal_settle = yes
+}
+
+# Schedules the next ambient tick. Irregular on purpose: a burst, a normal gap, a long gap or a long silence.
+STL_signal_schedule_next = {
+	random_list = {
+		seed = random
+		15 = {
+			modifier = { factor = 2 check_variable = { STL_signal > 8 } }
+			country_event = {
+				id = stl_feather.1
+				days = 7
+				random_days = 14
+			}
+		}
+		50 = {
+			country_event = {
+				id = stl_feather.1
+				days = 25
+				random_days = 45
+			}
+		}
+		25 = {
+			country_event = {
+				id = stl_feather.1
+				days = 70
+				random_days = 50
+			}
+		}
+		10 = {
+			modifier = { factor = 2 check_variable = { STL_signal < 3 } }
+			country_event = {
+				id = stl_feather.1
+				days = 120
+				random_days = 90
+			}
+		}
+	}
+}
+
+STL_add_deported_hungarian = {
+	add_to_variable = { STL_hungarians_deported = 1 }
+	if = {
+		limit = {
+			check_variable = { STL_hungarians_deported > 4 }
+			NOT = { has_country_flag = STL_trains_questioned }
+		}
+		set_country_flag = STL_trains_questioned
+		country_event = {
+			id = stl_feather.34
+			days = 5
+		}
+	}
+	if = {
+		limit = {
+			check_variable = { STL_hungarians_deported > 9 }
+			NOT = { has_country_flag = STL_deportees_returned }
+		}
+		set_country_flag = STL_deportees_returned
+		country_event = {
+			id = stl_feather.35
+			days = 14
+		}
+	}
+}

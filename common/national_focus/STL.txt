@@ -4287,21 +4287,1149 @@ focus_tree = {
         }
     }
 
+    # Feather Bangs' hidden, deliberately absurd path. The reveal event controls visibility.
+    # Several rewards on this path lie on purpose: custom tooltips show one thing, hidden_effect does another.
     focus = {
         id = STL_deport_hungarians
         icon = GFX_GENERIC_Village_Raid_and_Arrests
         cost = 5
         x = 0
         y = 1
+        allow_branch = { has_country_flag = going_fascist }
+        relative_position_id = STL_shining_example_of_democracy
+        prerequisite = { focus = STL_shining_example_of_democracy }
+        completion_reward = {
+            add_political_power = 35
+            add_stability = -0.03
+            set_country_flag = STL_hungarian_question_open
+            custom_effect_tooltip = STL_deport_hungarians_tt
+            STL_signal_up = yes
+
+            custom_effect_tooltip = generic_skip_one_line_tt
+            reduce_focus_completion_cost = {
+                focus = STL_army_effort
+                cost = 35
+            }
+        }
+        search_filters = { FOCUS_FILTER_POLITICAL }
+    }
+
+    # Trap: promises a way out, delivers an election Feather wins. Hides itself once the event closes.
+    focus = {
+        id = STL_return_to_sanity
+        icon = GFX_focus_generic_democratic_europe
+        cost = 5
+        x = 5
+        y = 1
         allow_branch = {
             has_country_flag = going_fascist
+            NOT = { has_country_flag = STL_sanity_denied }
         }
-        relative_position_id = STL_shining_example_of_democracy
+        relative_position_id = STL_deport_hungarians
+        prerequisite = { focus = STL_deport_hungarians }
+        completion_reward = {
+            custom_effect_tooltip = STL_return_to_sanity_tt
+            hidden_effect = {
+                country_event = stl_feather.13
+            }
+        }
+        search_filters = { FOCUS_FILTER_POLITICAL }
+    }
+
+    # The cabinet's own objective. It only exists while the Signal's mood is Away, so it blinks in and out of the tree.
+    focus = {
+        id = STL_it_is_not_looking
+        icon = GFX_focus_generic_turning_a_blind_eye
+        cost = 1
+        x = 8
+        y = 1
+        allow_branch = {
+            OR = {
+                has_country_flag = STL_cabinet_plan_started
+                check_variable = { STL_signal_mood = 7 }
+            }
+        }
+        relative_position_id = STL_deport_hungarians
+        select_effect = {
+            set_country_flag = STL_cabinet_plan_started
+        }
+        completion_reward = {
+            add_stability = 0.10
+            STL_signal_down = yes
+        }
+        search_filters = { FOCUS_FILTER_STABILITY }
+    }
+
+    # The Bureau of Hungarian Affairs: winds off to the left, away from everything else.
+    focus = {
+        id = STL_a_larger_building
+        icon = GFX_focus_generic_improve_the_administration
+        cost = 3
+        x = -3
+        y = 1
+        relative_position_id = STL_deport_hungarians
+        prerequisite = { focus = STL_deport_hungarians }
+        completion_reward = {
+            add_ideas = STL_fascist_bureau
+            add_political_power = 25
+            custom_effect_tooltip = STL_one_hungarian_deported_tt
+            hidden_effect = {
+                STL_add_deported_hungarian = yes
+            }
+        }
+        search_filters = { FOCUS_FILTER_POLITICAL }
+    }
+
+    focus = {
+        id = STL_hungarian_phrasebook
+        icon = GFX_focus_generic_education
+        cost = 3
+        x = -2
+        y = 1
+        relative_position_id = STL_a_larger_building
+        prerequisite = { focus = STL_a_larger_building }
+        completion_reward = {
+            add_political_power = 25
+            add_stability = 0.01
+            custom_effect_tooltip = STL_one_hungarian_deported_tt
+            hidden_effect = {
+                STL_add_deported_hungarian = yes
+            }
+        }
+        search_filters = { FOCUS_FILTER_POLITICAL }
+    }
+
+    focus = {
+        id = STL_census_of_undefined_persons
+        icon = GFX_focus_generic_population_growth
+        cost = 3
+        x = -2
+        y = 1
+        relative_position_id = STL_hungarian_phrasebook
+        prerequisite = { focus = STL_hungarian_phrasebook }
+        completion_reward = {
+            add_manpower = 1500
+            add_stability = -0.01
+            custom_effect_tooltip = STL_one_hungarian_deported_tt
+            hidden_effect = {
+                STL_add_deported_hungarian = yes
+            }
+        }
+        search_filters = { FOCUS_FILTER_MANPOWER }
+    }
+
+    focus = {
+        id = STL_hungary_located
+        icon = GFX_focus_generic_secret_service_agency
+        cost = 5
+        x = 1
+        y = 1
+        relative_position_id = STL_census_of_undefined_persons
+        prerequisite = { focus = STL_census_of_undefined_persons }
+        completion_reward = {
+            add_political_power = 50
+            STL_signal_up = yes
+        }
+        search_filters = { FOCUS_FILTER_POLITICAL }
+    }
+
+    focus = {
+        id = STL_the_hungarian_legion
+        icon = GFX_goal_generic_allies_build_infantry
+        cost = 5
+        x = -2
+        y = 1
+        relative_position_id = STL_hungary_located
+        prerequisite = { focus = STL_hungary_located }
+        available = {
+            custom_trigger_tooltip = {
+                tooltip = STL_the_hungarian_legion_available_tt
+                check_variable = { STL_hungarians_deported > 4 }
+            }
+        }
+        completion_reward = {
+            custom_effect_tooltip = STL_the_hungarian_legion_tt
+            hidden_effect = {
+                division_template = {
+                    name = "Hungarian Legion"
+                    priority = 1
+                    regiments = {
+                        infantry = { x = 0 y = 0 }
+                        infantry = { x = 0 y = 1 }
+                        infantry = { x = 0 y = 2 }
+                        infantry = { x = 1 y = 0 }
+                        infantry = { x = 1 y = 1 }
+                        infantry = { x = 1 y = 2 }
+                        infantry = { x = 2 y = 0 }
+                    }
+                }
+                capital_scope = {
+                    create_unit = {
+                        division = "division_template = \"Hungarian Legion\" start_experience_factor = 0.5 start_equipment_factor = 0.8"
+                        owner = ROOT
+                        count = 4
+                    }
+                }
+            }
+        }
+        search_filters = { FOCUS_FILTER_MANPOWER FOCUS_FILTER_ARMY_BONUS }
+    }
+
+    # The Voice: the part of the plan that talks back. Everything below runs through here.
+    focus = {
+        id = STL_the_tooltips_are_talking
+        icon = GFX_goal_generic_propaganda
+        cost = 5
+        x = 1
+        y = 1
+        relative_position_id = STL_deport_hungarians
+        prerequisite = { focus = STL_deport_hungarians }
+        completion_reward = {
+            custom_effect_tooltip = STL_the_tooltips_are_talking_tt
+            hidden_effect = {
+                random_list = {
+                    50 = { add_political_power = 75 }
+                    25 = {
+                        add_political_power = 150
+                        add_stability = -0.05
+                    }
+                    25 = {
+                        add_political_power = 1
+                        STL_signal_up = yes
+                    }
+                }
+            }
+            STL_signal_up = yes
+
+            custom_effect_tooltip = generic_skip_one_line_tt
+            if = {
+                limit = {
+                    has_dynamic_modifier = { modifier = STL_wirtschaftswunder_modifier }
+                }
+                custom_effect_tooltip = STL_effective_change_for_economy_boom_tt
+            }
+            if = {
+                limit = {
+                    NOT = { has_dynamic_modifier = { modifier = STL_wirtschaftswunder_modifier } }
+                }
+                custom_effect_tooltip = STL_effective_change_for_economy_recovery_tt
+            }
+
+            add_to_variable = {
+                STL_industrial_consumer_goods_factor = -0.25
+                tooltip = consumer_goods_factor_tt
+            }
+        }
+        search_filters = { FOCUS_FILTER_POLITICAL }
+    }
+
+    # Appears only once the Signal is high enough, with no connection to the rest of the tree.
+    focus = {
+        id = STL_there_was_always_a_focus_here
+        icon = GFX_goal_generic_scientific_exchange
+        cost = 1
+        x = -13
+        y = 2
+        allow_branch = { has_country_flag = STL_phantom_focus_revealed }
+        relative_position_id = STL_the_tooltips_are_talking
+        completion_reward = {
+            add_political_power = 100
+            STL_signal_up = yes
+        }
+        search_filters = { FOCUS_FILTER_POLITICAL }
+    }
+
+    # The tooltip threatens penalties, the hidden effect pays out.
+    focus = {
+        id = STL_do_not_complete_this_focus
+        icon = GFX_goal_generic_dangerous_deal
+        cost = 1
+        x = 1
+        y = 1
+        relative_position_id = STL_there_was_always_a_focus_here
+        prerequisite = { focus = STL_there_was_always_a_focus_here }
+        completion_reward = {
+            custom_effect_tooltip = STL_do_not_complete_this_focus_tt
+            hidden_effect = {
+                add_stability = 0.05
+                add_war_support = 0.05
+                add_manpower = 2000
+            }
+            STL_signal_up = yes
+        }
+        search_filters = { FOCUS_FILTER_STABILITY FOCUS_FILTER_MANPOWER }
+    }
+
+    focus = {
+        id = STL_what_happened_to_the_cleaner
+        icon = GFX_focus_generic_whispers
+        cost = 1
+        x = -1
+        y = 1
+        relative_position_id = STL_do_not_complete_this_focus
+        prerequisite = { focus = STL_do_not_complete_this_focus }
+        completion_reward = {
+            custom_effect_tooltip = STL_what_happened_to_the_cleaner_tt
+            add_stability = 0.05
+        }
+        search_filters = { FOCUS_FILTER_STABILITY }
+    }
+
+    focus = {
+        id = STL_adjust_the_antenna
+        icon = GFX_goal_generic_radar
+        cost = 3
+        x = -2
+        y = 1
+        relative_position_id = STL_the_tooltips_are_talking
+        prerequisite = { focus = STL_the_tooltips_are_talking }
+        completion_reward = {
+            add_political_power = 25
+            custom_effect_tooltip = STL_adjust_the_antenna_tt
+            hidden_effect = {
+                set_country_flag = STL_reception_sheet_open
+            }
+            STL_signal_up = yes
+
+            custom_effect_tooltip = generic_skip_one_line_tt
+            reduce_focus_completion_cost = {
+                focus = STL_industrial_flourish
+                cost = 35
+            }
+        }
+        search_filters = { FOCUS_FILTER_POLITICAL }
+    }
+
+    focus = {
+        id = STL_the_little_white_arrow
+        icon = GFX_goal_generic_position_armies
+        cost = 3
+        x = 2
+        y = 1
+        relative_position_id = STL_the_tooltips_are_talking
+        prerequisite = { focus = STL_the_tooltips_are_talking }
+        completion_reward = {
+            army_experience = 10
+            add_war_support = 0.02
+            STL_signal_up = yes
+
+            custom_effect_tooltip = generic_skip_one_line_tt
+            reduce_focus_completion_cost = {
+                focus = STL_army_effort
+                cost = 35
+            }
+        }
+        search_filters = { FOCUS_FILTER_ARMY_BONUS }
+    }
+
+    focus = {
+        id = STL_ask_it_what_it_wants
+        icon = GFX_focus_generic_public_meetings
+        cost = 5
+        x = 0
+        y = 2
+        relative_position_id = STL_the_tooltips_are_talking
+        prerequisite = { focus = STL_adjust_the_antenna }
+        prerequisite = { focus = STL_the_little_white_arrow }
+        completion_reward = {
+            custom_effect_tooltip = STL_ask_it_what_it_wants_tt
+            hidden_effect = {
+                country_event = stl_feather.60
+            }
+        }
+        search_filters = { FOCUS_FILTER_POLITICAL }
+    }
+
+    # The Three Readings of the Tooltip. Only one can become state doctrine, but their later
+    # focuses braid: the Console can reach Space Marines, and the Spreadsheet can reach Concentrated Industry.
+    focus = {
+        id = STL_historical_ai_off
+        icon = GFX_focus_generic_support_the_left_right
+        cost = 5
+        x = -5
+        y = 1
+        relative_position_id = STL_ask_it_what_it_wants
+        prerequisite = { focus = STL_ask_it_what_it_wants }
+        mutually_exclusive = {
+            focus = STL_just_one_more_factory
+            focus = STL_consult_the_spreadsheet
+        }
+        completion_reward = {
+            add_political_power = 50
+            add_war_support = 0.10
+            add_stability = -0.05
+            if = {
+                limit = { is_historical_focus_on = yes }
+                add_war_support = 0.05
+            }
+            STL_signal_up = yes
+        }
+        search_filters = { FOCUS_FILTER_POLITICAL }
+    }
+
+    focus = {
+        id = STL_open_the_console
+        icon = GFX_focus_generic_cryptologic_bomb
+        cost = 5
+        x = 1
+        y = 1
+        relative_position_id = STL_historical_ai_off
+        prerequisite = { focus = STL_historical_ai_off }
+        completion_reward = {
+            army_experience = 10
+            add_stability = -0.02
+            custom_effect_tooltip = STL_open_the_console_tt
+            hidden_effect = {
+                country_event = { id = stl_feather.14 days = 9 }
+            }
+            STL_signal_up = yes
+        }
+        search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_ARMY_BONUS }
+    }
+
+    focus = {
+        id = STL_hit_the_spacebar
+        icon = GFX_goal_leopold_clock
+        cost = 3
+        x = -2
+        y = 1
+        relative_position_id = STL_open_the_console
+        prerequisite = { focus = STL_open_the_console }
+        mutually_exclusive = { focus = STL_speed_five }
+        completion_reward = {
+            add_ideas = STL_fascist_pause
+            army_experience = 10
+        }
+        search_filters = { FOCUS_FILTER_ARMY_BONUS }
+    }
+
+    focus = {
+        id = STL_speed_five
+        icon = GFX_goal_generic_army_motorized
+        cost = 3
+        x = 2
+        y = 1
+        relative_position_id = STL_open_the_console
+        prerequisite = { focus = STL_open_the_console }
+        mutually_exclusive = { focus = STL_hit_the_spacebar }
+        completion_reward = {
+            add_ideas = STL_fascist_speed_five
+            STL_signal_up = yes
+        }
+        search_filters = { FOCUS_FILTER_INDUSTRY }
+    }
+
+    focus = {
+        id = STL_no_step_backwards
+        icon = GFX_goal_generic_fortify_city
+        cost = 5
+        x = 0
+        y = 2
+        relative_position_id = STL_open_the_console
         prerequisite = {
-            focus = STL_shining_example_of_democracy
+            focus = STL_hit_the_spacebar
+            focus = STL_speed_five
         }
-        completion_reward = { }
-        search_filters = { FOCUS_FILTER_COMPLETED_BY_EVENT FOCUS_FILTER_POLITICAL }
+        completion_reward = {
+            add_ideas = STL_fascist_elastic_defense
+            army_experience = 15
+        }
+        search_filters = { FOCUS_FILTER_ARMY_BONUS }
+    }
+
+    focus = {
+        id = STL_try_the_tag_command
+        icon = GFX_focus_generic_secret_agent_operative
+        cost = 5
+        x = -2
+        y = 1
+        relative_position_id = STL_no_step_backwards
+        prerequisite = { focus = STL_no_step_backwards }
+        completion_reward = {
+            custom_effect_tooltip = STL_try_the_tag_command_tt
+            hidden_effect = {
+                country_event = { id = stl_feather.65 days = 3 }
+            }
+            STL_signal_up = yes
+        }
+        search_filters = { FOCUS_FILTER_POLITICAL }
+    }
+
+    focus = {
+        id = STL_save_scum_the_frontline
+        icon = GFX_goal_generic_defence
+        cost = 5
+        x = 1
+        y = 2
+        relative_position_id = STL_no_step_backwards
+        prerequisite = { focus = STL_no_step_backwards }
+        completion_reward = {
+            army_experience = 15
+            add_political_power = 35
+            add_stability = 0.03
+            STL_signal_up = yes
+        }
+        search_filters = { FOCUS_FILTER_ARMY_BONUS FOCUS_FILTER_STABILITY }
+    }
+
+    focus = {
+        id = STL_just_one_more_factory
+        icon = GFX_goal_generic_construct_civ_factory
+        cost = 1
+        x = 2
+        y = 1
+        relative_position_id = STL_ask_it_what_it_wants
+        prerequisite = { focus = STL_ask_it_what_it_wants }
+        mutually_exclusive = {
+            focus = STL_historical_ai_off
+            focus = STL_consult_the_spreadsheet
+        }
+        available = { 57 = { is_owned_and_controlled_by = ROOT } }
+        completion_reward = {
+            57 = {
+                add_extra_state_shared_building_slots = 2
+                add_building_construction = {
+                    type = industrial_complex
+                    level = 2
+                    instant_build = yes
+                }
+            }
+            custom_effect_tooltip = STL_just_one_more_factory_tt
+            STL_signal_up = yes
+        }
+        search_filters = { FOCUS_FILTER_INDUSTRY }
+    }
+
+    focus = {
+        id = STL_civs_until_1939
+        icon = GFX_focus_generic_industry_1
+        cost = 10
+        x = 1
+        y = 1
+        relative_position_id = STL_just_one_more_factory
+        prerequisite = { focus = STL_just_one_more_factory }
+        available = { 57 = { is_owned_and_controlled_by = ROOT } }
+        completion_reward = {
+            57 = {
+                add_extra_state_shared_building_slots = 1
+                add_building_construction = {
+                    type = industrial_complex
+                    level = 1
+                    instant_build = yes
+                }
+            }
+            add_ideas = STL_fascist_civ_greed
+        }
+        search_filters = { FOCUS_FILTER_INDUSTRY }
+    }
+
+    focus = {
+        id = STL_nobody_builds_infrastructure
+        icon = GFX_goal_generic_construct_infrastructure
+        cost = 3
+        x = -2
+        y = 1
+        relative_position_id = STL_civs_until_1939
+        prerequisite = { focus = STL_civs_until_1939 }
+        available = { 57 = { is_owned_and_controlled_by = ROOT } }
+        completion_reward = {
+            57 = {
+                add_building_construction = {
+                    type = infrastructure
+                    level = 2
+                    instant_build = yes
+                }
+            }
+            add_political_power = 15
+        }
+        search_filters = { FOCUS_FILTER_INDUSTRY }
+    }
+
+    focus = {
+        id = STL_refineries_in_1941
+        icon = GFX_goal_generic_oil_refinery
+        cost = 3
+        x = 2
+        y = 1
+        relative_position_id = STL_civs_until_1939
+        prerequisite = { focus = STL_civs_until_1939 }
+        completion_reward = {
+            add_fuel = 5000
+            add_political_power = 15
+        }
+        search_filters = { FOCUS_FILTER_INDUSTRY }
+    }
+
+    # Crossing point: the Factory reading gets here through its infrastructure, the Console through No Step Backwards.
+    focus = {
+        id = STL_space_marines_are_canon
+        icon = GFX_focus_generic_tank_assault
+        cost = 5
+        x = -1
+        y = 2
+        relative_position_id = STL_nobody_builds_infrastructure
+        prerequisite = {
+            focus = STL_nobody_builds_infrastructure
+            focus = STL_no_step_backwards
+        }
+        completion_reward = {
+            add_ideas = STL_fascist_space_marines
+            army_experience = 25
+        }
+        search_filters = { FOCUS_FILTER_ARMY_BONUS }
+    }
+
+    focus = {
+        id = STL_forty_width_forever
+        icon = GFX_goal_generic_army_artillery2
+        cost = 5
+        x = 1
+        y = 1
+        relative_position_id = STL_space_marines_are_canon
+        prerequisite = { focus = STL_space_marines_are_canon }
+        completion_reward = {
+            add_ideas = STL_fascist_forty_width
+            army_experience = 20
+            STL_signal_up = yes
+        }
+        search_filters = { FOCUS_FILTER_ARMY_BONUS }
+    }
+
+    # Crossing point: the Factory reading gets here through the refineries, the Spreadsheet through column Q.
+    focus = {
+        id = STL_concentrated_forever
+        icon = GFX_focus_generic_mass_production
+        cost = 5
+        x = 0
+        y = 2
+        relative_position_id = STL_refineries_in_1941
+        prerequisite = {
+            focus = STL_refineries_in_1941
+            focus = STL_sort_column_q
+        }
+        completion_reward = {
+            add_ideas = STL_fascist_concentrated
+        }
+        search_filters = { FOCUS_FILTER_INDUSTRY }
+    }
+
+    focus = {
+        id = STL_consult_the_spreadsheet
+        icon = GFX_focus_generic_industry_2
+        cost = 5
+        x = 9
+        y = 1
+        relative_position_id = STL_ask_it_what_it_wants
+        prerequisite = { focus = STL_ask_it_what_it_wants }
+        mutually_exclusive = {
+            focus = STL_historical_ai_off
+            focus = STL_just_one_more_factory
+        }
+        completion_reward = {
+            add_ideas = STL_fascist_spreadsheet
+            add_political_power = 35
+            STL_signal_up = yes
+        }
+        search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_RESEARCH }
+    }
+
+    focus = {
+        id = STL_ahead_of_time_is_fake
+        icon = GFX_focus_research2
+        cost = 5
+        x = 1
+        y = 1
+        relative_position_id = STL_consult_the_spreadsheet
+        prerequisite = { focus = STL_consult_the_spreadsheet }
+        completion_reward = {
+            add_research_slot = 1
+            add_stability = -0.03
+        }
+        search_filters = { FOCUS_FILTER_RESEARCH }
+    }
+
+    # Tooltip says do not. Rolls one of three sort orders, each with its own consequences.
+    focus = {
+        id = STL_sort_column_q
+        icon = GFX_goal_generic_dangerous_deal
+        cost = 1
+        x = -2
+        y = 1
+        relative_position_id = STL_ahead_of_time_is_fake
+        prerequisite = { focus = STL_ahead_of_time_is_fake }
+        completion_reward = {
+            custom_effect_tooltip = STL_sort_column_q_tt
+            hidden_effect = {
+                random_list = {
+                    seed = random
+                    34 = { country_event = stl_feather.61 }
+                    33 = { country_event = stl_feather.62 }
+                    33 = { country_event = stl_feather.63 }
+                }
+            }
+        }
+        search_filters = { FOCUS_FILTER_RESEARCH }
+    }
+
+    focus = {
+        id = STL_open_the_tab_called_dont
+        icon = GFX_focus_generic_conspiracy
+        cost = 5
+        x = 2
+        y = 1
+        relative_position_id = STL_ahead_of_time_is_fake
+        prerequisite = { focus = STL_ahead_of_time_is_fake }
+        completion_reward = {
+            add_war_support = 0.05
+            custom_effect_tooltip = STL_open_the_tab_called_dont_tt
+            hidden_effect = {
+                country_event = stl_feather.64
+            }
+            STL_signal_up = yes
+        }
+        search_filters = { FOCUS_FILTER_POLITICAL }
+    }
+
+    focus = {
+        id = STL_click_the_green_bubbles
+        icon = GFX_goal_generic_intelligence_exchange_pony
+        cost = 1
+        x = 0
+        y = 2
+        relative_position_id = STL_ahead_of_time_is_fake
+        prerequisite = {
+            focus = STL_sort_column_q
+            focus = STL_open_the_tab_called_dont
+        }
+        completion_reward = {
+            add_ideas = STL_fascist_green_bubbles
+            add_political_power = 75
+            STL_signal_up = yes
+        }
+        search_filters = { FOCUS_FILTER_POLITICAL }
+    }
+
+    focus = {
+        id = STL_one_division_training
+        icon = GFX_goal_generic_pony_soldier
+        cost = 10
+        x = -1
+        y = 1
+        relative_position_id = STL_click_the_green_bubbles
+        prerequisite = { focus = STL_click_the_green_bubbles }
+        completion_reward = {
+            army_experience = 35
+            add_manpower = 1500
+        }
+        search_filters = { FOCUS_FILTER_ARMY_BONUS FOCUS_FILTER_MANPOWER }
+    }
+
+    focus = {
+        id = STL_circular_reference
+        icon = GFX_focus_generic_central_planning
+        cost = 5
+        x = 1
+        y = 1
+        relative_position_id = STL_click_the_green_bubbles
+        prerequisite = { focus = STL_click_the_green_bubbles }
+        completion_reward = {
+            add_ideas = STL_fascist_circular
+            STL_signal_up = yes
+        }
+        search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_POLITICAL }
+    }
+
+    # The Voice's own thread, running down the far right. Open to every reading.
+    focus = {
+        id = STL_it_has_a_second_monitor
+        icon = GFX_focus_generic_phone
+        cost = 3
+        x = 12
+        y = 1
+        relative_position_id = STL_the_little_white_arrow
+        prerequisite = { focus = STL_the_little_white_arrow }
+        completion_reward = {
+            add_political_power = 25
+            custom_effect_tooltip = STL_it_has_a_second_monitor_tt
+            hidden_effect = {
+                set_variable = { STL_signal_mood = 7 }
+                STL_signal_refresh = yes
+            }
+        }
+        search_filters = { FOCUS_FILTER_POLITICAL }
+    }
+
+    focus = {
+        id = STL_say_something_back
+        icon = GFX_focus_generic_radio_communication
+        cost = 3
+        x = -1
+        y = 1
+        relative_position_id = STL_it_has_a_second_monitor
+        prerequisite = { focus = STL_it_has_a_second_monitor }
+        completion_reward = {
+            add_political_power = 5
+            custom_effect_tooltip = STL_say_something_back_tt
+            STL_signal_up = yes
+        }
+        search_filters = { FOCUS_FILTER_POLITICAL }
+    }
+
+    focus = {
+        id = STL_read_the_error_log
+        icon = GFX_focus_generic_printing_press
+        cost = 3
+        x = 2
+        y = 1
+        relative_position_id = STL_it_has_a_second_monitor
+        prerequisite = { focus = STL_it_has_a_second_monitor }
+        completion_reward = {
+            add_timed_idea = {
+                idea = STL_error_log
+                days = 365
+            }
+        }
+        search_filters = { FOCUS_FILTER_RESEARCH }
+    }
+
+    focus = {
+        id = STL_why_did_you_pick_us
+        icon = GFX_focus_generic_conference
+        cost = 5
+        x = 2
+        y = 1
+        relative_position_id = STL_say_something_back
+        prerequisite = {
+            focus = STL_say_something_back
+            focus = STL_read_the_error_log
+        }
+        completion_reward = {
+            custom_effect_tooltip = STL_why_did_you_pick_us_tt
+            hidden_effect = {
+                country_event = stl_feather.66
+            }
+        }
+        search_filters = { FOCUS_FILTER_POLITICAL }
+    }
+
+    focus = {
+        id = STL_the_other_saves
+        icon = GFX_focus_generic_government_in_exile
+        cost = 5
+        x = 2
+        y = 1
+        relative_position_id = STL_why_did_you_pick_us
+        prerequisite = { focus = STL_why_did_you_pick_us }
+        completion_reward = {
+            custom_effect_tooltip = STL_the_other_saves_tt
+            hidden_effect = {
+                random_list = {
+                    seed = random
+                    40 = { add_political_power = 100 }
+                    30 = {
+                        add_war_support = 0.10
+                        add_stability = -0.05
+                    }
+                    30 = { STL_signal_up = yes }
+                }
+            }
+        }
+        search_filters = { FOCUS_FILTER_POLITICAL }
+    }
+
+    focus = {
+        id = STL_it_is_listening
+        icon = GFX_goal_generic_intelligence_exchange
+        cost = 5
+        x = -1
+        y = 2
+        relative_position_id = STL_why_did_you_pick_us
+        prerequisite = { focus = STL_why_did_you_pick_us }
+        completion_reward = {
+            custom_effect_tooltip = STL_it_is_listening_tt
+            STL_signal_up = yes
+        }
+        search_filters = { FOCUS_FILTER_POLITICAL }
+    }
+
+    # Everything converges here, then winds on to the orchard.
+    focus = {
+        id = STL_map_painting_department
+        icon = GFX_goal_generic_more_territorial_claims
+        cost = 7
+        x = 1
+        y = 1
+        relative_position_id = STL_forty_width_forever
+        prerequisite = {
+            focus = STL_save_scum_the_frontline
+            focus = STL_forty_width_forever
+            focus = STL_one_division_training
+        }
+        completion_reward = {
+            add_ideas = STL_fascist_map_painters
+            add_war_support = 0.10
+        }
+        search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_ARMY_BONUS }
+    }
+
+    focus = {
+        id = STL_peace_conference_bingo
+        icon = GFX_focus_generic_diplomatic_treaty
+        cost = 5
+        x = -2
+        y = 1
+        relative_position_id = STL_map_painting_department
+        prerequisite = { focus = STL_map_painting_department }
+        available = {
+            count_triggers = {
+                amount = 3
+                custom_trigger_tooltip = {
+                    tooltip = STL_bingo_war_tt
+                    has_war = yes
+                }
+                custom_trigger_tooltip = {
+                    tooltip = STL_bingo_enclave_tt
+                    any_owned_state = { NOT = { is_core_of = ROOT } }
+                }
+                custom_trigger_tooltip = {
+                    tooltip = STL_bingo_puppet_tt
+                    num_subjects > 0
+                }
+                custom_trigger_tooltip = {
+                    tooltip = STL_bingo_stability_tt
+                    has_stability < 0.5
+                }
+                custom_trigger_tooltip = {
+                    tooltip = STL_bingo_political_power_tt
+                    has_political_power > 200
+                }
+                custom_trigger_tooltip = {
+                    tooltip = STL_bingo_phantom_tt
+                    has_completed_focus = STL_there_was_always_a_focus_here
+                }
+            }
+        }
+        completion_reward = {
+            add_political_power = 100
+            add_war_support = 0.05
+            add_stability = -0.05
+        }
+        search_filters = { FOCUS_FILTER_POLITICAL }
+    }
+
+    focus = {
+        id = STL_the_third_pencil
+        icon = GFX_goal_generic_demand_territory
+        cost = 5
+        x = 2
+        y = 1
+        relative_position_id = STL_map_painting_department
+        prerequisite = { focus = STL_map_painting_department }
+        completion_reward = {
+            add_political_power = 25
+            custom_effect_tooltip = STL_the_third_pencil_tt
+        }
+        search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_ANNEXATION }
+    }
+
+    focus = {
+        id = STL_one_tag_challenge
+        icon = GFX_goal_generic_territory_or_war
+        cost = 7
+        x = 0
+        y = 2
+        relative_position_id = STL_map_painting_department
+        prerequisite = {
+            focus = STL_peace_conference_bingo
+            focus = STL_the_third_pencil
+        }
+        completion_reward = {
+            add_political_power = 150
+            add_war_support = 0.15
+            add_stability = 0.10
+            custom_effect_tooltip = STL_one_tag_challenge_tt
+            hidden_effect = {
+                every_neighbor_country = {
+                    limit = {
+                        exists = yes
+                        NOT = { is_in_faction_with = ROOT }
+                        NOT = { has_war_with = ROOT }
+                    }
+                    ROOT = {
+                        create_wargoal = {
+                            type = annex_everything
+                            target = PREV
+                        }
+                    }
+                }
+            }
+        }
+        search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_ANNEXATION }
+    }
+
+    # Sugar Belle's thread, off to one side. Feather would prefer you did not look at it.
+    focus = {
+        id = STL_classify_the_muffin
+        icon = GFX_goal_generic_consumer_goods
+        cost = 3
+        x = -3
+        y = 1
+        relative_position_id = STL_one_tag_challenge
+        prerequisite = { focus = STL_one_tag_challenge }
+        completion_reward = {
+            add_stability = 0.03
+            add_political_power = 10
+        }
+        search_filters = { FOCUS_FILTER_STABILITY }
+    }
+
+    focus = {
+        id = STL_draft_412
+        icon = GFX_focus_generic_commission
+        cost = 3
+        x = -1
+        y = 1
+        relative_position_id = STL_classify_the_muffin
+        prerequisite = { focus = STL_classify_the_muffin }
+        completion_reward = {
+            add_war_support = 0.03
+            STL_signal_up = yes
+        }
+        search_filters = { FOCUS_FILTER_POLITICAL }
+    }
+
+    focus = {
+        id = STL_form_number_one
+        icon = GFX_focus_generic_treaty
+        cost = 5
+        x = 3
+        y = 1
+        relative_position_id = STL_one_tag_challenge
+        prerequisite = { focus = STL_one_tag_challenge }
+        completion_reward = {
+            custom_effect_tooltip = STL_form_number_one_tt
+            hidden_effect = {
+                # The Signal is random: make sure He Turned Around has happened before the ending starts.
+                if = {
+                    limit = { NOT = { has_country_flag = STL_he_turned_around } }
+                    set_variable = { STL_signal = 9 }
+                    STL_signal_settle = yes
+                }
+                country_event = stl_feather.50
+            }
+        }
+        search_filters = { FOCUS_FILTER_POLITICAL }
+    }
+
+    focus = {
+        id = STL_the_ponyville_question
+        icon = GFX_goal_generic_major_war
+        cost = 5
+        x = -2
+        y = 1
+        relative_position_id = STL_form_number_one
+        prerequisite = { focus = STL_form_number_one }
+        completion_reward = {
+            add_war_support = 0.10
+            custom_effect_tooltip = STL_the_ponyville_question_tt
+            hidden_effect = {
+                if = {
+                    limit = {
+                        2 = {
+                            NOT = { is_owned_by = ROOT }
+                            owner = { NOT = { is_in_faction_with = ROOT } }
+                        }
+                    }
+                    2 = {
+                        owner = {
+                            ROOT = {
+                                create_wargoal = {
+                                    type = take_state_focus
+                                    target = PREV
+                                    generator = { 2 }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_ANNEXATION }
+    }
+
+    focus = {
+        id = STL_three_armies
+        icon = GFX_focus_generic_combined_arms
+        cost = 5
+        x = -2
+        y = 1
+        relative_position_id = STL_the_ponyville_question
+        prerequisite = { focus = STL_the_ponyville_question }
+        completion_reward = {
+            army_experience = 25
+            add_manpower = 3000
+        }
+        search_filters = { FOCUS_FILTER_ARMY_BONUS FOCUS_FILTER_MANPOWER }
+    }
+
+    focus = {
+        id = STL_a_folding_chair
+        icon = GFX_focus_generic_court
+        cost = 1
+        x = 2
+        y = 1
+        relative_position_id = STL_the_ponyville_question
+        prerequisite = { focus = STL_the_ponyville_question }
+        completion_reward = {
+            custom_effect_tooltip = STL_a_folding_chair_tt
+            add_stability = 0.02
+        }
+        search_filters = { FOCUS_FILTER_STABILITY }
+    }
+
+    # The end of the path: the ending events, and the Final Map, which cores every state on Equus.
+    focus = {
+        id = STL_achievement_unlocked
+        icon = GFX_goal_generic_national_unity
+        cost = 5
+        x = 0
+        y = 2
+        relative_position_id = STL_the_ponyville_question
+        prerequisite = { focus = STL_three_armies }
+        prerequisite = { focus = STL_a_folding_chair }
+        available = { 2 = { is_controlled_by = ROOT } }
+        completion_reward = {
+            custom_effect_tooltip = STL_achievement_unlocked_tt
+            custom_effect_tooltip = generic_skip_one_line_tt
+            custom_effect_tooltip = STL_achievement_unlocked_core_tt
+            hidden_effect = {
+                every_state = {
+                    add_core_of = ROOT
+                }
+                mark_focus_tree_layout_dirty = yes
+                country_event = stl_feather.51
+            }
+        }
+        search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_STABILITY FOCUS_FILTER_ANNEXATION }
+    }
+
+    # Revealed by the ending. The tooltip says it does nothing. This is one of the kinder lies on the path.
+    focus = {
+        id = STL_todo_happy_ending
+        icon = GFX_focus_generic_happy_cheer
+        cost = 1
+        x = 3
+        y = 1
+        allow_branch = { has_completed_focus = STL_achievement_unlocked }
+        relative_position_id = STL_achievement_unlocked
+        prerequisite = { focus = STL_achievement_unlocked }
+        completion_reward = {
+            custom_effect_tooltip = STL_todo_happy_ending_tt
+            hidden_effect = {
+                add_stability = 0.01
+            }
+        }
+        search_filters = { FOCUS_FILTER_STABILITY }
     }
 
     focus = {

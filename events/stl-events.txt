@@ -275,6 +275,7 @@ country_event = {
         trigger = {
             any_character = {
                 is_political_advisor = yes
+                is_hired_as_advisor = yes
                 has_trait = fascist_demagogue
             }
         }
@@ -438,18 +439,24 @@ country_event = {
 
         set_country_flag = going_fascist
         mark_focus_tree_layout_dirty = yes
+        STL_signal_start = yes
 
         add_popularity = {
             ideology = fascism
             popularity = 45
         }
-        set_party_rule = {
-            ideology = fascism
-        }
-        ROOT = {
-            STL_feather_bangs = {
-                promote_character = yes
+        STL_feather_bangs = {
+            add_country_leader_role = {
+                promote_leader = yes
+                country_leader = {
+                    ideology = nazism
+                    expire = "1965.1.1.1"
+                }
             }
+        }
+        set_politics = {
+            ruling_party = fascism
+            elections_allowed = no
         }
     }
 }

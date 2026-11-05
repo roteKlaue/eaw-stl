@@ -1,0 +1,125 @@
+# Focus descriptions on Feather Bangs' path that react to the player's actual game settings.
+defined_text = {
+	name = GetSTLHistoricalAiDesc
+	text = {
+		trigger = { is_historical_focus_on = yes }
+		localization_key = STL_historical_ai_off_desc_on
+	}
+	text = {
+		localization_key = STL_historical_ai_off_desc_off
+	}
+}
+
+defined_text = {
+	name = GetSTLConsoleDesc
+	text = {
+		trigger = { is_ironman = yes }
+		localization_key = STL_open_the_console_desc_ironman
+	}
+	text = {
+		localization_key = STL_open_the_console_desc_normal
+	}
+}
+
+defined_text = {
+	name = GetSTLNoStepBackDesc
+	text = {
+		trigger = { has_dlc = "No Step Back" }
+		localization_key = STL_no_step_backwards_desc_owned
+	}
+	text = {
+		localization_key = STL_no_step_backwards_desc_missing
+	}
+}
+
+# The Signal's current mood, for the modifier tooltip, the Reception Sheet and the Reception Report.
+defined_text = {
+	name = GetSTLSignalMoodName
+	text = {
+		trigger = { check_variable = { STL_signal_mood = 1 } }
+		localization_key = STL_signal_mood_1
+	}
+	text = {
+		trigger = { check_variable = { STL_signal_mood = 2 } }
+		localization_key = STL_signal_mood_2
+	}
+	text = {
+		trigger = { check_variable = { STL_signal_mood = 3 } }
+		localization_key = STL_signal_mood_3
+	}
+	text = {
+		trigger = { check_variable = { STL_signal_mood = 4 } }
+		localization_key = STL_signal_mood_4
+	}
+	text = {
+		trigger = { check_variable = { STL_signal_mood = 5 } }
+		localization_key = STL_signal_mood_5
+	}
+	text = {
+		trigger = { check_variable = { STL_signal_mood = 6 } }
+		localization_key = STL_signal_mood_6
+	}
+	text = {
+		trigger = { check_variable = { STL_signal_mood = 7 } }
+		localization_key = STL_signal_mood_7
+	}
+	text = {
+		trigger = { check_variable = { STL_signal_mood = 8 } }
+		localization_key = STL_signal_mood_8
+	}
+	text = {
+		trigger = { check_variable = { STL_signal_mood = 9 } }
+		localization_key = STL_signal_mood_9
+	}
+}
+
+defined_text = {
+	name = GetSTLSignalMoodDesc
+	text = {
+		trigger = { check_variable = { STL_signal_mood = 1 } }
+		localization_key = STL_signal_mood_1_desc
+	}
+	text = {
+		trigger = { check_variable = { STL_signal_mood = 2 } }
+		localization_key = STL_signal_mood_2_desc
+	}
+	text = {
+		trigger = { check_variable = { STL_signal_mood = 3 } }
+		localization_key = STL_signal_mood_3_desc
+	}
+	text = {
+		trigger = { check_variable = { STL_signal_mood = 4 } }
+		localization_key = STL_signal_mood_4_desc
+	}
+	text = {
+		trigger = { check_variable = { STL_signal_mood = 5 } }
+		localization_key = STL_signal_mood_5_desc
+	}
+	text = {
+		trigger = { check_variable = { STL_signal_mood = 6 } }
+		localization_key = STL_signal_mood_6_desc
+	}
+	text = {
+		trigger = { check_variable = { STL_signal_mood = 7 } }
+		localization_key = STL_signal_mood_7_desc
+	}
+	text = {
+		trigger = { check_variable = { STL_signal_mood = 8 } }
+		localization_key = STL_signal_mood_8_desc
+	}
+	text = {
+		trigger = { check_variable = { STL_signal_mood = 9 } }
+		localization_key = STL_signal_mood_9_desc
+	}
+}
+
+defined_text = {
+	name = GetSTLTagDesc
+	text = {
+		trigger = { is_ironman = yes }
+		localization_key = STL_try_the_tag_command_desc_ironman
+	}
+	text = {
+		localization_key = STL_try_the_tag_command_desc_normal
+	}
+}

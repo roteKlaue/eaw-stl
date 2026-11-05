@@ -181,3 +181,20 @@ STL_fortress_democracy_modifier = {
     ai_get_ally_desire_factor = -150
 }
 
+STL_the_signal = {
+    enable = { always = yes }
+    icon = GFX_idea_generic_deal_with_the_devil2
+
+    political_power_gain = STL_signal_political_power
+    stability_factor = STL_signal_stability
+    war_support_factor = STL_signal_war_support
+    decryption_factor = STL_signal_decryption
+    research_speed_factor = STL_signal_research
+    production_speed_buildings_factor = STL_signal_construction
+    industrial_capacity_factory = STL_signal_industry
+    consumer_goods_factor = STL_signal_consumer_goods
+    army_attack_factor = STL_signal_attack
+    army_defence_factor = STL_signal_defence
+    planning_speed = STL_signal_planning
+    experience_gain_army_factor = STL_signal_experience
+}

@@ -70,6 +70,24 @@ characters={
         gender = female
     }
 
+    STL_forum_prophet = {
+        name = STL_forum_prophet
+        portraits = {
+            civilian = {
+                small = GFX_idea_unknown_advisor
+            }
+        }
+        advisor = {
+            slot = political_advisor
+            idea_token = STL_forum_prophet
+            allowed = { original_tag = STL }
+            visible = { has_completed_focus = STL_twilight_teaching }
+            available = { has_government = democratic }
+            traits = { fascist_demagogue }
+            ai_will_do = { factor = 0 }
+        }
+    }
+
 	STL_supreme_equalist_council = {
 		name = STL_supreme_equalist_council
 
