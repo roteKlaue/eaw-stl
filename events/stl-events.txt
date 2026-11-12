@@ -89,6 +89,9 @@ country_event = { # EQS accepts
         STL_starlight_glimmer = {
             promote_character = yes
         }
+
+        country_event = { id = stl_equality.30 days = 3 }
+        mark_focus_tree_layout_dirty = yes
     }
 }
 
@@ -118,6 +121,7 @@ country_event = {
         STL_supreme_equalist_council = {
             promote_character = yes
         }
+        mark_focus_tree_layout_dirty = yes
     }
 }
 
@@ -539,12 +543,12 @@ country_event = {
     id = starlight_equalism.1
     title = starlight_equalism.1.t
     desc = starlight_equalism.1.d
-    picture = GFX_report_event_generic_propaganda
+    picture = GFX_event_pony_march
 
+    # Fired 15 days after STL_descent_into_madness is selected, so the focus is still in progress.
     trigger = {
         tag = STL
         has_country_flag = STL_has_formed_our_eqs
-        has_completed_focus = STL_decent_into_madness
     }
 
     is_triggered_only = yes
@@ -575,7 +579,7 @@ country_event = {
     id = starlight_equalism.2
     title = starlight_equalism.2.t
     desc = starlight_equalism.2.d
-    picture = GFX_report_event_generic_protest
+    picture = GFX_event_pony_protest
 
     is_triggered_only = yes
     fire_only_once = yes

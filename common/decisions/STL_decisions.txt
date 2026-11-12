@@ -134,6 +134,8 @@ form_equ_stg = {
             }
             custom_effect_tooltip =	form_stg_tt4
             set_country_flag = formed_stg_stl
+            country_event = { id = stl_equality.11 days = 1 }
+            news_event = { id = stl_equality.12 hours = 12 }
             STG = {
                 every_character = {
                     limit = {
@@ -252,6 +254,7 @@ form_equ_stg = {
                 id = starlight.19
                 days = 1
             }
+            news_event = { id = stl_equality.51 hours = 12 }
 
             hidden_effect = {
                 every_state = {

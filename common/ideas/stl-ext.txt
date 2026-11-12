@@ -138,6 +138,23 @@ ideas = {
             }
         }
 
+        STL_revived_institutes = {
+            allowed = {
+                original_tag = STL
+            }
+
+            picture = EQS_home_of_ponies
+
+            removal_cost = -1
+
+            modifier = {
+                political_power_factor = 0.1
+                drift_defence_factor = -0.1
+                political_advisor_cost_factor = -0.25
+                high_command_cost_factor = -0.25
+            }
+        }
+
         STL_foreigners = {
             allowed_civil_war = {
                 always = yes

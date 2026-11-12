@@ -1,0 +1,720 @@
+add_namespace = stl_equality
+
+# Story events for the communist (Equality) path.
+#   1-19   Act I   - Our Neighbours: Double Diamond's first term and the conquest of Stalliongrad
+#   20-29  Act II  - The Supreme Equalist: Double Diamond's path
+#   30-49  Act II  - Our Beloved Ruler: Starlight Glimmer's path
+#   50-59  Act III - Our Equestria
+#   60-69  Act IV  - Equality for the Continent
+
+###########################################################################
+# ACT I - OUR NEIGHBOURS
+###########################################################################
+
+# STL_neighbors_help: the mountain road to Stalliongrad reopens.
+country_event = {
+    id = stl_equality.1
+    title = stl_equality.1.t
+    desc = stl_equality.1.d
+    picture = GFX_event_stalliongrad
+
+    is_triggered_only = yes
+    fire_only_once = yes
+
+    option = {
+        name = stl_equality.1.a
+        add_political_power = 50
+        if = {
+            limit = { country_exists = STG }
+            add_opinion_modifier = { target = STG modifier = worker_solidarity2 }
+            STG = {
+                add_opinion_modifier = { target = ROOT modifier = worker_solidarity2 }
+            }
+        }
+        swap_ideas = { remove_idea = STL_city_state add_idea = STL_city_state2 }
+    }
+}
+
+# STL_independence_line: Our Town refuses to be absorbed.
+country_event = {
+    id = stl_equality.2
+    title = stl_equality.2.t
+    desc = stl_equality.2.d
+    picture = GFX_event_our_town
+
+    is_triggered_only = yes
+    fire_only_once = yes
+
+    option = {
+        name = stl_equality.2.a
+        add_political_power = 50
+        if = {
+            limit = { country_exists = STG }
+            STG = {
+                add_opinion_modifier = { target = ROOT modifier = refused_to_cooperate }
+            }
+        }
+    }
+}
+
+# STL_industrial_help: STG receives the request for industrial aid. FROM = STL.
+country_event = {
+    id = stl_equality.3
+    title = stl_equality.3.t
+    desc = stl_equality.3.d
+    picture = GFX_event_stg_pairlament2
+
+    is_triggered_only = yes
+    fire_only_once = yes
+
+    option = {
+        name = stl_equality.3.a
+        ai_chance = {
+            base = 80
+            modifier = { factor = 100 is_historical_focus_on = yes }
+        }
+        add_political_power = -65
+        FROM = {
+            country_event = { id = stl_equality.4 days = 1 }
+        }
+    }
+
+    option = {
+        name = stl_equality.3.b
+        ai_chance = {
+            base = 80
+            modifier = { factor = 0 is_historical_focus_on = yes }
+        }
+        add_political_power = -5
+        FROM = {
+            add_opinion_modifier = { target = ROOT modifier = why_you_do_this }
+            country_event = { id = stl_equality.5 days = 1 }
+        }
+    }
+}
+
+# STG sends engineers.
+country_event = {
+    id = stl_equality.4
+    title = stl_equality.4.t
+    desc = stl_equality.4.d
+    picture = GFX_report_event_generic_factory
+
+    is_triggered_only = yes
+    fire_only_once = yes
+
+    option = {
+        name = stl_equality.4.a
+        add_timed_idea = { idea = STL_STG_advisory_industry days = 650 }
+    }
+}
+
+# STG refuses industrial aid.
+country_event = {
+    id = stl_equality.5
+    title = stl_equality.5.t
+    desc = stl_equality.5.d
+    picture = GFX_report_event_generic_read_write
+
+    is_triggered_only = yes
+    fire_only_once = yes
+
+    option = {
+        name = stl_equality.5.a
+        add_political_power = 10
+    }
+}
+
+# STL_STG_military_advisors: STG receives the request for military advisors. FROM = STL.
+country_event = {
+    id = stl_equality.6
+    title = stl_equality.6.t
+    desc = stl_equality.6.d
+    picture = GFX_event_stg_pairlament2
+
+    is_triggered_only = yes
+    fire_only_once = yes
+
+    option = {
+        name = stl_equality.6.a
+        ai_chance = {
+            base = 80
+            modifier = { factor = 100 is_historical_focus_on = yes }
+        }
+        add_political_power = -65
+        FROM = {
+            country_event = { id = stl_equality.7 days = 1 }
+        }
+    }
+
+    option = {
+        name = stl_equality.6.b
+        ai_chance = {
+            base = 80
+            modifier = { factor = 0 is_historical_focus_on = yes }
+        }
+        add_political_power = -5
+        FROM = {
+            add_opinion_modifier = { target = ROOT modifier = why_you_do_this }
+            country_event = { id = stl_equality.8 days = 1 }
+        }
+    }
+}
+
+# STG instructors arrive.
+country_event = {
+    id = stl_equality.7
+    title = stl_equality.7.t
+    desc = stl_equality.7.d
+    picture = GFX_event_stg_red_army
+
+    is_triggered_only = yes
+    fire_only_once = yes
+
+    option = {
+        name = stl_equality.7.a
+        set_country_flag = STL_stg_instructors_came
+        add_ideas = STL_new_army_spirit
+    }
+}
+
+# STG refuses military aid.
+country_event = {
+    id = stl_equality.8
+    title = stl_equality.8.t
+    desc = stl_equality.8.d
+    picture = GFX_report_event_generic_read_write
+
+    is_triggered_only = yes
+    fire_only_once = yes
+
+    option = {
+        name = stl_equality.8.a
+        add_political_power = 10
+    }
+}
+
+# STL_new_army: the first parade of the Equality Army.
+country_event = {
+    id = stl_equality.9
+    title = stl_equality.9.t
+    desc = {
+        text = stl_equality.9.d_instructors
+        trigger = { has_country_flag = STL_stg_instructors_came }
+    }
+    desc = {
+        text = stl_equality.9.d_alone
+        trigger = { NOT = { has_country_flag = STL_stg_instructors_came } }
+    }
+    picture = GFX_event_pony_march
+
+    is_triggered_only = yes
+    fire_only_once = yes
+
+    option = {
+        name = stl_equality.9.a
+        add_ideas = STL_new_army_spirit
+    }
+}
+
+# STL_conquest_of_STG: Double Diamond turns on Stalliongrad.
+country_event = {
+    id = stl_equality.10
+    title = stl_equality.10.t
+    desc = stl_equality.10.d
+    picture = GFX_event_pony_soldiers
+
+    is_triggered_only = yes
+    fire_only_once = yes
+
+    option = {
+        name = stl_equality.10.a
+        ai_chance = { base = 70 }
+        add_war_support = 0.05
+    }
+
+    option = {
+        name = stl_equality.10.b
+        ai_chance = { base = 30 }
+        add_stability = 0.03
+    }
+}
+
+# form_stg decision: the banners change over Stalliongrad.
+country_event = {
+    id = stl_equality.11
+    title = stl_equality.11.t
+    desc = stl_equality.11.d
+    picture = GFX_event_stalliongrad_tower
+
+    is_triggered_only = yes
+    fire_only_once = yes
+
+    option = {
+        name = stl_equality.11.a
+    }
+}
+
+# form_stg decision: the world hears about it.
+news_event = {
+    id = stl_equality.12
+    title = stl_equality.12.t
+    desc = stl_equality.12.d
+    picture = GFX_news_event_our_town
+
+    major = yes
+    is_triggered_only = yes
+    fire_only_once = yes
+
+    option = {
+        name = stl_equality.12.a
+        trigger = { original_tag = STL }
+    }
+
+    option = {
+        name = stl_equality.12.b
+        trigger = { NOT = { original_tag = STL } }
+    }
+}
+
+# STL_garden: colour comes back to Our Town.
+country_event = {
+    id = stl_equality.13
+    title = stl_equality.13.t
+    desc = stl_equality.13.d
+    picture = GFX_event_gardening
+
+    is_triggered_only = yes
+    fire_only_once = yes
+
+    option = {
+        name = stl_equality.13.a
+    }
+}
+
+# STL_breeding_program: the nurseries open.
+country_event = {
+    id = stl_equality.14
+    title = stl_equality.14.t
+    desc = stl_equality.14.d
+    picture = GFX_event_school
+
+    is_triggered_only = yes
+    fire_only_once = yes
+
+    option = {
+        name = stl_equality.14.a
+    }
+}
+
+###########################################################################
+# ACT II - THE SUPREME EQUALIST (Double Diamond)
+###########################################################################
+
+# STL_double_diamond_supreme: the victory speech.
+country_event = {
+    id = stl_equality.20
+    title = stl_equality.20.t
+    desc = stl_equality.20.d
+    picture = GFX_event_speech
+
+    is_triggered_only = yes
+    fire_only_once = yes
+
+    option = {
+        name = stl_equality.20.a
+        ai_chance = { base = 80 }
+        add_war_support = 0.05
+    }
+
+    option = {
+        name = stl_equality.20.b
+        ai_chance = { base = 20 }
+        add_stability = 0.03
+    }
+}
+
+# STL_increase_radicalism: ponies start painting equal signs over their marks.
+country_event = {
+    id = stl_equality.21
+    title = stl_equality.21.t
+    desc = stl_equality.21.d
+    picture = GFX_event_eqs_communists
+
+    is_triggered_only = yes
+    fire_only_once = yes
+
+    option = {
+        name = stl_equality.21.a
+        ai_chance = { base = 80 }
+        add_political_power = 25
+        add_war_support = 0.03
+    }
+
+    option = {
+        name = stl_equality.21.b
+        ai_chance = { base = 20 }
+        add_stability = 0.03
+    }
+}
+
+# STL_starlight_as_a_figure_head: Starlight becomes a poster.
+country_event = {
+    id = stl_equality.22
+    title = stl_equality.22.t
+    desc = stl_equality.22.d
+    picture = GFX_event_starlight_for_the_win
+
+    is_triggered_only = yes
+    fire_only_once = yes
+
+    option = {
+        name = stl_equality.22.a
+    }
+}
+
+# STL_purge_the_dissidents
+country_event = {
+    id = stl_equality.23
+    title = stl_equality.23.t
+    desc = stl_equality.23.d
+    picture = GFX_report_event_SOV_purge_administration
+
+    is_triggered_only = yes
+    fire_only_once = yes
+
+    option = {
+        name = stl_equality.23.a
+    }
+}
+
+# STL_restore_normality
+country_event = {
+    id = stl_equality.24
+    title = stl_equality.24.t
+    desc = stl_equality.24.d
+    picture = GFX_event_our_town
+
+    is_triggered_only = yes
+    fire_only_once = yes
+
+    option = {
+        name = stl_equality.24.a
+    }
+}
+
+###########################################################################
+# ACT II - OUR BELOVED RULER (Starlight Glimmer)
+###########################################################################
+
+# Follow-up to starlight.21: Starlight walks back into Our Town.
+country_event = {
+    id = stl_equality.30
+    title = stl_equality.30.t
+    desc = stl_equality.30.d
+    picture = GFX_event_starlight_for_the_win
+
+    is_triggered_only = yes
+    fire_only_once = yes
+
+    option = {
+        name = stl_equality.30.a
+    }
+}
+
+# STL_our_beloved_ruler: Starlight is recovered from Canterlot and takes power.
+country_event = {
+    id = stl_equality.31
+    title = stl_equality.31.t
+    desc = {
+        text = stl_equality.31.d_council
+        trigger = { has_country_flag = STL_council_handed_over }
+    }
+    desc = {
+        text = stl_equality.31.d_diamond
+        trigger = { NOT = { has_country_flag = STL_council_handed_over } }
+    }
+    picture = GFX_event_starlight_for_the_win
+
+    is_triggered_only = yes
+    fire_only_once = yes
+
+    option = {
+        name = stl_equality.31.a
+    }
+}
+
+# STL_reastablish_equality: Equality, done differently.
+country_event = {
+    id = stl_equality.32
+    title = stl_equality.32.t
+    desc = stl_equality.32.d
+    picture = GFX_event_mare_republic
+
+    is_triggered_only = yes
+    fire_only_once = yes
+
+    option = {
+        name = stl_equality.32.a
+    }
+}
+
+# STL_reastablish_solidified: the new curriculum.
+country_event = {
+    id = stl_equality.33
+    title = stl_equality.33.t
+    desc = stl_equality.33.d
+    picture = GFX_event_school
+
+    is_triggered_only = yes
+    fire_only_once = yes
+
+    option = {
+        name = stl_equality.33.a
+    }
+}
+
+# STL_accention_of_our_ruler: Starlight becomes an alicorn.
+country_event = {
+    id = stl_equality.34
+    title = stl_equality.34.t
+    desc = stl_equality.34.d
+    picture = GFX_event_pony_statue
+
+    is_triggered_only = yes
+    fire_only_once = yes
+
+    option = {
+        name = stl_equality.34.a
+        hidden_effect = {
+            news_event = { id = stl_equality.35 hours = 12 }
+        }
+    }
+}
+
+# The world learns of the ascension.
+news_event = {
+    id = stl_equality.35
+    title = stl_equality.35.t
+    desc = stl_equality.35.d
+    picture = GFX_news_event_our_town
+
+    major = yes
+    is_triggered_only = yes
+    fire_only_once = yes
+
+    option = {
+        name = stl_equality.35.a
+        trigger = { original_tag = STL }
+    }
+
+    option = {
+        name = stl_equality.35.b
+        trigger = { NOT = { original_tag = STL } }
+    }
+}
+
+# STL_recruit_old_friends
+country_event = {
+    id = stl_equality.36
+    title = stl_equality.36.t
+    desc = stl_equality.36.d
+    picture = GFX_report_event_generic_read_write
+
+    is_triggered_only = yes
+    fire_only_once = yes
+
+    option = {
+        name = stl_equality.36.a
+    }
+}
+
+# STL_applejack
+country_event = {
+    id = stl_equality.37
+    title = stl_equality.37.t
+    desc = stl_equality.37.d
+    picture = GFX_event_ponyville
+
+    is_triggered_only = yes
+    fire_only_once = yes
+
+    option = {
+        name = stl_equality.37.a
+    }
+}
+
+# STL_rarity
+country_event = {
+    id = stl_equality.38
+    title = stl_equality.38.t
+    desc = stl_equality.38.d
+    picture = GFX_event_rarity
+
+    is_triggered_only = yes
+    fire_only_once = yes
+
+    option = {
+        name = stl_equality.38.a
+    }
+}
+
+# STL_fluttershy
+country_event = {
+    id = stl_equality.39
+    title = stl_equality.39.t
+    desc = stl_equality.39.d
+    picture = GFX_event_fluttershy_disappointed
+
+    is_triggered_only = yes
+    fire_only_once = yes
+
+    option = {
+        name = stl_equality.39.a
+    }
+}
+
+# STL_pinkie
+country_event = {
+    id = stl_equality.40
+    title = stl_equality.40.t
+    desc = stl_equality.40.d
+    picture = GFX_event_ponies_cheering
+
+    is_triggered_only = yes
+    fire_only_once = yes
+
+    option = {
+        name = stl_equality.40.a
+    }
+}
+
+# STL_rainbow
+country_event = {
+    id = stl_equality.41
+    title = stl_equality.41.t
+    desc = stl_equality.41.d
+    picture = GFX_event_pegasi_city
+
+    is_triggered_only = yes
+    fire_only_once = yes
+
+    option = {
+        name = stl_equality.41.a
+    }
+}
+
+# STL_reastablish_normality
+country_event = {
+    id = stl_equality.42
+    title = stl_equality.42.t
+    desc = stl_equality.42.d
+    picture = GFX_event_forest_celebration
+
+    is_triggered_only = yes
+    fire_only_once = yes
+
+    option = {
+        name = stl_equality.42.a
+    }
+}
+
+###########################################################################
+# ACT III - OUR EQUESTRIA
+###########################################################################
+
+# STL_bring_equality_to_equestria: war on a non-communist Equestria.
+country_event = {
+    id = stl_equality.50
+    title = stl_equality.50.t
+    desc = stl_equality.50.d
+    picture = GFX_event_pony_soldiers_sunset
+
+    is_triggered_only = yes
+    fire_only_once = yes
+
+    option = {
+        name = stl_equality.50.a
+        add_war_support = 0.05
+    }
+}
+
+# form_eqs decision: the world hears about Our Equestria.
+news_event = {
+    id = stl_equality.51
+    title = stl_equality.51.t
+    desc = stl_equality.51.d
+    picture = GFX_news_event_fall_of_canterlot
+
+    major = yes
+    is_triggered_only = yes
+    fire_only_once = yes
+
+    option = {
+        name = stl_equality.51.a
+        trigger = { original_tag = STL }
+    }
+
+    option = {
+        name = stl_equality.51.b
+        trigger = { NOT = { original_tag = STL } }
+    }
+}
+
+# STL_revive_institute: the academies reopen (replaces MAN_ELF_new.155).
+country_event = {
+    id = stl_equality.52
+    title = stl_equality.52.t
+    desc = {
+        text = stl_equality.52.d_starlight
+        trigger = { has_country_leader = { character = STL_starlight_glimmer } }
+    }
+    desc = {
+        text = stl_equality.52.d_ministry
+        trigger = { NOT = { has_country_leader = { character = STL_starlight_glimmer } } }
+    }
+    picture = GFX_event_dim_library
+
+    is_triggered_only = yes
+    fire_only_once = yes
+
+    option = {
+        name = stl_equality.52.a
+        add_ideas = STL_revived_institutes
+    }
+}
+
+###########################################################################
+# ACT IV - EQUALITY FOR THE CONTINENT
+###########################################################################
+
+# STL_equality_for_the_continet
+country_event = {
+    id = stl_equality.60
+    title = stl_equality.60.t
+    desc = stl_equality.60.d
+    picture = GFX_event_crystal_mountain
+
+    is_triggered_only = yes
+    fire_only_once = yes
+
+    option = {
+        name = stl_equality.60.a
+        add_war_support = 0.05
+    }
+}
+
+# STL_integrate_the_changelings: the last border.
+country_event = {
+    id = stl_equality.61
+    title = stl_equality.61.t
+    desc = stl_equality.61.d
+    picture = GFX_event_swarm
+
+    is_triggered_only = yes
+    fire_only_once = yes
+
+    option = {
+        name = stl_equality.61.a
+    }
+}

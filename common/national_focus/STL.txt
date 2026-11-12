@@ -630,6 +630,7 @@ focus_tree = {
         relative_position_id = STL_industrial_effort
         will_lead_to_war_with = STG
         completion_reward = {
+            country_event = { id = stl_equality.10 days = 1 }
             create_wargoal = {
                 type = annex_everything
                 target = STG
@@ -824,6 +825,7 @@ focus_tree = {
         y = 1
         relative_position_id = STL_conquest_of_STG
         completion_reward = {
+            country_event = { id = stl_equality.20 days = 1 }
             add_country_leader_trait = equalist_mad_man
             custom_effect_tooltip = STL_double_diamond_supreme_tt
         }
@@ -856,6 +858,7 @@ focus_tree = {
         y = 1
         relative_position_id = STL_double_diamond_supreme
         completion_reward = {
+            country_event = { id = stl_equality.21 days = 1 }
             swap_ideas = {
                 remove_idea = STL_equality_past
                 add_idea = STL_embraced_past
@@ -963,6 +966,7 @@ focus_tree = {
         y = 1
         relative_position_id = STL_increase_radicalism
         completion_reward = {
+            country_event = { id = stl_equality.22 days = 1 }
             set_country_flag = STL_the_star_is_back
             custom_effect_tooltip = available_political_advisor
             show_ideas_tooltip = starlight_glimmer_pa
@@ -1212,6 +1216,7 @@ focus_tree = {
         }
         relative_position_id = STL_starlight_as_a_figure_head
         completion_reward = {
+            country_event = { id = stl_equality.23 days = 1 }
             remove_dynamic_modifier = {
                 modifier = STL_instability
             }
@@ -1243,6 +1248,7 @@ focus_tree = {
         relative_position_id = STL_purge_the_dissidents
         cancel_if_invalid = no
         completion_reward = {
+            country_event = { id = stl_equality.24 days = 1 }
             remove_ideas = STL_civil_unrest
             add_timed_idea = {
                 idea = STL_civil_unrest
@@ -1304,6 +1310,7 @@ focus_tree = {
                 limit = {
                     EQS = { country_exists = THIS }
                 }
+                country_event = { id = stl_equality.50 days = 1 }
                 create_wargoal = {
                     type = annex_everything
                     target = EQS
@@ -1360,6 +1367,14 @@ focus_tree = {
             focus = STL_invite_starlight_back
         }
         completion_reward = {
+            hidden_effect = {
+                # Remembered for stl_equality.31, which fires after Starlight has already been promoted.
+                if = {
+                    limit = { has_country_leader = { character = STL_supreme_equalist_council } }
+                    set_country_flag = STL_council_handed_over
+                }
+            }
+            country_event = { id = stl_equality.31 hours = 1 }
             set_country_flag = STL_the_star_is_back
             STL_starlight_glimmer = {
                 promote_character = yes
@@ -1405,6 +1420,7 @@ focus_tree = {
             focus = STL_invite_starlight_back
         }
         completion_reward = {
+            country_event = { id = stl_equality.34 days = 1 }
             add_country_leader_trait = the_equal_alicorn
             custom_effect_tooltip = STL_accention_of_our_ruler_tt
 
@@ -1434,6 +1450,7 @@ focus_tree = {
             focus = STL_accention_of_our_ruler
         }
         completion_reward = {
+            country_event = { id = stl_equality.36 days = 1 }
             EQS = {
                 EQS_twilight_sparkle = {
                     set_nationality = STL
@@ -1472,6 +1489,7 @@ focus_tree = {
         }
 
         completion_reward = {
+            country_event = { id = stl_equality.37 days = 1 }
             custom_effect_tooltip = STL_effective_change_for_instability_tt
             add_to_variable = {
                 STL_instability_stability = 0.02
@@ -1497,6 +1515,7 @@ focus_tree = {
         }
 
         completion_reward = {
+            country_event = { id = stl_equality.38 days = 1 }
             custom_effect_tooltip = STL_effective_change_for_instability_tt
             add_to_variable = {
                 STL_instability_advisor_cost = -0.20
@@ -1534,6 +1553,7 @@ focus_tree = {
         }
 
         completion_reward = {
+            country_event = { id = stl_equality.39 days = 1 }
             custom_effect_tooltip = STL_effective_change_for_instability_tt
             add_to_variable = {
                 STL_instability_resistance = -0.03
@@ -1563,6 +1583,7 @@ focus_tree = {
         }
 
         completion_reward = {
+            country_event = { id = stl_equality.40 days = 1 }
             custom_effect_tooltip = STL_effective_change_for_instability_tt
             add_to_variable = {
                 STL_instability_stability = 0.03
@@ -1595,6 +1616,7 @@ focus_tree = {
         }
 
         completion_reward = {
+            country_event = { id = stl_equality.41 days = 1 }
             custom_effect_tooltip = STL_effective_change_for_instability_tt
             add_to_variable = {
                 STL_instability_advisor_cost = -0.40
@@ -1632,6 +1654,7 @@ focus_tree = {
         prerequisite = { focus = STL_rainbow }
         prerequisite = { focus = STL_pinkie }
         completion_reward = {
+            country_event = { id = stl_equality.42 days = 1 }
             remove_ideas = STL_civil_unrest
             remove_dynamic_modifier = {
                 modifier = STL_instability
@@ -1804,8 +1827,8 @@ focus_tree = {
         relative_position_id = STL_industrial_integration_of_eqs
         prerequisite = { focus = STL_industrial_integration_of_eqs }
         completion_reward = {
-            log = "[GetDateText]: [Root.GetName]: Focus ELF_left_4_b"
-            country_event = { id = MAN_ELF_new.155 hours = 1 }
+            log = "[GetDateText]: [Root.GetName]: Focus STL_revive_institute"
+            country_event = { id = stl_equality.52 hours = 1 }
             add_stability = 0.05
             add_research_slot = 1
         }
@@ -2034,6 +2057,7 @@ focus_tree = {
         y = 1
         relative_position_id = STL_invite_starlight_back
         completion_reward = {
+            country_event = { id = stl_equality.32 days = 1 }
             swap_ideas = {
                 remove_idea = STL_equality_past
                 add_idea = STL_equality_reastablished
@@ -2069,6 +2093,7 @@ focus_tree = {
         y = 1
         relative_position_id = STL_reastablish_equality
         completion_reward = {
+            country_event = { id = stl_equality.33 days = 1 }
             swap_ideas = {
                 remove_idea = STL_equality_reastablished
                 add_idea = STL_equality_solidified
@@ -2114,6 +2139,7 @@ focus_tree = {
         relative_position_id = STL_independence_line
         completion_reward = {
             log = "[GetDateText]: [Root.GetName]: Focus STL_garden"
+            country_event = { id = stl_equality.13 days = 1 }
             add_ideas = STL_garden_spirit
 
             if = {
@@ -2163,6 +2189,7 @@ focus_tree = {
         y = 1
         relative_position_id = STL_garden
         completion_reward = {
+            country_event = { id = stl_equality.14 days = 1 }
             swap_ideas = {
                 remove_idea = STL_garden_spirit
                 add_idea = STL_breeding
@@ -3787,6 +3814,8 @@ focus_tree = {
             ROOT = {
                 add_country_leader_trait = juno_cult_of_personality
             }
+
+            remove_ideas = STL_equality_past
         }
     }
 
@@ -7113,7 +7142,9 @@ focus_tree = {
         allow_branch = {
             has_country_flag = STL_has_formed_our_eqs
         }
-        completion_reward = { }
+        completion_reward = {
+            country_event = { id = stl_equality.60 days = 1 }
+        }
         search_filters = { FOCUS_FILTER_ANNEXATION }
     }
 
@@ -7286,7 +7317,9 @@ focus_tree = {
         prerequisite = {
             focus = STL_war_on_the_changelings
         }
-        completion_reward = { }
+        completion_reward = {
+            country_event = { id = stl_equality.61 days = 1 }
+        }
     }
 
     focus = {
